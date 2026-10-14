@@ -1,0 +1,165 @@
+{
+  "saga_id": "06_compensation_fee_cap_deposit",
+  "exit": 5,
+  "inject": "spike-persist@deposit",
+  "forkBlock": 20260897,
+  "done": [
+    "approve_usdc",
+    "swap",
+    "approve_wpros"
+  ],
+  "compensationPrepared": [
+    {
+      "step": "cancel_pending",
+      "description": "0-PROS self-transfer at nonce 2172 supersedes the abandoned 0x150d943b0d\u2026 (it may still sit in some node's mempool)",
+      "unsignedTx": {
+        "chainId": "0x688",
+        "nonce": "0x87c",
+        "maxPriorityFeePerGas": "0x0",
+        "maxFeePerGas": "0x3e6517a51",
+        "gas": "0x5208",
+        "to": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+        "value": "0x0",
+        "data": "0x"
+      },
+      "unsignedSerialized": "0x02e882068882087c808503e6517a518252089484dbd23178ba7fc6a2a396559139aef69d0f072a8080c0",
+      "signingHash": "0xcb5ba76a4d824f16981a4d7f9a086d72e5490c1e1ad8bf9980899701583b94c4",
+      "castCommandForUser": "cast send 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a 0x --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+      "signed": false,
+      "broadcast": false
+    },
+    {
+      "step": "revoke_wpros_vault",
+      "description": "approve(vault, 0): remove the unused WPROS allowance",
+      "unsignedTx": {
+        "chainId": "0x688",
+        "nonce": "0x87d",
+        "maxPriorityFeePerGas": "0x0",
+        "maxFeePerGas": "0x2bad2a26e",
+        "gas": "0x87b5",
+        "to": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+        "value": "0x0",
+        "data": "0x095ea7b30000000000000000000000006ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e730000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "unsignedSerialized": "0x02f86d82068882087d808502bad2a26e8287b59452c48d4213107b20bc583832b0d951fb9ca8f0b080b844095ea7b30000000000000000000000006ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e730000000000000000000000000000000000000000000000000000000000000000c0",
+      "signingHash": "0x483b06a2fed0fb68d50f8007839a08faab2bcdfd126a7ff82449efbc1882ec46",
+      "castCommandForUser": "cast send 0x52C48d4213107b20bC583832b0d951FB9CA8F0B0 0x095ea7b30000000000000000000000006ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e730000000000000000000000000000000000000000000000000000000000000000 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+      "signed": false,
+      "broadcast": false
+    },
+    {
+      "step": "approve_wpros_router",
+      "description": "approve router 42.973099 WPROS for the unwind",
+      "unsignedTx": {
+        "chainId": "0x688",
+        "nonce": "0x87e",
+        "maxPriorityFeePerGas": "0x0",
+        "maxFeePerGas": "0x263793e92",
+        "gas": "0xd85e",
+        "to": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+        "value": "0x0",
+        "data": "0x095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd875000000000000000000000000000000000000000000000002545f1e09f61eb80e"
+      },
+      "unsignedSerialized": "0x02f86d82068882087e80850263793e9282d85e9452c48d4213107b20bc583832b0d951fb9ca8f0b080b844095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd875000000000000000000000000000000000000000000000002545f1e09f61eb80ec0",
+      "signingHash": "0xeb27b8d3abf128c6764c0c39ba1162152346dadbce615beac268e3303c9c600e",
+      "castCommandForUser": "cast send 0x52C48d4213107b20bC583832b0d951FB9CA8F0B0 0x095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd875000000000000000000000000000000000000000000000002545f1e09f61eb80e --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+      "signed": false,
+      "broadcast": false
+    },
+    {
+      "step": "swap_back",
+      "description": "unwind: 42.973099 WPROS -> USDC, quote 24.995000 minOut 24.870025",
+      "unsignedTx": {
+        "chainId": "0x688",
+        "nonce": "0x87f",
+        "maxPriorityFeePerGas": "0x0",
+        "maxFeePerGas": "0x2170b08b4",
+        "gas": "0x2696c",
+        "to": "0xf38d34c8382b9079b0f85309578b43b8479cd875",
+        "value": "0x0",
+        "data": "0x414bf38900000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000000000000000000000000000000000000000006400000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a000000000000000000000000000000000000000000000000000000006ad0177e000000000000000000000000000000000000000000000002545f1e09f61eb80e00000000000000000000000000000000000000000000000000000000017b7c890000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "unsignedSerialized": "0x02f9012f82068882087f808502170b08b48302696c94f38d34c8382b9079b0f85309578b43b8479cd87580b90104414bf38900000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000000000000000000000000000000000000000006400000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a000000000000000000000000000000000000000000000000000000006ad0177e000000000000000000000000000000000000000000000002545f1e09f61eb80e00000000000000000000000000000000000000000000000000000000017b7c890000000000000000000000000000000000000000000000000000000000000000c0",
+      "signingHash": "0xfa7c6450b97682ab49996e3205603bc0c19157a4fc6edbe46b9d380637242ce3",
+      "castCommandForUser": "cast send 0xf38d34c8382b9079b0f85309578b43b8479Cd875 0x414bf38900000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000000000000000000000000000000000000000006400000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a000000000000000000000000000000000000000000000000000000006ad0177e000000000000000000000000000000000000000000000002545f1e09f61eb80e00000000000000000000000000000000000000000000000000000000017b7c890000000000000000000000000000000000000000000000000000000000000000 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+      "signed": false,
+      "broadcast": false
+    }
+  ],
+  "receipts": [
+    {
+      "step": "approve_usdc",
+      "phase": "forward",
+      "tx": "0xd1e88ea792eca65b5ddb5599ce431aa92739c3797c53fa16c421a6dac2a06ff5",
+      "gasUsed": 55449,
+      "price": 8750000000,
+      "status": 1
+    },
+    {
+      "step": "swap",
+      "phase": "forward",
+      "tx": "0x401f8b2281567f0f55387119261cae35f05f2a892d47dde3720cd4b0f5b5d2e4",
+      "gasUsed": 144003,
+      "price": 7656371295,
+      "status": 1
+    },
+    {
+      "step": "approve_wpros",
+      "phase": "forward",
+      "tx": "0xfb9865d6969788269dbfba871d2aa32b08dcd5cfbe6b8e4c827b4d50ebe689b7",
+      "gasUsed": 46159,
+      "price": 6699600519,
+      "status": 1
+    },
+    {
+      "step": "cancel_pending",
+      "phase": "compensation",
+      "tx": "0x3a99b98e822b819a6c2ab2e1e11f262c8ddddc5e8cae6398162ff6e088539542",
+      "gasUsed": 21000,
+      "price": 14236651103,
+      "status": 1
+    },
+    {
+      "step": "revoke_wpros_vault",
+      "phase": "compensation",
+      "tx": "0x1e2136d9b61b01d291340a5071dacbacf50197692af59a21813c5f75d03d9238",
+      "gasUsed": 24151,
+      "price": 5129412425,
+      "status": 1
+    },
+    {
+      "step": "approve_wpros_router",
+      "phase": "compensation",
+      "tx": "0x98630bebe61b1dc2011bf76a3a3c7fa1020e05bb8af65feb464ea2218fd46eda",
+      "gasUsed": 46159,
+      "price": 4488266842,
+      "status": 1
+    },
+    {
+      "step": "swap_back",
+      "phase": "compensation",
+      "tx": "0x76d82d61203035620537ae98f38393e2e8738964eceb52fcae4a44e24c7b32f4",
+      "gasUsed": 118826,
+      "price": 3927285281,
+      "status": 1
+    }
+  ],
+  "balancesBefore": {
+    "USDC": "6959753033",
+    "WPROS": "0",
+    "vault shares": "0",
+    "PROS": "7135753067000000000",
+    "USDC allowance->router": "0",
+    "WPROS allowance->router": "0",
+    "WPROS allowance->vault": "0"
+  },
+  "balancesAfter": {
+    "USDC": "6959748033",
+    "WPROS": "0",
+    "vault shares": "0",
+    "PROS": "7132759413331450435",
+    "USDC allowance->router": "0",
+    "WPROS allowance->router": "0",
+    "WPROS allowance->vault": "0"
+  }
+}
