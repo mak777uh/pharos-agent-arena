@@ -1,0 +1,19 @@
+$ python aggregator.py rates --token USDC --json sample_rates_usdc.json
+=== Pharos multi-protocol aggregator · mainnet block #20,257,685 · PROS $0.5840 (Chainlink)
+
+USDC venues (best first):
+   1. ERC-4626 vault:SharpByte USDC Pharos Ecosystem             APY   5.52%  size   2,135,133.78  exit liq   per holder  room no cap
+   2. Morpho Blue:syzUSD/USDC market 0xc79579a0…                 APY   5.32%  size   3,414,773.69  exit liq      331,425  room no cap
+   3. Morpho Blue:WPROS/USDC market 0xb3b8a31c…                  APY   4.51%  size   1,098,122.23  exit liq       98,563  room no cap
+   4. Morpho Blue:wsrUSD/USDC market 0xbea21c37…                 APY   4.43%  size   6,568,920.72  exit liq      630,079  room no cap
+   5. ERC-4626 vault:SharpByte Pharos Prime                      APY   3.96%  size      70,493.81  exit liq   per holder  room no cap
+   6. Morpho Blue:APC3M/USDC market 0xba0d2638…                  APY   2.95%  size   1,342,785.41  exit liq      337,753  room no cap
+   7. Avalon:USDC reserve                                        APY   1.95%  size     501,262.73  exit liq       55,016  room 498,737
+   8. Morpho Blue:BTCVC/USDC market 0xf203d06f…                  APY   0.00%  size         200.01  exit liq          190  room no cap
+   9. Morpho Blue:ETHVP/USDC market 0x81c8e4d8…                  APY   0.00%  size           0.00  exit liq            0  room no cap
+  10. Morpho Blue:VRPCW/USDC market 0x082e865d…                  APY   0.00%  size           2.00  exit liq            2  room no cap
+  11. Morpho Blue:APC3M/USDC market 0x1aa31baf…                  APY   0.00%  size           1.00  exit liq            1  room no cap
+  12. Morpho Blue:-/USDC market 0x0db7e824…                      APY   0.00%  size           0.00  exit liq            0  room no cap
+  protocol status: Avalon: up (1 venue) | Morpho Blue: up (9 venues) | ERC-4626 vault: up (2 venues)
+
+Nothing was signed or sent. Rates are live on-chain values at this block; not financial advice.
