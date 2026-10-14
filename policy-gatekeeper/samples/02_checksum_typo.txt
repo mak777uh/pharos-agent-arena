@@ -1,0 +1,10 @@
+$ python3 scripts/gatekeeper.py check --policy assets/policy.json --log samples/audit_log.jsonl --request '{"id":"r10-typo","type":"transfer","token":"USDC","to":"0x1F3546a29EeC2102c8d52E21a45114124014c85c","amount":"5"}'
+Policy Gatekeeper · policy 'treasury-agent-v1' · agent 0x84dbd23178ba7fc6a2a396559139aef69d0f072a · Pharos mainnet · 2026-10-14 22:38:15 UTC (wed)
+
+[DENY] r10-typo: transfer 5 USDC -> 0x1F3546a29EeC2102c8d52E21a45114124014c85c
+        decided by: request.validation - recipient 0x1F3546a29EeC2102c8d52E21a45114124014c85c fails the EIP-55 checksum (typo?) - expected 0x1F3546a29EeC2102c8d52E21a45114124014c85C
+        executor: NOT called (denied actions are never executed)
+        audit #cf15c7ac53ef (prev cf96ee5913ed)
+
+1 requests: 0 allowed, 1 denied; executor called 0 times. Audit log: samples/audit_log.jsonl
+exit code: 5
