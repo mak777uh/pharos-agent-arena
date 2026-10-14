@@ -1,0 +1,36 @@
+$ printf 'yes\n0x1F3546a29EeC2102c8d52E21a45114124014c85c\n0x1F3546a29EeC2102c8d52E21a45114124014c85C\ny\n' | python nl_pay.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a 'send $50 to alice.eth'
+[run at 2026-10-14 21:16:48 UTC]
+Instruction: 'send $50 to alice.eth'
+Parsed     : amount=50 token=None recipient=None
+? USD is not a token: did you mean USDC (Circle, the only USD stablecoin in the Pharos mainnet registry)?
+> yes
+? 'alice.eth' is a name-service name. ENS does not resolve on Pharos (chainId 1672) and it is not in your address book. What is the 0x address?
+> 0x1F3546a29EeC2102c8d52E21a45114124014c85c
+? recipient 0x1F3546a29EeC2102c8d52E21a45114124014c85c fails the EIP-55 checksum (typo?) - expected 0x1F3546a29EeC2102c8d52E21a45114124014c85C. Please give a contact name or a valid 0x address.
+> 0x1F3546a29EeC2102c8d52E21a45114124014c85C
+=== Payment summary (review before signing) ===
+  Pay        : 50 USDC  (contract 0xc879c018db60520f4355c26ed1a6d572cdac1815)
+  To         : 0x1F3546a29EeC2102c8d52E21a45114124014c85C  https://www.pharosscan.xyz/address/0x1f3546a29eec2102c8d52e21a45114124014c85c
+  From/signer: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  Network    : Pharos mainnet, chainId 1672, nonce 2164, gas limit 70,362
+  Fees       : maxFeePerGas 20 gwei, tip 0 gwei -> at most 0.00140724 PROS network fee
+  Checks:
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [ok] payer not blacklisted by USDC
+    [ok] recipient not blacklisted by USDC
+    [ok] payer USDC balance 6,845.265664 >= 50 (balanceOf)
+    [ok] simulation OK: estimate_gas 58,635 -> gas limit 70,362 (+20%)
+    [ok] signer PROS balance 7.142356537 >= value + max gas fee 0.00140724 (get_balance)
+    [ok] nonce 2164 = get_transaction_count(sender, 'pending')
+? Prepare this as an unsigned transaction for your wallet? [y/N]
+> y
+=== Unsigned transaction (NOT signed, NOT sent) ===
+  Wallet signing request (EIP-1193):
+  {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000002faf080", "gas": "0x112da", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x874", "chainId": "0x688", "type": "0x2"}]}
+  Unsigned EIP-1559 serialization: 0x02f86e820688820874808504a817c800830112da94c879c018db60520f4355c26ed1a6d572cdac181580b844a9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000002faf080c0
+  Signing hash (keccak256 of the above): 0x1d7b268e7ebbc185325ed79368a062fa9c498908cb4ec100c991d11b3d8b32e9
+  EIP-681 URI: ethereum:0xC879C018dB60520F4355C26eD1a6D572cdAC1815@1672/transfer?address=0x1F3546a29EeC2102c8d52E21a45114124014c85C&uint256=50000000
+  Sign it in your own wallet; this tool holds no key and never broadcasts.
+[exit code 0]
