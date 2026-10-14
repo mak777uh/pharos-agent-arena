@@ -1,0 +1,120 @@
+{
+  "invoice": {
+    "format": "text",
+    "reference": "INV-2026-0042",
+    "payee_name": "Lumen Design Studio",
+    "payee_wallet": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+    "amount": "250.00",
+    "currency": "USDC",
+    "due_date": "2026-10-31",
+    "network": "Pharos mainnet (chainId 1672)",
+    "payer_wallet": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+    "subtotal": "250.00",
+    "tax": null,
+    "discount": null,
+    "raw_wallets": [
+      "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+      "0x1F3546a29EeC2102c8d52E21a45114124014c85C"
+    ],
+    "token": "USDC",
+    "due_iso": "2026-10-31"
+  },
+  "line_items": [
+    {
+      "description": "Landing page design",
+      "quantity": "2",
+      "unit_price": "100.00",
+      "amount": "200.00"
+    },
+    {
+      "description": "Icon set",
+      "quantity": null,
+      "unit_price": null,
+      "amount": "50.00"
+    }
+  ],
+  "chainId": 1672,
+  "token": "USDC",
+  "tokenAddress": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+  "amount": "250",
+  "amountUnits": "250000000",
+  "reference": "INV-2026-0042",
+  "preparedAtBlock": 20253132,
+  "unsignedTx": {
+    "chainId": "0x688",
+    "nonce": "0x874",
+    "maxPriorityFeePerGas": "0x0",
+    "maxFeePerGas": "0x4a817c800",
+    "gas": "0x11514",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x0",
+    "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c000000000000000000000000000000000000000000000000000000000ee6b280504841524f532d5245463a494e562d323032362d30303432"
+  },
+  "unsignedSerialized": "0x02f886820688820874808504a817c8008301151494c879c018db60520f4355c26ed1a6d572cdac181580b85ca9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c000000000000000000000000000000000000000000000000000000000ee6b280504841524f532d5245463a494e562d323032362d30303432c0",
+  "signingHash": "0xe440e30cd930ba25e7b9da31f66519a8ad5b1f37607fa1f154e1ecbbfda84787",
+  "walletRequest": {
+    "method": "eth_sendTransaction",
+    "params": [
+      {
+        "from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+        "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "value": "0x0",
+        "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c000000000000000000000000000000000000000000000000000000000ee6b280504841524f532d5245463a494e562d323032362d30303432",
+        "gas": "0x11514",
+        "maxFeePerGas": "0x4a817c800",
+        "maxPriorityFeePerGas": "0x0",
+        "nonce": "0x874",
+        "chainId": "0x688",
+        "type": "0x2"
+      }
+    ]
+  },
+  "eip681": null,
+  "maxNetworkFeePROS": "0.00141864",
+  "checks": [
+    {
+      "ok": true,
+      "check": "Chain MCP is on Pharos mainnet (chainId 1672)"
+    },
+    {
+      "ok": true,
+      "check": "token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)"
+    },
+    {
+      "ok": true,
+      "check": "recipient is a regular account (no contract code)"
+    },
+    {
+      "ok": true,
+      "check": "payer not blacklisted by USDC"
+    },
+    {
+      "ok": true,
+      "check": "recipient not blacklisted by USDC"
+    },
+    {
+      "ok": true,
+      "check": "payer USDC balance 6,845.265664 >= 250.00 (balanceOf)"
+    },
+    {
+      "ok": true,
+      "check": "simulation OK: estimate_gas 59,110 -> gas limit 70,932 (+20%)"
+    },
+    {
+      "ok": true,
+      "check": "signer PROS balance 7.142356537 >= value + max gas fee 0.00141864 (get_balance)"
+    },
+    {
+      "ok": true,
+      "check": "nonce 2164 = get_transaction_count(sender, 'pending')"
+    }
+  ],
+  "warnings": [],
+  "signed": false,
+  "broadcast": false,
+  "invoiceNotes": [
+    "payee wallet matches the vendor book entry for 'Lumen Design Studio'"
+  ]
+}
