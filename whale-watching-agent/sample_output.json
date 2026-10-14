@@ -1,0 +1,396 @@
+{
+  "from_block": 20243911,
+  "to_block": 20246910,
+  "from_time": "2026-10-14 18:37:06 UTC",
+  "to_time": "2026-10-14 19:32:03 UTC",
+  "transfers_seen": 472,
+  "reports": [
+    {
+      "watched": "0xff70f4a1d11995621854f3692acf286d8acd04b2",
+      "watched_label": "LiFiDiamond bridge (explorer)",
+      "direction": "in",
+      "kind": "received",
+      "token": "WPROS",
+      "token_address": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+      "amount": 5187.101367786861,
+      "raw": "5187101367786860998921",
+      "counterparty": "0x1de7889c440d4fefa0e5f4f83a021f6f41cdf26b",
+      "counterparty_label": "unlabelled contract",
+      "block": 20244014,
+      "time": "2026-10-14 18:39:08 UTC",
+      "tx": "0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90",
+      "link": "https://www.pharosscan.xyz/tx/0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90",
+      "why_significant": ">= 2,000 WPROS token threshold",
+      "context": "PASS-THROUGH - held no WPROS before or after this block (tokens received and forwarded in the same block)",
+      "swap": null,
+      "usd_estimate": 3371.62
+    },
+    {
+      "watched": "0xff70f4a1d11995621854f3692acf286d8acd04b2",
+      "watched_label": "LiFiDiamond bridge (explorer)",
+      "direction": "out",
+      "kind": "sent",
+      "token": "WPROS",
+      "token_address": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+      "amount": 5187.101367786861,
+      "raw": "5187101367786860998921",
+      "counterparty": "0x290d54179960984599f16f77dcda81320301b158",
+      "counterparty_label": "unlabelled contract",
+      "block": 20244014,
+      "time": "2026-10-14 18:39:08 UTC",
+      "tx": "0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90",
+      "link": "https://www.pharosscan.xyz/tx/0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90",
+      "why_significant": ">= 2,000 WPROS token threshold",
+      "context": "PASS-THROUGH - held no WPROS before or after this block (tokens forwarded right after receipt in the same block)",
+      "swap": null,
+      "usd_estimate": 3371.62
+    },
+    {
+      "watched": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "watched_label": "Active swap contract (unlabelled)",
+      "direction": "out",
+      "kind": "sent",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 621.324307,
+      "raw": "621324307",
+      "counterparty": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "counterparty_label": "Most active USDC/WPROS contract (unlabelled)",
+      "block": 20244330,
+      "time": "2026-10-14 18:45:01 UTC",
+      "tx": "0x39dcac197ad4c9b5aa841d24358c92d746598872441e8d7ed94ad9aa4930ae12",
+      "link": "https://www.pharosscan.xyz/tx/0x39dcac197ad4c9b5aa841d24358c92d746598872441e8d7ed94ad9aa4930ae12",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "moves 2% of the 38,171.862913 USDC held before (now 37,550.538606)",
+      "swap": "part of a swap: 621.324307 USDC -> 1,063.514102 WPROS",
+      "usd_estimate": 621.32
+    },
+    {
+      "watched": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "watched_label": "Most active USDC/WPROS contract (unlabelled)",
+      "direction": "in",
+      "kind": "received",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 621.324307,
+      "raw": "621324307",
+      "counterparty": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "counterparty_label": "Active swap contract (unlabelled)",
+      "block": 20244330,
+      "time": "2026-10-14 18:45:01 UTC",
+      "tx": "0x39dcac197ad4c9b5aa841d24358c92d746598872441e8d7ed94ad9aa4930ae12",
+      "link": "https://www.pharosscan.xyz/tx/0x39dcac197ad4c9b5aa841d24358c92d746598872441e8d7ed94ad9aa4930ae12",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "adds <1% to the 520,219.856724 USDC held before (now 520,841.181031)",
+      "swap": "part of a swap: 1,063.514102 WPROS -> 621.324307 USDC",
+      "usd_estimate": 621.32
+    },
+    {
+      "watched": "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f",
+      "watched_label": "ERC1967Proxy, large USDC receiver (explorer)",
+      "direction": "in",
+      "kind": "received",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 1552.129867,
+      "raw": "1552129867",
+      "counterparty": "0xd7c38e2580f6eb3e547ce77ec5495833a0d9520e",
+      "counterparty_label": "unlabelled wallet (EOA)",
+      "block": 20244371,
+      "time": "2026-10-14 18:45:39 UTC",
+      "tx": "0x95b4f18b6f4d28e9c928fb2378553c7ce8b815d07f67012bfc9fe21f73a83081",
+      "link": "https://www.pharosscan.xyz/tx/0x95b4f18b6f4d28e9c928fb2378553c7ce8b815d07f67012bfc9fe21f73a83081",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "adds <1% to the 13,704,447.528102 USDC held before (now 13,705,999.657969)",
+      "swap": null,
+      "usd_estimate": 1552.13
+    },
+    {
+      "watched": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "watched_label": "Active swap contract (unlabelled)",
+      "direction": "out",
+      "kind": "sent",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 621.417873,
+      "raw": "621417873",
+      "counterparty": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "counterparty_label": "Most active USDC/WPROS contract (unlabelled)",
+      "block": 20244505,
+      "time": "2026-10-14 18:48:00 UTC",
+      "tx": "0x86c98d8b5b02b061ff7f1b7a351b11d7e82c7959701e4961425f555912f0d2f3",
+      "link": "https://www.pharosscan.xyz/tx/0x86c98d8b5b02b061ff7f1b7a351b11d7e82c7959701e4961425f555912f0d2f3",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "moves 2% of the 37,084.48203 USDC held before (now 36,463.064157)",
+      "swap": "part of a swap: 621.417873 USDC -> 1,060.444792 WPROS",
+      "usd_estimate": 621.42
+    },
+    {
+      "watched": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "watched_label": "Most active USDC/WPROS contract (unlabelled)",
+      "direction": "in",
+      "kind": "received",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 621.417873,
+      "raw": "621417873",
+      "counterparty": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "counterparty_label": "Active swap contract (unlabelled)",
+      "block": 20244505,
+      "time": "2026-10-14 18:48:00 UTC",
+      "tx": "0x86c98d8b5b02b061ff7f1b7a351b11d7e82c7959701e4961425f555912f0d2f3",
+      "link": "https://www.pharosscan.xyz/tx/0x86c98d8b5b02b061ff7f1b7a351b11d7e82c7959701e4961425f555912f0d2f3",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "adds <1% to the 521,151.877383 USDC held before (now 521,773.295256)",
+      "swap": "part of a swap: 1,060.444792 WPROS -> 621.417873 USDC",
+      "usd_estimate": 621.42
+    },
+    {
+      "watched": "0x768b959191ce5876cabbbc014a08d72615bdde54",
+      "watched_label": "Vault (explorer)",
+      "direction": "in",
+      "kind": "received",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 584.85,
+      "raw": "584850000",
+      "counterparty": "0x9a6b487d47ace505cc010a1da967504d7f9e961d",
+      "counterparty_label": "unlabelled contract",
+      "block": 20245757,
+      "time": "2026-10-14 19:10:38 UTC",
+      "tx": "0x8fbbcff6d8a362279a4f69c50384b632f39a99c835d8bcd50a88400596ae8ed5",
+      "link": "https://www.pharosscan.xyz/tx/0x8fbbcff6d8a362279a4f69c50384b632f39a99c835d8bcd50a88400596ae8ed5",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "adds 176% to the 332.80903 USDC held before (now 917.65903)",
+      "swap": null,
+      "usd_estimate": 584.85
+    },
+    {
+      "watched": "0x768b959191ce5876cabbbc014a08d72615bdde54",
+      "watched_label": "Vault (explorer)",
+      "direction": "out",
+      "kind": "sent",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 584.85,
+      "raw": "584850000",
+      "counterparty": "0x9a6b487d47ace505cc010a1da967504d7f9e961d",
+      "counterparty_label": "unlabelled contract",
+      "block": 20245781,
+      "time": "2026-10-14 19:11:00 UTC",
+      "tx": "0x2e8b4acb3ea452b1597c0246184b371fa752fe6201b869f7738ddc14e777b100",
+      "link": "https://www.pharosscan.xyz/tx/0x2e8b4acb3ea452b1597c0246184b371fa752fe6201b869f7738ddc14e777b100",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "moves 64% of the 917.65903 USDC held before (now 332.80903)",
+      "swap": null,
+      "usd_estimate": 584.85
+    },
+    {
+      "watched": "0x768b959191ce5876cabbbc014a08d72615bdde54",
+      "watched_label": "Vault (explorer)",
+      "direction": "in",
+      "kind": "received",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 555.53,
+      "raw": "555530000",
+      "counterparty": "0x279ab064d45ec9d9a57a2a5a1e4d295dfe69cace",
+      "counterparty_label": "unlabelled contract",
+      "block": 20246315,
+      "time": "2026-10-14 19:20:36 UTC",
+      "tx": "0x2a62f573848b75496769cf21ae15206d3412477e19bdd88e425a27c39e314057",
+      "link": "https://www.pharosscan.xyz/tx/0x2a62f573848b75496769cf21ae15206d3412477e19bdd88e425a27c39e314057",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "adds 167% to the 332.80903 USDC held before (now 888.33903)",
+      "swap": null,
+      "usd_estimate": 555.53
+    },
+    {
+      "watched": "0x768b959191ce5876cabbbc014a08d72615bdde54",
+      "watched_label": "Vault (explorer)",
+      "direction": "out",
+      "kind": "sent",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 555.53,
+      "raw": "555530000",
+      "counterparty": "0x279ab064d45ec9d9a57a2a5a1e4d295dfe69cace",
+      "counterparty_label": "unlabelled contract",
+      "block": 20246333,
+      "time": "2026-10-14 19:20:54 UTC",
+      "tx": "0x456c97767323ee7a47745d3a9fa238460fb89e49fc634ef6e3c6f31d20e46fd8",
+      "link": "https://www.pharosscan.xyz/tx/0x456c97767323ee7a47745d3a9fa238460fb89e49fc634ef6e3c6f31d20e46fd8",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "moves 63% of the 888.33903 USDC held before (now 332.80903)",
+      "swap": null,
+      "usd_estimate": 555.53
+    },
+    {
+      "watched": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "watched_label": "Active swap contract (unlabelled)",
+      "direction": "out",
+      "kind": "sent",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 621.529396,
+      "raw": "621529396",
+      "counterparty": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "counterparty_label": "Most active USDC/WPROS contract (unlabelled)",
+      "block": 20246384,
+      "time": "2026-10-14 19:22:06 UTC",
+      "tx": "0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b",
+      "link": "https://www.pharosscan.xyz/tx/0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "moves 2% of the 35,607.575527 USDC held before (now 34,830.663782)",
+      "swap": "part of a swap: 621.529396 USDC -> 1,057.720438 WPROS",
+      "usd_estimate": 621.53
+    },
+    {
+      "watched": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+      "watched_label": "Most active USDC/WPROS contract (unlabelled)",
+      "direction": "in",
+      "kind": "received",
+      "token": "USDC",
+      "token_address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": 621.529396,
+      "raw": "621529396",
+      "counterparty": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+      "counterparty_label": "Active swap contract (unlabelled)",
+      "block": 20246384,
+      "time": "2026-10-14 19:22:06 UTC",
+      "tx": "0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b",
+      "link": "https://www.pharosscan.xyz/tx/0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b",
+      "why_significant": ">= 500 USDC token threshold",
+      "context": "adds <1% to the 521,997.163766 USDC held before (now 522,618.693162)",
+      "swap": "part of a swap: 1,057.720438 WPROS -> 621.529396 USDC",
+      "usd_estimate": 621.53
+    }
+  ],
+  "stats": {
+    "0x912c9ade24d44d8922f0866d8dcb079f1363f647": {
+      "label": "Most active USDC/WPROS contract (unlabelled)",
+      "moves": 406,
+      "significant": 3,
+      "tokens": {
+        "WPROS": [
+          16016.389855429996,
+          19492.240057129486
+        ],
+        "USDC": [
+          11411.585834000001,
+          9379.387781999996
+        ]
+      },
+      "largest": "0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b",
+      "last_block": 20246897
+    },
+    "0x936564245b69f5a293b42cbd752e0ee3bb68b470": {
+      "label": "Active swap contract (unlabelled)",
+      "moves": 212,
+      "significant": 3,
+      "tokens": {
+        "WPROS": [
+          15916.848212673483,
+          9947.737757555891
+        ],
+        "USDC": [
+          5824.171636999999,
+          9320.614009999998
+        ]
+      },
+      "largest": "0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b",
+      "last_block": 20246897
+    },
+    "0x1f3546a29eec2102c8d52e21a45114124014c85c": {
+      "label": "High-frequency wallet (EOA)",
+      "moves": 176,
+      "significant": 0,
+      "tokens": {
+        "USDC": [
+          2870.093392,
+          2282.4960279999996
+        ],
+        "WPROS": [
+          3900.0,
+          4900.0
+        ]
+      },
+      "largest": null,
+      "last_block": 20246715
+    },
+    "0x768b959191ce5876cabbbc014a08d72615bdde54": {
+      "label": "Vault (explorer)",
+      "moves": 54,
+      "significant": 4,
+      "tokens": {
+        "USDC": [
+          5722.090000000001,
+          5722.090000000001
+        ]
+      },
+      "largest": "0x8fbbcff6d8a362279a4f69c50384b632f39a99c835d8bcd50a88400596ae8ed5",
+      "last_block": 20246856
+    },
+    "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f": {
+      "label": "ERC1967Proxy, large USDC receiver (explorer)",
+      "moves": 2,
+      "significant": 1,
+      "tokens": {
+        "USDC": [
+          1652.129867,
+          0.0
+        ]
+      },
+      "largest": "0x95b4f18b6f4d28e9c928fb2378553c7ce8b815d07f67012bfc9fe21f73a83081",
+      "last_block": 20244371
+    },
+    "0xba3b260596d8412318ee6ef5476291f6c8e3b68a": {
+      "label": "MorphoMarketV1AdapterV2 (explorer)",
+      "moves": 0,
+      "significant": 0,
+      "tokens": {},
+      "largest": null,
+      "last_block": null
+    },
+    "0xff70f4a1d11995621854f3692acf286d8acd04b2": {
+      "label": "LiFiDiamond bridge (explorer)",
+      "moves": 2,
+      "significant": 2,
+      "tokens": {
+        "WPROS": [
+          5187.101367786861,
+          5187.101367786861
+        ]
+      },
+      "largest": "0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90",
+      "last_block": 20244014
+    },
+    "0x15ddce897d76ac39c188ade4d353711a60395315": {
+      "label": "Active wallet (EOA)",
+      "moves": 8,
+      "significant": 0,
+      "tokens": {
+        "USDC": [
+          583.763671,
+          0.0
+        ],
+        "WPROS": [
+          0.0,
+          995.9575988015271
+        ]
+      },
+      "largest": null,
+      "last_block": 20244982
+    }
+  },
+  "native_change": {
+    "0x912c9ade24d44d8922f0866d8dcb079f1363f647": 0.0,
+    "0x936564245b69f5a293b42cbd752e0ee3bb68b470": 0.0,
+    "0x1f3546a29eec2102c8d52e21a45114124014c85c": -0.16975776,
+    "0x768b959191ce5876cabbbc014a08d72615bdde54": 0.0,
+    "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f": 0.0,
+    "0xba3b260596d8412318ee6ef5476291f6c8e3b68a": 0.0,
+    "0xff70f4a1d11995621854f3692acf286d8acd04b2": 0.0,
+    "0x15ddce897d76ac39c188ade4d353711a60395315": -0.00727155
+  }
+}
