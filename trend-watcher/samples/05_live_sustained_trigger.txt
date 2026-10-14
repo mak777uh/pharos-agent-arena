@@ -1,0 +1,26 @@
+$ python3 scripts/trend.py watch --config assets/morpho_util_high.json --db samples/trend_state.db --alerts samples/alerts.jsonl --interval 25 --count 4
+[2026-10-14 23:15:48 UTC] block 20,259,190 value 91.024391 move n/a streak 1/3 stored; history 1 obs
+[2026-10-14 23:16:15 UTC] block 20,259,211 value 91.024391 move n/a streak 2/3 stored; history 2 obs
+[2026-10-14 23:16:41 UTC] block 20,259,237 value 91.024391 move n/a streak 3/3 stored; history 3 obs
+*** TREND CONFIRMED [LIVE] at block 20,259,237 (2026-10-14 23:16:38 UTC): value gt 90 for 3 consecutive observations (blocks 20259190..20259237)
+    action: alert written to samples/alerts.jsonl
+=== Prepared action: top-up 100 USDC treasury -> ops (review before signing) ===
+  Pay        : 100 USDC  (contract 0xc879c018db60520f4355c26ed1a6d572cdac1815)
+  To         : 0x1F3546a29EeC2102c8d52E21a45114124014c85C  https://www.pharosscan.xyz/address/0x1f3546a29eec2102c8d52e21a45114124014c85c
+  From/signer: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  Reference  : TREND-UTIL-90  (embedded in calldata as 'PHAROS-REF:TREND-UTIL-90')
+  Network    : Pharos mainnet, chainId 1672, nonce 2168, gas limit 70,914
+  Fees       : maxFeePerGas 20 gwei, tip 0 gwei -> at most 0.00141828 PROS network fee
+  Checks:
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [ok] payer not blacklisted by USDC
+    [ok] recipient not blacklisted by USDC
+    [ok] payer USDC balance 6,860.524438 >= 100 (balanceOf)
+    [ok] simulation OK: estimate_gas 59,095 -> gas limit 70,914 (+20%)
+    [ok] signer PROS balance 7.137069597 >= value + max gas fee 0.00141828 (get_balance)
+    [ok] nonce 2168 = get_transaction_count(sender, 'pending')
+    sign it yourself (never done here): cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100504841524f532d5245463a5452454e442d5554494c2d3930 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+[2026-10-14 23:17:11 UTC] block 20,259,261 value 91.024391 move n/a streak 4 (>= 3, already triggered) stored; history 4 obs
+exit code: 0
