@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "schedules": {
+    "payroll-600": {
+      "id": "payroll-600",
+      "payer": "0x84ddbccba32bee8f4e775d737bec2d3c10ea112f",
+      "to": "0x3e79f7ffa10d23dac3ad16af98994f2214f69737",
+      "signer": "0x25fdb4a165661f07cb52ac55d00d8d191126b058",
+      "token": "USDC",
+      "amount": "600",
+      "amount_units": "600000000",
+      "every": "weekly",
+      "start": "2026-10-14T20:30:00+00:00",
+      "created": "2026-10-14T21:31:32+00:00",
+      "active": true,
+      "periods": {
+        "2026-10-14": {
+          "period": "2026-10-14",
+          "due": "2026-10-14 20:30 UTC",
+          "status": "paid",
+          "attempts": [],
+          "tx": "0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5",
+          "paid_block": 20251314,
+          "settled_by": "already paid on chain before preparing"
+        }
+      }
+    },
+    "rent": {
+      "id": "rent",
+      "payer": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+      "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "signer": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+      "token": "USDC",
+      "amount": "1000",
+      "amount_units": "1000000000",
+      "every": "monthly",
+      "start": "2026-10-14T21:00:00+00:00",
+      "created": "2026-10-14T21:31:35+00:00",
+      "active": true,
+      "periods": {
+        "2026-10-14": {
+          "period": "2026-10-14",
+          "due": "2026-10-14 21:00 UTC",
+          "status": "pending",
+          "attempts": [
+            {
+              "n": 1,
+              "status": "pending",
+              "nonce": 2165,
+              "signing_hash": "0x490c79caedd27a6b31b79aef3d9df36f4104bff009a1d1e943ec5abd0777eb9e",
+              "prepared_block": 20253705,
+              "file": "samples/prepared/rent_2026-10-14_attempt1.json",
+              "at": "2026-10-14 21:34 UTC"
+            }
+          ]
+        }
+      }
+    },
+    "subscription": {
+      "id": "subscription",
+      "payer": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "signer": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "token": "USDC",
+      "amount": "20",
+      "amount_units": "20000000",
+      "every": "weekly",
+      "start": "2026-10-14T21:00:00+00:00",
+      "created": "2026-10-14T21:31:37+00:00",
+      "active": true,
+      "periods": {
+        "2026-10-14": {
+          "period": "2026-10-14",
+          "due": "2026-10-14 21:00 UTC",
+          "status": "pending",
+          "attempts": [
+            {
+              "n": 1,
+              "status": "failed",
+              "nonce": 38487,
+              "signing_hash": "0x36aa29fbb9539d0edb56cb092eee8528207afacd8e81d0f287958d535c8e39e0",
+              "prepared_block": 20253741,
+              "file": "samples/prepared/subscription_2026-10-14_attempt1.json",
+              "at": "2026-10-14 21:35 UTC",
+              "reason": "dropped: signer nonce is now 38492 > 38487 and no matching transfer exists, so this unsigned tx can never be mined"
+            },
+            {
+              "n": 2,
+              "status": "pending",
+              "nonce": 38492,
+              "signing_hash": "0x60e584bbbee1798aeaa1238471f0161223efa8afb23cf13a90ff1ce8caeec9a0",
+              "prepared_block": 20254066,
+              "file": "samples/prepared/subscription_2026-10-14_attempt2.json",
+              "at": "2026-10-14 21:41 UTC"
+            }
+          ]
+        }
+      }
+    },
+    "payroll-bob": {
+      "id": "payroll-bob",
+      "payer": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "signer": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "token": "USDC",
+      "amount": "2500",
+      "amount_units": "2500000000",
+      "every": "weekly",
+      "start": "2026-10-14T21:00:00+00:00",
+      "created": "2026-10-14T21:31:39+00:00",
+      "active": true,
+      "periods": {
+        "2026-10-14": {
+          "period": "2026-10-14",
+          "due": "2026-10-14 21:00 UTC",
+          "status": "insufficient_funds",
+          "attempts": [
+            {
+              "n": 1,
+              "status": "insufficient_funds",
+              "reason": "insufficient USDC: payer has 1,926.073338, needs 2500",
+              "at": "2026-10-14 21:35 UTC"
+            },
+            {
+              "n": 2,
+              "status": "insufficient_funds",
+              "reason": "insufficient USDC: payer has 1,926.073338, needs 2500",
+              "at": "2026-10-14 21:36 UTC"
+            },
+            {
+              "n": 3,
+              "status": "insufficient_funds",
+              "reason": "insufficient USDC: payer has 1,633.392269, needs 2500",
+              "at": "2026-10-14 21:41 UTC"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "used_txs": [
+    "0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5"
+  ]
+}
