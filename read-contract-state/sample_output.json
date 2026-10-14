@@ -1,0 +1,107 @@
+{
+  "mcp_server": "pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp",
+  "network": {
+    "name": "Pharos",
+    "chainId": 1672
+  },
+  "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "explorer": "https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "block": 20223996,
+  "block_hash": "0xbb4c20893ac5d24b71468646d1a27b60e5d459ff0b2937c4fd5d082a48a60003",
+  "block_time_utc": "2026-10-14 12:58:33 UTC",
+  "contract_kind": "contract, 1,798 bytes of code",
+  "values": {
+    "name": "USDC",
+    "symbol": "USDC",
+    "decimals": 6,
+    "totalSupply": {
+      "raw": "23558408456760",
+      "human": "23,558,408.456760 USDC"
+    },
+    "currency": "USD",
+    "version": "2",
+    "paused": false
+  },
+  "roles": {
+    "owner": {
+      "address": "0x9f8ea09770dc38fc61f5a62031b3be0526d54d92",
+      "label": "Owner (can reassign roles)",
+      "kind": "wallet (EOA)"
+    },
+    "pauser": {
+      "address": "0x828409db274cad94ac10db6d54aeca1dbe00e237",
+      "label": "Pauser (can freeze all transfers)",
+      "kind": "wallet (EOA)"
+    },
+    "masterMinter": {
+      "address": "0x908ea62d2529f31347d71992954e540a8d169603",
+      "label": "Master minter (manages who may mint)",
+      "kind": "contract, 5,346 bytes of code"
+    },
+    "blacklister": {
+      "address": "0xba8cd4958d4105aaa23b00c645573f53fcd59486",
+      "label": "Blacklister (can block addresses)",
+      "kind": "wallet (EOA)"
+    },
+    "rescuer": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "label": "Rescuer (can recover stuck tokens)",
+      "kind": "zero address (unset)"
+    }
+  },
+  "proxy": {
+    "proxy implementation (zos)": {
+      "address": "0xc35becb283fec66626220467265f6d3b3f8ceae8",
+      "kind": "contract, 23,464 bytes of code"
+    },
+    "proxy admin (zos)": {
+      "address": "0x46f958bdeffd33495e058873cdd114c79ec13f1b",
+      "kind": "wallet (EOA)"
+    }
+  },
+  "balances": [
+    {
+      "address": "0x9f8ea09770dc38fc61f5a62031b3be0526d54d92",
+      "label": "Owner",
+      "token_raw": "0",
+      "token_human": "0.000000 USDC",
+      "native": "0.2 PROS"
+    },
+    {
+      "address": "0x828409db274cad94ac10db6d54aeca1dbe00e237",
+      "label": "Pauser",
+      "token_raw": "0",
+      "token_human": "0.000000 USDC",
+      "native": "0.2 PROS"
+    },
+    {
+      "address": "0x908ea62d2529f31347d71992954e540a8d169603",
+      "label": "Master minter",
+      "token_raw": "0",
+      "token_human": "0.000000 USDC",
+      "native": "0 PROS"
+    },
+    {
+      "address": "0xba8cd4958d4105aaa23b00c645573f53fcd59486",
+      "label": "Blacklister",
+      "token_raw": "0",
+      "token_human": "0.000000 USDC",
+      "native": "51.814762963091646094 PROS"
+    },
+    {
+      "address": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "label": "this contract (USDC)",
+      "token_raw": "0",
+      "token_human": "0.000000 USDC",
+      "native": "0 PROS"
+    }
+  ],
+  "mcp_tools_used": [
+    "get_chain_info",
+    "get_block",
+    "eth_call",
+    "get_storage_at",
+    "get_code",
+    "get_balance"
+  ]
+}
