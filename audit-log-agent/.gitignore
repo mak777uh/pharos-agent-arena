@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+state*.json
+*.tmp
+events*.jsonl
+report.md
+report.csv
