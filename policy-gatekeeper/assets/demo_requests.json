@@ -1,0 +1,72 @@
+[
+ {
+  "id": "r1-pay-alice",
+  "type": "transfer",
+  "token": "USDC",
+  "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+  "amount": "300",
+  "note": "ops top-up"
+ },
+ {
+  "id": "r2-pay-bob",
+  "type": "transfer",
+  "token": "USDC",
+  "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+  "amount": "400",
+  "note": "vendor invoice"
+ },
+ {
+  "id": "r3-pay-alice",
+  "type": "transfer",
+  "token": "USDC",
+  "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+  "amount": "400",
+  "note": "second top-up (daily cap)"
+ },
+ {
+  "id": "r4-big-pay",
+  "type": "transfer",
+  "token": "USDC",
+  "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+  "amount": "600",
+  "note": "over per-tx limit"
+ },
+ {
+  "id": "r5-unknown",
+  "type": "transfer",
+  "token": "USDC",
+  "to": "0x50fbb8651e332696ba14b04e17175f960ec18ab2",
+  "amount": "50",
+  "note": "recipient not allowlisted"
+ },
+ {
+  "id": "r6-approve",
+  "type": "contract_call",
+  "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000000005f5e100",
+  "note": "approve 100 USDC to Morpho (outside business hours?)"
+ },
+ {
+  "id": "r7-wpros-call",
+  "type": "contract_call",
+  "to": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+  "data": "0x2e1a7d4d0000000000000000000000000000000000000000000000000de0b6b3a7640000",
+  "note": "contract not allowlisted"
+ },
+ {
+  "id": "r8-pros-bob",
+  "type": "transfer",
+  "token": "PROS",
+  "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+  "amount": "0.5",
+  "note": "native PROS tip"
+ },
+ {
+  "id": "r9-wpros",
+  "type": "transfer",
+  "token": "WPROS",
+  "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+  "amount": "10",
+  "note": "no WPROS limit configured"
+ }
+]
