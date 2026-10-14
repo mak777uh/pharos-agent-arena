@@ -1,0 +1,23 @@
+$ python3 scripts/batch.py --actions assets/payouts.json
+Batch Executor · sender 0x84dbd23178ba7fc6a2a396559139aef69d0f072a · Pharos mainnet block #20,258,130 (2026-10-14 22:55:24 UTC)
+Multicall3 0xca11bde05977b3631167028862be2a173976ca11 aggregate3Value · on-failure: drop
+
+ # id                   action                   to                                           alone (eth_call)             in batch (allowFailure=true)
+ 1 tip-alice            send 0.02 PROS           0x1f3546a29eec2102c8d52e21a45114124014c85c   ok, 21,000 gas               ok
+ 2 tip-bob              send 0.015 PROS          0x4ffd9c7e8641947662a43af298b734ca93530002   ok, 21,000 gas               ok
+ 3 tip-carol            send 0.01 PROS           0x50fbb8651e332696ba14b04e17175f960ec18ab2   ok, 21,000 gas               ok
+ 4 tip-dave             send 0.005 PROS          0x25fdb4a165661f07cb52ac55d00d8d191126b058   ok, 21,000 gas               ok
+
+OUTCOME: ALL - 1 unsigned transaction bundles 4 actions (total value 0.05 PROS, allowFailure=false: all-or-nothing on chain)
+
+Saving vs one transaction per action:
+  transactions : 4 -> 1   (signatures/nonces saved: 3)
+  gas          : 84,000 -> 88,060   (batch costs 4,060 MORE gas = 4.8%: each value transfer through a contract costs ~9,000 gas, while a plain transfer has no execution cost beyond its 21,000 base)
+  fee @ 10 gwei: 0.00084 PROS -> 0.0008806 PROS (extra ~$0.000024 at PROS/USD 0.5840)
+
+Prepared UNSIGNED tx to Multicall3: nonce 2168, gas limit 105,672, value 0.05 PROS, signing hash 0x2cc6959c1a81a81894bf6797c6a1a05d073872a1ec96b67523dc87b70dc81220
+  calldata: 0x174dea710000000000000000000000000000000000000000000000000000000000000020… (836 bytes)
+  sign it yourself: cast send 0xcA11bde05977b3631167028862bE2a173976CA11 0x174dea71000000000000000000000000000000000000000000000000000000000…
+  (never signed or broadcast by this skill)
+  Multicall3: https://www.pharosscan.xyz/address/0xca11bde05977b3631167028862be2a173976ca11
+exit code: 0
