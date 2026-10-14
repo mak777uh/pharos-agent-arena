@@ -1,0 +1,8 @@
+verify-receipt · step approve_usdc · https://www.pharosscan.xyz/tx/0x9a2cdbaa52286a3c16771d0f5a4af451b0fed815119687a78e285b60b0171139
+  [OK] receipt exists (Chain MCP get_transaction_receipt)
+  [OK] status = 0x1
+  [XX] from 0xb143f6ca55358fac056eca7ac1a228a1f018b048 == planned sender 0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+  [XX] to 0x422615e302eb064a440f5be03400e03b6655abb6 == planned 0xc879c018db60520f4355c26ed1a6d572cdac1815
+  [XX] selector 0x67bf9bac == planned 0x095ea7b3
+  [XX] full calldata == planned calldata
+RESULT: NOT VERIFIED - saga stays at approve_usdc; do not sign the next step
