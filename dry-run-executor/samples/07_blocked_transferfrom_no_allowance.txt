@@ -1,0 +1,14 @@
+$ python3 scripts/dryrun.py raw --from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a --to 0xc879c018db60520f4355c26ed1a6d572cdac1815 --data 0x23b872dd0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c00000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a00000000000000000000000000000000000000000000000000000000004c4b40
+Dry run · raw call to 0xc879c018db60520f4355c26ed1a6d572cdac1815
+  network Pharos mainnet (chainId 1672), head block #20,257,588, 2026-10-14 22:45:22 UTC
+  from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> to 0xc879c018db60520f4355c26ed1a6d572cdac1815 (contract), value 0 wei, data 0x23b872dd… (100 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : REVERT - ERC20: transfer amount exceeds allowance
+  revert data: 0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002845524332303a207472616e7366657220616d6f756e74206578636565647320616c6c6f77616e6365000000000000000000000000000000000000000000000000
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  reverting tx changes nothing (except gas if sent)
+[3] Decision: BLOCKED
+  blocked: simulation reverted: ERC20: transfer amount exceeds allowance
+  execution blocked automatically - no transaction was prepared
+  sender: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+exit code: 4
