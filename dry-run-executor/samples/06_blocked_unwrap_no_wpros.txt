@@ -1,0 +1,14 @@
+$ python3 scripts/dryrun.py unwrap --from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a --amount 1
+Dry run · unwrap 1 WPROS
+  network Pharos mainnet (chainId 1672), head block #20,257,617, 2026-10-14 22:45:46 UTC
+  from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> to 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 (contract), value 0 wei, data 0x2e1a7d4d… (36 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : REVERT - reverted without a reason (empty revert data)
+  revert data: 0x
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  reverting tx changes nothing (except gas if sent)
+[3] Decision: BLOCKED
+  blocked: simulation reverted: reverted without a reason (empty revert data)
+  execution blocked automatically - no transaction was prepared
+  sender: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+exit code: 4
