@@ -1,0 +1,8 @@
+{
+  "series": "wpros-usdc-pool-price-per-block",
+  "description": "Same pool, observed every block around the 4,356 USDC swap in block 20,228,606 (tx 0xe8300396…4c31) (a real one-block -1.42% price drop, half recovered within 3 blocks). Same trend rule.",
+  "source": {"type": "pool_price", "params": {"pool": "0x912c9ade24d44d8922f0866d8dcb079f1363f647"}, "recheck_pct": "1"},
+  "rule": {"id": "down-3-checks", "type": "consecutive", "direction": "down", "moves": 3,
+           "min_step_pct": "0.02", "min_total_pct": "0.15", "max_step_pct": "2", "max_gap_blocks": 1200},
+  "action": {"type": "alert"}
+}
