@@ -1,0 +1,28 @@
+[run at 2026-10-14 21:31:32 UTC]
+$ python recurring_agent.py add --id payroll-600 --payer 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f --to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737 --signer 0x25fdb4a165661f07cb52ac55d00d8d191126b058 --token USDC --amount 600 --every weekly --start 2026-10-14T20:30Z
+added payroll-600: 600 USDC weekly from 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737, first due 2026-10-14 20:30 UTC, pull via operator 0x25fdb4a165661f07cb52ac55d00d8d191126b058
+[exit code 0]
+$ python recurring_agent.py add --id rent --payer 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --to 0x1F3546a29EeC2102c8d52E21a45114124014c85C --token USDC --amount 1000 --every monthly --start 2026-10-14T21:00Z
+added rent: 1000 USDC monthly from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a to 0x1f3546a29eec2102c8d52e21a45114124014c85c, first due 2026-10-14 21:00 UTC
+[exit code 0]
+$ python recurring_agent.py add --id subscription --payer 0x1F3546a29EeC2102c8d52E21a45114124014c85C --to 0x4ffd9c7e8641947662a43af298b734ca93530002 --token USDC --amount 20 --every weekly --start 2026-10-14T21:00Z
+added subscription: 20 USDC weekly from 0x1f3546a29eec2102c8d52e21a45114124014c85c to 0x4ffd9c7e8641947662a43af298b734ca93530002, first due 2026-10-14 21:00 UTC
+[exit code 0]
+$ python recurring_agent.py add --id payroll-bob --payer 0x1F3546a29EeC2102c8d52E21a45114124014c85C --to 0x4ffd9c7e8641947662a43af298b734ca93530002 --token USDC --amount 2500 --every weekly --start 2026-10-14T21:00Z
+added payroll-bob: 2500 USDC weekly from 0x1f3546a29eec2102c8d52e21a45114124014c85c to 0x4ffd9c7e8641947662a43af298b734ca93530002, first due 2026-10-14 21:00 UTC
+[exit code 0]
+$ python recurring_agent.py add --id bad --payer 0x1F3546a29EeC2102c8d52E21a45114124014c85c --to 0x4ffd9c7e8641947662a43af298b734ca93530002 --amount 5 --every weekly --start 2026-10-14T21:00Z
+invalid schedule: --payer 0x1F3546a29EeC2102c8d52E21a45114124014c85c fails the EIP-55 checksum (typo?) - expected 0x1F3546a29EeC2102c8d52E21a45114124014c85C
+[exit code 2]
+$ python recurring_agent.py add --id bad2 --payer 0x1F3546a29EeC2102c8d52E21a45114124014c85C --to 0x4ffd9c7e8641947662a43af298b734ca93530002 --amount 5 --every daily --start 2026-10-14T21:00Z
+usage: recurring_agent.py add [-h] --id ID --payer PAYER --to TO
+                              [--token TOKEN] --amount AMOUNT --every
+                              {weekly,monthly} --start START [--signer SIGNER]
+recurring_agent.py add: error: argument --every: invalid choice: 'daily' (choose from weekly, monthly)
+[exit code 2]
+$ python recurring_agent.py list
+payroll-600           600 USDC  weekly   to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737  next unpaid due 2026-10-14 20:30 UTC
+rent                 1000 USDC  monthly  to 0x1f3546a29eec2102c8d52e21a45114124014c85c  next unpaid due 2026-10-14 21:00 UTC
+subscription           20 USDC  weekly   to 0x4ffd9c7e8641947662a43af298b734ca93530002  next unpaid due 2026-10-14 21:00 UTC
+payroll-bob          2500 USDC  weekly   to 0x4ffd9c7e8641947662a43af298b734ca93530002  next unpaid due 2026-10-14 21:00 UTC
+[exit code 0]
