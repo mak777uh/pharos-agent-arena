@@ -1,0 +1,36 @@
+{
+  "_comment": "Same payouts plus one action that cannot succeed: sending PROS to the USDC token contract (it has no payable fallback and reverts).",
+  "sender": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "actions": [
+    {
+      "id": "tip-alice",
+      "type": "send_pros",
+      "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "amount": "0.02"
+    },
+    {
+      "id": "tip-bob",
+      "type": "send_pros",
+      "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "amount": "0.015"
+    },
+    {
+      "id": "tip-usdc-contract",
+      "type": "send_pros",
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "amount": "0.01"
+    },
+    {
+      "id": "tip-carol",
+      "type": "send_pros",
+      "to": "0x50fbb8651e332696ba14b04e17175f960ec18ab2",
+      "amount": "0.01"
+    },
+    {
+      "id": "tip-dave",
+      "type": "send_pros",
+      "to": "0x25fdb4a165661f07cb52ac55d00d8d191126b058",
+      "amount": "0.005"
+    }
+  ]
+}
