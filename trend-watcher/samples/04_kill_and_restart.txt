@@ -1,0 +1,10 @@
+# restart test: the backfill below is killed with SIGKILL after 12 s, then simply run again
+stored before: rows=48 distinct_blocks=48 first=20215200 last=20243400
+$ timeout -s KILL 12 python3 scripts/trend.py backfill --config assets/wpros_down.json --db samples/trend_state.db --alerts samples/alerts.jsonl --from-block 20243400 --to-block 20259000 --every 600
+exit code: 137 (137 = killed by SIGKILL)
+stored after the kill: rows=53 distinct_blocks=53 first=20215200 last=20246400
+$ python3 scripts/trend.py backfill --config assets/wpros_down.json --db samples/trend_state.db --alerts samples/alerts.jsonl --from-block 20243400 --to-block 20259000 --every 600
+backfill 20,243,400..20,259,000 every 600: 21 new observations (6 already stored)
+*** TREND CONFIRMED [historical (recorded, no action)] at block 20,248,200 (2026-10-14 19:55:11 UTC): 3 consecutive down moves 0.587569 -> 0.583071 (-0.7656%) from block 20246400 to 20248200
+exit code: 0
+stored after the restart: rows=74 distinct_blocks=74 first=20215200 last=20259000   (rows == distinct blocks: nothing duplicated; first..last contiguous every 600: nothing lost)
