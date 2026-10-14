@@ -1,0 +1,4 @@
+$ python3 scripts/trend.py backfill --config assets/wpros_down.json --db samples/trend_state.db --alerts samples/alerts.jsonl --from-block 20215200 --to-block 20243400 --every 600   # overlaps part 1
+backfill 20,215,200..20,243,400 every 600: 29 new observations (19 already stored)
+*** TREND CONFIRMED [historical (recorded, no action)] at block 20,229,000 (2026-10-14 14:20:31 UTC): 3 consecutive down moves 0.592326 -> 0.581004 (-1.9115%) from block 20227200 to 20229000
+exit code: 0
