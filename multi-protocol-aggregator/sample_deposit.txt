@@ -1,0 +1,24 @@
+$ python aggregator.py ask 0x84dbd23178ba7fc6a2a396559139aef69d0f072a deposit 5000 USDC --exclude syzUSD --prepare prepared
+understood: deposit {"token": "USDC", "amount": "5000"}
+=== Pharos multi-protocol aggregator · mainnet block #20,257,825 · PROS $0.5840 (Chainlink)
+
+DEPOSIT 5000 USDC for 0x84dbd23178ba7fc6a2a396559139aef69d0f072a → routed
+  routed to: ERC-4626 vault:SharpByte USDC Pharos Ecosystem (0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1)
+  why: highest expected APY after your deposit: 5.50% (now 5.52%; realised share-price growth over the last 7 days, annualised (net of vault fees))
+  why: next best Morpho Blue:WPROS/USDC market 0xb3b8a31c… would give 4.49% after deposit (≈ $50.84/year less)
+  why: capacity ok: no supply cap
+  why: venue facts: performanceFee 15.0% (already netted in share price); managementFee 0.0% (already netted in share price); idle USDC in the vault contract: 792,260.95
+  check: wallet balance 6,967.0892 USDC — enough
+  check: approve simulated → ok; deposit not simulated (needs the approve mined first)
+  alternatives: Morpho Blue:WPROS/USDC market 0xb3b8a31c… 4.49%; Morpho Blue:wsrUSD/USDC market 0xbea21c37… 4.43%; ERC-4626 vault:SharpByte Pharos Prime 3.70%
+  not eligible: Morpho Blue:ETHVP/USDC market 0x81c8e4d8…: too small (size $0.00 < $10,000)
+  not eligible: Morpho Blue:VRPCW/USDC market 0x082e865d…: too small (size $2.00 < $10,000)
+  not eligible: Morpho Blue:APC3M/USDC market 0x1aa31baf…: too small (size $1.00 < $10,000)
+  not eligible: Morpho Blue:syzUSD/USDC market 0xc79579a0…: excluded by --exclude
+  not eligible: Morpho Blue:BTCVC/USDC market 0xf203d06f…: too small (size $200.01 < $10,000)
+  not eligible: Morpho Blue:-/USDC market 0x0db7e824…: too small (size $0.00 < $10,000)
+  tx 1 (unsigned): to 0xc879c018db60520f4355c26ed1a6d572cdac1815 · approve 5000 USDC to ERC-4626 vault 0x15c2…aff1 · data 0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff1…
+  tx 2 (unsigned): to 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 · SharpByte USDC Pharos Ecosystem: deposit(5000 USDC, receiver=you) · data 0x6e553f65000000000000000000000000000000000000000000000000000000012a05f200…
+  prepared → prepared/deposit_USDC_20257825.json
+
+Nothing was signed or sent. Rates are live on-chain values at this block; not financial advice.
