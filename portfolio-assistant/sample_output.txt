@@ -1,0 +1,155 @@
+$ python portfolio_assistant.py 0xd27cb53f5920d484261cc14d32094d3f043265c9 "what am I earning?" "where is my USDC?" "what's my biggest position?" "what is my net worth?" "how much do I owe?" "am I at risk of liquidation?" "what is in my wallet?" "which protocols am I in?" "what will PROS be worth next year?" "tell me a joke" --json sample_answers.json
+=== Portfolio snapshot · 0xd27cb53f5920d484261cc14d32094d3f043265c9 · Pharos mainnet block #20,255,054 (2026-10-14 21:59:43 UTC) · read in 63 s
+    8 positions; https://www.pharosscan.xyz/address/0xd27cb53f5920d484261cc14d32094d3f043265c9
+
+Q: what am I earning?
+[earning] You are earning about $46,976.87 per year (≈ $128.70/day) at current rates, and paying about $49,473.87 per year in borrow interest → net ≈ −$2,497.00/year.
+• 2,000,292.9454 WPROS ($1,171,410.69) — deposited in Vault Vishwa WPROS Vault · vishwaWPROS, 7-day share-price APY 0.16% → ≈ $1,861.91/year
+• 676,100.6017 USDC ($676,100.60) — deposited in Vault SharpByte USDC Pharos Ecosystem · sbUSDC-ph-eco, 7-day share-price APY 5.53% → ≈ $37,403.15/year
+• 250,627.9732 USDC ($250,627.97) — supplied (earning) in Avalon · USDC, supply APY 1.95% → ≈ $4,899.72/year
+• 70,488.7785 USDC ($70,488.78) — deposited in Vault SharpByte Pharos Prime · sbPharosPrime, 7-day share-price APY 3.99% → ≈ $2,812.09/year
+• cost: 999,558.8500 USDC ($999,558.85) — BORROWED (owed) in Morpho Blue · WPROS/USDC, borrow APY 4.95% → ≈ −$49,473.87/year
+Rates are current on-chain rates and change every block; vault APY is the last 7 days' share-price growth, annualised.
+Sources:
+  - 0xe2ec2f3933ad2f83de9a9dda844558354384e87d balanceOf(wallet) @ block 20,255,054
+  - 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba getReserveData(USDC) @ block 20,255,054
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 balanceOf(wallet) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(shares) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 19,649,365
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 balanceOf(wallet) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(shares) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 19,649,365
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,365
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,054
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8…e1ba) @ block 20,255,054
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+
+Q: where is my USDC?
+[where_token] Your USDC: 997,217.3534 in total across 3 place(s), and you owe 999,558.8500 USDC:
+• 999,558.8500 USDC ($999,558.85) — BORROWED (owed) in Morpho Blue · WPROS/USDC, borrow APY 4.95%
+• 676,100.6017 USDC ($676,100.60) — deposited in Vault SharpByte USDC Pharos Ecosystem · sbUSDC-ph-eco, 7-day share-price APY 5.53%
+• 250,627.9732 USDC ($250,627.97) — supplied (earning) in Avalon · USDC, supply APY 1.95%
+• 70,488.7785 USDC ($70,488.78) — deposited in Vault SharpByte Pharos Prime · sbPharosPrime, 7-day share-price APY 3.99%
+Sources:
+  - 0xe2ec2f3933ad2f83de9a9dda844558354384e87d balanceOf(wallet) @ block 20,255,054
+  - 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba getReserveData(USDC) @ block 20,255,054
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8…e1ba) @ block 20,255,054
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 balanceOf(wallet) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(shares) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 19,649,365
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 balanceOf(wallet) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(shares) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 19,649,365
+
+Q: what's my biggest position?
+[biggest] Your biggest position is WPROS collateral in Morpho Blue worth $6,734,622.08.
+Top 3:
+1. 11,499,995.0065 WPROS ($6,734,622.08) — posted as collateral in Morpho Blue · WPROS/USDC — 66.8% of priced assets
+2. 2,000,292.9454 WPROS ($1,171,410.69) — deposited in Vault Vishwa WPROS Vault · vishwaWPROS, 7-day share-price APY 0.16% — 11.6% of priced assets
+3. 1,999,990.0000 WPROS ($1,171,233.27) — held in your wallet — 11.6% of priced assets
+Sources:
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,365
+  - 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 balanceOf(wallet) @ block 20,255,054
+
+Q: what is my net worth?
+[networth] Net worth ≈ $9,074,927.45: assets $10,074,486.30 minus debts $999,558.85 (priced positions only).
+• Morpho Blue: $6,734,622.08
+• Vault Vishwa WPROS Vault: $1,171,410.69
+• Wallet: $1,171,236.18
+• Vault SharpByte USDC Pharos Ecosystem: $676,100.60
+• Avalon: $250,627.97
+• Vault SharpByte Pharos Prime: $70,488.78
+Sources:
+  - 0xd27cb53f5920d484261cc14d32094d3f043265c9 get_balance @ block 20,255,054
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,054
+  - 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 balanceOf(wallet) @ block 20,255,054
+  - 0xe2ec2f3933ad2f83de9a9dda844558354384e87d balanceOf(wallet) @ block 20,255,054
+  - 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba getReserveData(USDC) @ block 20,255,054
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 balanceOf(wallet) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(shares) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 19,649,365
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 balanceOf(wallet) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(shares) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 19,649,365
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,365
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8…e1ba) @ block 20,255,054
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,054
+
+Q: how much do I owe?
+[debt] You owe $999,558.85 in total:
+• 999,558.8500 USDC ($999,558.85) — BORROWED (owed) in Morpho Blue · WPROS/USDC, borrow APY 4.95%, health factor 2.594
+Sources:
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8…e1ba) @ block 20,255,054
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+
+Q: am I at risk of liquidation?
+[health] Liquidation risk (health factor < 1.0 = can be liquidated):
+• Morpho WPROS/USDC: health factor 2.594 (healthy); liquidation if the WPROS price falls 61.4% (LLTV 38.5%)
+Sources:
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8…e1ba) @ block 20,255,054
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,054
+
+Q: what is in my wallet?
+[wallet] Tokens sitting in the wallet (not earning): $1,171,236.18 priced
+• 1,999,990.0000 WPROS ($1,171,233.27)
+• 4.9645 PROS ($2.91)
+Sources:
+  - 0xd27cb53f5920d484261cc14d32094d3f043265c9 get_balance @ block 20,255,054
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,054
+  - 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 balanceOf(wallet) @ block 20,255,054
+
+Q: which protocols am I in?
+[protocols] You have positions in: Avalon, Morpho Blue, Vault SharpByte Pharos Prime, Vault SharpByte USDC Pharos Ecosystem, Vault Vishwa WPROS Vault.
+I checked: Avalon lending pool 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba; Morpho Blue 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb; ERC-4626 vault SharpByte USDC Pharos Ecosystem 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1; ERC-4626 vault SharpByte Pharos Prime 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342; ERC-4626 vault Vishwa WPROS Vault 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73. Other Pharos protocols (DEX LPs, other lenders) are NOT read by this assistant, so positions there would not show up.
+Sources:
+  - 0xe2ec2f3933ad2f83de9a9dda844558354384e87d balanceOf(wallet) @ block 20,255,054
+  - 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba getReserveData(USDC) @ block 20,255,054
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8…e1ba, wallet) @ block 20,255,054
+  - 0xf4331ff581c31d897da6a3cd552dc39bd44983a5 price() @ block 20,255,054
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,054
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8…e1ba) @ block 20,255,054
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 balanceOf(wallet) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(shares) @ block 20,255,054
+  - 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 19,649,365
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 balanceOf(wallet) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(shares) @ block 20,255,054
+  - 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 19,649,365
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,054
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,365
+
+Q: what will PROS be worth next year?
+[out_of_scope] I only report what is on chain right now; I can't predict prices or future yields and I don't give buy/sell advice, so I won't guess.
+
+Q: tell me a joke
+[unknown] I don't know how to answer that from chain data, so I won't guess. I can answer: what am I earning? · where is my <TOKEN>? · what's my biggest position? · what's my net worth? · how much do I owe? · am I at risk of liquidation? · what's in my wallet? · which protocols am I in? · how much <TOKEN> do I have?
+
+exit 0
