@@ -1,0 +1,19 @@
+Pharos Audit-Log Agent · pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp
+  wallet 0x339d413ccefd986b1b3647a9cfa9cbbe70a30749
+  period 2026-10-14 19:20:00 -> 2026-10-14 19:35:00 UTC  =  blocks #20,246,273 - #20,247,070 (798 blocks)
+  logs: 0 wallet events; locating sent txs by nonce search ...
+  sent txs: 7 of 7 located; reading receipts ...
+
+Between 2026-10-14 19:20:00 and 2026-10-14 19:35:00 UTC (blocks 20,246,273–20,247,070) this wallet was involved in 7 transactions and itself sent 7, paying 0.003317 PROS in fees. It made 0 swaps (gave nothing; got nothing), 0 outgoing transfers (nothing), 0 incoming transfers (nothing), 0 token approvals and 7 other contract interactions. Native PROS balance went from 755.799472 to 755.796155.
+
+  Swaps                           0 txs   in: -   out: -
+  Transfers out                   0 txs   in: -   out: -
+  Transfers in                    0 txs   in: -   out: -
+  Approvals                       0 txs   in: -   out: -
+  Other contract interactions     7 txs   in: -   out: -
+
+Notable:
+  - 5 call(s) to contract 0x3c2269811836af69497e5f486a85d7316753cf62 (function 0x3161b7f6)  2026-10-14 19:32:26  https://www.pharosscan.xyz/tx/0x0b1c19a262d7539b01ff51924fb0b0f541d1e312bc2a23533e00b977344a3b23
+  - 2 call(s) to contract 0x3c2269811836af69497e5f486a85d7316753cf62 (function 0x7dc438a4)  2026-10-14 19:32:25  https://www.pharosscan.xyz/tx/0x9976ac1286323be6ddd466ba06553fdb6a4274b853764aba70120f251a505e03
+
+Wrote sample_report_oracle.md and sample_report_oracle.csv
