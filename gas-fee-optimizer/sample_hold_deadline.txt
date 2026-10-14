@@ -1,0 +1,12 @@
+$ python gas_fee_optimizer.py hold --to 0xc879c018db60520f4355c26ed1a6d572cdac1815 --from 0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f --data 0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c00000000000000000000000000000000000000000000000000000000000f4240 --target-gwei 9 --deadline 60s --interval 15
+[2026-10-14 20:39:37 UTC] REQUEST to=0xc879c018db60520f4355c26ed1a6d572cdac1815 value=0 PROS data=0xa9059cbb00000000… gasLimit=70,344 (estimate_gas +20%)
+    deadline 2026-10-14 20:40:36 UTC (60 s) · favourable when baseFee+tip <= target 9 gwei · poll every 15 s
+[2026-10-14 20:39:37 UTC] HOLD block #20,250,567 baseFee+tip 10 gwei > 9 gwei · 59 s to deadline
+[2026-10-14 20:39:52 UTC] HOLD block #20,250,580 baseFee+tip 10 gwei > 9 gwei · 43 s to deadline
+[2026-10-14 20:40:08 UTC] HOLD block #20,250,596 baseFee+tip 10 gwei > 9 gwei · 28 s to deadline
+[2026-10-14 20:40:24 UTC] SUBMIT (DEADLINE: 12 s left, submitting even though 10 gwei > 9 gwei) at block #20,250,614: baseFee 10 gwei + tip 0 gwei
+    request-time price 10 gwei at block #20,250,567 (2026-10-14 20:39:37 UTC)
+    expected fee now  0.00070344 PROS (~$0.000411)  vs at request time 0.00070344 PROS (~$0.000411)  -> same price
+    DRY RUN (prepare-only): nothing was signed or sent. Sign this with your own wallet now:
+    {"chainId": 1672, "type": "0x2", "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c00000000000000000000000000000000000000000000000000000000000f4240", "gas": "0x112c8", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "from": "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f"}
+    (actual-vs-request comparison for a mined tx: `gas_fee_optimizer.py report --tx <hash> --request-block 20250567`)
