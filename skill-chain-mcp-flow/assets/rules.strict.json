@@ -1,0 +1,8 @@
+{
+  "_comment": "Stricter variant used in samples/04: pool must be within 0.1% of Chainlink.",
+  "max_price_impact_pct": 0.5,
+  "max_oracle_deviation_pct": 0.1,
+  "max_oracle_age_s": 3900,
+  "max_gas_gwei": 20,
+  "max_request_amount": 10000000
+}
