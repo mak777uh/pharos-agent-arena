@@ -1,0 +1,5 @@
+{
+  "_comment": "Known vendor wallets (demo). Names are our labels; addresses are real public EOAs on Pharos mainnet. An invoice whose wallet differs from the one on file is flagged.",
+  "Lumen Design Studio": "0x1F3546a29EeC2102c8d52E21a45114124014c85C",
+  "Northwind Hosting": "0x4ffd9c7e8641947662a43af298b734ca93530002"
+}
