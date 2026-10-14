@@ -1,0 +1,295 @@
+[
+  {
+    "contract": "0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466",
+    "contract_name": "Chainlink PROS/USD price feed",
+    "function": "latestAnswer()",
+    "selector": "0x50d25bcd",
+    "args": [],
+    "explanation": {
+      "text": "`latestAnswer()` is a **read-only** call that returns the latest PROS/USD price. It takes **no parameters** and returns one `int256`.\n\nThe feed uses **18 decimals**, so interpret the raw integer as USD per PROS scaled by `10^18`. For example, a return value of `2500000000000000000` represents `$2.50` per PROS.\n\nThe function returns no timestamp. Use `latestTimestamp()` separately to check when the latest observation was recorded, and verify freshness for your use case. See [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe).",
+      "sources": [
+        {
+          "title": "Pacific Mainnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Chainlink Push Engine Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe"
+        },
+        {
+          "title": "Chainlink Data Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds"
+        },
+        {
+          "title": "Chainlink CCIP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip"
+        }
+      ]
+    },
+    "block": 20249396,
+    "block_time_utc": "2026-10-14 20:17:26 UTC",
+    "calldata": "0x50d25bcd",
+    "result_raw": "0x000000000000000000000000000000000000000000000000081ac154d7afd790",
+    "result": {
+      "latestAnswer": 583991671837939600
+    },
+    "interpretation": [
+      "Docs say values use 18 decimals; decimals() on chain = 18 -> matches the docs.",
+      "description() on chain = 'SelfManagedFeedsCacheProxy'.",
+      "Price pair PROS/USD -> a price value is USD per 1 PROS.",
+      "latestAnswer = 583991671837939600 raw -> 0.583992 USD per PROS."
+    ],
+    "explorer": "https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466",
+    "docs_interpretation": {
+      "text": "`latestAnswer = 583991671837939600` is the PROS/USD price scaled by **18 decimals**. Divide by (10^{18}) to get **$0.5839916718379396 per PROS**.\n\nThe contract address matches the PROS/USD feed listed for Pacific Mainnet in [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe).\n\nThe block number and time identify when you made the read; `latestAnswer()` alone does **not** return the report’s observation timestamp. To check freshness, read `latestAnswerTimestampForFeed` or `latestReportTimestamp`. The stored timestamp represents when Chainlink observed the price, not when its update transaction was included on-chain.",
+      "sources": [
+        {
+          "title": "Chainlink Push Engine Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe"
+        },
+        {
+          "title": "Chainlink Data Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Chainlink CCIP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        }
+      ]
+    }
+  },
+  {
+    "contract": "0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466",
+    "contract_name": "Chainlink PROS/USD price feed",
+    "function": "latestRoundData()",
+    "selector": "0xfeaf968c",
+    "args": [],
+    "explanation": {
+      "text": "`latestRoundData()` takes **no parameters**, but the Pharos documentation does **not** list it in this proxy’s documented interface. That interface lists `latestAnswer()`, `latestTimestamp()`, and `getFeedId()`, so its availability and exact ABI aren’t confirmed. See [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe).\n\nIf the proxy exposes the Chainlink round-data fields referenced there, their documented meanings are:\n\n* `roundId` and `answeredInRound` are always `0`; these feeds don’t use aggregation rounds.\n* `startedAt` and `updatedAt` are identical: the report’s **observation timestamp**, not its on-chain transaction time.\n* `answer` is the PROS/USD price. The feed uses **18 decimals**, so interpret the integer as USD per PROS divided by `10^18`.\n\nFor a read-only check, use `eth_call`, which Pharos documents as a read-only contract call. The docs don’t confirm `latestRoundData()`’s return types or that this method is implemented at the address. [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp).",
+      "sources": [
+        {
+          "title": "Pacific Mainnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Chainlink Push Engine Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe"
+        },
+        {
+          "title": "Chainlink Data Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds"
+        },
+        {
+          "title": "Chainlink CCIP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip"
+        }
+      ]
+    },
+    "block": 20249424,
+    "block_time_utc": "2026-10-14 20:18:06 UTC",
+    "calldata": "0xfeaf968c",
+    "result_raw": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000081ac154d7afd790000000000000000000000000000000000000000000000000000000006acfda9a000000000000000000000000000000000000000000000000000000006acfda9a0000000000000000000000000000000000000000000000000000000000000000",
+    "result": {
+      "roundId": 0,
+      "answer": 583991671837939600,
+      "startedAt": 1792006810,
+      "updatedAt": 1792006810,
+      "answeredInRound": 0
+    },
+    "interpretation": [
+      "Docs say values use 18 decimals; decimals() on chain = 18 -> matches the docs.",
+      "description() on chain = 'SelfManagedFeedsCacheProxy'.",
+      "Price pair PROS/USD -> a price value is USD per 1 PROS.",
+      "roundId = 0, exactly as the docs say for this contract (always 0).",
+      "answer = 583991671837939600 raw -> 0.583992 USD per PROS.",
+      "startedAt = 1792006810 -> 2026-10-14 19:40:10 UTC, 2276 s (37.9 min) before block #20,249,424.",
+      "updatedAt = 1792006810 -> 2026-10-14 19:40:10 UTC, 2276 s (37.9 min) before block #20,249,424.",
+      "answeredInRound = 0, exactly as the docs say for this contract (always 0).",
+      "Docs state a 3,600 s heartbeat; updatedAt is 2,276 s old -> within one heartbeat (fresh by that measure)."
+    ],
+    "explorer": "https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466",
+    "docs_interpretation": {
+      "text": "This is the Pharos **Pacific Mainnet PROS/USD** feed. Its values indicate a price of about **$0.5839916718 per PROS**, but the observation is older than the feed’s documented heartbeat.\n\n* **`roundId = 0` and `answeredInRound = 0`** — expected for this self-managed feed. It does not use round-based aggregation.\n* **`answer = 583991671837939600`** — with the feed’s 18 decimals, this represents `0.5839916718379396`.\n* **`startedAt` and `updatedAt = 1792006810`** — both are the observation timestamp, not separate round events. That timestamp is **2026-10-14 09:53:30 UTC**.\n* Compared with the block time you gave, **20:18:06 UTC**, the observation was **10 hours, 24 minutes, and 36 seconds old**. The feed’s documented heartbeat is **3,600 seconds**. Check that the price meets your application’s freshness threshold before using it.\n\nSee [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe) for the feed configuration and timestamp behavior.",
+      "sources": [
+        {
+          "title": "Chainlink Push Engine Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe"
+        },
+        {
+          "title": "Chainlink Data Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds"
+        },
+        {
+          "title": "Oracle",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles"
+        },
+        {
+          "title": "Supra",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/supra"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        }
+      ]
+    }
+  },
+  {
+    "contract": "0xca11bde05977b3631167028862be2a173976ca11",
+    "contract_name": "Multicall3 canonical contract",
+    "function": "getEthBalance(address)",
+    "selector": "0x4d2301cc",
+    "args": [
+      "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0"
+    ],
+    "explanation": {
+      "text": "`getEthBalance(address addr)` returns the **native-token balance** of `addr`. On Pharos, the native token is **PROS**, despite “Eth” in the function name. Multicall3 is listed as a Pacific Mainnet canonical contract at `0xca11bde05977b3631167028862be2a173976ca11` in [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts).\n\n* **Parameter — `addr`:** The EVM address whose native PROS balance is queried.\n* **Return — `uint256 balance`:** The balance as an integer in **wei**, not a human-formatted PROS amount.\n* **Conversion:** Pharos uses **18 decimal places**: `1 PROS = 10^18 wei`. Divide the returned value by `10^18` to express it in PROS. See [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas).\n\nIt is a read-only balance query; using `eth_call` executes a message call without creating a transaction, as described in [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods).",
+      "sources": [
+        {
+          "title": "Canonical Contracts",
+          "url": "https://docs.pharos.xyz/getting-started/canonical-contracts"
+        },
+        {
+          "title": "JSON-RPC API Methods",
+          "url": "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods"
+        },
+        {
+          "title": "Call EVM From WASM",
+          "url": "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        }
+      ]
+    },
+    "block": 20249543,
+    "block_time_utc": "2026-10-14 20:20:14 UTC",
+    "calldata": "0x4d2301cc00000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0",
+    "result_raw": "0x000000000000000000000000000000000000000000133e718b43d9ddb4c4b31a",
+    "result": {
+      "balance": 23264471811800142457385754
+    },
+    "interpretation": [
+      "Docs say the value is in wei -> divided by 10^18 (PROS).",
+      "balance = 23264471811800142457385754 raw -> 23,264,471.811800 PROS."
+    ],
+    "explorer": "https://www.pharosscan.xyz/address/0xca11bde05977b3631167028862be2a173976ca11",
+    "docs_interpretation": {
+      "text": "The result is a **native-token balance in wei**, for the address passed to `getEthBalance` at block `20249543`. Pharos identifies its native token as **PROS**, and its JSON-RPC docs express native balances in wei ([JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods); [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)).\n\n```\n23264471811800142457385754 wei\n= 23,264,471.811800142457385754 PROS\n```\n\nThat is the balance of the **function’s address argument**, not automatically Multicall3’s balance. The block number makes this a historical read at that block, rather than a current balance.",
+      "sources": [
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "JSON-RPC API Methods",
+          "url": "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods"
+        },
+        {
+          "title": "Alchemy RPC",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+        },
+        {
+          "title": "Hardhat",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        }
+      ]
+    }
+  },
+  {
+    "contract": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "contract_name": "USDC token (ERC-20) from the Pharos token registry",
+    "function": "balanceOf(address)",
+    "selector": "0x70a08231",
+    "args": [
+      "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f"
+    ],
+    "explanation": {
+      "text": "`balanceOf(address)` reads the USDC balance held by the specified account. It is a read-only query: it does not transfer tokens or change contract state.\n\n* **Parameter — `account` (`address`):** The Pharos account whose USDC balance you want to check.\n* **Return — `uint256`:** The balance in USDC’s smallest units, not a pre-formatted decimal amount. Pharos’s USDC example uses **6 decimals**, so divide the returned value by `1,000,000` to get USDC. For example, `1,234,567` represents `1.234567 USDC`.\n\nThe registry lists `0xc879c018db60520f4355c26ed1a6d572cdac1815` as Circle-deployed USDC on Pacific Mainnet. See the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) and the [x402](https://docs.pharos.xyz/developer-guide/x402), which demonstrates the six-decimal conversion.",
+      "sources": [
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token"
+        },
+        {
+          "title": "Circle CCTP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+        }
+      ]
+    },
+    "block": 20249508,
+    "block_time_utc": "2026-10-14 20:19:26 UTC",
+    "calldata": "0x70a08231000000000000000000000000f3503da2961ff5118adaa2c4ff8d9a6fb28a411f",
+    "result_raw": "0x00000000000000000000000000000000000000000000000000000c772d3dabf1",
+    "result": {
+      "balance": 13705999657969
+    },
+    "interpretation": [
+      "Docs say values use 6 decimals; decimals() on chain = 6 -> matches the docs.",
+      "balance = 13705999657969 raw -> 13,705,999.657969 USDC."
+    ],
+    "explorer": "https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "docs_interpretation": {
+      "text": "`balanceOf(address)` returns the holder’s balance as an integer in the token’s smallest units. The Pharos USDC configuration uses **6 decimal places**, so divide the result by 1,000,000:\n\n**13,705,999,657,969 ÷ 1,000,000 = 13,705,999.657969 USDC**\n\nThat is the balance for the queried address **at block 20,249,508**, assuming the call used that block as its state reference. The [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) lists the matching USDC contract address. The [x402](https://docs.pharos.xyz/developer-guide/x402) shows Pharos USDC amounts being converted with six-decimal precision.",
+      "sources": [
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Pacific Mainnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        }
+      ]
+    }
+  }
+]
