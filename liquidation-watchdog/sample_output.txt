@@ -1,0 +1,48 @@
+$ python liquidation_watchdog.py --json sample_output.json --alert-log sample_alerts.jsonl
+=== poll 1 · Pharos mainnet block #20,250,159 (2026-10-14 20:32:13 UTC) · Morpho 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb
+[2026-10-14T20:32:20Z] OK           WPROS→USDC borrower  WPROS/USDC market 0xb3b8a31c…  borrower 0xd27cb53f5920d484261cc14d32094d3f043265c9
+    HF 2.5867  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 38.5%)
+    collateral 11,499,995.0065 WPROS ≈ 6,715,901.31 USDC   debt 999,571.3992 USDC   borrow APR 4.83%
+    WPROS price 0.583992 USDC; liquidation at 0.225764 USDC (61.3% lower)
+    healthy: no action needed (HF already ≥ target 1.5)
+[2026-10-14T20:32:23Z] CRITICAL     wsrUSD→USDC large  wsrUSD/USDC market 0xbea21c37…  borrower 0x086eb9c2b14dd657ae77d07df9115a2f946ce327
+    HF 1.0214  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 91.5%)
+    collateral 5,558,838.5131 wsrUSD ≈ 6,131,369.42 USDC   debt 5,492,878.3826 USDC   borrow APR 4.78%
+    wsrUSD price 1.102995 USDC; liquidation at 1.079928 USDC (2.1% lower)
+    ACTION: repay 1,752,743.04 USDC OR add 2,605,043.5603 wsrUSD collateral to bring HF back to 1.5
+    borrower https://www.pharosscan.xyz/address/0x086eb9c2b14dd657ae77d07df9115a2f946ce327  ·  Morpho https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb
+[2026-10-14T20:32:24Z] CRITICAL     wsrUSD→USDC  wsrUSD/USDC market 0xbea21c37…  borrower 0xc6dd9976066f3364b4d6a72cd4f1fa0468327aa7
+    HF 1.0156  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 91.5%)
+    collateral 448,838.5663 wsrUSD ≈ 495,066.56 USDC   debt 446,036.4492 USDC   borrow APR 4.78%
+    wsrUSD price 1.102995 USDC; liquidation at 1.086073 USDC (1.5% lower)
+    ACTION: repay 144,045.85 USDC OR add 214,090.5426 wsrUSD collateral to bring HF back to 1.5
+    borrower https://www.pharosscan.xyz/address/0xc6dd9976066f3364b4d6a72cd4f1fa0468327aa7  ·  Morpho https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb
+[2026-10-14T20:32:27Z] CRITICAL     syzUSD→USDC  syzUSD/USDC market 0xc79579a0…  borrower 0xa4a57dcf7b15456b7053f10a377bdb437c073dcc
+    HF 1.0122  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 91.5%)
+    collateral 1,356,062.1042 syzUSD ≈ 1,475,921.18 USDC   debt 1,334,151.6069 USDC   borrow APR 5.72%
+    syzUSD price 1.088388 USDC; liquidation at 1.075238 USDC (1.2% lower)
+    ACTION: repay 433,839.69 USDC OR add 653,455.2635 syzUSD collateral to bring HF back to 1.5
+    borrower https://www.pharosscan.xyz/address/0xa4a57dcf7b15456b7053f10a377bdb437c073dcc  ·  Morpho https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb
+[2026-10-14T20:32:29Z] CRITICAL     syzUSD→USDC  syzUSD/USDC market 0xc79579a0…  borrower 0xe6a4771284342462f4d2bfbfb86db12c8f19fe7c
+    HF 1.0070  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 91.5%)
+    collateral 1,131,537.9954 syzUSD ≈ 1,231,551.92 USDC   debt 1,119,057.4776 USDC   borrow APR 5.72%
+    syzUSD price 1.088388 USDC; liquidation at 1.080842 USDC (0.7% lower)
+    ACTION: repay 367,810.81 USDC OR add 554,001.6576 syzUSD collateral to bring HF back to 1.5
+    borrower https://www.pharosscan.xyz/address/0xe6a4771284342462f4d2bfbfb86db12c8f19fe7c  ·  Morpho https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb
+[2026-10-14T20:32:32Z] OK           APC3M→USDC (86% LLTV)  APC3M/USDC market 0xba0d2638…  borrower 0x67765ea217d0021e35ca973dbae3b54823081a2b
+    HF 1.3237  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 86.0%)
+    collateral 1,500,000.6465 APC3M ≈ 1,544,435.17 USDC   debt 1,003,386.9268 USDC   borrow APR 3.87%
+    APC3M price 1.029623 USDC; liquidation at 0.777819 USDC (24.5% lower)
+    (to reach HF 1.5 if needed: repay 117,910.77 USDC or add 199,741.3726 APC3M; already above)
+[2026-10-14T20:32:35Z] OK           BTCVC→WPROS  BTCVC/WPROS market 0x6657f8b7…  borrower 0x44e96401ba547b25719d233daee87cb90ca649dc
+    HF 16.8610  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 38.5%)
+    collateral 564.0000 BTCVC ≈ 78,801,275.73 WPROS   debt 1,799,328.9067 WPROS   borrow APR 0.20%
+    BTCVC price 139,718.573994 WPROS; liquidation at 8,286.492156 WPROS (94.1% lower)
+    healthy: no action needed (HF already ≥ target 1.5)
+[2026-10-14T20:32:38Z] OK           ETHVP→WPROS  ETHVP/WPROS market 0xab78d4ff…  borrower 0x1f735797c030e7780f803706c5ed8e2b269a528c
+    HF 1.6008  (warn < 1.3, critical < 1.1, liquidation < 1.0; LLTV 38.5%)
+    collateral 0.0001 ETHVP ≈ 0.42 WPROS   debt 0.1000 WPROS   borrow APR 0.20%
+    ETHVP price 4,157.947115 WPROS; liquidation at 2,597.407989 WPROS (37.5% lower)
+    healthy: no action needed (HF already ≥ target 1.5)
+--- summary: CRITICAL 4, OK 4
+
