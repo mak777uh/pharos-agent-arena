@@ -1,0 +1,12 @@
+$ python aggregator.py withdraw --wallet 0xd27cb53f5920d484261cc14d32094d3f043265c9 --token USDC --amount 100000 --prepare prepared
+=== Pharos multi-protocol aggregator · mainnet block #20,257,892 · PROS $0.5840 (Chainlink)
+
+WITHDRAW 100000 USDC for 0xd27cb53f5920d484261cc14d32094d3f043265c9 → routed
+  why: Avalon:USDC reserve: take 55,015.9318 USDC — lowest APY among your withdrawable positions (1.95%), so higher-earning ones stay invested; 195,612.51 stays here
+  why: ERC-4626 vault:SharpByte USDC Pharos Ecosystem: take 44,984.0682 USDC — next-lowest APY among your withdrawable positions (5.52%), so higher-earning ones stay invested; 631,117.54 stays here
+  note: ERC-4626 vault:SharpByte Pharos Prime: withdrawal simulation REVERTS (execution reverted: ERC20: transfer amount exceeds balance) — skipped
+  tx 1 (unsigned): to 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba · Avalon withdraw(USDC, 55015.931814, to=you) · data 0x69328dec000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815…
+  tx 2 (unsigned): to 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 · SharpByte USDC Pharos Ecosystem: redeem(44902609856890999151500 shares, receiver=you, owner=you) · data 0xba0876520000000000000000000000000000000000000000000009822ce4409e85ac1b8c…
+  prepared → prepared/withdraw_USDC_20257892.json
+
+Nothing was signed or sent. Rates are live on-chain values at this block; not financial advice.
