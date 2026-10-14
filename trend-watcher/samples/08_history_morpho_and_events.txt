@@ -1,0 +1,14 @@
+$ python3 scripts/trend.py history --config assets/morpho_util_high.json --db samples/trend_state.db
+Series 'morpho-wpros-usdc-utilization' (morpho_utilization_pct) · rule util-above-90-x3: {"id": "util-above-90-x3", "type": "sustained", "op": "gt", "threshold": "90", "observations": 3, "max_gap_blocks": 1200}
+4 stored observations (needs 3 to trigger)
+      block block time (UTC)              value    move % streak  mode      note
+ 20,259,190 2026-10-14 23:15:44       91.024391                1  live      
+ 20,259,211 2026-10-14 23:16:11       91.024391                2  live      
+ 20,259,237 2026-10-14 23:16:38       91.024391                3  live        <== TRIGGER
+ 20,259,261 2026-10-14 23:17:08       91.024391                4  live      
+
+recorded triggers: 1
+  block 20,259,237 (2026-10-14 23:16:38 UTC) LIVE: value gt 90 for 3 consecutive observations (blocks 20259190..20259237) [action ran]
+
+$ python3 scripts/trend.py events --config assets/morpho_util_high.json --db samples/trend_state.db   (first 400 chars)
+{"trigger_block": 20259237, "time": "2026-10-14 23:16:38 UTC", "first_block": 20259190, "observations": 3, "detail": "value gt 90 for 3 consecutive observations (blocks 20259190..20259237)", "historical": false, "action": {"type": "erc20_transfer", "written_to": "samples/alerts.jsonl", "prepared": {"chainId": 1672, "token": "USDC", "tokenAddress": "0xc879c018db60520f4355c26ed1a6d572cdac1815", "fro
