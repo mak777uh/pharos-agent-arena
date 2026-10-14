@@ -1,0 +1,260 @@
+[
+  {
+    "token": "USDC",
+    "venues": [
+      {
+        "key": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+        "protocol": "ERC-4626 vault",
+        "kind": "curated vault",
+        "label": "SharpByte USDC Pharos Ecosystem",
+        "address": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+        "asset": "USDC",
+        "apy": 0.05515672271885652,
+        "apy_basis": "realised share-price growth over the last 7 days, annualised (net of vault fees)",
+        "tvl": "2135133.781767",
+        "liquidity": null,
+        "headroom": null,
+        "notes": [
+          "performanceFee 15.0% (already netted in share price)",
+          "managementFee 0.0% (already netted in share price)",
+          "idle USDC in the vault contract: 792,260.95"
+        ],
+        "sources": [
+          "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 totalAssets() @ block 20,257,685",
+          "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 20,257,685",
+          "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 19,652,219",
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(vault) @ block 20,257,685",
+          "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 performanceFee() @ block 20,257,685",
+          "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 managementFee() @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:syzUSD/USDC market 0xc79579a0\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "syzUSD/USDC market 0xc79579a0\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.0531636538159622,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "3414773.686665",
+        "liquidity": "331425.227127",
+        "headroom": null,
+        "notes": [
+          "collateral syzUSD, LLTV 91.5%, utilisation 90.3%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xc795\u2026fd86) @ block 20,257,685",
+          "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:WPROS/USDC market 0xb3b8a31c\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "WPROS/USDC market 0xb3b8a31c\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.0450637951823195,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "1098122.228093",
+        "liquidity": "98563.160001",
+        "headroom": null,
+        "notes": [
+          "collateral WPROS, LLTV 38.5%, utilisation 91.0%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8\u2026e1ba) @ block 20,257,685",
+          "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:wsrUSD/USDC market 0xbea21c37\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "wsrUSD/USDC market 0xbea21c37\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.04431313696353437,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "6568920.720153",
+        "liquidity": "630078.843394",
+        "headroom": null,
+        "notes": [
+          "collateral wsrUSD, LLTV 91.5%, utilisation 90.4%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xbea2\u20269e73) @ block 20,257,685",
+          "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "ERC-4626 vault:SharpByte Pharos Prime",
+        "protocol": "ERC-4626 vault",
+        "kind": "curated vault",
+        "label": "SharpByte Pharos Prime",
+        "address": "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342",
+        "asset": "USDC",
+        "apy": 0.03962397074134949,
+        "apy_basis": "realised share-price growth over the last 7 days, annualised (net of vault fees)",
+        "tvl": "70493.807354",
+        "liquidity": null,
+        "headroom": null,
+        "notes": [
+          "performanceFee raw 24907483 (scale not recognised, not used)",
+          "idle USDC in the vault contract: 0.00"
+        ],
+        "sources": [
+          "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 totalAssets() @ block 20,257,685",
+          "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 20,257,685",
+          "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 19,652,219",
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(vault) @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:APC3M/USDC market 0xba0d2638\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "APC3M/USDC market 0xba0d2638\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.02952649252955311,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "1342785.414268",
+        "liquidity": "337752.764204",
+        "headroom": null,
+        "notes": [
+          "collateral APC3M, LLTV 86.0%, utilisation 74.8%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xba0d\u202691bc) @ block 20,257,685",
+          "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Avalon:USDC reserve",
+        "protocol": "Avalon",
+        "kind": "lending pool (Aave V3 fork)",
+        "label": "USDC reserve",
+        "address": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+        "asset": "USDC",
+        "apy": 0.019549762328178646,
+        "apy_basis": "current liquidity rate (getReserveData.currentLiquidityRate, APR\u2192APY)",
+        "tvl": "501262.731532",
+        "liquidity": "55015.931814",
+        "headroom": "498737.268468",
+        "notes": [
+          "supply cap 1,000,000 USDC",
+          "reserve factor 45% (already inside the rate)"
+        ],
+        "sources": [
+          "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba getReserveData(USDC) @ block 20,257,685",
+          "0xe2ec2f3933ad2f83de9a9dda844558354384e87d totalSupply() @ block 20,257,685",
+          "0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(aToken) @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:BTCVC/USDC market 0xf203d06f\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "BTCVC/USDC market 0xf203d06f\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 1.4601590165027075e-05,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "200.010712",
+        "liquidity": "190.0005",
+        "headroom": null,
+        "notes": [
+          "collateral BTCVC, LLTV 38.5%, utilisation 5.0%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203\u202695c5) @ block 20,257,685",
+          "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:ETHVP/USDC market 0x81c8e4d8\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "ETHVP/USDC market 0x81c8e4d8\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.0,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "0",
+        "liquidity": "0",
+        "headroom": null,
+        "notes": [
+          "collateral ETHVP, LLTV 38.5%, utilisation 0.0%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x81c8\u2026751a) @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:VRPCW/USDC market 0x082e865d\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "VRPCW/USDC market 0x082e865d\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.0,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "2",
+        "liquidity": "2",
+        "headroom": null,
+        "notes": [
+          "collateral VRPCW, LLTV 86.0%, utilisation 0.0%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x082e\u2026e90f) @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:APC3M/USDC market 0x1aa31baf\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "APC3M/USDC market 0x1aa31baf\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.0,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "1.0001",
+        "liquidity": "1.0001",
+        "headroom": null,
+        "notes": [
+          "collateral APC3M, LLTV 77.0%, utilisation 0.0%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x1aa3\u20267219) @ block 20,257,685"
+        ]
+      },
+      {
+        "key": "Morpho Blue:-/USDC market 0x0db7e824\u2026",
+        "protocol": "Morpho Blue",
+        "kind": "isolated lending market",
+        "label": "-/USDC market 0x0db7e824\u2026",
+        "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+        "asset": "USDC",
+        "apy": 0.0,
+        "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+        "tvl": "0",
+        "liquidity": "0",
+        "headroom": null,
+        "notes": [
+          "collateral none, LLTV 0.0%, utilisation 0.0%, market fee 0%"
+        ],
+        "sources": [
+          "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x0db7\u20263227) @ block 20,257,685"
+        ]
+      }
+    ],
+    "unavailable": [],
+    "status": [
+      "Avalon: up (1 venue)",
+      "Morpho Blue: up (9 venues)",
+      "ERC-4626 vault: up (2 venues)"
+    ]
+  }
+]
