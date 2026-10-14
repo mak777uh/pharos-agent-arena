@@ -1,0 +1,12 @@
+$ python nl_pay.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --yes "send 10,000 USDC to bob"
+[run at 2026-10-14 21:16:54 UTC]
+Instruction: 'send 10,000 USDC to bob'
+Parsed     : amount=10000 token=USDC recipient=bob
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [ok] payer not blacklisted by USDC
+    [ok] recipient not blacklisted by USDC
+    [FAIL] payer USDC balance 6,845.265664 >= 10000 (balanceOf)
+REFUSED: insufficient USDC: payer has 6,845.265664, needs 10000. No transaction was prepared.
+[exit code 1]
