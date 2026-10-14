@@ -1,0 +1,26 @@
+$ python nl_pay.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --yes --out samples/tx_native_pros.json "transfer 0.25 PROS to alice"
+[run at 2026-10-14 21:16:58 UTC]
+Instruction: 'transfer 0.25 PROS to alice'
+Parsed     : amount=0.25 token=PROS recipient=alice
+=== Payment summary (review before signing) ===
+  Pay        : 0.25 PROS (native)
+  To         : 0x1F3546a29EeC2102c8d52E21a45114124014c85C  https://www.pharosscan.xyz/address/0x1f3546a29eec2102c8d52e21a45114124014c85c
+  From/signer: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  Network    : Pharos mainnet, chainId 1672, nonce 2164, gas limit 25,200
+  Fees       : maxFeePerGas 20 gwei, tip 0 gwei -> at most 0.000504 PROS network fee
+  Checks:
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] recipient is a regular account (no contract code)
+    [ok] simulation OK: estimate_gas 21,000 -> gas limit 25,200 (+20%)
+    [ok] signer PROS balance 7.142356537 >= value + max gas fee 0.250504 (get_balance)
+    [ok] nonce 2164 = get_transaction_count(sender, 'pending')
+    [warn] recipient resolved from your address book: 'alice'
+=== Unsigned transaction (NOT signed, NOT sent) ===
+  Wallet signing request (EIP-1193):
+  {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0x1F3546a29EeC2102c8d52E21a45114124014c85C", "value": "0x3782dace9d90000", "data": "0x", "gas": "0x6270", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x874", "chainId": "0x688", "type": "0x2"}]}
+  Unsigned EIP-1559 serialization: 0x02f0820688820874808504a817c800826270941f3546a29eec2102c8d52e21a45114124014c85c8803782dace9d9000080c0
+  Signing hash (keccak256 of the above): 0xd4ed8c9ee4132f12b5984de6e53ea8107c2270f8735a08afb91a8c466a458619
+  EIP-681 URI: ethereum:0x1F3546a29EeC2102c8d52E21a45114124014c85C@1672?value=250000000000000000
+  Sign it in your own wallet; this tool holds no key and never broadcasts.
+  saved samples/tx_native_pros.json
+[exit code 0]
