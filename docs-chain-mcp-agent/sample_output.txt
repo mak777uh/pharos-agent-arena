@@ -1,0 +1,188 @@
+$ python docs_chain_agent.py --examples examples.json --only 1
+=== Chainlink PROS/USD price feed · latestAnswer()  (0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466)
+    https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466
+
+1) EXPLAIN — Pharos Developer Docs MCP (askQuestion)
+
+   `latestAnswer()` is a **read-only** call that returns the latest PROS/USD price. It takes **no parameters** and returns one `int256`.
+   
+   The feed uses **18 decimals**, so interpret the raw integer as USD per PROS scaled by `10^18`. For example, a return value of `2500000000000000000` represents `$2.50` per PROS.
+   
+   The function returns no timestamp. Use `latestTimestamp()` separately to check when the latest observation was recorded, and verify freshness for your use case. See [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe).
+
+   Sources:
+   [1] Pacific Mainnet — https://docs.pharos.xyz/getting-started/network/pacific-mainnet
+   [2] Get PROS Gas — https://docs.pharos.xyz/getting-started/get-pros-gas
+   [3] Chainlink Push Engine Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe
+   [4] Chainlink Data Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds
+   [5] Chainlink CCIP — https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip
+
+2) CALL — Pharos Chain MCP eth_call at block #20,249,396 (2026-10-14 20:17:26 UTC)
+   args: (none)
+   calldata: 0x50d25bcd
+   raw result: 0x000000000000000000000000000000000000000000000000081ac154d7afd790
+   decoded: {"latestAnswer": "583991671837939600"}
+
+3) INTERPRET — result in the context of the explanation
+   - Docs say values use 18 decimals; decimals() on chain = 18 -> matches the docs.
+   - description() on chain = 'SelfManagedFeedsCacheProxy'.
+   - Price pair PROS/USD -> a price value is USD per 1 PROS.
+   - latestAnswer = 583991671837939600 raw -> 0.583992 USD per PROS.
+
+   Docs MCP reading of these exact values:
+   `latestAnswer = 583991671837939600` is the PROS/USD price scaled by **18 decimals**. Divide by (10^{18}) to get **$0.5839916718379396 per PROS**.
+   
+   The contract address matches the PROS/USD feed listed for Pacific Mainnet in [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe).
+   
+   The block number and time identify when you made the read; `latestAnswer()` alone does **not** return the report’s observation timestamp. To check freshness, read `latestAnswerTimestampForFeed` or `latestReportTimestamp`. The stored timestamp represents when Chainlink observed the price, not when its update transaction was included on-chain.
+   Sources:
+   [1] Chainlink Push Engine Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe
+   [2] Chainlink Data Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds
+   [3] Get PROS Gas — https://docs.pharos.xyz/getting-started/get-pros-gas
+
+$ python docs_chain_agent.py --examples examples.json --only 2
+=== Chainlink PROS/USD price feed · latestRoundData()  (0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466)
+    https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466
+
+1) EXPLAIN — Pharos Developer Docs MCP (askQuestion)
+
+   `latestRoundData()` takes **no parameters**, but the Pharos documentation does **not** list it in this proxy’s documented interface. That interface lists `latestAnswer()`, `latestTimestamp()`, and `getFeedId()`, so its availability and exact ABI aren’t confirmed. See [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe).
+   
+   If the proxy exposes the Chainlink round-data fields referenced there, their documented meanings are:
+   
+   * `roundId` and `answeredInRound` are always `0`; these feeds don’t use aggregation rounds.
+   * `startedAt` and `updatedAt` are identical: the report’s **observation timestamp**, not its on-chain transaction time.
+   * `answer` is the PROS/USD price. The feed uses **18 decimals**, so interpret the integer as USD per PROS divided by `10^18`.
+   
+   For a read-only check, use `eth_call`, which Pharos documents as a read-only contract call. The docs don’t confirm `latestRoundData()`’s return types or that this method is implemented at the address. [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp).
+
+   Sources:
+   [1] Pacific Mainnet — https://docs.pharos.xyz/getting-started/network/pacific-mainnet
+   [2] Get PROS Gas — https://docs.pharos.xyz/getting-started/get-pros-gas
+   [3] Chainlink Push Engine Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe
+   [4] Chainlink Data Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds
+   [5] Chainlink CCIP — https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip
+
+2) CALL — Pharos Chain MCP eth_call at block #20,249,424 (2026-10-14 20:18:06 UTC)
+   args: (none)
+   calldata: 0xfeaf968c
+   raw result: 0x0000000000000000000000000000000000000000000000000000000000000000…
+   decoded: {"roundId": "0", "answer": "583991671837939600", "startedAt": "1792006810", "updatedAt": "1792006810", "answeredInRound": "0"}
+
+3) INTERPRET — result in the context of the explanation
+   - Docs say values use 18 decimals; decimals() on chain = 18 -> matches the docs.
+   - description() on chain = 'SelfManagedFeedsCacheProxy'.
+   - Price pair PROS/USD -> a price value is USD per 1 PROS.
+   - roundId = 0, exactly as the docs say for this contract (always 0).
+   - answer = 583991671837939600 raw -> 0.583992 USD per PROS.
+   - startedAt = 1792006810 -> 2026-10-14 19:40:10 UTC, 2276 s (37.9 min) before block #20,249,424.
+   - updatedAt = 1792006810 -> 2026-10-14 19:40:10 UTC, 2276 s (37.9 min) before block #20,249,424.
+   - answeredInRound = 0, exactly as the docs say for this contract (always 0).
+   - Docs state a 3,600 s heartbeat; updatedAt is 2,276 s old -> within one heartbeat (fresh by that measure).
+
+   Docs MCP reading of these exact values:
+   This is the Pharos **Pacific Mainnet PROS/USD** feed. Its values indicate a price of about **$0.5839916718 per PROS**, but the observation is older than the feed’s documented heartbeat.
+   
+   * **`roundId = 0` and `answeredInRound = 0`** — expected for this self-managed feed. It does not use round-based aggregation.
+   * **`answer = 583991671837939600`** — with the feed’s 18 decimals, this represents `0.5839916718379396`.
+   * **`startedAt` and `updatedAt = 1792006810`** — both are the observation timestamp, not separate round events. That timestamp is **2026-10-14 09:53:30 UTC**.
+   * Compared with the block time you gave, **20:18:06 UTC**, the observation was **10 hours, 24 minutes, and 36 seconds old**. The feed’s documented heartbeat is **3,600 seconds**. Check that the price meets your application’s freshness threshold before using it.
+   
+   See [Chainlink Push Engine Feeds](https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe) for the feed configuration and timestamp behavior.
+   Sources:
+   [1] Chainlink Push Engine Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe
+   [2] Chainlink Data Feeds — https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-ds
+   [3] Oracle — https://docs.pharos.xyz/tooling-and-infrastructure/oracles
+
+$ python docs_chain_agent.py --examples examples.json --only 3
+=== Multicall3 canonical contract · getEthBalance(address)  (0xca11bde05977b3631167028862be2a173976ca11)
+    https://www.pharosscan.xyz/address/0xca11bde05977b3631167028862be2a173976ca11
+
+1) EXPLAIN — Pharos Developer Docs MCP (askQuestion)
+
+   `getEthBalance(address addr)` returns the **native-token balance** of `addr`. On Pharos, the native token is **PROS**, despite “Eth” in the function name. Multicall3 is listed as a Pacific Mainnet canonical contract at `0xca11bde05977b3631167028862be2a173976ca11` in [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts).
+   
+   * **Parameter — `addr`:** The EVM address whose native PROS balance is queried.
+   * **Return — `uint256 balance`:** The balance as an integer in **wei**, not a human-formatted PROS amount.
+   * **Conversion:** Pharos uses **18 decimal places**: `1 PROS = 10^18 wei`. Divide the returned value by `10^18` to express it in PROS. See [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas).
+   
+   It is a read-only balance query; using `eth_call` executes a message call without creating a transaction, as described in [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods).
+
+   Sources:
+   [1] Canonical Contracts — https://docs.pharos.xyz/getting-started/canonical-contracts
+   [2] JSON-RPC API Methods — https://docs.pharos.xyz/api-and-sdk/json-rpc-methods
+   [3] Call EVM From WASM — https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm
+   [4] Get PROS Gas — https://docs.pharos.xyz/getting-started/get-pros-gas
+   [5] Token Registry — https://docs.pharos.xyz/getting-started/token-registry
+
+2) CALL — Pharos Chain MCP eth_call at block #20,249,543 (2026-10-14 20:20:14 UTC)
+   args: ['0x52c48d4213107b20bc583832b0d951fb9ca8f0b0']
+   calldata: 0x4d2301cc00000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0
+   raw result: 0x000000000000000000000000000000000000000000133e718b43d9ddb4c4b31a
+   decoded: {"balance": "23264471811800142457385754"}
+
+3) INTERPRET — result in the context of the explanation
+   - Docs say the value is in wei -> divided by 10^18 (PROS).
+   - balance = 23264471811800142457385754 raw -> 23,264,471.811800 PROS.
+
+   Docs MCP reading of these exact values:
+   The result is a **native-token balance in wei**, for the address passed to `getEthBalance` at block `20249543`. Pharos identifies its native token as **PROS**, and its JSON-RPC docs express native balances in wei ([JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods); [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)).
+   
+   ```
+   23264471811800142457385754 wei
+   = 23,264,471.811800142457385754 PROS
+   ```
+   
+   That is the balance of the **function’s address argument**, not automatically Multicall3’s balance. The block number makes this a historical read at that block, rather than a current balance.
+   Sources:
+   [1] About Pharos — https://docs.pharos.xyz/introduction/readme
+   [2] JSON-RPC API Methods — https://docs.pharos.xyz/api-and-sdk/json-rpc-methods
+   [3] Alchemy RPC — https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy
+
+$ python docs_chain_agent.py --examples examples.json --only 4
+=== USDC token (ERC-20) from the Pharos token registry · balanceOf(address)  (0xc879c018db60520f4355c26ed1a6d572cdac1815)
+    https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815
+
+1) EXPLAIN — Pharos Developer Docs MCP (askQuestion)
+
+   `balanceOf(address)` reads the USDC balance held by the specified account. It is a read-only query: it does not transfer tokens or change contract state.
+   
+   * **Parameter — `account` (`address`):** The Pharos account whose USDC balance you want to check.
+   * **Return — `uint256`:** The balance in USDC’s smallest units, not a pre-formatted decimal amount. Pharos’s USDC example uses **6 decimals**, so divide the returned value by `1,000,000` to get USDC. For example, `1,234,567` represents `1.234567 USDC`.
+   
+   The registry lists `0xc879c018db60520f4355c26ed1a6d572cdac1815` as Circle-deployed USDC on Pacific Mainnet. See the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) and the [x402](https://docs.pharos.xyz/developer-guide/x402), which demonstrates the six-decimal conversion.
+
+   Sources:
+   [1] Token Registry — https://docs.pharos.xyz/getting-started/token-registry
+   [2] Write Your First Token — https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token
+   [3] Pharos Skill Engine — https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide
+   [4] Write Your First Token — https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token
+   [5] Circle CCTP — https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp
+
+2) CALL — Pharos Chain MCP eth_call at block #20,249,508 (2026-10-14 20:19:26 UTC)
+   args: ['0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f']
+   calldata: 0x70a08231000000000000000000000000f3503da2961ff5118adaa2c4ff8d9a6fb28a411f
+   raw result: 0x00000000000000000000000000000000000000000000000000000c772d3dabf1
+   decoded: {"balance": "13705999657969"}
+
+3) INTERPRET — result in the context of the explanation
+   - Docs say values use 6 decimals; decimals() on chain = 6 -> matches the docs.
+   - balance = 13705999657969 raw -> 13,705,999.657969 USDC.
+
+   Docs MCP reading of these exact values:
+   `balanceOf(address)` returns the holder’s balance as an integer in the token’s smallest units. The Pharos USDC configuration uses **6 decimal places**, so divide the result by 1,000,000:
+   
+   **13,705,999,657,969 ÷ 1,000,000 = 13,705,999.657969 USDC**
+   
+   That is the balance for the queried address **at block 20,249,508**, assuming the call used that block as its state reference. The [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) lists the matching USDC contract address. The [x402](https://docs.pharos.xyz/developer-guide/x402) shows Pharos USDC amounts being converted with six-decimal precision.
+   Sources:
+   [1] Token Registry — https://docs.pharos.xyz/getting-started/token-registry
+   [2] Pacific Mainnet — https://docs.pharos.xyz/getting-started/network/pacific-mainnet
+   [3] Write Your First Token — https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token
+
+$ python docs_chain_agent.py --contract 0x123 --name "bad" --function "balanceOf(address) returns (uint256)"
+docs_chain_agent.py: error: not a valid EVM address: '0x123'
+$ python docs_chain_agent.py --contract 0xc879c018db60520f4355c26ed1a6d572cdac1815 --name USDC --function "balanceOf(address)"
+docs_chain_agent.py: error: give the return types: '... returns (uint256)'
+$ python docs_chain_agent.py --chain-endpoint http://mcp.pharos.xyz/mcp --examples examples.json
+docs_chain_agent.py: error: refusing insecure MCP endpoint: 'http://mcp.pharos.xyz/mcp' (use https://)
