@@ -1,0 +1,83 @@
+$ python yield_optimizer.py --token USDC --wallet 0xd27cb53f5920d484261cc14d32094d3f043265c9 --prepare prepared --json sample_wallet_usdc.json
+=== Yield Optimizer · USDC on Pharos mainnet · block #20,256,702 · gas price 10 gwei · PROS $0.5856 (Chainlink) · holding period 30 d
+
+12 yield sources compared (live, same block):
+ #  venue                                                    APY              size    exit liquidity    deposit room
+ 1  ERC-4626 vault · SharpByte USDC Pharos Ecosystem       5.52%      2,135,132.50       per holder*          no cap
+      basis: realised share-price growth over the last 7 days, annualised (net of vault fees)
+      performanceFee 15.0% (already netted in share price); managementFee 0.0% (already netted in share price); idle USDC in the vault contract: 792,260.95
+ 2  Morpho Blue · syzUSD/USDC market 0xc79579a0…           5.32%      3,414,773.69           331,425          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral syzUSD, LLTV 91.5%, utilisation 90.3%, market fee 0%
+ 3  Morpho Blue · WPROS/USDC market 0xb3b8a31c…            4.51%      1,098,122.23            98,563          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral WPROS, LLTV 38.5%, utilisation 91.0%, market fee 0%
+ 4  Morpho Blue · wsrUSD/USDC market 0xbea21c37…           4.43%      6,568,920.72           630,079          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral wsrUSD, LLTV 91.5%, utilisation 90.4%, market fee 0%
+ 5  ERC-4626 vault · SharpByte Pharos Prime                3.97%         70,493.81       per holder*          no cap
+      basis: realised share-price growth over the last 7 days, annualised (net of vault fees)
+      performanceFee raw 24907483 (scale not recognised, not used); idle USDC in the vault contract: 0.00
+ 6  Morpho Blue · APC3M/USDC market 0xba0d2638…            2.95%      1,342,785.41           337,753          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral APC3M, LLTV 86.0%, utilisation 74.8%, market fee 0%
+ 7  Avalon · USDC reserve                                  1.95%        501,262.41            55,016         498,738
+      basis: current liquidity rate (getReserveData.currentLiquidityRate, APR→APY)
+      supply cap 1,000,000 USDC; reserve factor 45% (already inside the rate)
+ 8  Morpho Blue · BTCVC/USDC market 0xf203d06f…            0.00%            200.01               190          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral BTCVC, LLTV 38.5%, utilisation 5.0%, market fee 0%
+ 9  Morpho Blue · ETHVP/USDC market 0x81c8e4d8…            0.00%              0.00                 0          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral ETHVP, LLTV 38.5%, utilisation 0.0%, market fee 0%
+10  Morpho Blue · VRPCW/USDC market 0x082e865d…            0.00%              2.00                 2          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral VRPCW, LLTV 86.0%, utilisation 0.0%, market fee 0%
+11  Morpho Blue · APC3M/USDC market 0x1aa31baf…            0.00%              1.00                 1          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral APC3M, LLTV 77.0%, utilisation 0.0%, market fee 0%
+12  Morpho Blue · -/USDC market 0x0db7e824…                0.00%              0.00                 0          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral none, LLTV 0.0%, utilisation 0.0%, market fee 0%
+  sizes in USDC; * vault exit is checked by simulating redeem() from the holder
+
+── Avalon · USDC reserve · 250,628.2473 USDC · current APY 1.95%
+   exit liquidity: only 55,015.93 USDC is withdrawable in Avalon · USDC reserve right now (the rest is lent out); evaluating a partial move of 54,465.77 (99% of it)
+   held since: last deposit 50.6 d ago (block 15,832,367, https://www.pharosscan.xyz/tx/0x53a76ba436464b29be42c7d6c82b05c72d5fe2f9178fdfddd81543818c5973a8)
+   exit check: withdraw simulated with eth_call from the wallet → ok
+   → ERC-4626 vault · SharpByte USDC Pharos Ecosystem         APY 5.52% now / 5.38% after deposit · gain $153.50 in 30 d · gas $0.0028 (483,220 gas) · fees 0.0 bps $0.00 · net $153.50 · break-even 0.8 min
+   → Morpho Blue · syzUSD/USDC market 0xc79579a0…             APY 5.32% now / 5.23% after deposit · gain $146.73 in 30 d · gas $0.0027 (467,300 gas) · fees 0.0 bps $0.00 · net $146.73 · break-even 0.8 min
+   → Morpho Blue · wsrUSD/USDC market 0xbea21c37…             APY 4.43% now / 4.39% after deposit · gain $109.22 in 30 d · gas $0.0027 (467,300 gas) · fees 0.0 bps $0.00 · net $109.22 · break-even 1.1 min
+   → Morpho Blue · WPROS/USDC market 0xb3b8a31c…              APY 4.51% now / 4.29% after deposit · gain $104.67 in 30 d · gas $0.0027 (467,300 gas) · fees 0.0 bps $0.00 · net $104.66 · break-even 1.1 min
+   gas detail (best): withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 154,202 (median gasUsed of 50 recent 0x6e553f65 txs to 0x15c2…aff1 (explorer))
+   fee detail (best): entry = 1 − previewDeposit/convertToShares; exit = 1 − previewRedeem/convertToAssets
+   not considered: Morpho Blue · ETHVP/USDC market 0x81c8e4d8…: too small (size $0.00 < --min-tvl-usd 10,000); Morpho Blue · VRPCW/USDC market 0x082e865d…: too small (size $2.00 < --min-tvl-usd 10,000); Morpho Blue · APC3M/USDC market 0x1aa31baf…: too small (size $1.00 < --min-tvl-usd 10,000); Morpho Blue · BTCVC/USDC market 0xf203d06f…: too small (size $200.01 < --min-tvl-usd 10,000); Morpho Blue · -/USDC market 0x0db7e824…: too small (size $0.00 < --min-tvl-usd 10,000)
+   ⇒ MOVE: move 54,465.77 USDC (partial: 54,465.77 of 250,628.25 — exit liquidity limit) to ERC-4626 vault · SharpByte USDC Pharos Ecosystem: 5.38% expected after your deposit vs 1.95% now → +$153.50 over 30 days, costs $0.0028, net $153.50, break-even in 0.8 min
+   prepared 3 unsigned txs → prepared/move_1_USDC_0x15c2_aff1.json
+     1. to 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba · Avalon withdraw(USDC, 54465.772496, to=you) · simulated at block 20,256,702: ok
+     2. to 0xc879c018db60520f4355c26ed1a6d572cdac1815 · approve 54465.772496 USDC to ERC-4626 vault 0x15c2…aff1 · simulated at block 20,256,702: ok
+     3. to 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 · SharpByte USDC Pharos Ecosystem: deposit(54465.772496 USDC, receiver=you) · not simulated: needs the approve above to be mined first
+── ERC-4626 vault · SharpByte USDC Pharos Ecosystem · 676,101.1893 USDC · current APY 5.52%
+   held since: last deposit 23.7 d ago (block 18,165,940, https://www.pharosscan.xyz/tx/0xe032abd437d2ae72fa642e0d78f484010393130755e162da5df38f9e027dec3a)
+   exit check: withdraw simulated with eth_call from the wallet → ok
+   → Morpho Blue · syzUSD/USDC market 0xc79579a0…             APY 5.32% now / 4.44% after deposit · gain −$602.15 in 30 d · gas $0.0023 (394,045 gas) · fees 0.0 bps $0.00 · net −$602.15 · break-even never
+   → Morpho Blue · wsrUSD/USDC market 0xbea21c37…             APY 4.43% now / 4.02% after deposit · gain −$835.53 in 30 d · gas $0.0023 (394,045 gas) · fees 0.0 bps $0.00 · net −$835.53 · break-even never
+   → Morpho Blue · WPROS/USDC market 0xb3b8a31c…              APY 4.51% now / 2.79% after deposit · gain −$1,518.34 in 30 d · gas $0.0023 (394,045 gas) · fees 0.0 bps $0.00 · net −$1,518.35 · break-even never
+   → Avalon · USDC reserve                                    APY 1.95% now / 0.98% after deposit · gain −$1,861.55 in 30 d · gas $0.0027 (457,583 gas) · fees 0.0 bps $0.00 · net −$1,861.56 · break-even never
+   gas detail (best): withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857…4efb (explorer))
+   fee detail (best): no deposit/withdraw fee in the protocol
+   not considered: Morpho Blue · ETHVP/USDC market 0x81c8e4d8…: too small (size $0.00 < --min-tvl-usd 10,000); Morpho Blue · VRPCW/USDC market 0x082e865d…: too small (size $2.00 < --min-tvl-usd 10,000); Morpho Blue · APC3M/USDC market 0x1aa31baf…: too small (size $1.00 < --min-tvl-usd 10,000); Morpho Blue · BTCVC/USDC market 0xf203d06f…: too small (size $200.01 < --min-tvl-usd 10,000); Morpho Blue · -/USDC market 0x0db7e824…: too small (size $0.00 < --min-tvl-usd 10,000)
+   ⇒ STAY PUT: best alternative (Morpho Blue · syzUSD/USDC market 0xc79579a0…) would pay 4.44% after your deposit vs 5.52% now — a gap of -1.08 pts, below --min-apy-diff 0.25; expected net gain over the 30-day holding period is −$602.15 (gain −$602.15 − costs $0.0023), below --min-gain-usd 5
+── ERC-4626 vault · SharpByte Pharos Prime · 70,488.7785 USDC · current APY 3.97%
+   held since: last deposit 35.8 d ago (block 17,095,949, https://www.pharosscan.xyz/tx/0x039437e4ff3f20157abce23a98687083e1b231b72771b5e7d0c2f818597e2df2)
+   exit check: FAILS — execution reverted: ERC20: transfer amount exceeds balance
+   → ERC-4626 vault · SharpByte USDC Pharos Ecosystem         APY 5.52% now / 5.34% after deposit · gain $79.46 in 30 d · gas $0.0030 (504,531 gas) · fees 0.0 bps $0.00 · net $79.46 · break-even 1.6 min
+   → Morpho Blue · syzUSD/USDC market 0xc79579a0…             APY 5.32% now / 5.21% after deposit · gain $71.58 in 30 d · gas $0.0029 (488,611 gas) · fees 0.0 bps $0.00 · net $71.58 · break-even 1.7 min
+   → Morpho Blue · wsrUSD/USDC market 0xbea21c37…             APY 4.43% now / 4.38% after deposit · gain $23.81 in 30 d · gas $0.0029 (488,611 gas) · fees 0.0 bps $0.00 · net $23.80 · break-even 5.2 min
+   → Morpho Blue · WPROS/USDC market 0xb3b8a31c…              APY 4.51% now / 4.23% after deposit · gain $15.12 in 30 d · gas $0.0029 (488,611 gas) · fees 0.0 bps $0.00 · net $15.12 · break-even 8.2 min
+   gas detail (best): withdraw 300,000 (assumed default (no estimate / receipts available)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 154,202 (median gasUsed of 50 recent 0x6e553f65 txs to 0x15c2…aff1 (explorer))
+   fee detail (best): entry = 1 − previewDeposit/convertToShares; exit = 1 − previewRedeem/convertToAssets
+   not considered: Morpho Blue · ETHVP/USDC market 0x81c8e4d8…: too small (size $0.00 < --min-tvl-usd 10,000); Morpho Blue · VRPCW/USDC market 0x082e865d…: too small (size $2.00 < --min-tvl-usd 10,000); Morpho Blue · APC3M/USDC market 0x1aa31baf…: too small (size $1.00 < --min-tvl-usd 10,000); Morpho Blue · BTCVC/USDC market 0xf203d06f…: too small (size $200.01 < --min-tvl-usd 10,000); Morpho Blue · -/USDC market 0x0db7e824…: too small (size $0.00 < --min-tvl-usd 10,000)
+   ⇒ STAY PUT: withdrawal from the current venue would fail right now (execution reverted: ERC20: transfer amount exceeds balance)
+
+Caveats: rates are current on-chain values and move every block; the post-deposit APY is an estimate (pool venues: utilisation falls with your deposit, borrow rate held; vaults: yield diluted pro rata). Past vault share-price growth does not guarantee future yield. The ranking is by yield net of costs only: collateral, LLTV and curator risk differ per venue (shown in the notes) — use --exclude for venues you don't accept. Not financial advice.
