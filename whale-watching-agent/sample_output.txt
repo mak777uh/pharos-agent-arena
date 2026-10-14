@@ -1,0 +1,136 @@
+Pharos Whale-Watching Agent · pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp
+  watching 8 addresses, tokens: USDC (>= 500), WPROS (>= 2,000), WETH (>= 0.1), LINK (>= 50), or >= $1,000 where a usd_price is set, native PROS change >= 100
+
+[WHALE MOVE] 2026-10-14 18:39:08 UTC  block #20,244,014
+  who     : 0xff70f4a1d11995621854f3692acf286d8acd04b2  [LiFiDiamond bridge (explorer)]
+  what    : received 5,187.101368 WPROS (~$3,372)
+  from <- : 0x1de7889c440d4fefa0e5f4f83a021f6f41cdf26b  [unlabelled contract]
+  why     : >= 2,000 WPROS token threshold; PASS-THROUGH - held no WPROS before or after this block (tokens received and forwarded in the same block)
+  tx      : https://www.pharosscan.xyz/tx/0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90
+
+[WHALE MOVE] 2026-10-14 18:39:08 UTC  block #20,244,014
+  who     : 0xff70f4a1d11995621854f3692acf286d8acd04b2  [LiFiDiamond bridge (explorer)]
+  what    : sent 5,187.101368 WPROS (~$3,372)
+  to   -> : 0x290d54179960984599f16f77dcda81320301b158  [unlabelled contract]
+  why     : >= 2,000 WPROS token threshold; PASS-THROUGH - held no WPROS before or after this block (tokens forwarded right after receipt in the same block)
+  tx      : https://www.pharosscan.xyz/tx/0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90
+
+[WHALE MOVE] 2026-10-14 18:45:01 UTC  block #20,244,330
+  who     : 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+  what    : sent 621.324307 USDC (~$621)
+  to   -> : 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+  why     : >= 500 USDC token threshold; moves 2% of the 38,171.862913 USDC held before (now 37,550.538606)
+  note    : part of a swap: 621.324307 USDC -> 1,063.514102 WPROS
+  tx      : https://www.pharosscan.xyz/tx/0x39dcac197ad4c9b5aa841d24358c92d746598872441e8d7ed94ad9aa4930ae12
+
+[WHALE MOVE] 2026-10-14 18:45:01 UTC  block #20,244,330
+  who     : 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+  what    : received 621.324307 USDC (~$621)
+  from <- : 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+  why     : >= 500 USDC token threshold; adds <1% to the 520,219.856724 USDC held before (now 520,841.181031)
+  note    : part of a swap: 1,063.514102 WPROS -> 621.324307 USDC
+  tx      : https://www.pharosscan.xyz/tx/0x39dcac197ad4c9b5aa841d24358c92d746598872441e8d7ed94ad9aa4930ae12
+
+[WHALE MOVE] 2026-10-14 18:45:39 UTC  block #20,244,371
+  who     : 0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f  [ERC1967Proxy, large USDC receiver (explorer)]
+  what    : received 1,552.129867 USDC (~$1,552)
+  from <- : 0xd7c38e2580f6eb3e547ce77ec5495833a0d9520e  [unlabelled wallet (EOA)]
+  why     : >= 500 USDC token threshold; adds <1% to the 13,704,447.528102 USDC held before (now 13,705,999.657969)
+  tx      : https://www.pharosscan.xyz/tx/0x95b4f18b6f4d28e9c928fb2378553c7ce8b815d07f67012bfc9fe21f73a83081
+
+[WHALE MOVE] 2026-10-14 18:48:00 UTC  block #20,244,505
+  who     : 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+  what    : sent 621.417873 USDC (~$621)
+  to   -> : 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+  why     : >= 500 USDC token threshold; moves 2% of the 37,084.48203 USDC held before (now 36,463.064157)
+  note    : part of a swap: 621.417873 USDC -> 1,060.444792 WPROS
+  tx      : https://www.pharosscan.xyz/tx/0x86c98d8b5b02b061ff7f1b7a351b11d7e82c7959701e4961425f555912f0d2f3
+
+[WHALE MOVE] 2026-10-14 18:48:00 UTC  block #20,244,505
+  who     : 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+  what    : received 621.417873 USDC (~$621)
+  from <- : 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+  why     : >= 500 USDC token threshold; adds <1% to the 521,151.877383 USDC held before (now 521,773.295256)
+  note    : part of a swap: 1,060.444792 WPROS -> 621.417873 USDC
+  tx      : https://www.pharosscan.xyz/tx/0x86c98d8b5b02b061ff7f1b7a351b11d7e82c7959701e4961425f555912f0d2f3
+
+[WHALE MOVE] 2026-10-14 19:10:38 UTC  block #20,245,757
+  who     : 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+  what    : received 584.85 USDC (~$585)
+  from <- : 0x9a6b487d47ace505cc010a1da967504d7f9e961d  [unlabelled contract]
+  why     : >= 500 USDC token threshold; adds 176% to the 332.80903 USDC held before (now 917.65903)
+  tx      : https://www.pharosscan.xyz/tx/0x8fbbcff6d8a362279a4f69c50384b632f39a99c835d8bcd50a88400596ae8ed5
+
+[WHALE MOVE] 2026-10-14 19:11:00 UTC  block #20,245,781
+  who     : 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+  what    : sent 584.85 USDC (~$585)
+  to   -> : 0x9a6b487d47ace505cc010a1da967504d7f9e961d  [unlabelled contract]
+  why     : >= 500 USDC token threshold; moves 64% of the 917.65903 USDC held before (now 332.80903)
+  tx      : https://www.pharosscan.xyz/tx/0x2e8b4acb3ea452b1597c0246184b371fa752fe6201b869f7738ddc14e777b100
+
+[WHALE MOVE] 2026-10-14 19:20:36 UTC  block #20,246,315
+  who     : 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+  what    : received 555.53 USDC (~$556)
+  from <- : 0x279ab064d45ec9d9a57a2a5a1e4d295dfe69cace  [unlabelled contract]
+  why     : >= 500 USDC token threshold; adds 167% to the 332.80903 USDC held before (now 888.33903)
+  tx      : https://www.pharosscan.xyz/tx/0x2a62f573848b75496769cf21ae15206d3412477e19bdd88e425a27c39e314057
+
+[WHALE MOVE] 2026-10-14 19:20:54 UTC  block #20,246,333
+  who     : 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+  what    : sent 555.53 USDC (~$556)
+  to   -> : 0x279ab064d45ec9d9a57a2a5a1e4d295dfe69cace  [unlabelled contract]
+  why     : >= 500 USDC token threshold; moves 63% of the 888.33903 USDC held before (now 332.80903)
+  tx      : https://www.pharosscan.xyz/tx/0x456c97767323ee7a47745d3a9fa238460fb89e49fc634ef6e3c6f31d20e46fd8
+
+[WHALE MOVE] 2026-10-14 19:22:06 UTC  block #20,246,384
+  who     : 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+  what    : sent 621.529396 USDC (~$622)
+  to   -> : 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+  why     : >= 500 USDC token threshold; moves 2% of the 35,607.575527 USDC held before (now 34,830.663782)
+  note    : part of a swap: 621.529396 USDC -> 1,057.720438 WPROS
+  tx      : https://www.pharosscan.xyz/tx/0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b
+
+[WHALE MOVE] 2026-10-14 19:22:06 UTC  block #20,246,384
+  who     : 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+  what    : received 621.529396 USDC (~$622)
+  from <- : 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+  why     : >= 500 USDC token threshold; adds <1% to the 521,997.163766 USDC held before (now 522,618.693162)
+  note    : part of a swap: 1,057.720438 WPROS -> 621.529396 USDC
+  tx      : https://www.pharosscan.xyz/tx/0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b
+
+=== Summary: blocks #20,243,911-#20,246,910 (2026-10-14 18:37:06 UTC -> 2026-10-14 19:32:03 UTC)
+    472 transfers touching watched addresses, 13 significant
+
+* 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+    transfers 406, significant 3, native PROS change +0.0000
+    USDC   in      11,411.585834  out       9,379.387782  net +2,032.1981
+    WPROS  in      16,016.389855  out      19,492.240057  net -3,475.8502
+    largest: received 621.529396 USDC from Active swap contract (unlabelled)  https://www.pharosscan.xyz/tx/0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b
+* 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+    transfers 212, significant 3, native PROS change +0.0000
+    USDC   in       5,824.171637  out        9,320.61401  net -3,496.4424
+    WPROS  in      15,916.848213  out       9,947.737758  net +5,969.1105
+    largest: sent 621.529396 USDC to Most active USDC/WPROS contract (unlabelled)  https://www.pharosscan.xyz/tx/0xc1bd0c092162e9205bbc14537844106ff261e3650fe1460b052f7f11d143221b
+* 0x1f3546a29eec2102c8d52e21a45114124014c85c  [High-frequency wallet (EOA)]
+    transfers 176, significant 0, native PROS change -0.1698
+    USDC   in       2,870.093392  out       2,282.496028  net +587.5974
+    WPROS  in              3,900  out              4,900  net -1,000.0000
+* 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+    transfers 54, significant 4, native PROS change +0.0000
+    USDC   in           5,722.09  out           5,722.09  net +0.0000
+    largest: received 584.85 USDC from unlabelled contract  https://www.pharosscan.xyz/tx/0x8fbbcff6d8a362279a4f69c50384b632f39a99c835d8bcd50a88400596ae8ed5
+* 0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f  [ERC1967Proxy, large USDC receiver (explorer)]
+    transfers 2, significant 1, native PROS change +0.0000
+    USDC   in       1,652.129867  out                  0  net +1,652.1299
+    largest: received 1,552.129867 USDC from unlabelled wallet (EOA)  https://www.pharosscan.xyz/tx/0x95b4f18b6f4d28e9c928fb2378553c7ce8b815d07f67012bfc9fe21f73a83081
+* 0xba3b260596d8412318ee6ef5476291f6c8e3b68a  [MorphoMarketV1AdapterV2 (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xff70f4a1d11995621854f3692acf286d8acd04b2  [LiFiDiamond bridge (explorer)]
+    transfers 2, significant 2, native PROS change +0.0000
+    WPROS  in       5,187.101368  out       5,187.101368  net +0.0000
+    largest: received 5,187.101368 WPROS from unlabelled contract  https://www.pharosscan.xyz/tx/0x401ad0be1ed273cfbcaa2b1d34069d189979b029734296902bf75b790b48ef90
+* 0x15ddce897d76ac39c188ade4d353711a60395315  [Active wallet (EOA)]
+    transfers 8, significant 0, native PROS change -0.0073
+    USDC   in         583.763671  out                  0  net +583.7637
+    WPROS  in                  0  out         995.957599  net -995.9576
