@@ -147,6 +147,9 @@ or browse https://docs.pharos.xyz/
 [exit code 2]
 ```
 
+A subtler case — the docs simply don't cover it — is in [`sample_no_answer.txt`](sample_no_answer.txt)
+(`"Is Morpho deployed on Pharos mainnet? …"` → the Docs MCP says it *cannot confirm* → no answer, exit 2).
+
 Input validation (also in the transcript): `pharos-docs "?"` → `error: question is empty or too short`;
 `--endpoint http://docs.pharos.xyz/...` → `refusing insecure MCP endpoint`.
 
