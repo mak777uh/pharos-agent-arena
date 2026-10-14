@@ -1,0 +1,15 @@
+$ pharos-docs "Is Morpho deployed on Pharos mainnet? What is the Morpho Blue address?"
+Q: Is Morpho deployed on Pharos mainnet? What is the Morpho Blue address?
+
+No good answer found in the Pharos docs for this question.
+(Nothing was made up: the Docs MCP returned no grounded answer.)
+Docs MCP said: I cannot find information about Morpho’s deployment on Pharos mainnet or its Morpho Blue address in the docs. The [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet) identifies Pharos’s mainnet, but does not list Morpho contracts.
+
+Closest doc pages (may be unrelated):
+  - Validator Node Deployment — https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment
+  - Pacific Mainnet — https://docs.pharos.xyz/getting-started/network/pacific-mainnet
+  - Pharos Skill Engine — https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide
+
+Try rephrasing with Pharos terms (e.g. 'RPC', 'chain ID', 'Foundry', 'MCP'),
+or browse https://docs.pharos.xyz/
+[exit code 2]
