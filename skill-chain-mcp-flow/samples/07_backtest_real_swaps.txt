@@ -1,0 +1,19 @@
+$ python3 scripts/backtest.py --blocks 600 --max 8
+block 20,256,118  sell 100.000000 WPROS actual out 58.352365 USDC  skill quote 58.352366  diff +0.000001%
+   https://www.pharosscan.xyz/tx/0x9022e8063912fb5b7181fb71de3d42791f85e0fe6973f0061734bc54c3f4dda0
+block 20,256,119  sell 266.024223 WPROS actual out 155.177286 USDC  skill quote 155.177286  diff +0.000000%
+   https://www.pharosscan.xyz/tx/0x8fbec7cd1bd557823c423ba270de86d138720568d3ff2c023d9ec4c6b7cc3bda
+block 20,256,123  sell 133.182568 WPROS actual out 77.658525 USDC  skill quote 77.658526  diff +0.000001%
+   https://www.pharosscan.xyz/tx/0x5aae894f85a75e4ddf6661eff8e45c13a7c9252aab52974f64b178efd55e1a8a
+block 20,256,128  sell 133.224855 WPROS actual out 77.663467 USDC  skill quote 77.663468  diff +0.000001%
+   https://www.pharosscan.xyz/tx/0xa9ed20214f6066893c810ed9affd34dcdd9cc11e2d60a9b5804bc9f0d989b8ff
+block 20,256,139  sell 66.180282 WPROS actual out 38.572486 USDC  skill quote 38.572487  diff +0.000002%
+   https://www.pharosscan.xyz/tx/0xde7e31f9fd4a71819bf19ec0f3a594dda7e5533a53d2b9911ee00ab7050cfb00
+block 20,256,168  sell 266.473515 WPROS actual out 155.262104 USDC  skill quote 155.262105  diff +0.000000%
+   https://www.pharosscan.xyz/tx/0xac918cf6bfd9569c7a41a82a1615902643920babaa47cfde564fa8f7102393af
+block 20,256,183  sell 155.266936 USDC  actual out 266.428517 WPROS skill quote 266.428518  diff +0.000000%
+   https://www.pharosscan.xyz/tx/0x818de1bc6f4d3ebca3a3f68967e4961c0b95d7662c63e86e5f0ed258dc9a9fd6
+block 20,256,185  sell 58.297492 USDC  actual out 100.000000 WPROS skill quote 100.000001  diff +0.000001%
+   https://www.pharosscan.xyz/tx/0x0e1933d832d622bf9cf52207281a716c6e2a70adf3ee5bbcefad72f497e735f3
+
+8 real swaps compared (of 45 Swap events in 600 blocks); worst |diff| 0.000002%
