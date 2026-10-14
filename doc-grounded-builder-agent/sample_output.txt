@@ -1,0 +1,159 @@
+$ python builder_agent.py --examples examples.json --json sample_output.json
+━━━ Q: How do I check that I am connected to Pharos mainnet (chain ID)?
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ Pharos Pacific Mainnet uses **chain ID `1672`** (`0x688` in hexadecimal). Its RPC endpoint is `https://rpc.pharos.xyz`.
+   │ To verify the RPC connection, run:
+   │ [code example in the docs answer]
+   │ A response containing `"result":"0x688"` confirms the mainnet chain ID. In your wallet’s network details, check that the chain ID is `1672`. See [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet).
+   sources: https://docs.pharos.xyz/getting-started/network/pacific-mainnet · https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain · https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero
+   plan facts taken from the docs (recipe 'chain_check'):
+     1. Pacific Mainnet chain id: 1672  [https://docs.pharos.xyz/getting-started/network/pacific-mainnet]
+     2. expected eth_chainId result: 0x688  [https://docs.pharos.xyz/getting-started/network/pacific-mainnet]
+2) ACT — Pharos Chain MCP:
+   - Chain MCP get_chain_info → chainId 1672 (0x688), latest block 20,257,864
+3) VERIFY:
+   [PASS] chain id equals the documented value — 1672 vs 1672
+   [PASS] hex form matches — 0x688 vs 0x688
+   [PASS] chain is producing blocks (new block ~4 s later) — #20,257,864 → #20,257,870
+⇒ SUCCESS
+   proof: https://www.pharosscan.xyz/block/20257870
+
+━━━ Q: How do I check the PROS balance of an address on Pharos mainnet?
+    inputs: {"address": "0xd27cb53f5920d484261cc14d32094d3f043265c9"}
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ The quickest way is to open [Pharos Scan](https://www.pharosscan.xyz) and paste the address into its search bar. The address page shows its PROS balance and transaction history.
+   │ For a command-line check, query the Pharos mainnet RPC:
+   │ [code example in the docs answer]
+   │ The result is in wei. Divide it by `10^18` to get PROS. Pharos mainnet uses chain ID `1672`; see [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet) and [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas) for details.
+   sources: https://docs.pharos.xyz/getting-started/get-pros-gas · https://docs.pharos.xyz/getting-started/network/pacific-mainnet · https://docs.pharos.xyz/tooling-and-infrastructure/mcp
+   follow-up docs question: What is the Multicall3 contract address on Pharos mainnet? → sources: https://docs.pharos.xyz/getting-started/canonical-contracts · https://docs.pharos.xyz/getting-started/network/pacific-mainnet
+   plan facts taken from the docs (recipe 'native_balance'):
+     1. RPC method for a native balance: eth_getBalance  [https://docs.pharos.xyz/getting-started/get-pros-gas]
+     2. Pharos mainnet chain id: 1672  [https://docs.pharos.xyz/getting-started/get-pros-gas]
+     3. unit conversion: wei / 10^18 = PROS  [https://docs.pharos.xyz/getting-started/get-pros-gas]
+     4. Multicall3 address (second, independent read path for verification): 0xca11bde05977b3631167028862be2a173976ca11  [https://docs.pharos.xyz/getting-started/canonical-contracts]
+2) ACT — Pharos Chain MCP:
+   - Chain MCP get_balance(0xd27cb53f5920d484261cc14d32094d3f043265c9, block 20,257,889) → 4964453438229236311 wei = 4.964453 PROS
+   - Chain MCP eth_call Multicall3.getEthBalance(0xd27cb53f5920d484261cc14d32094d3f043265c9) @ 20,257,889 → 4964453438229236311 wei
+3) VERIFY:
+   [PASS] connected chain = documented chain id — get_chain_info chainId 1672 vs docs 1672
+   [PASS] balance matches an independent read (Multicall3.getEthBalance, same block) — 4964453438229236311 vs 4964453438229236311
+⇒ SUCCESS
+   proof: https://www.pharosscan.xyz/address/0xd27cb53f5920d484261cc14d32094d3f043265c9
+
+━━━ Q: How do I find the USDC contract address on Pharos and read its total supply?
+    inputs: {"token": "USDC"}
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ The address depends on which Pharos network you’re using. The [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) lists:
+   │ * **Pacific Mainnet:** USDC (Circle Deployed) — `0xc879c018db60520f4355c26ed1a6d572cdac1815`
+   │ * **Atlantic Testnet:** USDC — `0xcfC8330f4BCAB529c625D12781b1C19466A9Fc8B`
+   │ Use Foundry’s `cast call` to read `totalSupply()` without sending a transaction. For mainnet:
+   │ [code example in the docs answer]
+   │ For Atlantic Testnet, use its address and RPC instead:
+   │ [code example in the docs answer]
+   │ `totalSupply()` returns the raw integer in base units. Divide it by `10^decimals` for the human-readable supply. The Atlantic registry lists USDC with **6 decimals**. The [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide) documents this `cast call` pattern.
+   sources: https://docs.pharos.xyz/getting-started/token-registry · https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide · https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract
+   plan facts taken from the docs (recipe 'token_supply'):
+     1. token contract on Pacific Mainnet: 0xc879c018db60520f4355c26ed1a6d572cdac1815  [https://docs.pharos.xyz/getting-started/token-registry]
+     2. read function: totalSupply()  [https://docs.pharos.xyz/getting-started/token-registry]
+     3. scale by: decimals()  [https://docs.pharos.xyz/getting-started/token-registry]
+2) ACT — Pharos Chain MCP:
+   - Chain MCP eth_call 0xc879c018db60520f4355c26ed1a6d572cdac1815.totalSupply() @ 20,257,932 → 23219861668866 raw; decimals() → 6; symbol() → USDC
+   - result: total supply = 23,219,861.668866 USDC
+3) VERIFY:
+   [PASS] address from the docs has contract code on mainnet — get_code → 1798 bytes
+   [PASS] symbol() is the token the request asked about (USDC) — symbol() = 'USDC'
+   [PASS] total supply is a positive number — 23219861668866
+⇒ SUCCESS
+   proof: https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815
+
+━━━ Q: How do I query Transfer events of a token on Pharos?
+    inputs: {"token": "USDC"}
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ Use `eth_getLogs` with the token contract address and the ERC-20 `Transfer(address,address,uint256)` event signature as `topics[0]`.
+   │ [code example in the docs answer]
+   │ Replace the block range and token address. Each returned log includes `topics` and `data`; for standard ERC-20 transfers, the indexed sender and recipient are in `topics[1]` and `topics[2]`, while the amount is in `data`.
+   │ For one address, add its 32-byte, zero-padded address as the second or third topic to filter by sender or recipient. For live events, use `eth_subscribe` with the `logs` filter over WebSocket.
+   │ Pharos limits `eth_getLogs` ranges to 100 blocks when rate limiting is enabled, or 10,000 blocks otherwise. Split larger historical queries into smaller ranges. See [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods) for the filter format and [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp) for event-log query limits.
+   sources: https://docs.pharos.xyz/tooling-and-infrastructure/mcp · https://docs.pharos.xyz/api-and-sdk/json-rpc-methods · https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token
+   follow-up docs question: What is the USDC contract address on Pharos mainnet? → sources: https://docs.pharos.xyz/getting-started/token-registry · https://docs.pharos.xyz/getting-started/canonical-contracts
+   follow-up docs question: What is the maximum block range for get_logs on the Pharos Chain MCP? → sources: https://docs.pharos.xyz/tooling-and-infrastructure/mcp · https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks
+   plan facts taken from the docs (recipe 'token_events'):
+     1. Transfer event topic0 (given literally in the docs answer): 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef  [https://docs.pharos.xyz/tooling-and-infrastructure/mcp]
+     2. method: eth_getLogs filtered by address + topic  [https://docs.pharos.xyz/tooling-and-infrastructure/mcp]
+     3. USDC contract on Pacific Mainnet: 0xc879c018db60520f4355c26ed1a6d572cdac1815  [https://docs.pharos.xyz/getting-started/token-registry]
+     4. Chain MCP get_logs block-range cap: 1000  [https://docs.pharos.xyz/tooling-and-infrastructure/mcp]
+2) ACT — Pharos Chain MCP:
+   - Chain MCP get_logs(address=0xc879c018db60520f4355c26ed1a6d572cdac1815, topics=[Transfer], blocks 20,256,976..20,257,975) → 77 logs
+   -   0xe75dffca61b436a78bbfb5d9cc5487dc4216cfd024a5ae6d78c426dc0f29c67e: 0x84dbd23178ba7fc6a2a396559139aef69d0f072a → 0x6c4ad865b836f49e4d54ba3f2a21f0a082a46766 106.564790 USDC
+   -   0xeb997649b5ea1a2eb4bb3c9b4206b4fe49d3183feef083a78c3e59701c7d1d79: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 → 0x1f3546a29eec2102c8d52e21a45114124014c85c 58.431656 USDC
+   -   0x4b40d57e8e7a9a0ee1639b9e0375bc87af6da4531abe22e4a60a957e28c91793: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 → 0x1f3546a29eec2102c8d52e21a45114124014c85c 58.420512 USDC
+3) VERIFY:
+   [PASS] latest log is really in its tx receipt (status 1, same token/topic/amount) — receipt 0x4b40d57e8e7a9a0ee1639b9e0375bc87af6da4531abe22e4a60a957e28c91793 status 0x1, 1 matching log(s)
+⇒ SUCCESS
+   proof: https://www.pharosscan.xyz/tx/0x4b40d57e8e7a9a0ee1639b9e0375bc87af6da4531abe22e4a60a957e28c91793
+
+━━━ Q: How do I send USDC to another address on Pharos?
+    inputs: {"from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a", "to": "0xd27cb53f5920d484261cc14d32094d3f043265c9", "amount": "25", "token": "USDC"}
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ On Pharos, use your wallet’s **Send** flow for USDC:
+   │ 1. Select the **Pharos network** and choose **USDC**.
+   │ 2. Enter the recipient’s address and the amount, then review and confirm.
+   │ 3. Keep **PROS** in your wallet to pay transaction fees on Pacific Mainnet.
+   │ Use the right USDC token for your network: Pacific Mainnet uses `0xc879c018db60520f4355c26ed1a6d572cdac1815`; Atlantic Testnet uses `0xcfC8330f4BCAB529c625D12781b1C19466A9Fc8B`. Check the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) before sending.
+   │ This is a same-network transfer. For transfers between Pharos and another supported blockchain, see [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp).
+   sources: https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp · https://docs.pharos.xyz/getting-started/token-registry · https://docs.pharos.xyz/getting-started/get-pros-gas
+   plan facts taken from the docs (recipe 'send_token'):
+     1. USDC contract on Pacific Mainnet: 0xc879c018db60520f4355c26ed1a6d572cdac1815  [https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp]
+     2. fees: keep PROS for fees  [https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp]
+     3. same-network check: sender and recipient on the same Pharos network  [https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp]
+2) ACT — Pharos Chain MCP:
+   - prepared UNSIGNED tx: {"chainId": 1672, "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a", "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815", "value": "0x0", "data": "0xa9059cbb000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000017d7840"}
+   - eth_call simulation from the sender @ 20,257,989 → ok (returns true); estimate_gas 79,801
+3) VERIFY:
+   [PASS] documented address really is USDC (symbol() on chain) — symbol() = 'USDC'
+   [PASS] sender holds ≥ 25 USDC — balance 6,860.524438 USDC
+   [PASS] sender has PROS for the fee (docs: keep PROS for fees) — 7.137070 PROS vs fee ≈ 0.000798 PROS
+   [PASS] transfer simulates successfully from the sender — eth_call
+   [PASS] recipient is not the token contract itself — 0xd27cb53f5920d484261cc14d32094d3f043265c9
+⇒ PREPARED — sign and send it in your own wallet, then re-run with --tx <hash> to verify
+   proof: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+
+━━━ Q: How do I send USDC to another address on Pharos?
+    inputs: {"from": "0x84ddbccba32bee8f4e775d737bec2d3c10ea112f", "to": "0x3e79f7ffa10d23dac3ad16af98994f2214f69737", "amount": "600", "token": "USDC", "tx": "0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5"}
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ On **Pharos Pacific Mainnet**, send USDC from your wallet like any other token transfer:
+   │ 1. Select the **Pharos** network and open **USDC → Send**.
+   │ 2. Enter the recipient’s address and the amount, then review and confirm.
+   │ 3. Keep **PROS** in your wallet to pay the transaction fee. [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas).
+   │ If USDC isn’t listed in your wallet, add the mainnet token using the address in the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry): `0xc879c018db60520f4355c26ed1a6d572cdac1815`. Double-check the network and recipient address before confirming.
+   sources: https://docs.pharos.xyz/getting-started/get-pros-gas · https://docs.pharos.xyz/getting-started/token-registry · https://docs.pharos.xyz/developer-guide/hardhat
+   plan facts taken from the docs (recipe 'send_token'):
+     1. USDC contract on Pacific Mainnet: 0xc879c018db60520f4355c26ed1a6d572cdac1815  [https://docs.pharos.xyz/getting-started/get-pros-gas]
+     2. fees: keep PROS for fees  [https://docs.pharos.xyz/getting-started/get-pros-gas]
+     3. same-network check: not stated  [https://docs.pharos.xyz/getting-started/get-pros-gas]
+2) ACT — Pharos Chain MCP:
+   - prepared UNSIGNED tx: {"chainId": 1672, "from": "0x84ddbccba32bee8f4e775d737bec2d3c10ea112f", "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000003e79f7ffa10d23dac3ad16af98994f2214f697370000000000000000000000000000000000000000000000000000000023c34600"}
+   - Chain MCP get_transaction_receipt(0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5) → status 0x1, block 20,251,314, 1 logs
+3) VERIFY:
+   [PASS] documented address really is USDC (symbol() on chain) — symbol() = 'USDC'
+   [PASS] transaction succeeded (status 1) — status 0x1
+   [PASS] a USDC Transfer was emitted by the documented token contract — 1 Transfer log(s) from 0xc879c018db60520f4355c26ed1a6d572cdac1815
+   [PASS] from / to match the plan — plan 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f → 0x3e79f7ffa10d23dac3ad16af98994f2214f69737
+   [PASS] amount matches the plan — plan 600 vs on-chain 600 USDC
+⇒ SUCCESS (transfer verified on chain)
+   proof: https://www.pharosscan.xyz/tx/0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5
+
+━━━ Q: How do I wrap PROS into WPROS?
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ The docs list WPROS contract addresses, but don’t document a wrapping method or app flow. On Pacific Mainnet, WPROS is `0x52c48d4213107b20bc583832b0d951fb9ca8f0b0`. The registry also lists Ethereum and Base addresses. See the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry).
+   │ I can’t confirm from the docs whether you should call a `deposit()` function or use a specific interface. Don’t send PROS directly to the contract without verified wrapping instructions.
+   sources: https://docs.pharos.xyz/getting-started/token-registry · https://docs.pharos.xyz/getting-started/get-pros-gas · https://docs.pharos.xyz/node-and-validator-guide/node-management
+⇒ NOT COVERED BY THE DOCS: The Pharos docs don't document this, so I won't improvise steps or send anything.
+
+━━━ Q: How do I borrow USDC on Morpho on Pharos?
+1) PLAN — Pharos Developer Docs MCP askQuestion:
+   │ I cannot find information about borrowing USDC on Morpho in the Pharos docs. The [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) lists Circle-deployed USDC on Pacific Mainnet (`0xc879c018db60520f4355c26ed1a6d572cdac1815`), but doesn’t confirm a Morpho market or explain how to borrow from one.
+   sources: https://docs.pharos.xyz/getting-started/token-registry · https://docs.pharos.xyz/introduction/readme · https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi
+⇒ NOT COVERED BY THE DOCS: The Pharos docs don't document this, so I won't improvise steps or send anything.
+
