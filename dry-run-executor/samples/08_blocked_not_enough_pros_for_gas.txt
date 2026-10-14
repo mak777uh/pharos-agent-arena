@@ -1,0 +1,20 @@
+$ python3 scripts/dryrun.py wrap --from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a --amount 7.138296537
+Dry run · wrap 7.138296537 PROS
+  network Pharos mainnet (chainId 1672), head block #20,257,587, 2026-10-14 22:45:21 UTC
+  from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> to 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 (contract), value 7138296537000000000 wei, data 0xd0e30db0 (4 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : SUCCESS, return data 0x
+  gas    : estimate 57,576 -> limit 69,091 (+20%); gas price 10 gwei, maxFeePerGas 20 gwei
+  cost   : expected 0.00057576 PROS (~$0.000336 at Chainlink PROS/USD 0.5840); worst case 0.00138182 PROS
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  event  : Deposit (mint)     0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 0x84dbd23178ba7fc6a2a396559139aef69d0f072a value 7138296537000000000
+  account                                      token                before             change                after
+  0x52c48d4213107b20bc583832b0d951fb9ca8f0b0   PROS      23,264,047.393312          +7.138297    23,264,054.531609
+  0x84dbd23178ba7fc6a2a396559139aef69d0f072a   WPROS                     0          +7.138297             7.138297
+  0x84dbd23178ba7fc6a2a396559139aef69d0f072a   PROS               7.138397          -7.138872            -0.000476
+  (native PROS change of the sender includes the expected network fee)
+[3] Decision: BLOCKED
+  blocked: sender has 7.138396537 PROS, needs value + max fee 7.139678357 PROS
+  execution blocked automatically - no transaction was prepared
+  sender: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+exit code: 4
