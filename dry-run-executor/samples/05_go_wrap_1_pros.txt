@@ -1,0 +1,22 @@
+$ python3 scripts/dryrun.py wrap --from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a --amount 1
+Dry run · wrap 1 PROS
+  network Pharos mainnet (chainId 1672), head block #20,257,587, 2026-10-14 22:45:21 UTC
+  from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> to 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 (contract), value 1000000000000000000 wei, data 0xd0e30db0 (4 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : SUCCESS, return data 0x
+  gas    : estimate 57,576 -> limit 69,091 (+20%); gas price 10 gwei, maxFeePerGas 20 gwei
+  cost   : expected 0.00057576 PROS (~$0.000336 at Chainlink PROS/USD 0.5840); worst case 0.00138182 PROS
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  event  : Deposit (mint)     0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 0x84dbd23178ba7fc6a2a396559139aef69d0f072a value 1000000000000000000
+  account                                      token                before             change                after
+  0x52c48d4213107b20bc583832b0d951fb9ca8f0b0   PROS      23,264,047.393312                 +1    23,264,048.393312
+  0x84dbd23178ba7fc6a2a396559139aef69d0f072a   WPROS                     0                 +1                    1
+  0x84dbd23178ba7fc6a2a396559139aef69d0f072a   PROS               7.138397          -1.000576             6.137821
+  (native PROS change of the sender includes the expected network fee)
+[3] Decision: GO
+  prepared UNSIGNED EIP-1559 tx: nonce 2167, gas 69,091, signing hash 0x8e6b6b67825c2393ce745025fcca8aca733d125dd70c22422458fb3a650ba061
+  wallet request: {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0x52C48d4213107b20bC583832b0d951FB9CA8F0B0", "value": "0xde0b6b3a7640000", "data": "0xd0e30db0", "gas": "0x10de3", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x877", "chainId": "0x688", "type": "0x2"}]}
+  or sign yourself with Foundry: cast send 0x52C48d4213107b20bC583832b0d951FB9CA8F0B0 0xd0e30db0 --value 1000000000000000000 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+  (this skill never signs or broadcasts)
+  sender: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+exit code: 0
