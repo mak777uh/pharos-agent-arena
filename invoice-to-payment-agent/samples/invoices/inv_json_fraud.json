@@ -1,0 +1,10 @@
+{
+  "invoice_number": "NW-7790",
+  "due_date": "2026-11-20",
+  "payee": {"name": "Northwind Hosting", "wallet": "0x1f3546a29eec2102c8d52e21a45114124014c85c"},
+  "currency": "USDC",
+  "network": "1672",
+  "line_items": [{"description": "VPS plan, November", "quantity": 3, "unit_price": "40.00", "amount": "120.00"}],
+  "total": "120.00",
+  "note": "Our bank details changed, please use the new wallet."
+}
