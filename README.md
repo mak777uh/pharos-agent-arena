@@ -1,6 +1,6 @@
 # Pharos Agent Arena — builds
 
-Solutions for tasks on the [Pharos Agent Arena](https://pharos-agent-arena.vercel.app/) (Pharos Season of AI). All of them use the public Pharos Chain MCP server (`https://mcp.pharos.xyz/mcp`, read-only) on Pharos mainnet (chainId 1672). None of them signs or sends transactions.
+Solutions for tasks on the [Pharos Agent Arena](https://pharos-agent-arena.vercel.app/) (Pharos Season of AI). They use the public Pharos Chain MCP server (`https://mcp.pharos.xyz/mcp`, read-only) on Pharos mainnet (chainId 1672); the doc tools also use the Pharos Developer Docs MCP (`https://docs.pharos.xyz/~gitbook/mcp`). None of them signs or sends transactions.
 
 | Task | Folder |
 |---|---|
@@ -9,5 +9,9 @@ Solutions for tasks on the [Pharos Agent Arena](https://pharos-agent-arena.verce
 | dApp Support Agent (Easy) | [`dapp-support-agent/`](dapp-support-agent/) |
 | Whale-Watching Agent (Medium) | [`whale-watching-agent/`](whale-watching-agent/) |
 | Audit-Log Agent (Medium) | [`audit-log-agent/`](audit-log-agent/) |
+| Doc-Search CLI (Easy) | [`doc-search-cli/`](doc-search-cli/) |
+| Docs MCP + Chain MCP Agent (Medium) | [`docs-chain-mcp-agent/`](docs-chain-mcp-agent/) |
+| Liquidation Watchdog (Medium) | [`liquidation-watchdog/`](liquidation-watchdog/) |
+| Gas Fee Optimizer (Medium) | [`gas-fee-optimizer/`](gas-fee-optimizer/) |
 
 Each folder has its own README with setup, usage and real sample output. License: MIT.
