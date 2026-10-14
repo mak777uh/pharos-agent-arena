@@ -1,0 +1,265 @@
+{
+ "period_s": 604800,
+ "start": 1791158400,
+ "end": 1791763200,
+ "prev_start": 1790553600,
+ "blocks": {
+  "prev_start": 18762219,
+  "start": 19397643,
+  "end": 20009079
+ },
+ "markets": 12,
+ "snap_end": {
+  "block": 20009079,
+  "markets": {
+   "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69": {
+    "market": "ETHVP/WPROS",
+    "supply_usd": "0E-14",
+    "borrow_usd": "0E-14"
+   },
+   "0x81c8e4d8b7dd2a97ba7ebb472af57fca74b0e5fd046b34c3a1102a467c98751a": {
+    "market": "ETHVP/USDC",
+    "supply_usd": "0",
+    "borrow_usd": "0"
+   },
+   "0xba0d2638a277fd7696cdefdb96b5bd7405d0f174ba7526ce2c789f41149d91bc": {
+    "market": "APC3M/USDC",
+    "supply_usd": "1019596.218973",
+    "borrow_usd": "1000120.492702"
+   },
+   "0x082e865d3606768b6883039a1899df7d7267e012a1babf88ec0c29576098e90f": {
+    "market": "VRPCW/USDC",
+    "supply_usd": "2",
+    "borrow_usd": "0"
+   },
+   "0x1aa31baf4ea7b82429c410182688db9d3cccf400b25041d39656fa221c267219": {
+    "market": "APC3M/USDC",
+    "supply_usd": "1.0001",
+    "borrow_usd": "0"
+   },
+   "0x95bc6fe971db18703f2747ea9c8000e1525ea1c49b8c12f75c889e916a6b442c": {
+    "market": "USDC/WPROS",
+    "supply_usd": "0.34005633264071224475861529445134",
+    "borrow_usd": "0.30611466722008780120492615484079"
+   },
+   "0xc79579a002dbc8c535d3a87198fcbbece1a664ad82a356b0447c5bff9e16fd86": {
+    "market": "syzUSD/USDC",
+    "supply_usd": "3408064.898594",
+    "borrow_usd": "3080442.857885"
+   },
+   "0xf203d06ff4b5339e76d576b369c6799168d76112d489651b8347a501cc7795c5": {
+    "market": "BTCVC/USDC",
+    "supply_usd": "200.010712",
+    "borrow_usd": "10.010212"
+   },
+   "0x6657f8b7ec9d900f8e975e3f7eb74b80e2783cbbacd1d3f90d144a3e34ad2faa": {
+    "market": "BTCVC/WPROS",
+    "supply_usd": "1358066.01578993285191544245503835895457",
+    "borrow_usd": "1221283.2271691499023921017762054866879"
+   },
+   "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73": {
+    "market": "wsrUSD/USDC",
+    "supply_usd": "6596160.697811",
+    "borrow_usd": "5936665.485518"
+   },
+   "0x0db7e82424c0d1c00e4d166044007cf759ea1f5b72e96f031a92617b3ecc3227": {
+    "market": "-/USDC",
+    "supply_usd": "0",
+    "borrow_usd": "0"
+   },
+   "0xb3b8a31c8a1652cf31eb872c7778716edc39471ed82bcad99b3f5c83a449e1ba": {
+    "market": "WPROS/USDC",
+    "supply_usd": "1098097.885462",
+    "borrow_usd": "998806.922708"
+   }
+  },
+  "failed": [],
+  "pros_usd": "0.67883287226667",
+  "supply_usd": "13480189.06749826549262768721365365340591",
+  "borrow_usd": "12237329.30230881712247990298113164152869",
+  "utilization": "90.7801013845861009473635236821695378760797808063080880431252"
+ },
+ "snap_start": {
+  "block": 19397643,
+  "markets": {
+   "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69": {
+    "market": "ETHVP/WPROS",
+    "supply_usd": "0E-9",
+    "borrow_usd": "0E-9"
+   },
+   "0x81c8e4d8b7dd2a97ba7ebb472af57fca74b0e5fd046b34c3a1102a467c98751a": {
+    "market": "ETHVP/USDC",
+    "supply_usd": "0",
+    "borrow_usd": "0"
+   },
+   "0xba0d2638a277fd7696cdefdb96b5bd7405d0f174ba7526ce2c789f41149d91bc": {
+    "market": "APC3M/USDC",
+    "supply_usd": "1019596.218973",
+    "borrow_usd": "1000120.492702"
+   },
+   "0x082e865d3606768b6883039a1899df7d7267e012a1babf88ec0c29576098e90f": {
+    "market": "VRPCW/USDC",
+    "supply_usd": "2",
+    "borrow_usd": "0"
+   },
+   "0x1aa31baf4ea7b82429c410182688db9d3cccf400b25041d39656fa221c267219": {
+    "market": "APC3M/USDC",
+    "supply_usd": "1.0001",
+    "borrow_usd": "0"
+   },
+   "0x95bc6fe971db18703f2747ea9c8000e1525ea1c49b8c12f75c889e916a6b442c": {
+    "market": "USDC/WPROS",
+    "supply_usd": "0.407182557894136906076368390",
+    "borrow_usd": "0.366540897032144113048288715"
+   },
+   "0xc79579a002dbc8c535d3a87198fcbbece1a664ad82a356b0447c5bff9e16fd86": {
+    "market": "syzUSD/USDC",
+    "supply_usd": "3399823.878158",
+    "borrow_usd": "3077779.235459"
+   },
+   "0xf203d06ff4b5339e76d576b369c6799168d76112d489651b8347a501cc7795c5": {
+    "market": "BTCVC/USDC",
+    "supply_usd": "200.010712",
+    "borrow_usd": "10.010212"
+   },
+   "0x6657f8b7ec9d900f8e975e3f7eb74b80e2783cbbacd1d3f90d144a3e34ad2faa": {
+    "market": "BTCVC/WPROS",
+    "supply_usd": "1626144.673749387424689586715099845",
+    "borrow_usd": "1462361.32257930703468958590226715"
+   },
+   "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73": {
+    "market": "wsrUSD/USDC",
+    "supply_usd": "6623789.520768",
+    "borrow_usd": "6018860.549862"
+   },
+   "0x0db7e82424c0d1c00e4d166044007cf759ea1f5b72e96f031a92617b3ecc3227": {
+    "market": "-/USDC",
+    "supply_usd": "0",
+    "borrow_usd": "0"
+   },
+   "0xb3b8a31c8a1652cf31eb872c7778716edc39471ed82bcad99b3f5c83a449e1ba": {
+    "market": "WPROS/USDC",
+    "supply_usd": "1098000.035011",
+    "borrow_usd": "998171.595431"
+   }
+  },
+  "failed": [],
+  "pros_usd": "0.812832695",
+  "supply_usd": "13767557.744653945318826492791468235",
+  "borrow_usd": "12557303.572786204066833698950555865",
+  "utilization": "91.2093764608491088899778881387424219910833329520827322003783"
+ },
+ "cur": {
+  "count": {
+   "Supply": 11,
+   "Withdraw": 4,
+   "Repay": 1,
+   "WithdrawCollateral": 1
+  },
+  "flows": {
+   "Supply": "73769.614176",
+   "Withdraw": "103528.550988",
+   "Repay": "89365.099383",
+   "WithdrawCollateral": "100325.793235667673674000"
+  },
+  "accounts": 2,
+  "txs": 13
+ },
+ "prev": {
+  "count": {
+   "Supply": 13,
+   "Withdraw": 7,
+   "SupplyCollateral": 2,
+   "Borrow": 2,
+   "Repay": 1,
+   "WithdrawCollateral": 1,
+   "CreateMarket": 2
+  },
+  "flows": {
+   "Supply": "330579.617711",
+   "Withdraw": "681083.850268",
+   "SupplyCollateral": "1024474.66230470689599999999999999999999999999999999999790015",
+   "Borrow": "250000.035233137424541725",
+   "Repay": "0.0356758647228608652661417686177975",
+   "WithdrawCollateral": "9.99499999999999999999999999999999999999999999999571542562620",
+   "CreateMarket": "0"
+  },
+  "accounts": 4,
+  "txs": 18
+ },
+ "top": [
+  {
+   "kind": "WithdrawCollateral",
+   "tx": "0x93bcfee1b462808327e4b16b1e76367b531b150bd788d51d62dd0701e54300b2",
+   "block": 20006430,
+   "usd": "100325.793235667673674000",
+   "detail": "WithdrawCollateral 91,000.0000 wsrUSD in wsrUSD/USDC",
+   "account": "0xc6dd9976066f3364b4d6a72cd4f1fa0468327aa7",
+   "market": "wsrUSD/USDC",
+   "market_id": "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73"
+  },
+  {
+   "kind": "Repay",
+   "tx": "0x406bb94bdd740a284f04a4720c53c1569f918186d71cd6460d1c6ccda9ed4ad2",
+   "block": 20006349,
+   "usd": "89365.099383",
+   "detail": "Repay 89,365.0994 USDC in wsrUSD/USDC",
+   "account": "0xc6dd9976066f3364b4d6a72cd4f1fa0468327aa7",
+   "market": "wsrUSD/USDC",
+   "market_id": "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73"
+  },
+  {
+   "kind": "Withdraw",
+   "tx": "0xfe96c79f0ca10171b685f08db9334ef2dd13bc8a07b6c17eed10847c69205cb3",
+   "block": 19723132,
+   "usd": "52861.535049",
+   "detail": "Withdraw 52,861.5350 USDC in wsrUSD/USDC",
+   "account": "0xba3b260596d8412318ee6ef5476291f6c8e3b68a",
+   "market": "wsrUSD/USDC",
+   "market_id": "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73"
+  }
+ ],
+ "movers": [
+  [
+   "509156.75336961170507162838612314935753",
+   {
+    "market": "BTCVC/WPROS",
+    "supply_usd": "1358066.01578993285191544245503835895457",
+    "borrow_usd": "1221283.2271691499023921017762054866879"
+   },
+   {
+    "market": "BTCVC/WPROS",
+    "supply_usd": "1626144.673749387424689586715099845",
+    "borrow_usd": "1462361.32257930703468958590226715"
+   }
+  ],
+  [
+   "109823.887301",
+   {
+    "market": "wsrUSD/USDC",
+    "supply_usd": "6596160.697811",
+    "borrow_usd": "5936665.485518"
+   },
+   {
+    "market": "wsrUSD/USDC",
+    "supply_usd": "6623789.520768",
+    "borrow_usd": "6018860.549862"
+   }
+  ],
+  [
+   "10904.642862",
+   {
+    "market": "syzUSD/USDC",
+    "supply_usd": "3408064.898594",
+    "borrow_usd": "3080442.857885"
+   },
+   {
+    "market": "syzUSD/USDC",
+    "supply_usd": "3399823.878158",
+    "borrow_usd": "3077779.235459"
+   }
+  ]
+ ],
+ "unreadable": [],
+ "generated": "2026-10-14 21:58 UTC"
+}
