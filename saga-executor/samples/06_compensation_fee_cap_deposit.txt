@@ -1,0 +1,74 @@
+Saga 06_compensation_fee_cap_deposit: 25 USDC -> WPROS -> Vishwa WPROS Vault · Pharos mainnet (chainId 1672) · 2026-10-14 23:48:33 UTC
+inject: spike-persist@deposit · retry policy: {"max_attempts": 3, "confirm_blocks": 3, "fee_bump_pct": 25, "max_fee_gwei": 100, "backoff_seconds": 1, "requote_on_slippage": true}
+
+[1] Mainnet preflight — hosted Pharos Chain MCP (read-only)
+    chainId 1672 · head block 20260850 · all 5 contracts have code
+    vault  Vishwa WPROS Vault https://www.pharosscan.xyz/address/0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 · asset() = WPROS ✓
+    pool   WPROS/USDC fee 0.01% https://www.pharosscan.xyz/address/0x912c9ade24d44d8922f0866d8dcb079f1363f647 · spot 1 WPROS = 0.581677 USDC
+    oracle Chainlink PROS/USD = 0.581086 (round 0)
+    sender 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a: 6959.75 USDC (need 25) · 7.1357 PROS · pending nonce 2169
+    fees   base 10.00 gwei · tip 0.0000 gwei · maxFee 20.00 gwei
+
+[2] Local fork of Pharos mainnet (anvil, upstream https://rpc.pharos.xyz, no automine; sender impersonated — no key)
+    forked at mainnet block 20260897: https://www.pharosscan.xyz/block/20260897
+
+[3] Saga state log (also appended to runs/06_compensation_fee_cap_deposit.jsonl)
+  #01 [forward     ] 1/4 approve_usdc         STARTED         depends on: preflight
+  #02 [forward     ] 1/4 approve_usdc         SIMULATED      attempt=1 gas=55831  approve router 25.0 USDC (exact amount, no infinite approval)
+  #03 [forward     ] 1/4 approve_usdc         SENT           attempt=1 tx=0xd1e88ea792eca65b5ddb5599ce431aa92739c3797c53fa16c421a6dac2a06ff5  nonce 2169 maxFee 20.00 gwei tip 0.00 gwei gas 66997
+  #04 [forward     ] 1/4 approve_usdc         VERIFIED       attempt=1 tx=0xd1e88ea792eca65b5ddb5599ce431aa92739c3797c53fa16c421a6dac2a06ff5 block=20260898  Approval(owner,router)=25000000 · allowance now 25000000
+  #05 [forward     ] 2/4 swap                 STARTED         depends on: approve_usdc
+  #06 [forward     ] 2/4 swap                 SIMULATED      attempt=1 gas=152407  exactInputSingle 25.0 USDC -> WPROS, quote 42.9730, minOut 42.7582 (50 bps)
+  #07 [forward     ] 2/4 swap                 SENT           attempt=1 tx=0x401f8b2281567f0f55387119261cae35f05f2a892d47dde3720cd4b0f5b5d2e4  nonce 2170 maxFee 17.50 gwei tip 0.00 gwei gas 182888
+  #08 [forward     ] 2/4 swap                 VERIFIED       attempt=1 tx=0x401f8b2281567f0f55387119261cae35f05f2a892d47dde3720cd4b0f5b5d2e4 block=20260899  paid 25000000 USDC units, received 42.973099 WPROS (>= minOut 42.7582)
+  #09 [forward     ] 3/4 approve_wpros        STARTED         depends on: swap
+  #10 [forward     ] 3/4 approve_wpros        SIMULATED      attempt=1 gas=46159  approve vault 42.973099 WPROS (exactly what the swap receipt delivered)
+  #11 [forward     ] 3/4 approve_wpros        SENT           attempt=1 tx=0xfb9865d6969788269dbfba871d2aa32b08dcd5cfbe6b8e4c827b4d50ebe689b7  nonce 2171 maxFee 15.31 gwei tip 0.00 gwei gas 55390
+  #12 [forward     ] 3/4 approve_wpros        VERIFIED       attempt=1 tx=0xfb9865d6969788269dbfba871d2aa32b08dcd5cfbe6b8e4c827b4d50ebe689b7 block=20260900  Approval(owner,vault)=42.973099 WPROS
+  #13 [forward     ] 4/4 deposit              STARTED         depends on: approve_wpros
+  #14 [forward     ] 4/4 deposit              INJECT          base fee spike to 400 gwei while this step is pending
+  #15 [forward     ] 4/4 deposit              SIMULATED      attempt=1 gas=175582  Vishwa WPROS Vault deposit(42.973099 WPROS, receiver=sender)
+  #16 [forward     ] 4/4 deposit              SENT           attempt=1 tx=0x150d943b0da94fb6def6fe557f3921833184f6a806a4b30a891f656676a16a73  nonce 2172 maxFee 13.40 gwei tip 0.00 gwei gas 210698
+  #17 [forward     ] 4/4 deposit              RETRYING       attempt=1 tx=0x150d943b0da94fb6def6fe557f3921833184f6a806a4b30a891f656676a16a73  evicted from the mempool, no receipt: base fee 400.0 gwei > maxFee 13.40 gwei (transient, underpriced) -> resend nonce 2172 with fee bump
+  #18 [forward     ] 4/4 deposit              SIMULATED      attempt=2 gas=175582  Vishwa WPROS Vault deposit(42.973099 WPROS, receiver=sender)
+  #19 [forward     ] 4/4 deposit              INJECT          spike over: base fee back to 6.70 gwei
+  #20 [forward     ] 4/4 deposit              FAILED          retry budget: needed maxFeePerGas 800.0 gwei > cap 100 gwei (base fee 400.0 gwei) -> give up
+  #21 [compensation]     deposit              COMPENSATING    verified steps to undo: approve_usdc, swap, approve_wpros
+  #22 [compensation]  C1 cancel_pending       SENT           tx=0x3a99b98e822b819a6c2ab2e1e11f262c8ddddc5e8cae6398162ff6e088539542  0-PROS self-transfer at nonce 2172 supersedes the abandoned 0x150d943b0d… (it may still sit in some node's mempool) · maxFee 16.75 gwei
+  #23 [compensation]  C1 cancel_pending       VERIFIED       tx=0x3a99b98e822b819a6c2ab2e1e11f262c8ddddc5e8cae6398162ff6e088539542 block=20260903  abandoned tx 0x150d943b0d… has no receipt and nonce 2172 is now used -> it can never be mined
+  #24 [compensation]  C2 revoke_wpros_vault   PREPARED       gas=28951  approve(vault, 0): remove the unused WPROS allowance · eth_call ok, estimate_gas 28951 · unsigned tx prepared (nonce 2173)
+  #25 [compensation]  C2 revoke_wpros_vault   SIMULATED      attempt=1 gas=28951  approve(vault, 0): remove the unused WPROS allowance
+  #26 [compensation]  C2 revoke_wpros_vault   SENT           attempt=1 tx=0x1e2136d9b61b01d291340a5071dacbacf50197692af59a21813c5f75d03d9238  nonce 2173 maxFee 11.72 gwei tip 0.00 gwei gas 34741
+  #27 [compensation]  C2 revoke_wpros_vault   VERIFIED       attempt=1 tx=0x1e2136d9b61b01d291340a5071dacbacf50197692af59a21813c5f75d03d9238 block=20260904  WPROS allowance to vault = 0
+  #28 [compensation]  C3 approve_wpros_router PREPARED       gas=46159  approve router 42.973099 WPROS for the unwind · eth_call ok, estimate_gas 46159 · unsigned tx prepared (nonce 2174)
+  #29 [compensation]  C3 approve_wpros_router SIMULATED      attempt=1 gas=46159  approve router 42.973099 WPROS for the unwind
+  #30 [compensation]  C3 approve_wpros_router SENT           attempt=1 tx=0x98630bebe61b1dc2011bf76a3a3c7fa1020e05bb8af65feb464ea2218fd46eda  nonce 2174 maxFee 10.26 gwei tip 0.00 gwei gas 55390
+  #31 [compensation]  C3 approve_wpros_router VERIFIED       attempt=1 tx=0x98630bebe61b1dc2011bf76a3a3c7fa1020e05bb8af65feb464ea2218fd46eda block=20260905  WPROS allowance to router set
+  #32 [compensation]  C4 swap_back            PREPARED       gas=131717  unwind: 42.973099 WPROS -> USDC, quote 24.995000 minOut 24.870025 · eth_call ok, estimate_gas 131717 · unsigned tx prepared (nonce 2175)
+  #33 [compensation]  C4 swap_back            SIMULATED      attempt=1 gas=131717  unwind: 42.973099 WPROS -> USDC, quote 24.995000 minOut 24.870025
+  #34 [compensation]  C4 swap_back            SENT           attempt=1 tx=0x76d82d61203035620537ae98f38393e2e8738964eceb52fcae4a44e24c7b32f4  nonce 2175 maxFee 8.98 gwei tip 0.00 gwei gas 158060
+  #35 [compensation]  C4 swap_back            VERIFIED       attempt=1 tx=0x76d82d61203035620537ae98f38393e2e8738964eceb52fcae4a44e24c7b32f4 block=20260906  recovered 24.995000 USDC
+  #36 [compensation]  C5 revoke_usdc_router   SKIPPED         nothing to undo on chain
+  #37 [saga        ]     -                    COMPENSATED     failed at deposit: retry budget: needed maxFeePerGas 800.0 gwei > cap 100 gwei (base fee 400.0 gwei) -> give up
+
+[4] Balances on the fork, before -> after
+    asset                                     before                 after                change
+    USDC                                 6959.753033           6959.748033             -0.005000
+    WPROS                                   0.000000              0.000000              0.000000
+    vault shares                            0.000000              0.000000              0.000000
+    PROS                                    7.135753              7.132759             -0.002993
+    USDC allowance->router                  0.000000              0.000000              0.000000
+    WPROS allowance->router                 0.000000              0.000000              0.000000
+    WPROS allowance->vault                  0.000000              0.000000              0.000000
+    gas paid by 7 mined txs: 0.00299365 PROS ≈ $0.001740 (Chainlink PROS/USD 0.5811)
+    round-trip cost of the compensation: 0.005000 USDC (2× 0.01% pool fee + price impact) + gas; no WPROS, shares or allowances left behind
+
+[5] Compensation txs prepared (unsigned, chainId 1672, built from the stranded fork state)
+    cancel_pending       nonce 2172 gas   21000 to 0x84dbd23178ba7fc6a2a396559139aef69d0f072a signingHash 0xcb5ba76a4d824f16…
+    revoke_wpros_vault   nonce 2173 gas   34741 to 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 signingHash 0x483b06a2fed0fb68…
+    approve_wpros_router nonce 2174 gas   55390 to 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 signingHash 0xeb27b8d3abf128c6…
+    swap_back            nonce 2175 gas  158060 to 0xf38d34c8382b9079b0f85309578b43b8479cd875 signingHash 0xfa7c6450b97682ab…
+
+    JSON report: samples/06_compensation_fee_cap_deposit.json
+
+RESULT: FAILED -> COMPENSATED (exit 5)
