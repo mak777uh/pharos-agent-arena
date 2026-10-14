@@ -1,0 +1,23 @@
+{
+  "_comment": "Saga definition: USDC -> WPROS -> Vishwa WPROS Vault on Pharos mainnet (chainId 1672). Every address is re-checked on chain before the run (code, asset(), token0/token1). Amounts are human units.",
+  "saga": "usdc-to-wpros-vault",
+  "sender": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "amount_usdc": "25",
+  "slippage_bps": 50,
+  "contracts": {
+    "usdc": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "wpros": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+    "router": "0xf38d34c8382b9079b0f85309578b43b8479cd875",
+    "pool": "0x912c9ade24d44d8922f0866d8dcb079f1363f647",
+    "pool_fee": 100,
+    "vault": "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73"
+  },
+  "retry": {
+    "max_attempts": 3,
+    "confirm_blocks": 3,
+    "fee_bump_pct": 25,
+    "max_fee_gwei": 100,
+    "backoff_seconds": 1,
+    "requote_on_slippage": true
+  }
+}
