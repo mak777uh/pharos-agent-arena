@@ -1,0 +1,119 @@
+{
+  "invoice": {
+    "format": "pdf",
+    "reference": "ORB-1009",
+    "payee_name": "Orbit Translations",
+    "payee_wallet": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+    "amount": "90.00",
+    "currency": "USDC",
+    "due_date": "2026-11-05",
+    "network": "Pharos mainnet",
+    "payer_wallet": null,
+    "subtotal": "90.00",
+    "tax": null,
+    "discount": null,
+    "raw_wallets": [
+      "0x4FFD9c7E8641947662a43aF298B734ca93530002"
+    ],
+    "token": "USDC",
+    "due_iso": "2026-11-05"
+  },
+  "line_items": [
+    {
+      "description": "Website translation EN-RU",
+      "quantity": "3",
+      "unit_price": "25.00",
+      "amount": "75.00"
+    },
+    {
+      "description": "Proofreading",
+      "quantity": null,
+      "unit_price": null,
+      "amount": "15.00"
+    }
+  ],
+  "chainId": 1672,
+  "token": "USDC",
+  "tokenAddress": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+  "amount": "90",
+  "amountUnits": "90000000",
+  "reference": "ORB-1009",
+  "preparedAtBlock": 20253144,
+  "unsignedTx": {
+    "chainId": "0x688",
+    "nonce": "0x874",
+    "maxPriorityFeePerGas": "0x0",
+    "maxFeePerGas": "0x4a817c800",
+    "gas": "0x1148b",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x0",
+    "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000055d4a80504841524f532d5245463a4f52422d31303039"
+  },
+  "unsignedSerialized": "0x02f881820688820874808504a817c8008301148b94c879c018db60520f4355c26ed1a6d572cdac181580b857a9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000055d4a80504841524f532d5245463a4f52422d31303039c0",
+  "signingHash": "0xe65cf7c398b1007d69b85dbba32a8d6b9db0b1d73231f65e9cb4a0b67f8e89de",
+  "walletRequest": {
+    "method": "eth_sendTransaction",
+    "params": [
+      {
+        "from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+        "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "value": "0x0",
+        "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000055d4a80504841524f532d5245463a4f52422d31303039",
+        "gas": "0x1148b",
+        "maxFeePerGas": "0x4a817c800",
+        "maxPriorityFeePerGas": "0x0",
+        "nonce": "0x874",
+        "chainId": "0x688",
+        "type": "0x2"
+      }
+    ]
+  },
+  "eip681": null,
+  "maxNetworkFeePROS": "0.0014159",
+  "checks": [
+    {
+      "ok": true,
+      "check": "Chain MCP is on Pharos mainnet (chainId 1672)"
+    },
+    {
+      "ok": true,
+      "check": "token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)"
+    },
+    {
+      "ok": true,
+      "check": "recipient is a regular account (no contract code)"
+    },
+    {
+      "ok": true,
+      "check": "payer not blacklisted by USDC"
+    },
+    {
+      "ok": true,
+      "check": "recipient not blacklisted by USDC"
+    },
+    {
+      "ok": true,
+      "check": "payer USDC balance 6,845.265664 >= 90.00 (balanceOf)"
+    },
+    {
+      "ok": true,
+      "check": "simulation OK: estimate_gas 58,996 -> gas limit 70,795 (+20%)"
+    },
+    {
+      "ok": true,
+      "check": "signer PROS balance 7.142356537 >= value + max gas fee 0.0014159 (get_balance)"
+    },
+    {
+      "ok": true,
+      "check": "nonce 2164 = get_transaction_count(sender, 'pending')"
+    }
+  ],
+  "warnings": [],
+  "signed": false,
+  "broadcast": false,
+  "invoiceNotes": [
+    "payee 'Orbit Translations' is not in the vendor book - first payment to this wallet"
+  ]
+}
