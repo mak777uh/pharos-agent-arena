@@ -1,0 +1,2 @@
+$ python aggregator.py ask 0xd27cb53f5920d484261cc14d32094d3f043265c9 swap my USDC for ETH on a DEX
+error: I understand: rates/APY for <TOKEN> · my positions · deposit <N> <TOKEN> · withdraw <N|all> <TOKEN>. I won't guess anything else.
