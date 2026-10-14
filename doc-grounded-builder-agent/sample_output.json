@@ -1,0 +1,1005 @@
+[
+  {
+    "question": "How do I check that I am connected to Pharos mainnet (chain ID)?",
+    "docs": {
+      "question": "How do I check that I am connected to Pharos mainnet (chain ID)?",
+      "answer": "Pharos Pacific Mainnet uses **chain ID `1672`** (`0x688` in hexadecimal). Its RPC endpoint is `https://rpc.pharos.xyz`.\n\nTo verify the RPC connection, run:\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -H \"Content-Type: application/json\" \\\n  --data '{\"jsonrpc\":\"2.0\",\"method\":\"eth_chainId\",\"params\":[],\"id\":1}'\n```\n\nA response containing `\"result\":\"0x688\"` confirms the mainnet chain ID. In your wallet’s network details, check that the chain ID is `1672`. See [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet).",
+      "sources": [
+        {
+          "title": "Pacific Mainnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+        },
+        {
+          "title": "Cross Chain Infrastructure",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain"
+        },
+        {
+          "title": "LayerZero",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero"
+        },
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "Chainlink CCIP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip"
+        },
+        {
+          "title": "Why Pharos",
+          "url": "https://docs.pharos.xyz/introduction/why-pharos"
+        },
+        {
+          "title": "Node Debugging & Configuration",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration"
+        },
+        {
+          "title": "Alchemy RPC",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+        },
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "Atlantic Testnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/atlantic-testnet"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+      ],
+      "covered": true
+    },
+    "params": {},
+    "recipe": "chain_check",
+    "status": "SUCCESS",
+    "plan": [
+      {
+        "step": "Pacific Mainnet chain id",
+        "fact": 1672,
+        "source": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+      },
+      {
+        "step": "expected eth_chainId result",
+        "fact": "0x688",
+        "source": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+      }
+    ],
+    "actions": [
+      "Chain MCP get_chain_info → chainId 1672 (0x688), latest block 20,257,864"
+    ],
+    "checks": [
+      {
+        "check": "chain id equals the documented value",
+        "ok": true,
+        "detail": "1672 vs 1672"
+      },
+      {
+        "check": "hex form matches",
+        "ok": true,
+        "detail": "0x688 vs 0x688"
+      },
+      {
+        "check": "chain is producing blocks (new block ~4 s later)",
+        "ok": true,
+        "detail": "#20,257,864 → #20,257,870"
+      }
+    ],
+    "follow_up_docs": [],
+    "proof": "https://www.pharosscan.xyz/block/20257870"
+  },
+  {
+    "question": "How do I check the PROS balance of an address on Pharos mainnet?",
+    "docs": {
+      "question": "How do I check the PROS balance of an address on Pharos mainnet?",
+      "answer": "The quickest way is to open [Pharos Scan](https://www.pharosscan.xyz) and paste the address into its search bar. The address page shows its PROS balance and transaction history.\n\nFor a command-line check, query the Pharos mainnet RPC:\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -X POST \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getBalance\",\n    \"params\": [\"<address>\", \"latest\"],\n    \"id\": 1\n  }'\n```\n\nThe result is in wei. Divide it by `10^18` to get PROS. Pharos mainnet uses chain ID `1672`; see [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet) and [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas) for details.",
+      "sources": [
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Pacific Mainnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+        },
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "Node Management",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/node-management"
+        },
+        {
+          "title": "Circle CCTP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+        },
+        {
+          "title": "Pharos Network Snapshots",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/pharos-network-snapshots"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Chainlink Push Engine Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/get-pros-gas",
+        "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+      ],
+      "covered": true
+    },
+    "params": {
+      "address": "0xd27cb53f5920d484261cc14d32094d3f043265c9"
+    },
+    "recipe": "native_balance",
+    "status": "SUCCESS",
+    "plan": [
+      {
+        "step": "RPC method for a native balance",
+        "fact": "eth_getBalance",
+        "source": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+      },
+      {
+        "step": "Pharos mainnet chain id",
+        "fact": 1672,
+        "source": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+      },
+      {
+        "step": "unit conversion",
+        "fact": "wei / 10^18 = PROS",
+        "source": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+      },
+      {
+        "step": "Multicall3 address (second, independent read path for verification)",
+        "fact": "0xca11bde05977b3631167028862be2a173976ca11",
+        "source": "https://docs.pharos.xyz/getting-started/canonical-contracts"
+      }
+    ],
+    "actions": [
+      "Chain MCP get_balance(0xd27cb53f5920d484261cc14d32094d3f043265c9, block 20,257,889) → 4964453438229236311 wei = 4.964453 PROS",
+      "Chain MCP eth_call Multicall3.getEthBalance(0xd27cb53f5920d484261cc14d32094d3f043265c9) @ 20,257,889 → 4964453438229236311 wei"
+    ],
+    "checks": [
+      {
+        "check": "connected chain = documented chain id",
+        "ok": true,
+        "detail": "get_chain_info chainId 1672 vs docs 1672"
+      },
+      {
+        "check": "balance matches an independent read (Multicall3.getEthBalance, same block)",
+        "ok": true,
+        "detail": "4964453438229236311 vs 4964453438229236311"
+      }
+    ],
+    "follow_up_docs": [
+      {
+        "question": "What is the Multicall3 contract address on Pharos mainnet?",
+        "answer": "The Multicall3 contract address on Pharos Pacific Mainnet is `0xcA11bde05977b3631167028862bE2a173976CA11`. See [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts).",
+        "sources": [
+          {
+            "title": "Canonical Contracts",
+            "url": "https://docs.pharos.xyz/getting-started/canonical-contracts"
+          },
+          {
+            "title": "Pacific Mainnet",
+            "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+          },
+          {
+            "title": "About Pharos",
+            "url": "https://docs.pharos.xyz/introduction/readme"
+          },
+          {
+            "title": "ZAN RPC",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan"
+          },
+          {
+            "title": "Pharos Network Snapshots",
+            "url": "https://docs.pharos.xyz/node-and-validator-guide/pharos-network-snapshots"
+          },
+          {
+            "title": "Node Debugging & Configuration",
+            "url": "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration"
+          },
+          {
+            "title": "RPC Infrastructure",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc"
+          },
+          {
+            "title": "Alchemy RPC",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+          },
+          {
+            "title": "Node Management",
+            "url": "https://docs.pharos.xyz/node-and-validator-guide/node-management"
+          },
+          {
+            "title": "Vision & Mission",
+            "url": "https://docs.pharos.xyz/introduction/vision-and-mission"
+          }
+        ],
+        "inline": [
+          "https://docs.pharos.xyz/getting-started/canonical-contracts"
+        ],
+        "covered": true
+      }
+    ],
+    "proof": "https://www.pharosscan.xyz/address/0xd27cb53f5920d484261cc14d32094d3f043265c9"
+  },
+  {
+    "question": "How do I find the USDC contract address on Pharos and read its total supply?",
+    "docs": {
+      "question": "How do I find the USDC contract address on Pharos and read its total supply?",
+      "answer": "The address depends on which Pharos network you’re using. The [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) lists:\n\n* **Pacific Mainnet:** USDC (Circle Deployed) — `0xc879c018db60520f4355c26ed1a6d572cdac1815`\n* **Atlantic Testnet:** USDC — `0xcfC8330f4BCAB529c625D12781b1C19466A9Fc8B`\n\nUse Foundry’s `cast call` to read `totalSupply()` without sending a transaction. For mainnet:\n\n```bash\nRPC=https://rpc.pharos.xyz\nTOKEN=0xc879c018db60520f4355c26ed1a6d572cdac1815\n\ncast call $TOKEN \"totalSupply()(uint256)\" --rpc-url $RPC\ncast call $TOKEN \"decimals()(uint8)\" --rpc-url $RPC\n```\n\nFor Atlantic Testnet, use its address and RPC instead:\n\n```bash\nRPC=https://atlantic.dplabs-internal.com\nTOKEN=0xcfC8330f4BCAB529c625D12781b1C19466A9Fc8B\n\ncast call $TOKEN \"totalSupply()(uint256)\" --rpc-url $RPC\ncast call $TOKEN \"decimals()(uint8)\" --rpc-url $RPC\n```\n\n`totalSupply()` returns the raw integer in base units. Divide it by `10^decimals` for the human-readable supply. The Atlantic registry lists USDC with **6 decimals**. The [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide) documents this `cast call` pattern.",
+      "sources": [
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Write Your First Uniswap Contract",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract"
+        },
+        {
+          "title": "Write Your First Uniswap Contract",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract"
+        },
+        {
+          "title": "Canonical Contracts",
+          "url": "https://docs.pharos.xyz/getting-started/canonical-contracts"
+        },
+        {
+          "title": "Rust",
+          "url": "https://docs.pharos.xyz/developer-guide/rust"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token"
+        },
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token"
+        },
+        {
+          "title": "Write Your First dApp",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-dapp"
+        },
+        {
+          "title": "Write Your First dApp",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-dapp"
+        },
+        {
+          "title": "Hemera SocialScan",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan"
+        },
+        {
+          "title": "Block Explorer",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer"
+        },
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "Foundry",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+      ],
+      "covered": true
+    },
+    "params": {
+      "token": "USDC"
+    },
+    "recipe": "token_supply",
+    "status": "SUCCESS",
+    "plan": [
+      {
+        "step": "token contract on Pacific Mainnet",
+        "fact": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "source": "https://docs.pharos.xyz/getting-started/token-registry"
+      },
+      {
+        "step": "read function",
+        "fact": "totalSupply()",
+        "source": "https://docs.pharos.xyz/getting-started/token-registry"
+      },
+      {
+        "step": "scale by",
+        "fact": "decimals()",
+        "source": "https://docs.pharos.xyz/getting-started/token-registry"
+      }
+    ],
+    "actions": [
+      "Chain MCP eth_call 0xc879c018db60520f4355c26ed1a6d572cdac1815.totalSupply() @ 20,257,932 → 23219861668866 raw; decimals() → 6; symbol() → USDC",
+      "result: total supply = 23,219,861.668866 USDC"
+    ],
+    "checks": [
+      {
+        "check": "address from the docs has contract code on mainnet",
+        "ok": true,
+        "detail": "get_code → 1798 bytes"
+      },
+      {
+        "check": "symbol() is the token the request asked about (USDC)",
+        "ok": true,
+        "detail": "symbol() = 'USDC'"
+      },
+      {
+        "check": "total supply is a positive number",
+        "ok": true,
+        "detail": "23219861668866"
+      }
+    ],
+    "follow_up_docs": [],
+    "proof": "https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815"
+  },
+  {
+    "question": "How do I query Transfer events of a token on Pharos?",
+    "docs": {
+      "question": "How do I query Transfer events of a token on Pharos?",
+      "answer": "Use `eth_getLogs` with the token contract address and the ERC-20 `Transfer(address,address,uint256)` event signature as `topics[0]`.\n\n```bash\ncurl https://rpc.pharos.xyz \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_getLogs\",\n    \"params\": [{\n      \"fromBlock\": \"0x100000\",\n      \"toBlock\": \"0x100100\",\n      \"address\": \"<TOKEN_CONTRACT_ADDRESS>\",\n      \"topics\": [\"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\"]\n    }],\n    \"id\": 1\n  }'\n```\n\nReplace the block range and token address. Each returned log includes `topics` and `data`; for standard ERC-20 transfers, the indexed sender and recipient are in `topics[1]` and `topics[2]`, while the amount is in `data`.\n\nFor one address, add its 32-byte, zero-padded address as the second or third topic to filter by sender or recipient. For live events, use `eth_subscribe` with the `logs` filter over WebSocket.\n\nPharos limits `eth_getLogs` ranges to 100 blocks when rate limiting is enabled, or 10,000 blocks otherwise. Split larger historical queries into smaller ranges. See [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods) for the filter format and [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp) for event-log query limits.",
+      "sources": [
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "JSON-RPC API Methods",
+          "url": "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token"
+        },
+        {
+          "title": "Rust",
+          "url": "https://docs.pharos.xyz/developer-guide/rust"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Node Debugging & Configuration",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration"
+        },
+        {
+          "title": "Cross Chain Infrastructure",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Foundry",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry"
+        },
+        {
+          "title": "Hardhat",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat"
+        },
+        {
+          "title": "Using Docker",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-docker-deployment"
+        },
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "Using Binary",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment"
+        },
+        {
+          "title": "Encyclopedia",
+          "url": "https://docs.pharos.xyz/introduction/encyclopedia"
+        },
+        {
+          "title": "Goldsky",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Alchemy RPC",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      ],
+      "covered": true
+    },
+    "params": {
+      "token": "USDC"
+    },
+    "recipe": "token_events",
+    "status": "SUCCESS",
+    "plan": [
+      {
+        "step": "Transfer event topic0 (given literally in the docs answer)",
+        "fact": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "source": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      },
+      {
+        "step": "method",
+        "fact": "eth_getLogs filtered by address + topic",
+        "source": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      },
+      {
+        "step": "USDC contract on Pacific Mainnet",
+        "fact": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "source": "https://docs.pharos.xyz/getting-started/token-registry"
+      },
+      {
+        "step": "Chain MCP get_logs block-range cap",
+        "fact": 1000,
+        "source": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      }
+    ],
+    "actions": [
+      "Chain MCP get_logs(address=0xc879c018db60520f4355c26ed1a6d572cdac1815, topics=[Transfer], blocks 20,256,976..20,257,975) → 77 logs",
+      "  0xe75dffca61b436a78bbfb5d9cc5487dc4216cfd024a5ae6d78c426dc0f29c67e: 0x84dbd23178ba7fc6a2a396559139aef69d0f072a → 0x6c4ad865b836f49e4d54ba3f2a21f0a082a46766 106.564790 USDC",
+      "  0xeb997649b5ea1a2eb4bb3c9b4206b4fe49d3183feef083a78c3e59701c7d1d79: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 → 0x1f3546a29eec2102c8d52e21a45114124014c85c 58.431656 USDC",
+      "  0x4b40d57e8e7a9a0ee1639b9e0375bc87af6da4531abe22e4a60a957e28c91793: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 → 0x1f3546a29eec2102c8d52e21a45114124014c85c 58.420512 USDC"
+    ],
+    "checks": [
+      {
+        "check": "latest log is really in its tx receipt (status 1, same token/topic/amount)",
+        "ok": true,
+        "detail": "receipt 0x4b40d57e8e7a9a0ee1639b9e0375bc87af6da4531abe22e4a60a957e28c91793 status 0x1, 1 matching log(s)"
+      }
+    ],
+    "follow_up_docs": [
+      {
+        "question": "What is the USDC contract address on Pharos mainnet?",
+        "answer": "The USDC contract address on Pharos Pacific Mainnet is **`0xc879c018db60520f4355c26ed1a6d572cdac1815`**. See the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry).",
+        "sources": [
+          {
+            "title": "Token Registry",
+            "url": "https://docs.pharos.xyz/getting-started/token-registry"
+          },
+          {
+            "title": "Canonical Contracts",
+            "url": "https://docs.pharos.xyz/getting-started/canonical-contracts"
+          },
+          {
+            "title": "Write Your First Uniswap Contract",
+            "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract"
+          },
+          {
+            "title": "Write Your First Uniswap Contract",
+            "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract"
+          },
+          {
+            "title": "Pacific Mainnet",
+            "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+          },
+          {
+            "title": "About Pharos",
+            "url": "https://docs.pharos.xyz/introduction/readme"
+          },
+          {
+            "title": "Rust",
+            "url": "https://docs.pharos.xyz/developer-guide/rust"
+          },
+          {
+            "title": "Hemera SocialScan",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan"
+          },
+          {
+            "title": "LayerZero",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero"
+          },
+          {
+            "title": "Circle CCTP",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+          }
+        ],
+        "inline": [
+          "https://docs.pharos.xyz/getting-started/token-registry"
+        ],
+        "covered": true
+      },
+      {
+        "question": "What is the maximum block range for get_logs on the Pharos Chain MCP?",
+        "answer": "The `get_logs` tool supports a maximum range of **1,000 blocks per call**. Split larger queries into 1,000-block windows. See [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp).",
+        "sources": [
+          {
+            "title": "Pharos MCP",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+          },
+          {
+            "title": "Rollback Blocks",
+            "url": "https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks"
+          },
+          {
+            "title": "Block Explorer",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer"
+          },
+          {
+            "title": "Cross Chain Infrastructure",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain"
+          },
+          {
+            "title": "Get PROS Gas",
+            "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+          },
+          {
+            "title": "Node Debugging & Configuration",
+            "url": "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration"
+          },
+          {
+            "title": "JSON-RPC API Methods",
+            "url": "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods"
+          },
+          {
+            "title": "Alchemy RPC",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+          },
+          {
+            "title": "Pharos Skill Engine",
+            "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+          },
+          {
+            "title": "Why Pharos",
+            "url": "https://docs.pharos.xyz/introduction/why-pharos"
+          }
+        ],
+        "inline": [
+          "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        ],
+        "covered": true
+      }
+    ],
+    "proof": "https://www.pharosscan.xyz/tx/0x4b40d57e8e7a9a0ee1639b9e0375bc87af6da4531abe22e4a60a957e28c91793"
+  },
+  {
+    "question": "How do I send USDC to another address on Pharos?",
+    "docs": {
+      "question": "How do I send USDC to another address on Pharos?",
+      "answer": "On Pharos, use your wallet’s **Send** flow for USDC:\n\n1. Select the **Pharos network** and choose **USDC**.\n2. Enter the recipient’s address and the amount, then review and confirm.\n3. Keep **PROS** in your wallet to pay transaction fees on Pacific Mainnet.\n\nUse the right USDC token for your network: Pacific Mainnet uses `0xc879c018db60520f4355c26ed1a6d572cdac1815`; Atlantic Testnet uses `0xcfC8330f4BCAB529c625D12781b1C19466A9Fc8B`. Check the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) before sending.\n\nThis is a same-network transfer. For transfers between Pharos and another supported blockchain, see [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp).",
+      "sources": [
+        {
+          "title": "Circle CCTP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Hardhat",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat"
+        },
+        {
+          "title": "Foundry",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry"
+        },
+        {
+          "title": "Wallet",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/wallets"
+        },
+        {
+          "title": "Rust",
+          "url": "https://docs.pharos.xyz/developer-guide/rust"
+        },
+        {
+          "title": "Cross Chain Infrastructure",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain"
+        },
+        {
+          "title": "Call EVM From WASM",
+          "url": "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token"
+        },
+        {
+          "title": "Write Your First Uniswap Contract",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+      ],
+      "covered": true
+    },
+    "params": {
+      "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+      "to": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+      "amount": "25",
+      "token": "USDC"
+    },
+    "recipe": "send_token",
+    "status": "PREPARED — sign and send it in your own wallet, then re-run with --tx <hash> to verify",
+    "plan": [
+      {
+        "step": "USDC contract on Pacific Mainnet",
+        "fact": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "source": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+      },
+      {
+        "step": "fees",
+        "fact": "keep PROS for fees",
+        "source": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+      },
+      {
+        "step": "same-network check",
+        "fact": "sender and recipient on the same Pharos network",
+        "source": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+      }
+    ],
+    "actions": [
+      "prepared UNSIGNED tx: {\"chainId\": 1672, \"from\": \"0x84dbd23178ba7fc6a2a396559139aef69d0f072a\", \"to\": \"0xc879c018db60520f4355c26ed1a6d572cdac1815\", \"value\": \"0x0\", \"data\": \"0xa9059cbb000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000017d7840\"}",
+      "eth_call simulation from the sender @ 20,257,989 → ok (returns true); estimate_gas 79,801"
+    ],
+    "checks": [
+      {
+        "check": "documented address really is USDC (symbol() on chain)",
+        "ok": true,
+        "detail": "symbol() = 'USDC'"
+      },
+      {
+        "check": "sender holds ≥ 25 USDC",
+        "ok": true,
+        "detail": "balance 6,860.524438 USDC"
+      },
+      {
+        "check": "sender has PROS for the fee (docs: keep PROS for fees)",
+        "ok": true,
+        "detail": "7.137070 PROS vs fee ≈ 0.000798 PROS"
+      },
+      {
+        "check": "transfer simulates successfully from the sender",
+        "ok": true,
+        "detail": "eth_call"
+      },
+      {
+        "check": "recipient is not the token contract itself",
+        "ok": true,
+        "detail": "0xd27cb53f5920d484261cc14d32094d3f043265c9"
+      }
+    ],
+    "follow_up_docs": [],
+    "proof": "https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a"
+  },
+  {
+    "question": "How do I send USDC to another address on Pharos?",
+    "docs": {
+      "question": "How do I send USDC to another address on Pharos?",
+      "answer": "On **Pharos Pacific Mainnet**, send USDC from your wallet like any other token transfer:\n\n1. Select the **Pharos** network and open **USDC → Send**.\n2. Enter the recipient’s address and the amount, then review and confirm.\n3. Keep **PROS** in your wallet to pay the transaction fee. [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas).\n\nIf USDC isn’t listed in your wallet, add the mainnet token using the address in the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry): `0xc879c018db60520f4355c26ed1a6d572cdac1815`. Double-check the network and recipient address before confirming.",
+      "sources": [
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Hardhat",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat"
+        },
+        {
+          "title": "Foundry",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry"
+        },
+        {
+          "title": "Fordefi",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi"
+        },
+        {
+          "title": "Cross Chain Infrastructure",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "Circle CCTP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+        },
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token"
+        },
+        {
+          "title": "Rust",
+          "url": "https://docs.pharos.xyz/developer-guide/rust"
+        },
+        {
+          "title": "Wallet",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/wallets"
+        },
+        {
+          "title": "Write Your First Token",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token"
+        },
+        {
+          "title": "Network",
+          "url": "https://docs.pharos.xyz/getting-started/network"
+        },
+        {
+          "title": "Piggy Bank Tutorial",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide"
+        },
+        {
+          "title": "Node Management",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/node-management"
+        },
+        {
+          "title": "Pharos Network Snapshots",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/pharos-network-snapshots"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/get-pros-gas",
+        "https://docs.pharos.xyz/getting-started/token-registry"
+      ],
+      "covered": true
+    },
+    "params": {
+      "from": "0x84ddbccba32bee8f4e775d737bec2d3c10ea112f",
+      "to": "0x3e79f7ffa10d23dac3ad16af98994f2214f69737",
+      "amount": "600",
+      "token": "USDC",
+      "tx": "0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5"
+    },
+    "recipe": "send_token",
+    "status": "SUCCESS (transfer verified on chain)",
+    "plan": [
+      {
+        "step": "USDC contract on Pacific Mainnet",
+        "fact": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "source": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+      },
+      {
+        "step": "fees",
+        "fact": "keep PROS for fees",
+        "source": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+      },
+      {
+        "step": "same-network check",
+        "fact": "not stated",
+        "source": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+      }
+    ],
+    "actions": [
+      "prepared UNSIGNED tx: {\"chainId\": 1672, \"from\": \"0x84ddbccba32bee8f4e775d737bec2d3c10ea112f\", \"to\": \"0xc879c018db60520f4355c26ed1a6d572cdac1815\", \"value\": \"0x0\", \"data\": \"0xa9059cbb0000000000000000000000003e79f7ffa10d23dac3ad16af98994f2214f697370000000000000000000000000000000000000000000000000000000023c34600\"}",
+      "Chain MCP get_transaction_receipt(0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5) → status 0x1, block 20,251,314, 1 logs"
+    ],
+    "checks": [
+      {
+        "check": "documented address really is USDC (symbol() on chain)",
+        "ok": true,
+        "detail": "symbol() = 'USDC'"
+      },
+      {
+        "check": "transaction succeeded (status 1)",
+        "ok": true,
+        "detail": "status 0x1"
+      },
+      {
+        "check": "a USDC Transfer was emitted by the documented token contract",
+        "ok": true,
+        "detail": "1 Transfer log(s) from 0xc879c018db60520f4355c26ed1a6d572cdac1815"
+      },
+      {
+        "check": "from / to match the plan",
+        "ok": true,
+        "detail": "plan 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f → 0x3e79f7ffa10d23dac3ad16af98994f2214f69737"
+      },
+      {
+        "check": "amount matches the plan",
+        "ok": true,
+        "detail": "plan 600 vs on-chain 600 USDC"
+      }
+    ],
+    "follow_up_docs": [],
+    "proof": "https://www.pharosscan.xyz/tx/0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5"
+  },
+  {
+    "question": "How do I wrap PROS into WPROS?",
+    "docs": {
+      "question": "How do I wrap PROS into WPROS?",
+      "answer": "The docs list WPROS contract addresses, but don’t document a wrapping method or app flow. On Pacific Mainnet, WPROS is `0x52c48d4213107b20bc583832b0d951fb9ca8f0b0`. The registry also lists Ethereum and Base addresses. See the [Token Registry](https://docs.pharos.xyz/getting-started/token-registry).\n\nI can’t confirm from the docs whether you should call a `deposit()` function or use a specific interface. Don’t send PROS directly to the contract without verified wrapping instructions.",
+      "sources": [
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "Get PROS Gas",
+          "url": "https://docs.pharos.xyz/getting-started/get-pros-gas"
+        },
+        {
+          "title": "Node Management",
+          "url": "https://docs.pharos.xyz/node-and-validator-guide/node-management"
+        },
+        {
+          "title": "Pacific Mainnet",
+          "url": "https://docs.pharos.xyz/getting-started/network/pacific-mainnet"
+        },
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "Chainlink Push Engine Feeds",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe"
+        },
+        {
+          "title": "Publish Service Agent",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af"
+        },
+        {
+          "title": "Why Pharos",
+          "url": "https://docs.pharos.xyz/introduction/why-pharos"
+        },
+        {
+          "title": "Circle CCTP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+        },
+        {
+          "title": "Call EVM From WASM",
+          "url": "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm"
+        },
+        {
+          "title": "Chainlink CCIP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip"
+        },
+        {
+          "title": "RPC Infrastructure",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/rpc"
+        },
+        {
+          "title": "Oracle",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/token-registry"
+      ],
+      "covered": false
+    },
+    "params": {},
+    "status": "NOT COVERED BY THE DOCS",
+    "recipe": null,
+    "message": "The Pharos docs don't document this, so I won't improvise steps or send anything."
+  },
+  {
+    "question": "How do I borrow USDC on Morpho on Pharos?",
+    "docs": {
+      "question": "How do I borrow USDC on Morpho on Pharos?",
+      "answer": "I cannot find information about borrowing USDC on Morpho in the Pharos docs. The [Token Registry](https://docs.pharos.xyz/getting-started/token-registry) lists Circle-deployed USDC on Pacific Mainnet (`0xc879c018db60520f4355c26ed1a6d572cdac1815`), but doesn’t confirm a Morpho market or explain how to borrow from one.",
+      "sources": [
+        {
+          "title": "Token Registry",
+          "url": "https://docs.pharos.xyz/getting-started/token-registry"
+        },
+        {
+          "title": "About Pharos",
+          "url": "https://docs.pharos.xyz/introduction/readme"
+        },
+        {
+          "title": "Fordefi",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi"
+        },
+        {
+          "title": "Why Pharos",
+          "url": "https://docs.pharos.xyz/introduction/why-pharos"
+        },
+        {
+          "title": "Write Your First Uniswap Contract",
+          "url": "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract"
+        },
+        {
+          "title": "Circle CCTP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp"
+        },
+        {
+          "title": "Write Your First Uniswap Contract",
+          "url": "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract"
+        },
+        {
+          "title": "Pharos Skill Engine",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide"
+        },
+        {
+          "title": "Cross Chain Infrastructure",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain"
+        },
+        {
+          "title": "Pharos MCP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+        },
+        {
+          "title": "Oracle",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles"
+        },
+        {
+          "title": "Vision & Mission",
+          "url": "https://docs.pharos.xyz/introduction/vision-and-mission"
+        },
+        {
+          "title": "x402",
+          "url": "https://docs.pharos.xyz/developer-guide/x402"
+        },
+        {
+          "title": "Chainlink CCIP",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip"
+        },
+        {
+          "title": "Supra",
+          "url": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/supra"
+        }
+      ],
+      "inline": [
+        "https://docs.pharos.xyz/getting-started/token-registry"
+      ],
+      "covered": false
+    },
+    "params": {},
+    "status": "NOT COVERED BY THE DOCS",
+    "recipe": null,
+    "message": "The Pharos docs don't document this, so I won't improvise steps or send anything."
+  }
+]
