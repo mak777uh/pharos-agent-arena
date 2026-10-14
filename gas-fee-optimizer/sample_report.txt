@@ -1,0 +1,19 @@
+$ python gas_fee_optimizer.py report --tx 0xe66a35d77e41c80c9ec978b90752b3cfa5cbc0be6a994d3fbecf9f6254339e47 --request-block 20250567
+Gas report for https://www.pharosscan.xyz/tx/0xe66a35d77e41c80c9ec978b90752b3cfa5cbc0be6a994d3fbecf9f6254339e47
+    mined in block #20,250,617 · status success · gasUsed 124,909
+    tx fee fields: gasPrice 15 gwei (legacy)
+    actual price paid  15 gwei (baseFee at inclusion 10 gwei + tip 5 gwei)
+    baseFee at request block #20,250,567: 10 gwei
+    actual fee 0.00187364 PROS (~$0.001093)  vs at request-time price 0.00124909 PROS (~$0.000729)  -> paid MORE by 0.00062454 PROS (~$0.000364) (+50.0% per gas)
+    note: the tip of 5 gwei was above the network's suggested tip (0 gwei) — the optimizer would have used the suggested tip.
+
+$ python gas_fee_optimizer.py report --tx 0xe66a35d77e41c80c9ec978b90752b3cfa5cbc0be6a994d3fbecf9f6254339e47 --request-gwei 12
+Gas report for https://www.pharosscan.xyz/tx/0xe66a35d77e41c80c9ec978b90752b3cfa5cbc0be6a994d3fbecf9f6254339e47
+    mined in block #20,250,617 · status success · gasUsed 124,909
+    tx fee fields: gasPrice 15 gwei (legacy)
+    actual price paid  15 gwei (baseFee at inclusion 10 gwei + tip 5 gwei)
+    price given at request time: 12 gwei
+    actual fee 0.00187364 PROS (~$0.001093)  vs at request-time price 0.00149891 PROS (~$0.000875)  -> paid MORE by 0.00037473 PROS (~$0.000219) (+25.0% per gas)
+    note: the tip of 5 gwei was above the network's suggested tip (0 gwei) — the optimizer would have used the suggested tip.
+$ python gas_fee_optimizer.py report --tx 0x1234 --request-gwei 10
+gas_fee_optimizer.py: error: --tx must be a 32-byte hash
