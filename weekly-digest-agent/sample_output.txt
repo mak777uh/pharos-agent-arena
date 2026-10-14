@@ -1,0 +1,59 @@
+$ python weekly_digest_agent.py --end 2026-10-12T00:00 --json sample_digest_data.json   # weekly period ending Monday 00:00 UTC
+# Morpho Blue on Pharos · weekly digest
+**Period:** 2026-10-05 00:00 UTC → 2026-10-12 00:00 UTC (blocks 19,397,644–20,009,079) · compared with 2026-09-28 00:00 UTC → 2026-10-05 00:00 UTC (blocks 18,762,220–19,397,643)
+Morpho contract [0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb](https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb) · 12 markets · generated 2026-10-14 21:58 UTC
+
+## Key metrics
+
+| Metric | This period | Previous period | Change |
+|---|---:|---:|---:|
+| Total supplied (end of period) | $13,480,189.07 | $13,767,557.74 | -2.1% |
+| Total borrowed (end of period) | $12,237,329.30 | $12,557,303.57 | -2.5% |
+| Utilization | 90.78% | 91.21% | -0.43 pp |
+| PROS/USD (Chainlink) | $0.678833 | $0.812833 | -16.5% |
+| Transactions touching Morpho | 13 | 18 | -27.8% |
+| Unique accounts | 2 | 4 | -50.0% |
+| Supply events ($73,769.61 vs $330,579.62) | 11 | 13 | -15.4% |
+| Withdraw events ($103,528.55 vs $681,083.85) | 4 | 7 | -42.9% |
+| Borrow events ($0.00 vs $250,000.04) | 0 | 2 | -100.0% |
+| Repay events ($89,365.10 vs $0.04) | 1 | 1 | +0.0% |
+| SupplyCollateral events ($0.00 vs $1,024,474.66) | 0 | 2 | -100.0% |
+| WithdrawCollateral events ($100,325.79 vs $9.99) | 1 | 1 | +0.0% |
+| CreateMarket events | 0 | 2 | -100.0% |
+
+## Top 3 notable events
+
+1. **WithdrawCollateral** — WithdrawCollateral 91,000.0000 wsrUSD in wsrUSD/USDC (≈ $100,325.79) · block 20,006,430 · [tx](https://www.pharosscan.xyz/tx/0x93bcfee1b462808327e4b16b1e76367b531b150bd788d51d62dd0701e54300b2)
+2. **Repay** — Repay 89,365.0994 USDC in wsrUSD/USDC (≈ $89,365.10) · block 20,006,349 · [tx](https://www.pharosscan.xyz/tx/0x406bb94bdd740a284f04a4720c53c1569f918186d71cd6460d1c6ccda9ed4ad2)
+3. **Withdraw** — Withdraw 52,861.5350 USDC in wsrUSD/USDC (≈ $52,861.54) · block 19,723,132 · [tx](https://www.pharosscan.xyz/tx/0xfe96c79f0ca10171b685f08db9334ef2dd13bc8a07b6c17eed10847c69205cb3)
+
+## Biggest market moves (end of period vs start)
+
+| Market | Supplied | Borrowed |
+|---|---:|---:|
+| BTCVC/WPROS | $1,358,066.02 (-16.5%) | $1,221,283.23 (-16.5%) |
+| wsrUSD/USDC | $6,596,160.70 (-0.4%) | $5,936,665.49 (-1.4%) |
+| syzUSD/USDC | $3,408,064.90 (+0.2%) | $3,080,442.86 (+0.1%) |
+
+---
+Sources: Pharos Chain MCP `https://mcp.pharos.xyz/mcp` — `eth_call Morpho.market(id)` pinned to blocks 20,009,079 and 19,397,643, Morpho events from `get_transaction_receipt`, Chainlink PROS/USD [0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466](https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466) `latestRoundData()`; list of transactions from the Pharosscan explorer index. USD values: USDC counted as $1.00, WPROS at the Chainlink PROS/USD price, collateral via each market's Morpho oracle. Read-only; not financial advice.
+
+[2026-10-14T21:58:36Z] delivered: digests/digest_2026-10-12T0000Z.md and digests/digest_2026-10-12T0000Z.html
+exit 0
+
+$ python weekly_digest_agent.py --end 2026-10-12T00:00   # same period again -> not delivered twice
+[2026-10-14T21:58:38Z] period 2026-10-05 00:00 UTC → 2026-10-12 00:00 UTC already delivered; skipping
+exit 0
+
+$ python weekly_digest_agent.py --period 2w
+error: bad --period '2w'; use weekly, daily, <N>d or <N>h
+exit 2
+$ python weekly_digest_agent.py --period 30m
+error: bad --period '30m'; use weekly, daily, <N>d or <N>h
+exit 2
+$ python weekly_digest_agent.py --end 2026-10-12
+error: --end must be YYYY-MM-DDTHH:MM (UTC)
+exit 2
+$ python weekly_digest_agent.py --anchor 'funday 00:00'
+error: --anchor must look like 'monday 00:00'
+exit 2
