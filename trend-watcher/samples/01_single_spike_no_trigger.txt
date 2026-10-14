@@ -1,0 +1,33 @@
+$ python3 scripts/trend.py backfill --config assets/spike_demo.json --db samples/spike_state.db --alerts samples/alerts.jsonl --from-block 20228598 --to-block 20228616 --every 1
+backfill 20,228,598..20,228,616 every 1: 19 new observations (0 already stored)
+exit code: 0
+
+$ python3 scripts/trend.py backfill --config assets/spike_demo.json --db samples/spike_state.db --alerts samples/alerts.jsonl --from-block 20228598 --to-block 20228616 --every 1
+backfill 20,228,598..20,228,616 every 1: 0 new observations (19 already stored)
+exit code: 0
+
+$ python3 scripts/trend.py history --config assets/spike_demo.json --db samples/spike_state.db --alerts samples/alerts.jsonl --compare-single 0.5
+Series 'wpros-usdc-pool-price-per-block' (pool_price) · rule down-3-checks: {"id": "down-3-checks", "type": "consecutive", "direction": "down", "moves": 3, "min_step_pct": "0.02", "min_total_pct": "0.15", "max_step_pct": "2", "max_gap_blocks": 1200}
+19 stored observations (needs 4 to trigger)
+      block block time (UTC)              value    move % streak  mode      note
+ 20,228,598 2026-10-14 14:14:11        0.585025                0  backfill  
+ 20,228,599 2026-10-14 14:14:12        0.585025   +0.0000      0  backfill  
+ 20,228,600 2026-10-14 14:14:13        0.585025   +0.0000      0  backfill  
+ 20,228,601 2026-10-14 14:14:14        0.585025   +0.0000      0  backfill  
+ 20,228,602 2026-10-14 14:14:15        0.585025   +0.0000      0  backfill  
+ 20,228,603 2026-10-14 14:14:16        0.585025   +0.0000      0  backfill  
+ 20,228,604 2026-10-14 14:14:17        0.585025   +0.0000      0  backfill  
+ 20,228,605 2026-10-14 14:14:17        0.585025   +0.0000      0  backfill  
+ 20,228,606 2026-10-14 14:14:18        0.576739   -1.4163      1  backfill  [re-read confirmed the 1.42% jump]   (a single-reading rule |move| >= 0.5% would fire here)
+ 20,228,607 2026-10-14 14:14:19        0.576739   +0.0000      0  backfill  [re-read: first answer 0.644557 rejected, 0.576739 confirmed] 
+ 20,228,608 2026-10-14 14:14:20        0.578822   +0.3611      0  backfill  
+ 20,228,609 2026-10-14 14:14:21        0.580912   +0.3611      0  backfill  
+ 20,228,610 2026-10-14 14:14:22        0.580912   +0.0000      0  backfill  
+ 20,228,611 2026-10-14 14:14:22        0.581022   +0.0190      0  backfill  
+ 20,228,612 2026-10-14 14:14:23        0.581022   +0.0000      0  backfill  
+ 20,228,613 2026-10-14 14:14:25        0.581022   +0.0000      0  backfill  
+ 20,228,614 2026-10-14 14:14:25        0.581133   +0.0190      0  backfill  
+ 20,228,615 2026-10-14 14:14:26        0.581133   +0.0000      0  backfill  
+ 20,228,616 2026-10-14 14:14:27        0.581133   +0.0000      0  backfill  
+
+recorded triggers: 0
