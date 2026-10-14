@@ -1,0 +1,3 @@
+requests>=2.31
+pycryptodome>=3.19
+pypdf>=4
