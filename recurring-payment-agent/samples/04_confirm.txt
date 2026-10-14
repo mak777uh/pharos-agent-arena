@@ -1,0 +1,13 @@
+[run at 2026-10-14 21:37:03 UTC]
+$ python recurring_agent.py --state samples/recurring_state.json confirm --id subscription --period 2026-10-14 --tx 0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5
+REJECTED: 0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5 already settles another period
+[exit code 1]
+$ python recurring_agent.py --state samples/recurring_state.json confirm --id payroll-600 --period 2026-10-14 --tx 0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5
+payroll-600 2026-10-14 is already PAID by 0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5 - nothing to do (no double payment)
+[exit code 0]
+$ python recurring_agent.py --state samples/recurring_state.json confirm --id rent --period 2026-10-14 --tx 0x3e1168df397e9da275e75329093106eee1ea938549be3d18a53b44f949ee1a2a
+REJECTED: https://www.pharosscan.xyz/tx/0x3e1168df397e9da275e75329093106eee1ea938549be3d18a53b44f949ee1a2a does not transfer 1000 USDC from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a to 0x1f3546a29eec2102c8d52e21a45114124014c85c
+[exit code 1]
+$ python recurring_agent.py --state samples/recurring_state.json confirm --id rent --period 2026-10-14 --tx 0x1234
+--tx must be a 0x-prefixed 32-byte hash
+[exit code 2]
