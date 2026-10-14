@@ -1,0 +1,107 @@
+{
+  "label": "transfer 100 USDC to 0x1f3546a29eec2102c8d52e21a45114124014c85c",
+  "network": "Pharos mainnet",
+  "chainId": 1672,
+  "block": 20257618,
+  "time": "2026-10-14 22:45:51 UTC",
+  "tx": {
+    "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100",
+    "value": "0x0"
+  },
+  "toIsContract": true,
+  "simulation": {
+    "ok": true,
+    "returnData": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "revertData": null,
+    "revertReason": null,
+    "gas": 58620,
+    "mcpTools": [
+      "eth_call",
+      "estimate_gas"
+    ]
+  },
+  "prosUsd": "0.584028346166326",
+  "cost": {
+    "estimateGas": 58620,
+    "gasLimit": 70344,
+    "gasPriceGwei": "10",
+    "maxFeePerGasGwei": "20",
+    "expectedFeePROS": "0.0005862",
+    "expectedFeeUSD": "0.000342",
+    "maxFeePROS": "0.00140688"
+  },
+  "prediction": {
+    "available": true,
+    "events": [
+      [
+        "Transfer",
+        "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+        "0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> 0x1f3546a29eec2102c8d52e21a45114124014c85c",
+        100000000
+      ]
+    ],
+    "gasUsedTrace": 45059,
+    "balances": [
+      {
+        "account": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+        "token": "USDC",
+        "before": "1751.145295",
+        "delta": "100",
+        "after": "1851.145295"
+      },
+      {
+        "account": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+        "token": "USDC",
+        "before": "6967.089228",
+        "delta": "-100",
+        "after": "6867.089228"
+      },
+      {
+        "account": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+        "token": "PROS",
+        "before": "7.138396537",
+        "delta": "-0.0005862",
+        "after": "7.137810337"
+      }
+    ]
+  },
+  "decision": "GO",
+  "blockedBecause": [],
+  "prepared": {
+    "unsignedTx": {
+      "chainId": "0x688",
+      "nonce": "0x877",
+      "maxPriorityFeePerGas": "0x0",
+      "maxFeePerGas": "0x4a817c800",
+      "gas": "0x112c8",
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "value": "0x0",
+      "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100"
+    },
+    "unsignedSerialized": "0x02f86e820688820877808504a817c800830112c894c879c018db60520f4355c26ed1a6d572cdac181580b844a9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100c0",
+    "signingHash": "0xd2ba9c7ff49f1773c36e21a2755f27ceea434dbfb449264cf88c33f4783f441e",
+    "walletRequest": {
+      "method": "eth_sendTransaction",
+      "params": [
+        {
+          "from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+          "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "value": "0x0",
+          "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100",
+          "gas": "0x112c8",
+          "maxFeePerGas": "0x4a817c800",
+          "maxPriorityFeePerGas": "0x0",
+          "nonce": "0x877",
+          "chainId": "0x688",
+          "type": "0x2"
+        }
+      ]
+    },
+    "castCommandForUser": "cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+    "maxNetworkFeePROS": "0.00140688",
+    "signed": false,
+    "broadcast": false
+  }
+}
