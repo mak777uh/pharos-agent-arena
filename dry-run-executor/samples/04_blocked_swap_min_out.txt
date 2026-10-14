@@ -1,0 +1,14 @@
+$ python3 scripts/dryrun.py swap --from 0x1f3546a29eec2102c8d52e21a45114124014c85c --sell USDC --amount 10 --min-out 18
+Dry run · swap 10 USDC -> WPROS via router 0xf38d34c8382b9079b0f85309578b43b8479cd875 (pool fee 0.01%, amountOutMinimum 18, deadline +10 min)
+  network Pharos mainnet (chainId 1672), head block #20,257,588, 2026-10-14 22:45:22 UTC
+  from 0x1f3546a29eec2102c8d52e21a45114124014c85c -> to 0xf38d34c8382b9079b0f85309578b43b8479cd875 (contract), value 0 wei, data 0x414bf389… (260 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : REVERT - Too little received
+  revert data: 0x08c379a000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000013546f6f206c6974746c6520726563656976656400000000000000000000000000
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  reverting tx changes nothing (except gas if sent)
+[3] Decision: BLOCKED
+  blocked: simulation reverted: Too little received
+  execution blocked automatically - no transaction was prepared
+  sender: https://www.pharosscan.xyz/address/0x1f3546a29eec2102c8d52e21a45114124014c85c
+exit code: 4
