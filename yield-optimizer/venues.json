@@ -1,0 +1,22 @@
+{
+ "_comment": "Venue registry for Pharos mainnet (chainId 1672). morpho_markets: Morpho Blue market ids known on 2026-10-14 (from CreateMarket events + Supply/Borrow events; the label is collateral/loan). erc4626_vaults: ERC-4626 vaults seen holding real deposits on 2026-10-14 (Morpho Vault V2 style: SharpByte USDC Pharos Ecosystem, SharpByte Pharos Prime, Vishwa WPROS Vault). Avalon is discovered on chain from the 'Avalon USDC' aToken -> POOL() -> getReservesList(). Add more vaults with --vault 0x...; every entry is re-validated on chain (asset() must equal the token asked for).",
+ "morpho_markets": {
+  "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69": "ETHVP/WPROS",
+  "0x81c8e4d8b7dd2a97ba7ebb472af57fca74b0e5fd046b34c3a1102a467c98751a": "ETHVP/USDC",
+  "0xba0d2638a277fd7696cdefdb96b5bd7405d0f174ba7526ce2c789f41149d91bc": "APC3M/USDC",
+  "0x082e865d3606768b6883039a1899df7d7267e012a1babf88ec0c29576098e90f": "VRPCW/USDC",
+  "0x1aa31baf4ea7b82429c410182688db9d3cccf400b25041d39656fa221c267219": "APC3M/USDC",
+  "0x95bc6fe971db18703f2747ea9c8000e1525ea1c49b8c12f75c889e916a6b442c": "USDC/WPROS",
+  "0xc79579a002dbc8c535d3a87198fcbbece1a664ad82a356b0447c5bff9e16fd86": "syzUSD/USDC",
+  "0xf203d06ff4b5339e76d576b369c6799168d76112d489651b8347a501cc7795c5": "BTCVC/USDC",
+  "0x6657f8b7ec9d900f8e975e3f7eb74b80e2783cbbacd1d3f90d144a3e34ad2faa": "BTCVC/WPROS",
+  "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73": "wsrUSD/USDC",
+  "0x0db7e82424c0d1c00e4d166044007cf759ea1f5b72e96f031a92617b3ecc3227": "-/USDC",
+  "0xb3b8a31c8a1652cf31eb872c7778716edc39471ed82bcad99b3f5c83a449e1ba": "WPROS/USDC"
+ },
+ "erc4626_vaults": [
+  "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+  "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342",
+  "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73"
+ ]
+}
