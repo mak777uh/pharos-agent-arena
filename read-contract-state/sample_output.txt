@@ -1,0 +1,51 @@
+========================================================================
+ PHAROS CONTRACT STATE  ·  USDC (USDC)
+========================================================================
+ Network      : Pharos (chainId 1672)
+ Contract     : 0xc879c018db60520f4355c26ed1a6d572cdac1815  [contract, 1,798 bytes of code]
+ Explorer     : https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815
+ Read at block: #20,223,987  (2026-10-14 12:58:24 UTC)
+ Block hash   : 0x3e3af36f77c9e90888e93eb3a840bcf5ef8bca7d9b614d1f583b6816068527a9
+ Source       : Pharos Chain MCP — pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp
+------------------------------------------------------------------------
+ WHAT THIS TOKEN IS
+  • Name ............. USDC
+  • Ticker ........... USDC
+  • Decimals ......... 6  (1 USDC = 10^6 base units)
+  • Total supply ..... 23,558,408.456760 USDC
+                       (raw on-chain value: 23558408456760)
+  • Backing currency . USD
+  • Contract version . 2
+  • Transfers ........ active (not paused)
+------------------------------------------------------------------------
+ WHO CONTROLS IT
+  • Owner (can reassign roles)
+      0x9f8ea09770dc38fc61f5a62031b3be0526d54d92  [wallet (EOA)]
+  • Pauser (can freeze all transfers)
+      0x828409db274cad94ac10db6d54aeca1dbe00e237  [wallet (EOA)]
+  • Master minter (manages who may mint)
+      0x908ea62d2529f31347d71992954e540a8d169603  [contract, 5,346 bytes of code]
+  • Blacklister (can block addresses)
+      0xba8cd4958d4105aaa23b00c645573f53fcd59486  [wallet (EOA)]
+  • Rescuer (can recover stuck tokens)
+      0x0000000000000000000000000000000000000000  [zero address (unset)]
+------------------------------------------------------------------------
+ UPGRADEABILITY (raw storage slots)
+  This address is an upgradeable proxy: the logic lives elsewhere.
+  • proxy implementation (zos): 0xc35becb283fec66626220467265f6d3b3f8ceae8  [contract, 23,464 bytes of code]
+  • proxy admin (zos): 0x46f958bdeffd33495e058873cdd114c79ec13f1b  [wallet (EOA)]
+------------------------------------------------------------------------
+ BALANCES
+  • Wrapped PROS (WPROS) token contract
+      0x52c48d4213107b20bc583832b0d951fb9ca8f0b0: 0.807275 USDC   |   gas balance: 23256442.525086389026254338 PROS
+  • Owner
+      0x9f8ea09770dc38fc61f5a62031b3be0526d54d92: 0.000000 USDC   |   gas balance: 0.2 PROS
+  • Pauser
+      0x828409db274cad94ac10db6d54aeca1dbe00e237: 0.000000 USDC   |   gas balance: 0.2 PROS
+  • Master minter
+      0x908ea62d2529f31347d71992954e540a8d169603: 0.000000 USDC   |   gas balance: 0 PROS
+  • Blacklister
+      0xba8cd4958d4105aaa23b00c645573f53fcd59486: 0.000000 USDC   |   gas balance: 51.814762963091646094 PROS
+  • this contract (USDC)
+      0xc879c018db60520f4355c26ed1a6d572cdac1815: 0.000000 USDC   |   gas balance: 0 PROS
+========================================================================
