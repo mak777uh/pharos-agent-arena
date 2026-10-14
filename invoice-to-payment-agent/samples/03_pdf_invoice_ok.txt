@@ -1,0 +1,43 @@
+$ python invoice_agent.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --ledger samples/ledger.jsonl --record --out samples/payment_ORB-1009.json samples/invoices/inv_pdf_orbit.pdf
+[run at 2026-10-14 21:24:44 UTC]
+Invoice: samples/invoices/inv_pdf_orbit.pdf
+Extracted fields:
+  format                : pdf
+  reference             : ORB-1009
+  payee                 : Orbit Translations
+  payee wallet          : 0x4FFD9c7E8641947662a43aF298B734ca93530002
+  amount                : 90.00
+  currency/token        : USDC
+  due date              : 2026-11-05
+  network               : Pharos mainnet
+  bill-to wallet        : -
+  line items            : 2
+  subtotal/tax/discount : 90.00/None/None
+  [note] payee 'Orbit Translations' is not in the vendor book - first payment to this wallet
+=== Payment for invoice ORB-1009 (Orbit Translations), due 2026-11-05 (review before signing) ===
+  Pay        : 90 USDC  (contract 0xc879c018db60520f4355c26ed1a6d572cdac1815)
+  To         : 0x4FFD9c7E8641947662a43aF298B734ca93530002  https://www.pharosscan.xyz/address/0x4ffd9c7e8641947662a43af298b734ca93530002
+  From/signer: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  Reference  : ORB-1009  (embedded in calldata as 'PHAROS-REF:ORB-1009')
+  Network    : Pharos mainnet, chainId 1672, nonce 2164, gas limit 70,795
+  Fees       : maxFeePerGas 20 gwei, tip 0 gwei -> at most 0.0014159 PROS network fee
+  Checks:
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [ok] payer not blacklisted by USDC
+    [ok] recipient not blacklisted by USDC
+    [ok] payer USDC balance 6,845.265664 >= 90.00 (balanceOf)
+    [ok] simulation OK: estimate_gas 58,996 -> gas limit 70,795 (+20%)
+    [ok] signer PROS balance 7.142356537 >= value + max gas fee 0.0014159 (get_balance)
+    [ok] nonce 2164 = get_transaction_count(sender, 'pending')
+  Calldata reference check: decode_memo(data) = 'ORB-1009'
+=== Unsigned transaction (NOT signed, NOT sent) ===
+  Wallet signing request (EIP-1193):
+  {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000055d4a80504841524f532d5245463a4f52422d31303039", "gas": "0x1148b", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x874", "chainId": "0x688", "type": "0x2"}]}
+  Unsigned EIP-1559 serialization: 0x02f881820688820874808504a817c8008301148b94c879c018db60520f4355c26ed1a6d572cdac181580b857a9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000055d4a80504841524f532d5245463a4f52422d31303039c0
+  Signing hash (keccak256 of the above): 0xe65cf7c398b1007d69b85dbba32a8d6b9db0b1d73231f65e9cb4a0b67f8e89de
+  Sign it in your own wallet; this tool holds no key and never broadcasts.
+  saved samples/payment_ORB-1009.json
+  recorded ORB-1009 in samples/ledger.jsonl (status: prepared - duplicates will be flagged)
+[exit code 0]
