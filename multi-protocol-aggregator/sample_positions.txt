@@ -1,0 +1,16 @@
+$ python aggregator.py positions --wallet 0xd27cb53f5920d484261cc14d32094d3f043265c9 --token USDC --token WPROS
+=== Pharos multi-protocol aggregator · mainnet block #20,257,726 · PROS $0.5840 (Chainlink)
+
+USDC positions: idle in wallet 0.0000
+  - Avalon:USDC reserve                                            250,628.4149  APY   1.95%   [0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(aToken) @ block 20,257,726; 0xe2ec2f3933ad2f83de9a9dda844558354384e87d balanceOf(wallet) @ block 20,257,726]
+  - ERC-4626 vault:SharpByte USDC Pharos Ecosystem                 676,101.5484  APY   5.52%   [0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 balanceOf(wallet) @ block 20,257,726; 0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(shares) @ block 20,257,726]
+  - ERC-4626 vault:SharpByte Pharos Prime                           70,488.7785  APY   3.96%   [0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 balanceOf(wallet) @ block 20,257,726; 0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(shares) @ block 20,257,726]
+  total 997,218.7418 USDC (≈ $997,218.74)
+  protocol status: Avalon: up (1 venue) | Morpho Blue: up (9 venues) | ERC-4626 vault: up (2 venues)
+
+WPROS positions: idle in wallet 1,999,990.0000
+  - ERC-4626 vault:Vishwa WPROS Vault                            2,000,293.2352  APY   0.16%   [0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,257,726; 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,257,726]
+  total 4,000,283.2352 WPROS (≈ $2,336,278.80)
+  protocol status: Morpho Blue: up (3 venues) | ERC-4626 vault: up (1 venue) | Avalon: up (no venue for this token)
+
+Nothing was signed or sent. Rates are live on-chain values at this block; not financial advice.
