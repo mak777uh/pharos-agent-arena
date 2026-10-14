@@ -19,5 +19,15 @@ Solutions for tasks on the [Pharos Agent Arena](https://pharos-agent-arena.verce
 | Natural-Language Payment Agent (Medium) | [`natural-language-payment-agent/`](natural-language-payment-agent/) |
 | Invoice-to-Payment Agent (Medium) | [`invoice-to-payment-agent/`](invoice-to-payment-agent/) |
 | Recurring Payment Agent (Medium) | [`recurring-payment-agent/`](recurring-payment-agent/) |
+| Docs MCP Onboarding (Easy) | [`docs-mcp-onboarding/`](docs-mcp-onboarding/) |
+| Yield Optimizer (Hard) | [`yield-optimizer/`](yield-optimizer/) |
+| Multi-Protocol Aggregator (Hard) | [`multi-protocol-aggregator/`](multi-protocol-aggregator/) |
+| Doc-Grounded Builder Agent (Hard) | [`doc-grounded-builder-agent/`](doc-grounded-builder-agent/) |
+| Skill + Chain MCP Flow (Medium, SkillEngine) | [`skill-chain-mcp-flow/`](skill-chain-mcp-flow/) |
+| Threshold Guardian (Medium, SkillEngine) | [`threshold-guardian/`](threshold-guardian/) |
+| Policy Gatekeeper (Medium, SkillEngine) | [`policy-gatekeeper/`](policy-gatekeeper/) |
+| Dry-Run Executor (Medium, SkillEngine) | [`dry-run-executor/`](dry-run-executor/) |
+| Batch Executor (Medium, SkillEngine) | [`batch-executor/`](batch-executor/) |
+| Trend Watcher (Hard, SkillEngine) | [`trend-watcher/`](trend-watcher/) |
 
 Each folder has its own README with setup, usage and real sample output. License: MIT.
