@@ -1,0 +1,34 @@
+saga 05_compensation_revert_deposit · 32 transitions · last update 2026-10-14 23:49:56 UTC
+CURRENT: phase=saga state=COMPENSATED · last step C4 revoke_usdc_router -> SKIPPED
+  #01 23:49:45 forward      1/4 approve_usdc         STARTED        
+  #02 23:49:45 forward      1/4 approve_usdc         SIMULATED      
+  #03 23:49:45 forward      1/4 approve_usdc         SENT           0xd1e88ea792ec
+  #04 23:49:45 forward      1/4 approve_usdc         VERIFIED       0xd1e88ea792ec
+  #05 23:49:45 forward      2/4 swap                 STARTED        
+  #06 23:49:49 forward      2/4 swap                 SIMULATED      
+  #07 23:49:49 forward      2/4 swap                 SENT           0x401f8b228156
+  #08 23:49:49 forward      2/4 swap                 VERIFIED       0x401f8b228156
+  #09 23:49:49 forward      3/4 approve_wpros        STARTED        
+  #10 23:49:49 forward      3/4 approve_wpros        SIMULATED      
+  #11 23:49:49 forward      3/4 approve_wpros        SENT           0xfb9865d69697
+  #12 23:49:49 forward      3/4 approve_wpros        VERIFIED       0xfb9865d69697
+  #13 23:49:49 forward      4/4 deposit              STARTED        
+  #14 23:49:56 forward      4/4 deposit              SIM_REVERT     
+  #15 23:49:56 forward      4/4 deposit              SENT           0x5a3442040d17
+  #16 23:49:56 forward      4/4 deposit              RECEIPT_FAIL   0x5a3442040d17
+  #17 23:49:56 forward      4/4 deposit              FAILED         
+  #18 23:49:56 compensation     deposit              COMPENSATING   
+  #19 23:49:56 compensation  C1 revoke_wpros_vault   PREPARED       
+  #20 23:49:56 compensation  C1 revoke_wpros_vault   SIMULATED      
+  #21 23:49:56 compensation  C1 revoke_wpros_vault   SENT           0xb511949de865
+  #22 23:49:56 compensation  C1 revoke_wpros_vault   VERIFIED       0xb511949de865
+  #23 23:49:56 compensation  C2 approve_wpros_router PREPARED       
+  #24 23:49:56 compensation  C2 approve_wpros_router SIMULATED      
+  #25 23:49:56 compensation  C2 approve_wpros_router SENT           0x489b57cf7d45
+  #26 23:49:56 compensation  C2 approve_wpros_router VERIFIED       0x489b57cf7d45
+  #27 23:49:56 compensation  C3 swap_back            PREPARED       
+  #28 23:49:56 compensation  C3 swap_back            SIMULATED      
+  #29 23:49:56 compensation  C3 swap_back            SENT           0xe4528023cb28
+  #30 23:49:56 compensation  C3 swap_back            VERIFIED       0xe4528023cb28
+  #31 23:49:56 compensation  C4 revoke_usdc_router   SKIPPED        
+  #32 23:49:56 saga             -                    COMPENSATED    
