@@ -1,0 +1,39 @@
+{
+  "chainId": 1672,
+  "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+  "block": 20256702,
+  "decision": "move 54,465.77 USDC (partial: 54,465.77 of 250,628.25 \u2014 exit liquidity limit) to ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem: 5.38% expected after your deposit vs 1.95% now \u2192 +$153.50 over 30 days, costs $0.0028, net $153.50, break-even in 0.8 min",
+  "signing": "UNSIGNED. Review, then sign and send each transaction in order with your own wallet; set nonce, gas limit and gas price there. This tool never signs or broadcasts.",
+  "transactions": [
+    {
+      "chainId": 1672,
+      "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+      "to": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+      "value": "0x0",
+      "data": "0x69328dec000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac18150000000000000000000000000000000000000000000000000000000cae69bbd0000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+      "description": "Avalon withdraw(USDC, 54465.772496, to=you)",
+      "step": 1,
+      "check": "simulated at block 20,256,702: ok"
+    },
+    {
+      "chainId": 1672,
+      "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "value": "0x0",
+      "data": "0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff10000000000000000000000000000000000000000000000000000000cae69bbd0",
+      "description": "approve 54465.772496 USDC to ERC-4626 vault 0x15c2\u2026aff1",
+      "step": 2,
+      "check": "simulated at block 20,256,702: ok"
+    },
+    {
+      "chainId": 1672,
+      "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+      "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+      "value": "0x0",
+      "data": "0x6e553f650000000000000000000000000000000000000000000000000000000cae69bbd0000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+      "description": "SharpByte USDC Pharos Ecosystem: deposit(54465.772496 USDC, receiver=you)",
+      "step": 3,
+      "check": "not simulated: needs the approve above to be mined first"
+    }
+  ]
+}
