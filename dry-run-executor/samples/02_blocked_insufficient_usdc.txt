@@ -1,0 +1,14 @@
+$ python3 scripts/dryrun.py transfer --from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a --to 0x1f3546a29eec2102c8d52e21a45114124014c85c --token USDC --amount 10000
+Dry run · transfer 10000 USDC to 0x1f3546a29eec2102c8d52e21a45114124014c85c
+  network Pharos mainnet (chainId 1672), head block #20,257,498, 2026-10-14 22:44:19 UTC
+  from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> to 0xc879c018db60520f4355c26ed1a6d572cdac1815 (contract), value 0 wei, data 0xa9059cbb… (68 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : REVERT - ERC20: transfer amount exceeds balance
+  revert data: 0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  reverting tx changes nothing (except gas if sent)
+[3] Decision: BLOCKED
+  blocked: simulation reverted: ERC20: transfer amount exceeds balance
+  execution blocked automatically - no transaction was prepared
+  sender: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+exit code: 4
