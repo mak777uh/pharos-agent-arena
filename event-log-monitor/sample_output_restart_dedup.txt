@@ -1,0 +1,67 @@
+Pharos event monitor · server pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp
+  contract : 0xc879c018db60520f4355c26ed1a6d572cdac1815 (USDC, 6 decimals)  https://www.pharosscan.xyz/address/0xc879c018db60520f4355c26ed1a6d572cdac1815
+  event    : Transfer(address,address,uint256)  topic0 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+  head     : #20,223,952   watching from block #20,223,860   (Ctrl+C to stop)
+
+[NEW Transfer [transfer]] block #20,223,861  2026-10-14 12:56:24 UTC
+    from   : 0x4146d192da6428c9e1c243d2a953c625b5765623
+    to     : 0xa5ca5fbe34e444f366b373170541ec6902b0f75c
+    amount : 50.132483 USDC  (raw 50132483)
+    tx     : 0x180ae2ce560ed65f5b3bf463e138f706f6a81e1da230b370f7e087df8edb7cc0  (log #1)
+    link   : https://www.pharosscan.xyz/tx/0x180ae2ce560ed65f5b3bf463e138f706f6a81e1da230b370f7e087df8edb7cc0
+[NEW Transfer [transfer]] block #20,223,861  2026-10-14 12:56:24 UTC
+    from   : 0xa5ca5fbe34e444f366b373170541ec6902b0f75c
+    to     : 0x903cf528c0c54ecb99991a69e0e095589917a0ce
+    amount : 0.075198 USDC  (raw 75198)
+    tx     : 0x180ae2ce560ed65f5b3bf463e138f706f6a81e1da230b370f7e087df8edb7cc0  (log #4)
+    link   : https://www.pharosscan.xyz/tx/0x180ae2ce560ed65f5b3bf463e138f706f6a81e1da230b370f7e087df8edb7cc0
+[NEW Transfer [transfer]] block #20,223,861  2026-10-14 12:56:24 UTC
+    from   : 0xa5ca5fbe34e444f366b373170541ec6902b0f75c
+    to     : 0x9ea92f9949e768b2985036409d5d6b815d2ee239
+    amount : 50.057285 USDC  (raw 50057285)
+    tx     : 0x180ae2ce560ed65f5b3bf463e138f706f6a81e1da230b370f7e087df8edb7cc0  (log #5)
+    link   : https://www.pharosscan.xyz/tx/0x180ae2ce560ed65f5b3bf463e138f706f6a81e1da230b370f7e087df8edb7cc0
+[NEW Transfer [transfer]] block #20,223,868  2026-10-14 12:56:31 UTC
+    from   : 0x4146d192da6428c9e1c243d2a953c625b5765623
+    to     : 0xa5ca5fbe34e444f366b373170541ec6902b0f75c
+    amount : 50.110021 USDC  (raw 50110021)
+    tx     : 0x0164d85439fc79fe272dabfdee6009929ebb4f67f837ded8b2c8ab0cab9da1f5  (log #1)
+    link   : https://www.pharosscan.xyz/tx/0x0164d85439fc79fe272dabfdee6009929ebb4f67f837ded8b2c8ab0cab9da1f5
+[NEW Transfer [transfer]] block #20,223,868  2026-10-14 12:56:31 UTC
+    from   : 0xa5ca5fbe34e444f366b373170541ec6902b0f75c
+    to     : 0x903cf528c0c54ecb99991a69e0e095589917a0ce
+    amount : 0.075165 USDC  (raw 75165)
+    tx     : 0x0164d85439fc79fe272dabfdee6009929ebb4f67f837ded8b2c8ab0cab9da1f5  (log #4)
+    link   : https://www.pharosscan.xyz/tx/0x0164d85439fc79fe272dabfdee6009929ebb4f67f837ded8b2c8ab0cab9da1f5
+[NEW Transfer [transfer]] block #20,223,868  2026-10-14 12:56:31 UTC
+    from   : 0xa5ca5fbe34e444f366b373170541ec6902b0f75c
+    to     : 0x9ea92f9949e768b2985036409d5d6b815d2ee239
+    amount : 50.034856 USDC  (raw 50034856)
+    tx     : 0x0164d85439fc79fe272dabfdee6009929ebb4f67f837ded8b2c8ab0cab9da1f5  (log #5)
+    link   : https://www.pharosscan.xyz/tx/0x0164d85439fc79fe272dabfdee6009929ebb4f67f837ded8b2c8ab0cab9da1f5
+[NEW Transfer [transfer]] block #20,223,954  2026-10-14 12:57:52 UTC
+    from   : 0x552818be421fa69f7233652c1f02a2e3af438f89
+    to     : 0x32d839c194428732b41f92c6e10f361ed8157707
+    amount : 0.102837 USDC  (raw 102837)
+    tx     : 0x12b5794f41050ed86c5d0feee6062b49364959432bfce1a33803a74abb4fa746  (log #1)
+    link   : https://www.pharosscan.xyz/tx/0x12b5794f41050ed86c5d0feee6062b49364959432bfce1a33803a74abb4fa746
+[NEW Transfer [transfer]] block #20,223,954  2026-10-14 12:57:52 UTC
+    from   : 0x552818be421fa69f7233652c1f02a2e3af438f89
+    to     : 0xa43765a47b9918e4381fc8ccb03b70fb17d19489
+    amount : 0.000022 USDC  (raw 22)
+    tx     : 0x12b5794f41050ed86c5d0feee6062b49364959432bfce1a33803a74abb4fa746  (log #4)
+    link   : https://www.pharosscan.xyz/tx/0x12b5794f41050ed86c5d0feee6062b49364959432bfce1a33803a74abb4fa746
+[NEW Transfer [transfer]] block #20,223,963  2026-10-14 12:58:02 UTC
+    from   : 0x768b959191ce5876cabbbc014a08d72615bdde54
+    to     : 0x3a0feb761c0daf7548341e9e44f6c7cd8081f4d1
+    amount : 133.320000 USDC  (raw 133320000)
+    tx     : 0xfbd6de4361f07a8c0d470ac2544a47d2becdf762ee1b821a9b9802d16dc2830b  (log #0)
+    link   : https://www.pharosscan.xyz/tx/0xfbd6de4361f07a8c0d470ac2544a47d2becdf762ee1b821a9b9802d16dc2830b
+[NEW Transfer [transfer]] block #20,223,968  2026-10-14 12:58:07 UTC
+    from   : 0x3a0feb761c0daf7548341e9e44f6c7cd8081f4d1
+    to     : 0xcd7371e3e5956d3e9a2a7bf0ced44d0ed172d396
+    amount : 600.000000 USDC  (raw 600000000)
+    tx     : 0xbc2046aea764207f89a2a411429de3ee02a95c3db3782bab8c242a6a199be522  (log #0)
+    link   : https://www.pharosscan.xyz/tx/0xbc2046aea764207f89a2a411429de3ee02a95c3db3782bab8c242a6a199be522
+
+Stopped. 10 new event(s) reported over 7 poll(s); cursor at block #20,223,974.
