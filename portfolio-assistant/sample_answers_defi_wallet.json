@@ -1,0 +1,480 @@
+{
+ "wallet": "0x1f735797c030e7780f803706c5ed8e2b269a528c",
+ "block": 20255115,
+ "timestamp": 1792015250,
+ "answers": [
+  {
+   "question": "what is in my wallet?",
+   "type": "wallet",
+   "text": "Tokens sitting in the wallet (not earning): $39,951.44 priced\n• 0.4888 BTCVC ($39,940.17)\n• 8.6258 PROS ($5.05)\n• 0.0019 ETHVP ($4.59)\n• 2.7865 WPROS ($1.63)\n• 10.0000 VWTVS (no price)\n• 40.7942 CFVP (no price)\n• 1.3783 BTCVP (no price)\n• 3.118e-8 UNI-V2 (no price)\nWhat I could NOT read or value: VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals; CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals; BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals; UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals",
+   "sources": [
+    "0x1f735797c030e7780f803706c5ed8e2b269a528c get_balance @ block 20,255,115",
+    "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115",
+    "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 balanceOf(wallet) @ block 20,255,115",
+    "0xde0ed48021050a4979068a1708f6bbfb3939f385 balanceOf(wallet) @ block 20,255,115",
+    "Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price",
+    "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d balanceOf(wallet) @ block 20,255,115",
+    "Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price",
+    "0x97ae2f0d16b9828dd7a014752366dead2abf963c balanceOf(wallet) @ block 20,255,115",
+    "0xa3b81aa35a2462c588639483ebe68a856cb32b0d balanceOf(wallet) @ block 20,255,115",
+    "0x79d154287ddc77e5c10127e68c2df1a942a330bb balanceOf(wallet) @ block 20,255,115",
+    "0xea3871093054e64c5f6e443347014f3549335c38 balanceOf(wallet) @ block 20,255,115"
+   ]
+  },
+  {
+   "question": "where is my BTCVP?",
+   "type": "where_token",
+   "text": "Your BTCVP: 1.3783 in total across 1 place(s):\n• 1.3783 BTCVP (no price) — held in your wallet",
+   "sources": [
+    "0x79d154287ddc77e5c10127e68c2df1a942a330bb balanceOf(wallet) @ block 20,255,115"
+   ]
+  },
+  {
+   "question": "how much do I owe?",
+   "type": "debt",
+   "text": "You owe $0.06 in total:\n• 0.1000 WPROS ($0.06) — BORROWED (owed) in Morpho Blue · ETHVP/WPROS, borrow APY 0.20%, health factor 1.588\n• 5.000e-5 USDC ($0.00) — BORROWED (owed) in Morpho Blue · BTCVC/USDC, borrow APY 0.03%, health factor 31.460",
+   "sources": [
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115",
+    "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115",
+    "0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115",
+    "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115",
+    "0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115",
+    "USDC counted as $1.00 (assumption, no USDC/USD feed used)"
+   ]
+  },
+  {
+   "question": "am I at risk of liquidation?",
+   "type": "health",
+   "text": "Liquidation risk (health factor < 1.0 = can be liquidated):\n• Morpho ETHVP/WPROS: health factor 1.588 (healthy); liquidation if the ETHVP price falls 37.0% (LLTV 38.5%)\n• Morpho BTCVC/USDC: health factor 31.460 (healthy); liquidation if the BTCVC price falls 96.8% (LLTV 38.5%)",
+   "sources": [
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115",
+    "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115",
+    "0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115",
+    "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115",
+    "Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115",
+    "0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115",
+    "USDC counted as $1.00 (assumption, no USDC/USD feed used)",
+    "Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price"
+   ]
+  },
+  {
+   "question": "what am I earning?",
+   "type": "earning",
+   "text": "You are earning about $0.99 per year (≈ $0.00/day) at current rates, and paying about $0.00 per year in borrow interest → net ≈ $0.99/year.\n• 527.0979 WPROS ($308.68) — deposited in Vault Vishwa WPROS Vault · vishwaWPROS, 7-day share-price APY 0.16% → ≈ $0.49/year\n• 200.0081 USDC ($200.01) — deposited in Vault Vishwa USDC Vault · vishwaUSDC, 7-day share-price APY 0.00% → ≈ $0.00/year\n• 10.0469 USDC ($10.05) — deposited in Vault VRPC-Weekly · VRPCW, 7-day share-price APY 5.00% → ≈ $0.50/year\n• cost: 0.1000 WPROS ($0.06) — BORROWED (owed) in Morpho Blue · ETHVP/WPROS, borrow APY 0.20% → ≈ −$0.00/year\n• cost: 5.000e-5 USDC ($0.00) — BORROWED (owed) in Morpho Blue · BTCVC/USDC, borrow APY 0.03% → ≈ −$0.00/year\nRates are current on-chain rates and change every block; vault APY is the last 7 days' share-price growth, annualised.\nWhat I could NOT read or value: VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals; CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals; BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals; UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals",
+   "sources": [
+    "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,115",
+    "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,115",
+    "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,430",
+    "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115",
+    "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 balanceOf(wallet) @ block 20,255,115",
+    "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(shares) @ block 20,255,115",
+    "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(1 share) @ block 19,649,430",
+    "USDC counted as $1.00 (assumption, no USDC/USD feed used)",
+    "0xa5fb3eca411926e64c41cd9d200440953a936378 balanceOf(wallet) @ block 20,255,115",
+    "0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(shares) @ block 20,255,115",
+    "0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(1 share) @ block 19,649,430",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115",
+    "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115",
+    "0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115",
+    "0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115"
+   ]
+  },
+  {
+   "question": "which protocols am I in?",
+   "type": "protocols",
+   "text": "You have positions in: Morpho Blue, Vault VRPC-Weekly, Vault Vishwa USDC Vault, Vault Vishwa WPROS Vault.\nI checked: Avalon lending pool 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba; Morpho Blue 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb; ERC-4626 vault Vishwa WPROS Vault 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73; ERC-4626 vault VRPC-Weekly 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268; ERC-4626 vault Vishwa USDC Vault 0xa5fb3eca411926e64c41cd9d200440953a936378. Other Pharos protocols (DEX LPs, other lenders) are NOT read by this assistant, so positions there would not show up.\nWhat I could NOT read or value: VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals; CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals; BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals; UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals",
+   "sources": [
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115",
+    "0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115",
+    "Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115",
+    "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115",
+    "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115",
+    "0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115",
+    "Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price",
+    "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115",
+    "USDC counted as $1.00 (assumption, no USDC/USD feed used)",
+    "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,115",
+    "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,115",
+    "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,430",
+    "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 balanceOf(wallet) @ block 20,255,115",
+    "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(shares) @ block 20,255,115",
+    "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(1 share) @ block 19,649,430",
+    "0xa5fb3eca411926e64c41cd9d200440953a936378 balanceOf(wallet) @ block 20,255,115",
+    "0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(shares) @ block 20,255,115",
+    "0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(1 share) @ block 19,649,430"
+   ]
+  }
+ ],
+ "positions": [
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "native",
+   "symbol": "PROS",
+   "amount": "8.62579342581824866",
+   "usd_key": "native",
+   "src": [
+    [
+     "0x1f735797c030e7780f803706c5ed8e2b269a528c",
+     "get_balance",
+     20255115
+    ]
+   ],
+   "usd": "5.051433398303030920057220499459746",
+   "price_src": "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115"
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+   "symbol": "WPROS",
+   "amount": "2.786506154137889988",
+   "usd_key": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+   "src": [
+    [
+     "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": "1.6318325233082922027807664830549828",
+   "price_src": "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115"
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0xde0ed48021050a4979068a1708f6bbfb3939f385",
+   "symbol": "ETHVP",
+   "amount": "0.0019",
+   "usd_key": "0xde0ed48021050a4979068a1708f6bbfb3939f385",
+   "src": [
+    [
+     "0xde0ed48021050a4979068a1708f6bbfb3939f385",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": "4.58876248688923744999999999999999999999918940823295852544",
+   "price_src": "Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price"
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d",
+   "symbol": "BTCVC",
+   "amount": "0.48877722",
+   "usd_key": "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d",
+   "src": [
+    [
+     "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": "39940.169126888199546260610925086145491765298074",
+   "price_src": "Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price"
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0x97ae2f0d16b9828dd7a014752366dead2abf963c",
+   "symbol": "VWTVS",
+   "amount": "10",
+   "usd_key": "0x97ae2f0d16b9828dd7a014752366dead2abf963c",
+   "src": [
+    [
+     "0x97ae2f0d16b9828dd7a014752366dead2abf963c",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": null,
+   "price_src": null
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0xa3b81aa35a2462c588639483ebe68a856cb32b0d",
+   "symbol": "CFVP",
+   "amount": "40.794240436677856438",
+   "usd_key": "0xa3b81aa35a2462c588639483ebe68a856cb32b0d",
+   "src": [
+    [
+     "0xa3b81aa35a2462c588639483ebe68a856cb32b0d",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": null,
+   "price_src": null
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0x79d154287ddc77e5c10127e68c2df1a942a330bb",
+   "symbol": "BTCVP",
+   "amount": "1.37831118",
+   "usd_key": "0x79d154287ddc77e5c10127e68c2df1a942a330bb",
+   "src": [
+    [
+     "0x79d154287ddc77e5c10127e68c2df1a942a330bb",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": null,
+   "price_src": null
+  },
+  {
+   "kind": "wallet",
+   "protocol": "Wallet",
+   "token": "0xea3871093054e64c5f6e443347014f3549335c38",
+   "symbol": "UNI-V2",
+   "amount": "3.1184289917E-8",
+   "usd_key": "0xea3871093054e64c5f6e443347014f3549335c38",
+   "src": [
+    [
+     "0xea3871093054e64c5f6e443347014f3549335c38",
+     "balanceOf(wallet)",
+     20255115
+    ]
+   ],
+   "usd": null,
+   "price_src": null
+  },
+  {
+   "kind": "collateral",
+   "protocol": "Morpho Blue",
+   "market": "ETHVP/WPROS",
+   "market_id": "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69",
+   "token": "0xde0ed48021050a4979068a1708f6bbfb3939f385",
+   "symbol": "ETHVP",
+   "amount": "0.0001",
+   "usd_key": "0xde0ed48021050a4979068a1708f6bbfb3939f385",
+   "apy": null,
+   "src": [
+    [
+     "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+     "position(0xab78…5c69, wallet)",
+     20255115
+    ],
+    [
+     "0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a",
+     "price()",
+     20255115
+    ]
+   ],
+   "usd": "0.24151381509943354999999999999999999999995733727541886976",
+   "price_src": "Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price"
+  },
+  {
+   "kind": "debt",
+   "protocol": "Morpho Blue",
+   "market": "ETHVP/WPROS",
+   "market_id": "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69",
+   "token": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+   "symbol": "WPROS",
+   "amount": "0.100000001653299113",
+   "usd_key": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+   "apy": "0.001990980565280363150104658842565186205320060253143310546875",
+   "health_factor": "1.58776828423156260993764574621887273979410595438524822986851",
+   "lltv": "0.385",
+   "src": [
+    [
+     "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+     "position(0xab78…5c69, wallet)",
+     20255115
+    ],
+    [
+     "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+     "market(0xab78…5c69)",
+     20255115
+    ],
+    [
+     "0xd5e02889c13230458506cc842347c4e62f8cdf3a",
+     "borrowRateView()",
+     20255115
+    ],
+    [
+     "0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a",
+     "price()",
+     20255115
+    ]
+   ],
+   "usd": "0.0585619575203211182315926024538953",
+   "price_src": "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115"
+  },
+  {
+   "kind": "collateral",
+   "protocol": "Morpho Blue",
+   "market": "BTCVC/USDC",
+   "market_id": "0xf203d06ff4b5339e76d576b369c6799168d76112d489651b8347a501cc7795c5",
+   "token": "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d",
+   "symbol": "BTCVC",
+   "amount": "5E-8",
+   "usd_key": "0x4b01436d82dff601281f7ebdf44e73a47d77ee3d",
+   "apy": null,
+   "src": [
+    [
+     "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+     "position(0xf203…95c5, wallet)",
+     20255115
+    ],
+    [
+     "0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10",
+     "price()",
+     20255115
+    ]
+   ],
+   "usd": "0.004085723259247658835886481260837621022085",
+   "price_src": "Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price"
+  },
+  {
+   "kind": "debt",
+   "protocol": "Morpho Blue",
+   "market": "BTCVC/USDC",
+   "market_id": "0xf203d06ff4b5339e76d576b369c6799168d76112d489651b8347a501cc7795c5",
+   "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+   "symbol": "USDC",
+   "amount": "0.00005",
+   "usd_key": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+   "apy": "0.0002917495099243915044999464480923734299722127616405487060546875",
+   "health_factor": "31.4600690962069730363259057084496818700545",
+   "lltv": "0.385",
+   "src": [
+    [
+     "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+     "position(0xf203…95c5, wallet)",
+     20255115
+    ],
+    [
+     "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+     "market(0xf203…95c5)",
+     20255115
+    ],
+    [
+     "0xd5e02889c13230458506cc842347c4e62f8cdf3a",
+     "borrowRateView()",
+     20255115
+    ],
+    [
+     "0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10",
+     "price()",
+     20255115
+    ]
+   ],
+   "usd": "0.00005",
+   "price_src": "USDC counted as $1.00 (assumption, no USDC/USD feed used)"
+  },
+  {
+   "kind": "vault",
+   "protocol": "Vault Vishwa WPROS Vault",
+   "market": "vishwaWPROS",
+   "token": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+   "symbol": "WPROS",
+   "amount": "527.09791834257857659",
+   "usd_key": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+   "apy": "0.0015894581554791731292652912088669836521148681640625",
+   "shares": "526.995415589068272563",
+   "share_token": "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73",
+   "src": [
+    [
+     "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73",
+     "balanceOf(wallet)",
+     20255115
+    ],
+    [
+     "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73",
+     "convertToAssets(shares)",
+     20255115
+    ],
+    [
+     "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73",
+     "convertToAssets(1 share)",
+     19649430
+    ]
+   ],
+   "usd": "308.678853926893007617511809212114779",
+   "price_src": "Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115"
+  },
+  {
+   "kind": "vault",
+   "protocol": "Vault VRPC-Weekly",
+   "market": "VRPCW",
+   "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+   "symbol": "USDC",
+   "amount": "10.046894",
+   "usd_key": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+   "apy": "0.050019709831088388085618134937249124050140380859375",
+   "shares": "9.822474",
+   "share_token": "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268",
+   "src": [
+    [
+     "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268",
+     "balanceOf(wallet)",
+     20255115
+    ],
+    [
+     "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268",
+     "convertToAssets(shares)",
+     20255115
+    ],
+    [
+     "0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268",
+     "convertToAssets(1 share)",
+     19649430
+    ]
+   ],
+   "usd": "10.046894",
+   "price_src": "USDC counted as $1.00 (assumption, no USDC/USD feed used)"
+  },
+  {
+   "kind": "vault",
+   "protocol": "Vault Vishwa USDC Vault",
+   "market": "vishwaUSDC",
+   "token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+   "symbol": "USDC",
+   "amount": "200.008057",
+   "usd_key": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+   "apy": "0",
+   "shares": "200",
+   "share_token": "0xa5fb3eca411926e64c41cd9d200440953a936378",
+   "src": [
+    [
+     "0xa5fb3eca411926e64c41cd9d200440953a936378",
+     "balanceOf(wallet)",
+     20255115
+    ],
+    [
+     "0xa5fb3eca411926e64c41cd9d200440953a936378",
+     "convertToAssets(shares)",
+     20255115
+    ],
+    [
+     "0xa5fb3eca411926e64c41cd9d200440953a936378",
+     "convertToAssets(1 share)",
+     19649430
+    ]
+   ],
+   "usd": "200.008057",
+   "price_src": "USDC counted as $1.00 (assumption, no USDC/USD feed used)"
+  }
+ ],
+ "unreadable": [
+  "VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals",
+  "CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals",
+  "BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals",
+  "UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals"
+ ]
+}
