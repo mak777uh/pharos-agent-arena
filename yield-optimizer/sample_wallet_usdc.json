@@ -1,0 +1,1116 @@
+{
+  "token": "USDC",
+  "block": 20256702,
+  "gas_price_wei": 10000000000,
+  "pros_usd": "0.5856195655211681",
+  "venues": [
+    {
+      "key": "Avalon:USDC reserve",
+      "protocol": "Avalon",
+      "kind": "lending pool (Aave V3 fork)",
+      "label": "USDC reserve",
+      "address": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+      "asset": "USDC",
+      "apy": 0.019549762328178646,
+      "apy_basis": "current liquidity rate (getReserveData.currentLiquidityRate, APR\u2192APY)",
+      "tvl": "501262.409518",
+      "liquidity": "55015.931814",
+      "headroom": "498737.590482",
+      "notes": [
+        "supply cap 1,000,000 USDC",
+        "reserve factor 45% (already inside the rate)"
+      ],
+      "sources": [
+        "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba getReserveData(USDC) @ block 20,256,702",
+        "0xe2ec2f3933ad2f83de9a9dda844558354384e87d totalSupply() @ block 20,256,702",
+        "0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(aToken) @ block 20,256,702",
+        "0xe2ec2f3933ad2f83de9a9dda844558354384e87d balanceOf(wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:ETHVP/USDC market 0x81c8e4d8\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "ETHVP/USDC market 0x81c8e4d8\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.0,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "0",
+      "liquidity": "0",
+      "headroom": null,
+      "notes": [
+        "collateral ETHVP, LLTV 38.5%, utilisation 0.0%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x81c8\u2026751a) @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0x81c8\u2026751a, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:APC3M/USDC market 0xba0d2638\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "APC3M/USDC market 0xba0d2638\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.029530687166302395,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "1342785.414268",
+      "liquidity": "337752.764204",
+      "headroom": null,
+      "notes": [
+        "collateral APC3M, LLTV 86.0%, utilisation 74.8%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xba0d\u202691bc) @ block 20,256,702",
+        "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xba0d\u202691bc, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:VRPCW/USDC market 0x082e865d\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "VRPCW/USDC market 0x082e865d\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.0,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "2",
+      "liquidity": "2",
+      "headroom": null,
+      "notes": [
+        "collateral VRPCW, LLTV 86.0%, utilisation 0.0%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x082e\u2026e90f) @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0x082e\u2026e90f, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:APC3M/USDC market 0x1aa31baf\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "APC3M/USDC market 0x1aa31baf\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.0,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "1.0001",
+      "liquidity": "1.0001",
+      "headroom": null,
+      "notes": [
+        "collateral APC3M, LLTV 77.0%, utilisation 0.0%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x1aa3\u20267219) @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0x1aa3\u20267219, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:syzUSD/USDC market 0xc79579a0\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "syzUSD/USDC market 0xc79579a0\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.053162314564302864,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "3414773.686665",
+      "liquidity": "331425.227127",
+      "headroom": null,
+      "notes": [
+        "collateral syzUSD, LLTV 91.5%, utilisation 90.3%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xc795\u2026fd86) @ block 20,256,702",
+        "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xc795\u2026fd86, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:BTCVC/USDC market 0xf203d06f\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "BTCVC/USDC market 0xf203d06f\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 1.4601590165027075e-05,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "200.010712",
+      "liquidity": "190.0005",
+      "headroom": null,
+      "notes": [
+        "collateral BTCVC, LLTV 38.5%, utilisation 5.0%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203\u202695c5) @ block 20,256,702",
+        "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203\u202695c5, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:wsrUSD/USDC market 0xbea21c37\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "wsrUSD/USDC market 0xbea21c37\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.044311596194186474,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "6568920.720153",
+      "liquidity": "630078.843394",
+      "headroom": null,
+      "notes": [
+        "collateral wsrUSD, LLTV 91.5%, utilisation 90.4%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xbea2\u20269e73) @ block 20,256,702",
+        "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xbea2\u20269e73, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:-/USDC market 0x0db7e824\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "-/USDC market 0x0db7e824\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.0,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "0",
+      "liquidity": "0",
+      "headroom": null,
+      "notes": [
+        "collateral none, LLTV 0.0%, utilisation 0.0%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0x0db7\u20263227) @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0x0db7\u20263227, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "Morpho Blue:WPROS/USDC market 0xb3b8a31c\u2026",
+      "protocol": "Morpho Blue",
+      "kind": "isolated lending market",
+      "label": "WPROS/USDC market 0xb3b8a31c\u2026",
+      "address": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+      "asset": "USDC",
+      "apy": 0.04505986050795577,
+      "apy_basis": "borrow APY (IRM borrowRateView) \u00d7 utilisation \u00d7 (1 \u2212 market fee)",
+      "tvl": "1098122.228093",
+      "liquidity": "98563.160001",
+      "headroom": null,
+      "notes": [
+        "collateral WPROS, LLTV 38.5%, utilisation 91.0%, market fee 0%"
+      ],
+      "sources": [
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8\u2026e1ba) @ block 20,256,702",
+        "0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,256,702",
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xb3b8\u2026e1ba, wallet) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+      "protocol": "ERC-4626 vault",
+      "kind": "curated vault",
+      "label": "SharpByte USDC Pharos Ecosystem",
+      "address": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+      "asset": "USDC",
+      "apy": 0.05521203767393357,
+      "apy_basis": "realised share-price growth over the last 7 days, annualised (net of vault fees)",
+      "tvl": "2135132.500181",
+      "liquidity": null,
+      "headroom": null,
+      "notes": [
+        "performanceFee 15.0% (already netted in share price)",
+        "managementFee 0.0% (already netted in share price)",
+        "idle USDC in the vault contract: 792,260.95"
+      ],
+      "sources": [
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 totalAssets() @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(1 share) @ block 19,651,209",
+        "0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(vault) @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 performanceFee() @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 managementFee() @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 balanceOf(wallet) @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 convertToAssets(shares) @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 previewDeposit(amount) @ block 20,256,702",
+        "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1 previewRedeem(shares) @ block 20,256,702"
+      ]
+    },
+    {
+      "key": "ERC-4626 vault:SharpByte Pharos Prime",
+      "protocol": "ERC-4626 vault",
+      "kind": "curated vault",
+      "label": "SharpByte Pharos Prime",
+      "address": "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342",
+      "asset": "USDC",
+      "apy": 0.03973223594122266,
+      "apy_basis": "realised share-price growth over the last 7 days, annualised (net of vault fees)",
+      "tvl": "70493.807354",
+      "liquidity": null,
+      "headroom": null,
+      "notes": [
+        "performanceFee raw 24907483 (scale not recognised, not used)",
+        "idle USDC in the vault contract: 0.00"
+      ],
+      "sources": [
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 totalAssets() @ block 20,256,702",
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 20,256,702",
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(1 share) @ block 19,651,209",
+        "0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(vault) @ block 20,256,702",
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 balanceOf(wallet) @ block 20,256,702",
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 convertToAssets(shares) @ block 20,256,702",
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 previewDeposit(amount) @ block 20,256,702",
+        "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342 previewRedeem(shares) @ block 20,256,702"
+      ]
+    }
+  ],
+  "unavailable": [],
+  "results": [
+    {
+      "from": "Avalon \u00b7 USDC reserve",
+      "from_apy": 0.019549762328178646,
+      "amount": "250628.247334",
+      "candidates": [
+        {
+          "venue": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+          "to": "ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem",
+          "move": "54465.772496",
+          "apy_now": "0.0552120376739335672056085968506522476673126220703125",
+          "apy_after": "0.0538386504546823896300513226290560713424902920143787731337973",
+          "gain_year": "1867.57077983894858155042191286683985378695152742986287613833",
+          "gain_hold": "153.498968205940979305514129824671768804406974857249003518219",
+          "gas_units": 483220,
+          "gas_usd": "0.00282983086451138849282",
+          "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 154,202 (median gasUsed of 50 recent 0x6e553f65 txs to 0x15c2\u2026aff1 (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "entry = 1 \u2212 previewDeposit/convertToShares; exit = 1 \u2212 previewRedeem/convertToAssets",
+          "cost": "0.00282983086451138849282",
+          "net": "153.496138375076467917021309824671768804406974857249003518219",
+          "breakeven_days": "0.000553065124329975179118852332417745789145051108556835767366077",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff10000000000000000000000000000000000000000000000000000000cae69bbd0",
+              "description": "approve 54465.772496 USDC to ERC-4626 vault 0x15c2\u2026aff1"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+              "value": "0x0",
+              "data": "0x6e553f650000000000000000000000000000000000000000000000000000000cae69bbd0000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+              "description": "SharpByte USDC Pharos Ecosystem: deposit(54465.772496 USDC, receiver=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:syzUSD/USDC market 0xc79579a0\u2026",
+          "to": "Morpho Blue \u00b7 syzUSD/USDC market 0xc79579a0\u2026",
+          "move": "54465.772496",
+          "apy_now": "0.0531623145643028662655341352460280675985338578845775616059030",
+          "apy_after": "0.0523276859477125428388028548716085387858441051741834224185450",
+          "gain_year": "1785.27493075279809988630726418111123590010708222587379588447",
+          "gain_hold": "146.734925815298473963258131302557087882200582100756750346669",
+          "gas_units": 467300,
+          "gas_usd": "0.0027366002296804185313",
+          "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.0027366002296804185313",
+          "net": "146.732189215068793544726831302557087882200582100756750346669",
+          "breakeven_days": "0.000559498745334514483742795052446213241489557588737081110567283",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000000cae69bbd0",
+              "description": "approve 54465.772496 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000054df79d8edf36d15cd83fbedbdd90807fc8289340000000000000000000000004eefc4c6e7216aedd5e809e4fc74fb8859b3fa46000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b80000000000000000000000000000000000000000000000000000000000cae69bbd00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xc795\u2026fd86, assets=54465.772496, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:wsrUSD/USDC market 0xbea21c37\u2026",
+          "to": "Morpho Blue \u00b7 wsrUSD/USDC market 0xbea21c37\u2026",
+          "move": "54465.772496",
+          "apy_now": "0.0443115961941864732624435970090995058608529460513887020128482",
+          "apy_after": "0.0439472107970900216293449010760389735286432511519260531436261",
+          "gain_year": "1328.82587779061052691803558927393960185977964127269740059727",
+          "gain_hold": "109.218565297858399472715253912926542618612025310084717857310",
+          "gas_units": 467300,
+          "gas_usd": "0.0027366002296804185313",
+          "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.0027366002296804185313",
+          "net": "109.215828697628719054183953912926542618612025310084717857310",
+          "breakeven_days": "0.000751685454451051701414399061981802962089013829667672373013003",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000000cae69bbd0",
+              "description": "approve 54465.772496 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac18150000000000000000000000004809010926aec940b550d34a46a52739f996d75d0000000000000000000000009416f861970c2a39c02ab7696ef0496383d4e81b000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b80000000000000000000000000000000000000000000000000000000000cae69bbd00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xbea2\u20269e73, assets=54465.772496, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:WPROS/USDC market 0xb3b8a31c\u2026",
+          "to": "Morpho Blue \u00b7 WPROS/USDC market 0xb3b8a31c\u2026",
+          "move": "54465.772496",
+          "apy_now": "0.0450598605079557686800770177159001687089417878563965158537493",
+          "apy_after": "0.0429305479436451487581440096326528692491898365290357513663159",
+          "gain_year": "1273.45255010974789123756552560607898228733795319199459002951",
+          "gain_hold": "104.667332885732703389388947310088683475671612591122843016124",
+          "gas_units": 467300,
+          "gas_usd": "0.0027366002296804185313",
+          "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.0027366002296804185313",
+          "net": "104.664596285503022970857647310088683475671612591122843016124",
+          "breakeven_days": "0.000784370869371826783073123563094671287118955004589659336109521",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000000cae69bbd0",
+              "description": "approve 54465.772496 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000f4331ff581c31d897da6a3cd552dc39bd44983a5000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000557cb75ce8680000000000000000000000000000000000000000000000000000000000cae69bbd00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xb3b8\u2026e1ba, assets=54465.772496, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:APC3M/USDC market 0xba0d2638\u2026",
+          "to": "Morpho Blue \u00b7 APC3M/USDC market 0xba0d2638\u2026",
+          "move": "54465.772496",
+          "apy_now": "0.0295306871663023936885260051272461528840673826339050950094523",
+          "apy_after": "0.0283795615103812019415070169564836973412224669231382976658183",
+          "gain_year": "480.921833443211277203571654688230664339272950445638696872515",
+          "gain_hold": "39.5278219268392830578278072346490956991183246941620846744532",
+          "gas_units": 467300,
+          "gas_usd": "0.0027366002296804185313",
+          "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.0027366002296804185313",
+          "net": "39.5250853266096026392965072346490956991183246941620846744532",
+          "breakeven_days": "0.00207696763667790745728526918351895117463572454846535657402956",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000000cae69bbd0",
+              "description": "approve 54465.772496 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000ec47e6f3ef1e7bc8e00f670ac3d5016798fe44d00000000000000000000000004eb6fcffc4d1b27ea773edc062d5adfc94a81fae000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000bef55718ad600000000000000000000000000000000000000000000000000000000000cae69bbd00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xba0d\u202691bc, assets=54465.772496, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "ERC-4626 vault:SharpByte Pharos Prime",
+          "to": "ERC-4626 vault \u00b7 SharpByte Pharos Prime",
+          "move": "54465.772496",
+          "apy_now": "0.0397322359412226600028361644945107400417327880859375",
+          "apy_after": "0.0224142605916758375005001561190852139295656017178532832709775",
+          "gain_year": "156.017110734825106704923759143352818344540215758046766005031",
+          "gain_hold": "12.8233241699856252086238706145221494529759081444969944661669",
+          "gas_units": 494281,
+          "gas_usd": "0.002894606244653684896361",
+          "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 144,096 (median gasUsed of 7 recent 0x6e553f65 txs to 0x6973\u2026a342 (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "entry = 1 \u2212 previewDeposit/convertToShares; exit = 1 \u2212 previewRedeem/convertToAssets",
+          "cost": "0.002894606244653684896361",
+          "net": "12.8204295637409715237275096145221494529759081444969944661669",
+          "breakeven_days": "0.00677189363604054403695772911899355503651573169063225821078335",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b3000000000000000000000000697322f0bb715fc1e4c1f1283a9f8e546cb4a3420000000000000000000000000000000000000000000000000000000cae69bbd0",
+              "description": "approve 54465.772496 USDC to ERC-4626 vault 0x6973\u2026a342"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342",
+              "value": "0x0",
+              "data": "0x6e553f650000000000000000000000000000000000000000000000000000000cae69bbd0000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+              "description": "SharpByte Pharos Prime: deposit(54465.772496 USDC, receiver=you)"
+            }
+          ]
+        }
+      ],
+      "skipped": [
+        "Morpho Blue \u00b7 ETHVP/USDC market 0x81c8e4d8\u2026: too small (size $0.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 VRPCW/USDC market 0x082e865d\u2026: too small (size $2.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 APC3M/USDC market 0x1aa31baf\u2026: too small (size $1.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 BTCVC/USDC market 0xf203d06f\u2026: too small (size $200.01 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 -/USDC market 0x0db7e824\u2026: too small (size $0.00 < --min-tvl-usd 10,000)"
+      ],
+      "partial_exit": "only 55,015.93 USDC is withdrawable in Avalon \u00b7 USDC reserve right now (the rest is lent out); evaluating a partial move of 54,465.77 (99% of it)",
+      "held_since": "last deposit 50.6 d ago (block 15,832,367, https://www.pharosscan.xyz/tx/0x53a76ba436464b29be42c7d6c82b05c72d5fe2f9178fdfddd81543818c5973a8)",
+      "exit_ok": true,
+      "exit_msg": "ok",
+      "withdraw_tx": {
+        "chainId": 1672,
+        "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+        "to": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+        "value": "0x0",
+        "data": "0x69328dec000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac18150000000000000000000000000000000000000000000000000000000cae69bbd0000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+        "description": "Avalon withdraw(USDC, 54465.772496, to=you)"
+      },
+      "best": {
+        "venue": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+        "to": "ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem",
+        "move": "54465.772496",
+        "apy_now": "0.0552120376739335672056085968506522476673126220703125",
+        "apy_after": "0.0538386504546823896300513226290560713424902920143787731337973",
+        "gain_year": "1867.57077983894858155042191286683985378695152742986287613833",
+        "gain_hold": "153.498968205940979305514129824671768804406974857249003518219",
+        "gas_units": 483220,
+        "gas_usd": "0.00282983086451138849282",
+        "gas_detail": "withdraw 278,689 (estimate_gas (simulated from the wallet)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 154,202 (median gasUsed of 50 recent 0x6e553f65 txs to 0x15c2\u2026aff1 (explorer))",
+        "fee_bps": "0",
+        "fee_usd": "0.000000",
+        "fee_detail": "entry = 1 \u2212 previewDeposit/convertToShares; exit = 1 \u2212 previewRedeem/convertToAssets",
+        "cost": "0.00282983086451138849282",
+        "net": "153.496138375076467917021309824671768804406974857249003518219",
+        "breakeven_days": "0.000553065124329975179118852332417745789145051108556835767366077",
+        "deposit_txs": [
+          {
+            "chainId": 1672,
+            "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+            "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+            "value": "0x0",
+            "data": "0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff10000000000000000000000000000000000000000000000000000000cae69bbd0",
+            "description": "approve 54465.772496 USDC to ERC-4626 vault 0x15c2\u2026aff1"
+          },
+          {
+            "chainId": 1672,
+            "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+            "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+            "value": "0x0",
+            "data": "0x6e553f650000000000000000000000000000000000000000000000000000000cae69bbd0000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+            "description": "SharpByte USDC Pharos Ecosystem: deposit(54465.772496 USDC, receiver=you)"
+          }
+        ]
+      },
+      "decision": "MOVE",
+      "reason": "move 54,465.77 USDC (partial: 54,465.77 of 250,628.25 \u2014 exit liquidity limit) to ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem: 5.38% expected after your deposit vs 1.95% now \u2192 +$153.50 over 30 days, costs $0.0028, net $153.50, break-even in 0.8 min"
+    },
+    {
+      "from": "ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem",
+      "from_apy": 0.05521203767393357,
+      "amount": "676101.189273",
+      "candidates": [
+        {
+          "venue": "Morpho Blue:syzUSD/USDC market 0xc79579a0\u2026",
+          "to": "Morpho Blue \u00b7 syzUSD/USDC market 0xc79579a0\u2026",
+          "move": "676101.189273",
+          "apy_now": "0.0531623145643028662655341352460280675985338578845775616059030",
+          "apy_after": "0.0443761489661216035391359643381349928583040985178640678129684",
+          "gain_year": "-7326.15724218153984055961235862000203530384124780421579265636",
+          "gain_hold": "-602.149910316290945799420193859178249477028047764730065149838",
+          "gas_units": 394045,
+          "gas_usd": "0.002307604616957886839645",
+          "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002307604616957886839645",
+          "net": "-602.152217920907903686259838859178249477028047764730065149838",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000009d6ac56e99",
+              "description": "approve 676101.189273 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000054df79d8edf36d15cd83fbedbdd90807fc8289340000000000000000000000004eefc4c6e7216aedd5e809e4fc74fb8859b3fa46000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b80000000000000000000000000000000000000000000000000000000009d6ac56e990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xc795\u2026fd86, assets=676101.189273, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:wsrUSD/USDC market 0xbea21c37\u2026",
+          "to": "Morpho Blue \u00b7 wsrUSD/USDC market 0xbea21c37\u2026",
+          "move": "676101.189273",
+          "apy_now": "0.0443115961941864732624435970090995058608529460513887020128482",
+          "apy_after": "0.0401764640634614219334402439127133492601691857495096302327380",
+          "gain_year": "-10165.5691994419518655526476888140927744772026551907637998372",
+          "gain_hold": "-835.526235570571386209806659354582967765249533303350449301688",
+          "gas_units": 394045,
+          "gas_usd": "0.002307604616957886839645",
+          "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002307604616957886839645",
+          "net": "-835.528543175188344096646304354582967765249533303350449301688",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000009d6ac56e99",
+              "description": "approve 676101.189273 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac18150000000000000000000000004809010926aec940b550d34a46a52739f996d75d0000000000000000000000009416f861970c2a39c02ab7696ef0496383d4e81b000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b80000000000000000000000000000000000000000000000000000000009d6ac56e990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xbea2\u20269e73, assets=676101.189273, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:WPROS/USDC market 0xb3b8a31c\u2026",
+          "to": "Morpho Blue \u00b7 WPROS/USDC market 0xb3b8a31c\u2026",
+          "move": "676101.189273",
+          "apy_now": "0.0450598605079557686800770177159001687089417878563965158537493",
+          "apy_after": "0.0278889535186136090029106517524684594975190202424259350775289",
+          "gain_year": "-18473.1696920180863906767322780753199339257622507803332002214",
+          "gain_hold": "-1518.34271441244545676795059819797150141855580143399998905929",
+          "gas_units": 394045,
+          "gas_usd": "0.002307604616957886839645",
+          "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002307604616957886839645",
+          "net": "-1518.34502201706241465479024319797150141855580143399998905929",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000009d6ac56e99",
+              "description": "approve 676101.189273 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000f4331ff581c31d897da6a3cd552dc39bd44983a5000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000557cb75ce8680000000000000000000000000000000000000000000000000000000009d6ac56e990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xb3b8\u2026e1ba, assets=676101.189273, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Avalon:USDC reserve",
+          "to": "Avalon \u00b7 USDC reserve",
+          "move": "498737.590482",
+          "apy_now": "0.0195497623281786457594133565862648538313806056976318359375",
+          "apy_after": "0.00979956097012705344171771205258325565523591649252921342849731",
+          "gain_year": "-22648.9092090764182721395085413519722025016411848241659754422",
+          "gain_hold": "-1861.55418156792478949091851024810730431520338505404103907744",
+          "gas_units": 457583,
+          "gas_usd": "0.002679695576498726627023",
+          "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 201,820 (median gasUsed of 10 recent 0x617ba037 txs to 0xd9b9\u20260cba (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002679695576498726627023",
+          "net": "-1861.55686126350128821754553324810730431520338505404103907744",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b3000000000000000000000000d9b9e4f8257bff9b1415d74c1ef88d8057f60cba000000000000000000000000000000000000000000000000000000741f13b0d2",
+              "description": "approve 498737.590482 USDC to Avalon 0xd9b9\u20260cba"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+              "value": "0x0",
+              "data": "0x617ba037000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000000000000000000000000000000000741f13b0d2000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c90000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Avalon supply(USDC, 498737.590482, onBehalfOf=you, referral=0)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:APC3M/USDC market 0xba0d2638\u2026",
+          "to": "Morpho Blue \u00b7 APC3M/USDC market 0xba0d2638\u2026",
+          "move": "676101.189273",
+          "apy_now": "0.0295306871663023936885260051272461528840673826339050950094523",
+          "apy_after": "0.0196412101257557238051440840506173629718507226129349281987709",
+          "gain_year": "-24049.4788087478306271624115047361167784892166491925296686079",
+          "gain_hold": "-1976.66949112995868168458176751255754343746986157746819194038",
+          "gas_units": 394045,
+          "gas_usd": "0.002307604616957886839645",
+          "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002307604616957886839645",
+          "net": "-1976.67179873457563957142141251255754343746986157746819194038",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000009d6ac56e99",
+              "description": "approve 676101.189273 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000ec47e6f3ef1e7bc8e00f670ac3d5016798fe44d00000000000000000000000004eb6fcffc4d1b27ea773edc062d5adfc94a81fae000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000bef55718ad600000000000000000000000000000000000000000000000000000000009d6ac56e990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xba0d\u202691bc, assets=676101.189273, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "ERC-4626 vault:SharpByte Pharos Prime",
+          "to": "ERC-4626 vault \u00b7 SharpByte Pharos Prime",
+          "move": "676101.189273",
+          "apy_now": "0.0397322359412226600028361644945107400417327880859375",
+          "apy_after": "0.00375153409658268481470244182386920776444621631962773949408815",
+          "gain_year": "-34792.5076692344025313076050937437204456741913296769329121641",
+          "gain_hold": "-2859.65816459460842723076206249948387224719380791865202017786",
+          "gas_units": 421026,
+          "gas_usd": "0.002465610631931153204706",
+          "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 144,096 (median gasUsed of 7 recent 0x6e553f65 txs to 0x6973\u2026a342 (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "entry = 1 \u2212 previewDeposit/convertToShares; exit = 1 \u2212 previewRedeem/convertToAssets",
+          "cost": "0.002465610631931153204706",
+          "net": "-2859.66063020524035838396676849948387224719380791865202017786",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b3000000000000000000000000697322f0bb715fc1e4c1f1283a9f8e546cb4a3420000000000000000000000000000000000000000000000000000009d6ac56e99",
+              "description": "approve 676101.189273 USDC to ERC-4626 vault 0x6973\u2026a342"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342",
+              "value": "0x0",
+              "data": "0x6e553f650000000000000000000000000000000000000000000000000000009d6ac56e99000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+              "description": "SharpByte Pharos Prime: deposit(676101.189273 USDC, receiver=you)"
+            }
+          ]
+        }
+      ],
+      "skipped": [
+        "Morpho Blue \u00b7 ETHVP/USDC market 0x81c8e4d8\u2026: too small (size $0.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 VRPCW/USDC market 0x082e865d\u2026: too small (size $2.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 APC3M/USDC market 0x1aa31baf\u2026: too small (size $1.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 BTCVC/USDC market 0xf203d06f\u2026: too small (size $200.01 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 -/USDC market 0x0db7e824\u2026: too small (size $0.00 < --min-tvl-usd 10,000)"
+      ],
+      "partial_exit": null,
+      "held_since": "last deposit 23.7 d ago (block 18,165,940, https://www.pharosscan.xyz/tx/0xe032abd437d2ae72fa642e0d78f484010393130755e162da5df38f9e027dec3a)",
+      "exit_ok": true,
+      "exit_msg": "ok",
+      "withdraw_tx": {
+        "chainId": 1672,
+        "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+        "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+        "value": "0x0",
+        "data": "0xba087652000000000000000000000000000000000000000000008ee92c0a4b19b91c0806000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+        "description": "SharpByte USDC Pharos Ecosystem: redeem(674877305368125233694726 shares, receiver=you, owner=you)"
+      },
+      "best": {
+        "venue": "Morpho Blue:syzUSD/USDC market 0xc79579a0\u2026",
+        "to": "Morpho Blue \u00b7 syzUSD/USDC market 0xc79579a0\u2026",
+        "move": "676101.189273",
+        "apy_now": "0.0531623145643028662655341352460280675985338578845775616059030",
+        "apy_after": "0.0443761489661216035391359643381349928583040985178640678129684",
+        "gain_year": "-7326.15724218153984055961235862000203530384124780421579265636",
+        "gain_hold": "-602.149910316290945799420193859178249477028047764730065149838",
+        "gas_units": 394045,
+        "gas_usd": "0.002307604616957886839645",
+        "gas_detail": "withdraw 205,434 (estimate_gas (simulated from the wallet)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+        "fee_bps": "0",
+        "fee_usd": "0.000000",
+        "fee_detail": "no deposit/withdraw fee in the protocol",
+        "cost": "0.002307604616957886839645",
+        "net": "-602.152217920907903686259838859178249477028047764730065149838",
+        "breakeven_days": null,
+        "deposit_txs": [
+          {
+            "chainId": 1672,
+            "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+            "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+            "value": "0x0",
+            "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb0000000000000000000000000000000000000000000000000000009d6ac56e99",
+            "description": "approve 676101.189273 USDC to Morpho Blue 0x1857\u20264efb"
+          },
+          {
+            "chainId": 1672,
+            "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+            "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+            "value": "0x0",
+            "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000054df79d8edf36d15cd83fbedbdd90807fc8289340000000000000000000000004eefc4c6e7216aedd5e809e4fc74fb8859b3fa46000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b80000000000000000000000000000000000000000000000000000000009d6ac56e990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+            "description": "Morpho supply(market 0xc795\u2026fd86, assets=676101.189273, onBehalf=you)"
+          }
+        ]
+      },
+      "decision": "STAY PUT",
+      "reason": "best alternative (Morpho Blue \u00b7 syzUSD/USDC market 0xc79579a0\u2026) would pay 4.44% after your deposit vs 5.52% now \u2014 a gap of -1.08 pts, below --min-apy-diff 0.25; expected net gain over the 30-day holding period is \u2212$602.15 (gain \u2212$602.15 \u2212 costs $0.0023), below --min-gain-usd 5"
+    },
+    {
+      "from": "ERC-4626 vault \u00b7 SharpByte Pharos Prime",
+      "from_apy": 0.03973223594122266,
+      "amount": "70488.778467",
+      "candidates": [
+        {
+          "venue": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+          "to": "ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem",
+          "move": "70488.778467",
+          "apy_now": "0.0552120376739335672056085968506522476673126220703125",
+          "apy_after": "0.0534475329831304518397661832346867345947047124256825540332563",
+          "gain_year": "966.774534796138753834511080358424112635836671254974357009148",
+          "gain_hold": "79.4609206681757879863981709883636256960961647606828238637655",
+          "gas_units": 504531,
+          "gas_usd": "0.002954632250119604626611",
+          "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 154,202 (median gasUsed of 50 recent 0x6e553f65 txs to 0x15c2\u2026aff1 (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "entry = 1 \u2212 previewDeposit/convertToShares; exit = 1 \u2212 previewRedeem/convertToAssets",
+          "cost": "0.002954632250119604626611",
+          "net": "79.4579660359256683817715599883636256960961647606828238637655",
+          "breakeven_days": "0.00111550390755902947465457507501654170089773325027663785172736",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff100000000000000000000000000000000000000000000000000000010697566e3",
+              "description": "approve 70488.778467 USDC to ERC-4626 vault 0x15c2\u2026aff1"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+              "value": "0x0",
+              "data": "0x6e553f6500000000000000000000000000000000000000000000000000000010697566e3000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+              "description": "SharpByte USDC Pharos Ecosystem: deposit(70488.778467 USDC, receiver=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:syzUSD/USDC market 0xc79579a0\u2026",
+          "to": "Morpho Blue \u00b7 syzUSD/USDC market 0xc79579a0\u2026",
+          "move": "70488.778467",
+          "apy_now": "0.0531623145643028662655341352460280675985338578845775616059030",
+          "apy_after": "0.0520871167415833121289175168729982202256539465436092421083612",
+          "gain_year": "870.880455722813661419001000626967527217470953916826826082228",
+          "gain_hold": "71.5792155388613968289589863529014405932167907328898761163474",
+          "gas_units": 488611,
+          "gas_usd": "0.002861401615288634665091",
+          "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002861401615288634665091",
+          "net": "71.5763541372461081942938953529014405932167907328898761163474",
+          "breakeven_days": "0.00119925941926611564721273842241063689984256417056013687614548",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb00000000000000000000000000000000000000000000000000000010697566e3",
+              "description": "approve 70488.778467 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000054df79d8edf36d15cd83fbedbdd90807fc8289340000000000000000000000004eefc4c6e7216aedd5e809e4fc74fb8859b3fa46000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b800000000000000000000000000000000000000000000000000000000010697566e30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xc795\u2026fd86, assets=70488.778467, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:wsrUSD/USDC market 0xbea21c37\u2026",
+          "to": "Morpho Blue \u00b7 wsrUSD/USDC market 0xbea21c37\u2026",
+          "move": "70488.778467",
+          "apy_now": "0.0443115961941864732624435970090995058608529460513887020128482",
+          "apy_after": "0.0438411522054100040099301117316624614166673670816238848868424",
+          "gain_year": "289.632488285754937501165323256174400065472185444848932896731",
+          "gain_hold": "23.8054099960894469179039991717403616492168919543711451695943",
+          "gas_units": 488611,
+          "gas_usd": "0.002861401615288634665091",
+          "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002861401615288634665091",
+          "net": "23.8025485944741582832389081717403616492168919543711451695943",
+          "breakeven_days": "0.00360598907864894793487048371277834805341453646054916105780036",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb00000000000000000000000000000000000000000000000000000010697566e3",
+              "description": "approve 70488.778467 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac18150000000000000000000000004809010926aec940b550d34a46a52739f996d75d0000000000000000000000009416f861970c2a39c02ab7696ef0496383d4e81b000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000cb2bba6f17b800000000000000000000000000000000000000000000000000000000010697566e30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xbea2\u20269e73, assets=70488.778467, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:WPROS/USDC market 0xb3b8a31c\u2026",
+          "to": "Morpho Blue \u00b7 WPROS/USDC market 0xb3b8a31c\u2026",
+          "move": "70488.778467",
+          "apy_now": "0.0450598605079557686800770177159001687089417878563965158537493",
+          "apy_after": "0.0423419205713391098557810252848068356942429201324200407515640",
+          "gain_year": "183.953481761013270096745019813336029784828510297425161620294",
+          "gain_hold": "15.1194642543298578161708235463015914891639871477335749276954",
+          "gas_units": 488611,
+          "gas_usd": "0.002861401615288634665091",
+          "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002861401615288634665091",
+          "net": "15.1166028527145691815057325463015914891639871477335749276954",
+          "breakeven_days": "0.00567758533071539904144124149956133756475998959378978570817002",
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb00000000000000000000000000000000000000000000000000000010697566e3",
+              "description": "approve 70488.778467 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000f4331ff581c31d897da6a3cd552dc39bd44983a5000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000557cb75ce86800000000000000000000000000000000000000000000000000000000010697566e30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xb3b8\u2026e1ba, assets=70488.778467, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Morpho Blue:APC3M/USDC market 0xba0d2638\u2026",
+          "to": "Morpho Blue \u00b7 APC3M/USDC market 0xba0d2638\u2026",
+          "move": "70488.778467",
+          "apy_now": "0.0295306871663023936885260051272461528840673826339050950094523",
+          "apy_after": "0.0280578080347479958887324274968873012889699162634265619783176",
+          "gain_year": "-822.916162428455193687293127482310279730244856079690053894738",
+          "gain_hold": "-67.6369448571333035907364214369022147723488922805224701831290",
+          "gas_units": 488611,
+          "gas_usd": "0.002861401615288634665091",
+          "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 71,496 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857\u20264efb (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.002861401615288634665091",
+          "net": "-67.6398062587485922254015124369022147723488922805224701831290",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efb00000000000000000000000000000000000000000000000000000010697566e3",
+              "description": "approve 70488.778467 USDC to Morpho Blue 0x1857\u20264efb"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb",
+              "value": "0x0",
+              "data": "0xa99aad89000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac1815000000000000000000000000ec47e6f3ef1e7bc8e00f670ac3d5016798fe44d00000000000000000000000004eb6fcffc4d1b27ea773edc062d5adfc94a81fae000000000000000000000000d5e02889c13230458506cc842347c4e62f8cdf3a0000000000000000000000000000000000000000000000000bef55718ad6000000000000000000000000000000000000000000000000000000000010697566e30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c900000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Morpho supply(market 0xba0d\u202691bc, assets=70488.778467, onBehalf=you)"
+            }
+          ]
+        },
+        {
+          "venue": "Avalon:USDC reserve",
+          "to": "Avalon \u00b7 USDC reserve",
+          "move": "70488.778467",
+          "apy_now": "0.0195497623281786457594133565862648538313806056976318359375",
+          "apy_after": "0.0171395550653130374740863811107543363283702202599616928690959",
+          "gain_year": "-1592.53047723762089954263581941184278764383021113547047695182",
+          "gain_hold": "-130.892915937338704071997464609192557888533989956340039201519",
+          "gas_units": 552149,
+          "gas_usd": "0.003233492574829474452469",
+          "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 201,820 (median gasUsed of 10 recent 0x617ba037 txs to 0xd9b9\u20260cba (explorer))",
+          "fee_bps": "0",
+          "fee_usd": "0.000000",
+          "fee_detail": "no deposit/withdraw fee in the protocol",
+          "cost": "0.003233492574829474452469",
+          "net": "-130.896149429913533546449933609192557888533989956340039201519",
+          "breakeven_days": null,
+          "deposit_txs": [
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+              "value": "0x0",
+              "data": "0x095ea7b3000000000000000000000000d9b9e4f8257bff9b1415d74c1ef88d8057f60cba00000000000000000000000000000000000000000000000000000010697566e3",
+              "description": "approve 70488.778467 USDC to Avalon 0xd9b9\u20260cba"
+            },
+            {
+              "chainId": 1672,
+              "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+              "to": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+              "value": "0x0",
+              "data": "0x617ba037000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000000000000000000000000000000000010697566e3000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c90000000000000000000000000000000000000000000000000000000000000000",
+              "description": "Avalon supply(USDC, 70488.778467, onBehalfOf=you, referral=0)"
+            }
+          ]
+        }
+      ],
+      "skipped": [
+        "Morpho Blue \u00b7 ETHVP/USDC market 0x81c8e4d8\u2026: too small (size $0.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 VRPCW/USDC market 0x082e865d\u2026: too small (size $2.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 APC3M/USDC market 0x1aa31baf\u2026: too small (size $1.00 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 BTCVC/USDC market 0xf203d06f\u2026: too small (size $200.01 < --min-tvl-usd 10,000)",
+        "Morpho Blue \u00b7 -/USDC market 0x0db7e824\u2026: too small (size $0.00 < --min-tvl-usd 10,000)"
+      ],
+      "partial_exit": null,
+      "held_since": "last deposit 35.8 d ago (block 17,095,949, https://www.pharosscan.xyz/tx/0x039437e4ff3f20157abce23a98687083e1b231b72771b5e7d0c2f818597e2df2)",
+      "exit_ok": false,
+      "exit_msg": "execution reverted: ERC20: transfer amount exceeds balance",
+      "withdraw_tx": {
+        "chainId": 1672,
+        "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+        "to": "0x697322f0bb715fc1e4c1f1283a9f8e546cb4a342",
+        "value": "0x0",
+        "data": "0xba08765200000000000000000000000000000000000000000000000000000010586e209b000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+        "description": "SharpByte Pharos Prime: redeem(70203089051 shares, receiver=you, owner=you)"
+      },
+      "best": {
+        "venue": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+        "to": "ERC-4626 vault \u00b7 SharpByte USDC Pharos Ecosystem",
+        "move": "70488.778467",
+        "apy_now": "0.0552120376739335672056085968506522476673126220703125",
+        "apy_after": "0.0534475329831304518397661832346867345947047124256825540332563",
+        "gain_year": "966.774534796138753834511080358424112635836671254974357009148",
+        "gain_hold": "79.4609206681757879863981709883636256960961647606828238637655",
+        "gas_units": 504531,
+        "gas_usd": "0.002954632250119604626611",
+        "gas_detail": "withdraw 300,000 (assumed default (no estimate / receipts available)); approve 50,329 (estimate_gas (simulated from the wallet)); deposit 154,202 (median gasUsed of 50 recent 0x6e553f65 txs to 0x15c2\u2026aff1 (explorer))",
+        "fee_bps": "0",
+        "fee_usd": "0.000000",
+        "fee_detail": "entry = 1 \u2212 previewDeposit/convertToShares; exit = 1 \u2212 previewRedeem/convertToAssets",
+        "cost": "0.002954632250119604626611",
+        "net": "79.4579660359256683817715599883636256960961647606828238637655",
+        "breakeven_days": "0.00111550390755902947465457507501654170089773325027663785172736",
+        "deposit_txs": [
+          {
+            "chainId": 1672,
+            "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+            "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+            "value": "0x0",
+            "data": "0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff100000000000000000000000000000000000000000000000000000010697566e3",
+            "description": "approve 70488.778467 USDC to ERC-4626 vault 0x15c2\u2026aff1"
+          },
+          {
+            "chainId": 1672,
+            "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+            "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+            "value": "0x0",
+            "data": "0x6e553f6500000000000000000000000000000000000000000000000000000010697566e3000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+            "description": "SharpByte USDC Pharos Ecosystem: deposit(70488.778467 USDC, receiver=you)"
+          }
+        ]
+      },
+      "decision": "STAY PUT",
+      "reason": "withdrawal from the current venue would fail right now (execution reverted: ERC20: transfer amount exceeds balance)"
+    }
+  ]
+}
