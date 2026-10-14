@@ -1,0 +1,23 @@
+$ python invoice_agent.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --ledger samples/ledger.jsonl samples/invoices/inv_text_missing.txt
+[run at 2026-10-14 21:24:57 UTC]
+Invoice: samples/invoices/inv_text_missing.txt
+Extracted fields:
+  format                : text
+  reference             : -
+  payee                 : Quill Copywriting
+  payee wallet          : -
+  amount                : 450.00
+  currency/token        : EUR
+  due date              : -
+  network               : -
+  bill-to wallet        : -
+  line items            : 0
+  subtotal/tax/discount : None/None/None
+  [note] invoice does not name a network; assuming Pharos mainnet (chainId 1672)
+  [note] no line items found - total could not be cross-checked
+  [note] payee 'Quill Copywriting' is not in the vendor book - first payment to this wallet
+FLAGGED - not preparing a payment until these are resolved with the payee:
+  [!] MISSING invoice reference / number
+  [!] MISSING payee wallet address
+  [!] CURRENCY EUR is fiat with no token on Pharos mainnet - cannot pay it on chain without a quote/FX
+[exit code 1]
