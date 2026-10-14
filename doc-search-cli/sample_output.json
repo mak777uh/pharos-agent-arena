@@ -1,0 +1,21 @@
+{
+  "question": "What does the get_logs tool of the Pharos MCP do and what is its block range limit?",
+  "endpoint": "https://docs.pharos.xyz/~gitbook/mcp",
+  "server": "docs.pharos.xyz/~gitbook/mcp",
+  "found": true,
+  "answer": "`get_logs` retrieves on-chain event logs matching a filter, such as block range, contract address, or topics. Its maximum range is **1,000 blocks per call**. For larger ranges, query in 1,000-block windows; adding an address or topics can narrow the results.\n\nSee [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp).",
+  "sources": [
+    {
+      "title": "Pharos MCP",
+      "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+    },
+    {
+      "title": "JSON-RPC API Methods",
+      "url": "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods"
+    },
+    {
+      "title": "Rollback Blocks",
+      "url": "https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks"
+    }
+  ]
+}
