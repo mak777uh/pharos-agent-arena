@@ -1,0 +1,120 @@
+{
+  "invoice": {
+    "format": "json",
+    "reference": "NW-7781",
+    "payee_name": "Northwind Hosting",
+    "payee_wallet": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+    "amount": "129.50",
+    "currency": "USDC",
+    "due_date": "2026-11-12",
+    "network": "Pharos Pacific mainnet",
+    "payer_wallet": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+    "subtotal": "129.50",
+    "tax": "0",
+    "discount": null,
+    "raw_wallets": [
+      "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "0x84dbd23178ba7fc6a2a396559139aef69d0f072a"
+    ],
+    "token": "USDC",
+    "due_iso": "2026-11-12"
+  },
+  "line_items": [
+    {
+      "description": "VPS plan, October",
+      "quantity": "3",
+      "unit_price": "40.00",
+      "amount": "120.00"
+    },
+    {
+      "description": "Backup storage",
+      "quantity": "1",
+      "unit_price": "9.50",
+      "amount": "9.50"
+    }
+  ],
+  "chainId": 1672,
+  "token": "USDC",
+  "tokenAddress": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+  "amount": "129.5",
+  "amountUnits": "129500000",
+  "reference": "NW-7781",
+  "preparedAtBlock": 20253137,
+  "unsignedTx": {
+    "chainId": "0x688",
+    "nonce": "0x874",
+    "maxPriorityFeePerGas": "0x0",
+    "maxFeePerGas": "0x4a817c800",
+    "gas": "0x11474",
+    "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+    "value": "0x0",
+    "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca935300020000000000000000000000000000000000000000000000000000000007b80360504841524f532d5245463a4e572d37373831"
+  },
+  "unsignedSerialized": "0x02f880820688820874808504a817c8008301147494c879c018db60520f4355c26ed1a6d572cdac181580b856a9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca935300020000000000000000000000000000000000000000000000000000000007b80360504841524f532d5245463a4e572d37373831c0",
+  "signingHash": "0x3b8cb568058d4f85cd1cf1f758cec15f56137f242879565842c789e60776ca3a",
+  "walletRequest": {
+    "method": "eth_sendTransaction",
+    "params": [
+      {
+        "from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+        "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "value": "0x0",
+        "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca935300020000000000000000000000000000000000000000000000000000000007b80360504841524f532d5245463a4e572d37373831",
+        "gas": "0x11474",
+        "maxFeePerGas": "0x4a817c800",
+        "maxPriorityFeePerGas": "0x0",
+        "nonce": "0x874",
+        "chainId": "0x688",
+        "type": "0x2"
+      }
+    ]
+  },
+  "eip681": null,
+  "maxNetworkFeePROS": "0.00141544",
+  "checks": [
+    {
+      "ok": true,
+      "check": "Chain MCP is on Pharos mainnet (chainId 1672)"
+    },
+    {
+      "ok": true,
+      "check": "token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)"
+    },
+    {
+      "ok": true,
+      "check": "recipient is a regular account (no contract code)"
+    },
+    {
+      "ok": true,
+      "check": "payer not blacklisted by USDC"
+    },
+    {
+      "ok": true,
+      "check": "recipient not blacklisted by USDC"
+    },
+    {
+      "ok": true,
+      "check": "payer USDC balance 6,845.265664 >= 129.50 (balanceOf)"
+    },
+    {
+      "ok": true,
+      "check": "simulation OK: estimate_gas 58,977 -> gas limit 70,772 (+20%)"
+    },
+    {
+      "ok": true,
+      "check": "signer PROS balance 7.142356537 >= value + max gas fee 0.00141544 (get_balance)"
+    },
+    {
+      "ok": true,
+      "check": "nonce 2164 = get_transaction_count(sender, 'pending')"
+    }
+  ],
+  "warnings": [],
+  "signed": false,
+  "broadcast": false,
+  "invoiceNotes": [
+    "payee wallet matches the vendor book entry for 'Northwind Hosting'"
+  ]
+}
