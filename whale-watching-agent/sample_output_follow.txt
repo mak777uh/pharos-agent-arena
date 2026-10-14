@@ -1,0 +1,92 @@
+Pharos Whale-Watching Agent · pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp
+  watching 8 addresses, tokens: USDC (>= 500), WPROS (>= 2,000), WETH (>= 0.1), LINK (>= 50), or >= $1,000 where a usd_price is set, native PROS change >= 100
+
+=== Summary: blocks #20,246,849-#20,246,948 (2026-10-14 19:30:54 UTC -> 2026-10-14 19:32:38 UTC)
+    6 transfers touching watched addresses, 0 significant
+
+* 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+    transfers 4, significant 0, native PROS change +0.0000
+    USDC   in         155.324746  out          155.22288  net +0.1019
+    WPROS  in         264.976829  out          265.09773  net -0.1209
+* 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+    transfers 4, significant 0, native PROS change +0.0000
+    USDC   in          155.22288  out         155.324746  net -0.1019
+    WPROS  in          265.09773  out         264.976829  net +0.1209
+* 0x1f3546a29eec2102c8d52e21a45114124014c85c  [High-frequency wallet (EOA)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+    transfers 2, significant 0, native PROS change +0.0000
+    USDC   in              11.02  out              39.84  net -28.8200
+* 0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f  [ERC1967Proxy, large USDC receiver (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xba3b260596d8412318ee6ef5476291f6c8e3b68a  [MorphoMarketV1AdapterV2 (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xff70f4a1d11995621854f3692acf286d8acd04b2  [LiFiDiamond bridge (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0x15ddce897d76ac39c188ade4d353711a60395315  [Active wallet (EOA)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+
+=== Summary: blocks #20,246,949-#20,246,978 (2026-10-14 19:32:38 UTC -> 2026-10-14 19:33:10 UTC)
+    5 transfers touching watched addresses, 0 significant
+
+* 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+    transfers 4, significant 0, native PROS change +0.0000
+    USDC   in                  0  out         349.513277  net -349.5133
+    WPROS  in          597.13607  out                  0  net +597.1361
+* 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+    transfers 4, significant 0, native PROS change +0.0000
+    USDC   in         349.513277  out                  0  net +349.5133
+    WPROS  in                  0  out          597.13607  net -597.1361
+* 0x1f3546a29eec2102c8d52e21a45114124014c85c  [High-frequency wallet (EOA)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+    transfers 1, significant 0, native PROS change +0.0000
+    USDC   in                  0  out              11.02  net -11.0200
+* 0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f  [ERC1967Proxy, large USDC receiver (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xba3b260596d8412318ee6ef5476291f6c8e3b68a  [MorphoMarketV1AdapterV2 (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xff70f4a1d11995621854f3692acf286d8acd04b2  [LiFiDiamond bridge (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0x15ddce897d76ac39c188ade4d353711a60395315  [Active wallet (EOA)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+
+=== Summary: blocks #20,246,979-#20,247,004 (2026-10-14 19:33:11 UTC -> 2026-10-14 19:33:47 UTC)
+    6 transfers touching watched addresses, 0 significant
+
+* 0x912c9ade24d44d8922f0866d8dcb079f1363f647  [Most active USDC/WPROS contract (unlabelled)]
+    transfers 6, significant 0, native PROS change +0.0000
+    USDC   in         155.312191  out         194.062694  net -38.7505
+    WPROS  in         331.678026  out         265.378574  net +66.2995
+* 0x936564245b69f5a293b42cbd752e0ee3bb68b470  [Active swap contract (unlabelled)]
+    transfers 6, significant 0, native PROS change +0.0000
+    USDC   in         194.062694  out         155.312191  net +38.7505
+    WPROS  in         265.378574  out         331.678026  net -66.2995
+* 0x1f3546a29eec2102c8d52e21a45114124014c85c  [High-frequency wallet (EOA)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0x768b959191ce5876cabbbc014a08d72615bdde54  [Vault (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f  [ERC1967Proxy, large USDC receiver (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xba3b260596d8412318ee6ef5476291f6c8e3b68a  [MorphoMarketV1AdapterV2 (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0xff70f4a1d11995621854f3692acf286d8acd04b2  [LiFiDiamond bridge (explorer)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
+* 0x15ddce897d76ac39c188ade4d353711a60395315  [Active wallet (EOA)]
+    transfers 0, significant 0, native PROS change +0.0000
+    no token transfers in this window
