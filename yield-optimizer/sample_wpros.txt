@@ -1,0 +1,29 @@
+$ python yield_optimizer.py --token WPROS --wallet 0xd27cb53f5920d484261cc14d32094d3f043265c9 --hold-days 14
+=== Yield Optimizer · WPROS on Pharos mainnet · block #20,257,103 · gas price 10 gwei · PROS $0.5856 (Chainlink) · holding period 14 d
+
+4 yield sources compared (live, same block):
+ #  venue                                                    APY              size    exit liquidity    deposit room
+ 1  Morpho Blue · USDC/WPROS market 0x95bc6fe9…            3.66%              0.50                 0          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral USDC, LLTV 86.0%, utilisation 90.0%, market fee 0%
+ 2  Morpho Blue · BTCVC/WPROS market 0x6657f8b7…           0.18%      2,000,589.65           201,497          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral BTCVC, LLTV 38.5%, utilisation 89.9%, market fee 0%
+ 3  ERC-4626 vault · Vishwa WPROS Vault                    0.16%      2,000,851.74       per holder*          no cap
+      basis: realised share-price growth over the last 7 days, annualised (net of vault fees)
+      performanceFee 10.0% (already netted in share price); managementFee 0.0% (already netted in share price); idle WPROS in the vault contract: 0.00
+ 4  Morpho Blue · ETHVP/WPROS market 0xab78d4ff…           0.00%             25.00                25          no cap
+      basis: borrow APY (IRM borrowRateView) × utilisation × (1 − market fee)
+      collateral ETHVP, LLTV 38.5%, utilisation 0.4%, market fee 0%
+  sizes in WPROS; * vault exit is checked by simulating redeem() from the holder
+
+── ERC-4626 vault · Vishwa WPROS Vault · 2,000,293.1658 WPROS · current APY 0.16%
+   held since: last deposit 24.5 d ago (block 18,090,514, https://www.pharosscan.xyz/tx/0xf324470ac22335beb6b53aced0ec015210873b189c24a8f5e2a9d2db50e08768)
+   exit check: FAILS — execution reverted: 
+   → Morpho Blue · BTCVC/WPROS market 0x6657f8b7…             APY 0.18% now / 0.09% after deposit · gain −$31.69 in 14 d · gas $0.0022 (379,245 gas) · fees 0.0 bps $0.00 · net −$31.69 · break-even never
+   gas detail (best): withdraw 203,042 (median gasUsed of 1 recent 0xba087652 txs to 0x6ce7…3e73 (explorer)); approve 59,088 (estimate_gas (simulated from the wallet)); deposit 117,115 (median gasUsed of 12 recent 0xa99aad89 txs to 0x1857…4efb (explorer))
+   fee detail (best): no deposit/withdraw fee in the protocol
+   not considered: Morpho Blue · ETHVP/WPROS market 0xab78d4ff…: too small (size $14.64 < --min-tvl-usd 10,000); Morpho Blue · USDC/WPROS market 0x95bc6fe9…: too small (size $0.29 < --min-tvl-usd 10,000)
+   ⇒ STAY PUT: best alternative (Morpho Blue · BTCVC/WPROS market 0x6657f8b7…) would pay 0.09% after your deposit vs 0.16% now — a gap of -0.07 pts, below --min-apy-diff 0.25; expected net gain over the 14-day holding period is −$31.69 (gain −$31.69 − costs $0.0022), below --min-gain-usd 5; withdrawal from the current venue would fail right now (execution reverted: )
+
+Caveats: rates are current on-chain values and move every block; the post-deposit APY is an estimate (pool venues: utilisation falls with your deposit, borrow rate held; vaults: yield diluted pro rata). Past vault share-price growth does not guarantee future yield. The ranking is by yield net of costs only: collateral, LLTV and curator risk differ per venue (shown in the notes) — use --exclude for venues you don't accept. Not financial advice.
