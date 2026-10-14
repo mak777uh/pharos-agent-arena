@@ -1,0 +1,27 @@
+{
+  "name": "treasury-agent-v1",
+  "description": "Policy for an agent that may pay known counterparties from the treasury wallet. Addresses are real public Pharos mainnet accounts used as examples.",
+  "agent": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "rules": {
+    "spend_limits": [
+      {"token": "USDC", "per_tx": "500", "per_day": "1000", "max_approval": "200"},
+      {"token": "PROS", "per_tx": "1", "per_day": "2"}
+    ],
+    "allowlist": {
+      "recipients": {
+        "0x1f3546a29eec2102c8d52e21a45114124014c85c": "alice (ops wallet)",
+        "0x4ffd9c7e8641947662a43af298b734ca93530002": "bob (vendor)"
+      },
+      "contracts": {
+        "0xc879c018db60520f4355c26ed1a6d572cdac1815": {"label": "USDC", "functions": ["transfer(address,uint256)", "approve(address,uint256)"]},
+        "0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb": {"label": "Morpho Blue", "functions": ["supply((address,address,address,address,uint256),uint256,uint256,address,bytes)"]}
+      }
+    },
+    "time_windows": [
+      {"id": "contract_calls_business_hours", "applies_to": {"type": "contract_call"},
+       "days": ["mon", "tue", "wed", "thu", "fri"], "start": "08:00", "end": "20:00"},
+      {"id": "payments_24x7", "applies_to": {"type": "transfer"},
+       "days": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"], "start": "00:00", "end": "23:59:59"}
+    ]
+  }
+}
