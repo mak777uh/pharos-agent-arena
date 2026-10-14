@@ -1,0 +1,24 @@
+{
+  "sender": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "_comment": "Contains an ERC-20 transfer - refused by design.",
+  "actions": [
+    {
+      "id": "tip-alice",
+      "type": "send_pros",
+      "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "amount": "0.02"
+    },
+    {
+      "id": "tip-bob",
+      "type": "send_pros",
+      "to": "0x4ffd9c7e8641947662a43af298b734ca93530002",
+      "amount": "0.015"
+    },
+    {
+      "id": "usdc-to-bob",
+      "type": "call",
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca935300020000000000000000000000000000000000000000000000000000000000989680"
+    }
+  ]
+}
