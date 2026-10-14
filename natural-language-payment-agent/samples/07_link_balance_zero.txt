@@ -1,0 +1,10 @@
+$ echo n | python nl_pay.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a "send 5 link to bob"
+[run at 2026-10-14 21:17:39 UTC]
+Instruction: 'send 5 link to bob'
+Parsed     : amount=5 token=LINK recipient=bob
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token LINK 0x51e2a24742db77604b881d6781ee16b5b8fcbe29 has code, decimals 18 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [FAIL] payer LINK balance 0 >= 5 (balanceOf)
+REFUSED: insufficient LINK: payer has 0, needs 5. No transaction was prepared.
+[exit code 1]
