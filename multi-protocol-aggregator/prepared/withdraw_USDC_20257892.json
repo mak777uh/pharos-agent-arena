@@ -1,0 +1,32 @@
+{
+  "chainId": 1672,
+  "block": 20257892,
+  "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+  "route": [
+    "Avalon:USDC reserve",
+    "ERC-4626 vault:SharpByte USDC Pharos Ecosystem"
+  ],
+  "why": [
+    "Avalon:USDC reserve: take 55,015.9318 USDC \u2014 lowest APY among your withdrawable positions (1.95%), so higher-earning ones stay invested; 195,612.51 stays here",
+    "ERC-4626 vault:SharpByte USDC Pharos Ecosystem: take 44,984.0682 USDC \u2014 next-lowest APY among your withdrawable positions (5.52%), so higher-earning ones stay invested; 631,117.54 stays here"
+  ],
+  "signing": "UNSIGNED \u2014 sign and send in order with your own wallet (it sets nonce, gas limit and fees). This tool never signs or broadcasts.",
+  "transactions": [
+    {
+      "chainId": 1672,
+      "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+      "to": "0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba",
+      "value": "0x0",
+      "data": "0x69328dec000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac18150000000000000000000000000000000000000000000000000000000ccf347fa6000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+      "description": "Avalon withdraw(USDC, 55015.931814, to=you)"
+    },
+    {
+      "chainId": 1672,
+      "from": "0xd27cb53f5920d484261cc14d32094d3f043265c9",
+      "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+      "value": "0x0",
+      "data": "0xba0876520000000000000000000000000000000000000000000009822ce4409e85ac1b8c000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9000000000000000000000000d27cb53f5920d484261cc14d32094d3f043265c9",
+      "description": "SharpByte USDC Pharos Ecosystem: redeem(44902609856890999151500 shares, receiver=you, owner=you)"
+    }
+  ]
+}
