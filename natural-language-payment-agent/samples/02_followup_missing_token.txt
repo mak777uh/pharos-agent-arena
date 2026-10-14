@@ -1,0 +1,33 @@
+$ printf 'usdc\ny\n' | python nl_pay.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a "pay bob 25"
+[run at 2026-10-14 21:16:43 UTC]
+Instruction: 'pay bob 25'
+Parsed     : amount=25 token=None recipient=bob
+? Which token? (USDC, PROS, WPROS, LINK, WETH)
+> usdc
+=== Payment summary (review before signing) ===
+  Pay        : 25 USDC  (contract 0xc879c018db60520f4355c26ed1a6d572cdac1815)
+  To         : 0x4FFD9c7E8641947662a43aF298B734ca93530002  https://www.pharosscan.xyz/address/0x4ffd9c7e8641947662a43af298b734ca93530002
+  From/signer: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  Network    : Pharos mainnet, chainId 1672, nonce 2164, gas limit 70,344
+  Fees       : maxFeePerGas 20 gwei, tip 0 gwei -> at most 0.00140688 PROS network fee
+  Checks:
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [ok] payer not blacklisted by USDC
+    [ok] recipient not blacklisted by USDC
+    [ok] payer USDC balance 6,845.265664 >= 25 (balanceOf)
+    [ok] simulation OK: estimate_gas 58,620 -> gas limit 70,344 (+20%)
+    [ok] signer PROS balance 7.142356537 >= value + max gas fee 0.00140688 (get_balance)
+    [ok] nonce 2164 = get_transaction_count(sender, 'pending')
+    [warn] recipient resolved from your address book: 'bob'
+? Prepare this as an unsigned transaction for your wallet? [y/N]
+> y
+=== Unsigned transaction (NOT signed, NOT sent) ===
+  Wallet signing request (EIP-1193):
+  {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000017d7840", "gas": "0x112c8", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x874", "chainId": "0x688", "type": "0x2"}]}
+  Unsigned EIP-1559 serialization: 0x02f86e820688820874808504a817c800830112c894c879c018db60520f4355c26ed1a6d572cdac181580b844a9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca9353000200000000000000000000000000000000000000000000000000000000017d7840c0
+  Signing hash (keccak256 of the above): 0xb31d27818686e9226b84818eaf1a2b1fad17db8b8084ba6018ed5f3ec52aac9a
+  EIP-681 URI: ethereum:0xC879C018dB60520F4355C26eD1a6D572cdAC1815@1672/transfer?address=0x4FFD9c7E8641947662a43aF298B734ca93530002&uint256=25000000
+  Sign it in your own wallet; this tool holds no key and never broadcasts.
+[exit code 0]
