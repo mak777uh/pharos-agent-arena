@@ -1,0 +1,10 @@
+$ python recurring_agent.py --state samples/recurring_state.json run --out-dir samples/prepared   # third run
+[run at 2026-10-14 21:41:05 UTC]
+[2026-10-14 21:41 UTC] run: 4 schedule(s), block 20,254,053, lead 1.0 h
+[2026-10-14 21:41 UTC] rent 2026-10-14: attempt #1 still PENDING (nonce 2165 unused) - not preparing another tx; sign samples/prepared/rent_2026-10-14_attempt1.json
+[2026-10-14 21:41 UTC] subscription 2026-10-14: attempt #1 FAILED (dropped: signer nonce is now 38492 > 38487 and no matching transfer exists, so this unsigned tx can never be mined)
+[2026-10-14 21:41 UTC] subscription 2026-10-14: due (due 2026-10-14 21:00 UTC), no payment on chain yet -> preparing
+[2026-10-14 21:41 UTC] subscription 2026-10-14: PREPARED attempt #2 - 20 USDC -> 0x4FFD9c7E8641947662a43aF298B734ca93530002, nonce 38492, gas 71,143, signing hash 0x60e584bbbee1798a... -> samples/prepared/subscription_2026-10-14_attempt2.json (unsigned; sign it in your wallet)
+[2026-10-14 21:41 UTC] payroll-bob 2026-10-14: due (due 2026-10-14 21:00 UTC), no payment on chain yet -> preparing
+[2026-10-14 21:41 UTC] payroll-bob 2026-10-14: INSUFFICIENT FUNDS - insufficient USDC: payer has 1,633.392269, needs 2500; nothing prepared, will retry next run
+[exit code 0]
