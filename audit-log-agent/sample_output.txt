@@ -1,0 +1,26 @@
+Pharos Audit-Log Agent · pharos-mcp-server 0.1.0 @ https://mcp.pharos.xyz/mcp
+  wallet 0x50fbb8651e332696ba14b04e17175f960ec18ab2
+  period 2026-10-14 17:20:00 -> 2026-10-14 19:40:00 UTC  =  blocks #20,239,502 - #20,247,338 (7,837 blocks)
+  logs: 10 wallet events; locating sent txs by nonce search ...
+  sent txs: 7 of 7 located; reading receipts ...
+
+Between 2026-10-14 17:20:00 and 2026-10-14 19:40:00 UTC (blocks 20,239,502–20,247,338) this wallet was involved in 9 transactions and itself sent 7, paying 0.010799 PROS in fees. It made 2 swaps (gave 15,008.156206 USDC, 14 PROS; got 14,576.357551 APC3M, 8.156206 USDC), 2 outgoing transfers (14,576.357551 APC3M, 11.622022 WPROS), 2 incoming transfers (15,000 USDC, 11.622022 WPROS), 3 token approvals and 0 other contract interactions. Native PROS balance went from 0 to 10.428802.
+
+  Swaps                           2 txs   in: 14,576.357551 APC3M, 8.156206 USDC   out: 15,008.156206 USDC, 14 PROS
+  Transfers out                   2 txs   in: -   out: 11.622022 WPROS, 14,576.357551 APC3M
+  Transfers in                    2 txs   in: 11.622022 WPROS, 15,000 USDC   out: -
+  Approvals                       3 txs   in: -   out: -   approvals: 3
+  Other contract interactions     0 txs   in: -   out: -
+
+Notable:
+  - UNLIMITED approval of WPROS to 0xb300000b72deaeb607a12d5f54773d1c19c7028d  2026-10-14 17:51:17  https://www.pharosscan.xyz/tx/0xd260f86d7ec8f8a78dcbd4c2aac1a1c6f9b8e4d92c06d44258a445c6f7d8a14e
+  - largest WPROS moves: out 11.622022 WPROS (transfer_out)  2026-10-14 17:51:34  https://www.pharosscan.xyz/tx/0xe9636fbac290f139f293e68aebc816862bdcc7ebe343cd4cce29c5fc5e560373
+  - largest WPROS moves: in 11.622022 WPROS (transfer_in)  2026-10-14 17:44:49  https://www.pharosscan.xyz/tx/0x1b65ce158b364f776615ae92b82ecb00a9269cac5524347ae72bfef4d3e40916
+  - largest USDC moves: out 15,008.156206 USDC (swap)  2026-10-14 18:05:37  https://www.pharosscan.xyz/tx/0xed75573c66ca0c9b211af8ea53858ce45de62dcf41640f53a3c8ec651ed004b3
+  - largest USDC moves: in 15,000 USDC (transfer_in)  2026-10-14 17:52:28  https://www.pharosscan.xyz/tx/0xf4138f7552a1a145d1bc4ffda3f89470ced93fbce4bc4ac1dcf4888b58281c43
+  - largest USDC moves: in 8.156206 USDC (swap)  2026-10-14 17:53:23  https://www.pharosscan.xyz/tx/0xce12eab1a8665ab71ddedb1fd47aec508ff44f7302c57803fbdda8ab68764370
+  - largest APC3M moves: out 14,576.357551 APC3M (transfer_out)  2026-10-14 18:06:31  https://www.pharosscan.xyz/tx/0xf53c93ec1c1e550106d186922eb4b2733bc19c5dd7d4d8fc54c6d5ca06eb1f21
+  - largest APC3M moves: in 14,576.357551 APC3M (swap)  2026-10-14 18:05:37  https://www.pharosscan.xyz/tx/0xed75573c66ca0c9b211af8ea53858ce45de62dcf41640f53a3c8ec651ed004b3
+  - largest PROS moves: out 14 PROS (swap)  2026-10-14 17:53:23  https://www.pharosscan.xyz/tx/0xce12eab1a8665ab71ddedb1fd47aec508ff44f7302c57803fbdda8ab68764370
+
+Wrote sample_report.md and sample_report.csv
