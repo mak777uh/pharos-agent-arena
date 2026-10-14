@@ -1,0 +1,10 @@
+[
+ {"question": "How do I check that I am connected to Pharos mainnet (chain ID)?"},
+ {"question": "How do I check the PROS balance of an address on Pharos mainnet?", "address": "0xd27cb53f5920d484261cc14d32094d3f043265c9"},
+ {"question": "How do I find the USDC contract address on Pharos and read its total supply?", "token": "USDC"},
+ {"question": "How do I query Transfer events of a token on Pharos?", "token": "USDC"},
+ {"question": "How do I send USDC to another address on Pharos?", "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a", "to": "0xd27cb53f5920d484261cc14d32094d3f043265c9", "amount": "25", "token": "USDC"},
+ {"question": "How do I send USDC to another address on Pharos?", "from": "0x84ddbccba32bee8f4e775d737bec2d3c10ea112f", "to": "0x3e79f7ffa10d23dac3ad16af98994f2214f69737", "amount": "600", "token": "USDC", "tx": "0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5"},
+ {"question": "How do I wrap PROS into WPROS?"},
+ {"question": "How do I borrow USDC on Morpho on Pharos?"}
+]
