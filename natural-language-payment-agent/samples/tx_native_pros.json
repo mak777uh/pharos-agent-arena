@@ -1,0 +1,70 @@
+{
+  "instruction": "transfer 0.25 PROS to alice",
+  "chainId": 1672,
+  "token": "PROS",
+  "tokenAddress": null,
+  "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+  "amount": "0.25",
+  "amountUnits": "250000000000000000",
+  "reference": null,
+  "preparedAtBlock": 20252732,
+  "unsignedTx": {
+    "chainId": "0x688",
+    "nonce": "0x874",
+    "maxPriorityFeePerGas": "0x0",
+    "maxFeePerGas": "0x4a817c800",
+    "gas": "0x6270",
+    "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+    "value": "0x3782dace9d90000",
+    "data": "0x"
+  },
+  "unsignedSerialized": "0x02f0820688820874808504a817c800826270941f3546a29eec2102c8d52e21a45114124014c85c8803782dace9d9000080c0",
+  "signingHash": "0xd4ed8c9ee4132f12b5984de6e53ea8107c2270f8735a08afb91a8c466a458619",
+  "walletRequest": {
+    "method": "eth_sendTransaction",
+    "params": [
+      {
+        "from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+        "to": "0x1F3546a29EeC2102c8d52E21a45114124014c85C",
+        "value": "0x3782dace9d90000",
+        "data": "0x",
+        "gas": "0x6270",
+        "maxFeePerGas": "0x4a817c800",
+        "maxPriorityFeePerGas": "0x0",
+        "nonce": "0x874",
+        "chainId": "0x688",
+        "type": "0x2"
+      }
+    ]
+  },
+  "eip681": "ethereum:0x1F3546a29EeC2102c8d52E21a45114124014c85C@1672?value=250000000000000000",
+  "maxNetworkFeePROS": "0.000504",
+  "checks": [
+    {
+      "ok": true,
+      "check": "Chain MCP is on Pharos mainnet (chainId 1672)"
+    },
+    {
+      "ok": true,
+      "check": "recipient is a regular account (no contract code)"
+    },
+    {
+      "ok": true,
+      "check": "simulation OK: estimate_gas 21,000 -> gas limit 25,200 (+20%)"
+    },
+    {
+      "ok": true,
+      "check": "signer PROS balance 7.142356537 >= value + max gas fee 0.250504 (get_balance)"
+    },
+    {
+      "ok": true,
+      "check": "nonce 2164 = get_transaction_count(sender, 'pending')"
+    }
+  ],
+  "warnings": [
+    "recipient resolved from your address book: 'alice'"
+  ],
+  "signed": false,
+  "broadcast": false
+}
