@@ -1,0 +1,34 @@
+$ python3 scripts/flow.py Should\ I\ buy\ WPROS\ with\ \$250\ now\? --rules assets/rules.strict.json 
+Request: "Should I buy WPROS with $250 now?"
+[1 SKILL] parsed -> sell 250 USDC, buy WPROS on pool WPROS/USDC 0x912c9ade24d44d8922f0866d8dcb079f1363f647
+[2 CHAIN MCP] https://mcp.pharos.xyz/mcp (pharos-mcp-server 0.1.0) - 17 calls, block #20,256,659 (2026-10-14 22:28:41 UTC)
+    1. get_chain_info   {}                                                    206 ms -> {"name": "Pharos", "chainId": 1672, "chainIdHex"
+    2. get_block_number {}                                                    187 ms -> {"blockNumber": "20256659", "blockNumberHex": "0
+    3. get_block        {"block": 20256659}                                   191 ms -> {"baseFeePerGas": "0x2540be400", "difficulty": "
+    4. eth_call         0x912c9ade…f647.token0() @latest                      448 ms -> {"result": "0x00000000000000000000000052c48d4213
+    5. eth_call         0x912c9ade…f647.token1() @latest                      446 ms -> {"result": "0x000000000000000000000000c879c018db
+    6. eth_call         0x52c48d42…f0b0.decimals() @latest                    571 ms -> {"result": "0x0000000000000000000000000000000000
+    7. eth_call         0xc879c018…1815.decimals() @latest                    449 ms -> {"result": "0x0000000000000000000000000000000000
+    8. eth_call         0x52c48d42…f0b0.symbol() @latest                      369 ms -> {"result": "0x0000000000000000000000000000000000
+    9. eth_call         0xc879c018…1815.symbol() @latest                      408 ms -> {"result": "0x0000000000000000000000000000000000
+   10. eth_call         0x912c9ade…f647.slot0() @20256659                    1053 ms -> {"result": "0x0000000000000000000000000000000000
+   11. eth_call         0x912c9ade…f647.liquidity() @20256659                 314 ms -> {"result": "0x0000000000000000000000000000000000
+   12. eth_call         0x912c9ade…f647.fee() @20256659                       412 ms -> {"result": "0x0000000000000000000000000000000000
+   13. eth_call         0x912c9ade…f647.tickSpacing() @20256659               508 ms -> {"result": "0x0000000000000000000000000000000000
+   14. eth_call         0x371ed36a…5466.latestRoundData() @20256659           409 ms -> {"result": "0x0000000000000000000000000000000000
+   15. eth_call         0x371ed36a…5466.decimals() @20256659                  474 ms -> {"result": "0x0000000000000000000000000000000000
+   16. get_gas_price    {}                                                    228 ms -> {"gasPriceWei": "10000000000", "gasPriceGwei": "
+   17. eth_call         0x912c9ade…f647.tickBitmap(int16) @20256659           415 ms -> {"result": "0x0000000000000000000000000000000000
+   live: slot0 sqrtPriceX96=60592439536972614248791 tick=-281688 liquidity=801386629611202861 fee=100
+         pool price 0.584895 USDC/WPROS, Chainlink PROS/USD 0.585620, gas 10 gwei
+[3 SKILL] quote: 250 USDC -> ~427.210355 WPROS (exec 0.585192, after 0.585372, impact 0.0508%, fee 0.01%)
+          at the Chainlink price it would be 426.898305 WPROS
+   [   ok] range        stays inside the current liquidity range (tick -281688 -> -281680, no initialized tick crossed)
+   [   ok] impact       price impact 0.0508% <= 0.5%
+   [ WAIT] oracle_dev   pool 0.584895 vs Chainlink 0.585620: deviation 0.124% > 0.1%
+   [   ok] oracle_fresh Chainlink answer age 2910s <= 3900s
+   [   ok] gas          gas 10 gwei <= 20 gwei
+VERDICT: WAIT
+pool: https://www.pharosscan.xyz/address/0x912c9ade24d44d8922f0866d8dcb079f1363f647
+(decision only - no swap transaction is built, signed or sent)
+exit code: 3
