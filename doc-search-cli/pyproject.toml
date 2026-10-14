@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharos-docs"
+version = "1.0.0"
+description = "Search the Pharos developer docs from the terminal via the Pharos Developer Docs MCP"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31"]
+license = {text = "MIT"}
+
+[project.scripts]
+pharos-docs = "pharos_docs:main"
+
+[tool.setuptools]
+py-modules = ["pharos_docs", "pharos_mcp"]
