@@ -1,0 +1,66 @@
+$ python weekly_digest_agent.py --schedule --period 1h --runs 2 --out digests --state state_digest.json --markets known_markets.json
+[2026-10-14T21:56:16Z] scheduler started: period 1h
+# Morpho Blue on Pharos · 1-hour digest
+**Period:** 2026-10-14 20:00 UTC → 2026-10-14 21:00 UTC (blocks 20,248,458–20,251,717) · compared with 2026-10-14 19:00 UTC → 2026-10-14 20:00 UTC (blocks 20,245,180–20,248,457)
+Morpho contract [0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb](https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb) · 12 markets · generated 2026-10-14 21:58 UTC
+
+## Key metrics
+
+| Metric | This period | Previous period | Change |
+|---|---:|---:|---:|
+| Total supplied (end of period) | $13,592,404.09 | $13,593,147.64 | -0.0% |
+| Total borrowed (end of period) | $12,076,778.85 | $12,077,447.51 | -0.0% |
+| Utilization | 88.85% | 88.85% | -0.00 pp |
+| PROS/USD (Chainlink) | $0.583620 | $0.583992 | -0.1% |
+| Transactions touching Morpho | 0 | 0 | ±0 |
+| Unique accounts | 0 | 0 | ±0 |
+
+## Top 3 notable events
+
+_No Morpho events in this period._
+
+## Biggest market moves (end of period vs start)
+
+| Market | Supplied | Borrowed |
+|---|---:|---:|
+| BTCVC/WPROS | $1,167,584.15 (-0.1%) | $1,049,986.47 (-0.1%) |
+| ETHVP/WPROS | $14.59 (-0.1%) | $0.06 (-0.1%) |
+| USDC/WPROS | $0.29 (-0.1%) | $0.26 (-0.1%) |
+
+---
+Sources: Pharos Chain MCP `https://mcp.pharos.xyz/mcp` — `eth_call Morpho.market(id)` pinned to blocks 20,251,717 and 20,248,457, Morpho events from `get_transaction_receipt`, Chainlink PROS/USD [0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466](https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466) `latestRoundData()`; list of transactions from the Pharosscan explorer index. USD values: USDC counted as $1.00, WPROS at the Chainlink PROS/USD price, collateral via each market's Morpho oracle. Read-only; not financial advice.
+
+[2026-10-14T21:58:20Z] delivered: digests/digest_2026-10-14T2100Z.md and digests/digest_2026-10-14T2100Z.html
+[2026-10-14T21:58:20Z] next digest at 2026-10-14 22:00 UTC (sleeping 130 s)
+# Morpho Blue on Pharos · 1-hour digest
+**Period:** 2026-10-14 21:00 UTC → 2026-10-14 22:00 UTC (blocks 20,251,718–20,255,058) · compared with 2026-10-14 20:00 UTC → 2026-10-14 21:00 UTC (blocks 20,248,458–20,251,717)
+Morpho contract [0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb](https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb) · 12 markets · generated 2026-10-14 22:01 UTC
+
+## Key metrics
+
+| Metric | This period | Previous period | Change |
+|---|---:|---:|---:|
+| Total supplied (end of period) | $13,596,404.43 | $13,592,404.09 | +0.0% |
+| Total borrowed (end of period) | $12,080,376.24 | $12,076,778.85 | +0.0% |
+| Utilization | 88.85% | 88.85% | +0.00 pp |
+| PROS/USD (Chainlink) | $0.585620 | $0.583620 | +0.3% |
+| Transactions touching Morpho | 0 | 0 | ±0 |
+| Unique accounts | 0 | 0 | ±0 |
+
+## Top 3 notable events
+
+_No Morpho events in this period._
+
+## Biggest market moves (end of period vs start)
+
+| Market | Supplied | Borrowed |
+|---|---:|---:|
+| BTCVC/WPROS | $1,171,584.44 (+0.3%) | $1,053,583.85 (+0.3%) |
+| ETHVP/WPROS | $14.64 (+0.3%) | $0.06 (+0.3%) |
+| USDC/WPROS | $0.29 (+0.3%) | $0.26 (+0.3%) |
+
+---
+Sources: Pharos Chain MCP `https://mcp.pharos.xyz/mcp` — `eth_call Morpho.market(id)` pinned to blocks 20,255,058 and 20,251,717, Morpho events from `get_transaction_receipt`, Chainlink PROS/USD [0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466](https://www.pharosscan.xyz/address/0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466) `latestRoundData()`; list of transactions from the Pharosscan explorer index. USD values: USDC counted as $1.00, WPROS at the Chainlink PROS/USD price, collateral via each market's Morpho oracle. Read-only; not financial advice.
+
+[2026-10-14T22:01:54Z] delivered: digests/digest_2026-10-14T2200Z.md and digests/digest_2026-10-14T2200Z.html
+[2026-10-14T22:01:54Z] --runs 2 reached; next digest would be at 2026-10-14 23:00 UTC; exiting
