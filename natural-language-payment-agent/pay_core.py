@@ -208,6 +208,7 @@ class Chain:
     def __init__(self, endpoint: str | None = None):
         self.m = PharosMCP(endpoint) if endpoint else PharosMCP()
         self._tok: dict[str, Token] = {}
+        self._at: dict[int, int] = {}
 
     # basic reads
     def call(self, to: str, data: str, frm: str | None = None) -> str:
@@ -293,17 +294,30 @@ class Chain:
         return out
 
     def block_at(self, ts: int, hi: int | None = None) -> int:
-        """First block with timestamp >= ts (binary search on block timestamps)."""
+        """First block with timestamp >= ts: estimate from the measured block rate, then binary-search a narrow
+        bracket around the estimate (keeps it to ~10 get_block calls instead of ~25)."""
+        if ts in self._at:
+            return self._at[ts]
         hi = hi or self.block_number()
-        if h2i(self.block(hi)["timestamp"]) < ts:
+        t_hi = h2i(self.block(hi)["timestamp"])
+        if t_hi < ts:
             return hi + 1
-        lo = max(0, hi - 5_000_000)
-        while lo < hi:
-            mid = (lo + hi) // 2
+        ref = max(0, hi - 10_000)
+        t_ref = h2i(self.block(ref)["timestamp"])
+        rate = max((t_hi - t_ref) / max(hi - ref, 1), 0.01)  # seconds per block
+        guess = int(hi - (t_hi - ts) / rate)
+        lo, up, step = max(0, guess - 600), min(hi, guess + 600), 1200
+        while lo > 0 and h2i(self.block(lo)["timestamp"]) >= ts:   # widen until lo is before ts
+            lo, step = max(0, lo - step), step * 2
+        while up < hi and h2i(self.block(up)["timestamp"]) < ts:   # widen until up is at/after ts
+            up, step = min(hi, up + step), step * 2
+        while lo < up:
+            mid = (lo + up) // 2
             if h2i(self.block(mid)["timestamp"]) < ts:
                 lo = mid + 1
             else:
-                hi = mid
+                up = mid
+        self._at[ts] = lo
         return lo
 
     # ------------------------------------------------------------ the one entry point that builds a tx
