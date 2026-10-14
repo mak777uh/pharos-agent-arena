@@ -1,0 +1,31 @@
+{
+  "chainId": 1672,
+  "block": 20257825,
+  "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "route": "ERC-4626 vault:SharpByte USDC Pharos Ecosystem",
+  "why": [
+    "highest expected APY after your deposit: 5.50% (now 5.52%; realised share-price growth over the last 7 days, annualised (net of vault fees))",
+    "next best Morpho Blue:WPROS/USDC market 0xb3b8a31c\u2026 would give 4.49% after deposit (\u2248 $50.84/year less)",
+    "capacity ok: no supply cap",
+    "venue facts: performanceFee 15.0% (already netted in share price); managementFee 0.0% (already netted in share price); idle USDC in the vault contract: 792,260.95"
+  ],
+  "signing": "UNSIGNED \u2014 sign and send in order with your own wallet (it sets nonce, gas limit and fees). This tool never signs or broadcasts.",
+  "transactions": [
+    {
+      "chainId": 1672,
+      "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+      "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+      "value": "0x0",
+      "data": "0x095ea7b300000000000000000000000015c25ed222fc498f672af5c3adb5ed0a96e1aff1000000000000000000000000000000000000000000000000000000012a05f200",
+      "description": "approve 5000 USDC to ERC-4626 vault 0x15c2\u2026aff1"
+    },
+    {
+      "chainId": 1672,
+      "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+      "to": "0x15c25ed222fc498f672af5c3adb5ed0a96e1aff1",
+      "value": "0x0",
+      "data": "0x6e553f65000000000000000000000000000000000000000000000000000000012a05f20000000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a",
+      "description": "SharpByte USDC Pharos Ecosystem: deposit(5000 USDC, receiver=you)"
+    }
+  ]
+}
