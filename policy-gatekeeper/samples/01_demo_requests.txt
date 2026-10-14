@@ -1,0 +1,75 @@
+$ python3 scripts/gatekeeper.py check --policy assets/policy.json --requests assets/demo_requests.json --log samples/audit_log.jsonl
+Policy Gatekeeper · policy 'treasury-agent-v1' · agent 0x84dbd23178ba7fc6a2a396559139aef69d0f072a · Pharos mainnet · 2026-10-14 22:37:35 UTC (wed)
+
+[ALLOW] r1-pay-alice: transfer 300 USDC -> 0x1f3546a29eec2102c8d52e21a45114124014c85c
+        decided by: all rules passed - recipient 0x1f3546a29eec2102c8d52e21a45114124014c85c is allowlisted (alice (ops wallet)); wed 22:37:35 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC; 300 USDC within per-tx 500 and 24 h 1000 limits
+          pass allowlist.recipients: recipient 0x1f3546a29eec2102c8d52e21a45114124014c85c is allowlisted (alice (ops wallet))
+          pass time_windows.payments_24x7: wed 22:37:35 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC
+          pass spend_limits.USDC: 300 USDC within per-tx 500 and 24 h 1000 limits
+        executor: prepared UNSIGNED tx (nonce 2167, signing hash 0xefa881d87deb8ff8…) - not signed, not sent
+        sign it yourself: cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000011e1a300 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+        audit #8d08b366e0a3 (prev 000000000000)
+
+[ALLOW] r2-pay-bob: transfer 400 USDC -> 0x4ffd9c7e8641947662a43af298b734ca93530002
+        decided by: all rules passed - recipient 0x4ffd9c7e8641947662a43af298b734ca93530002 is allowlisted (bob (vendor)); wed 22:37:39 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC; 400 USDC within per-tx 500 and 24 h 1000 limits
+          pass allowlist.recipients: recipient 0x4ffd9c7e8641947662a43af298b734ca93530002 is allowlisted (bob (vendor))
+          pass time_windows.payments_24x7: wed 22:37:39 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC
+          pass spend_limits.USDC: 400 USDC within per-tx 500 and 24 h 1000 limits
+        executor: prepared UNSIGNED tx (nonce 2168, signing hash 0x34cf8e4bcf70338e…) - not signed, not sent
+        sign it yourself: cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0xa9059cbb0000000000000000000000004ffd9c7e8641947662a43af298b734ca935300020000000000000000000000000000000000000000000000000000000017d78400 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+        audit #60ac4ff76574 (prev 8d08b366e0a3)
+
+[DENY] r3-pay-alice: transfer 400 USDC -> 0x1f3546a29eec2102c8d52e21a45114124014c85c
+        decided by: spend_limits.USDC.per_day - 700 USDC already executed in the last 24 h + 400 > daily limit 1000 USDC
+          pass allowlist.recipients: recipient 0x1f3546a29eec2102c8d52e21a45114124014c85c is allowlisted (alice (ops wallet))
+          pass time_windows.payments_24x7: wed 22:37:42 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC
+          DENY spend_limits.USDC.per_day: 700 USDC already executed in the last 24 h + 400 > daily limit 1000 USDC
+        executor: NOT called (denied actions are never executed)
+        audit #af5eebfac59b (prev 60ac4ff76574)
+
+[DENY] r4-big-pay: transfer 600 USDC -> 0x4ffd9c7e8641947662a43af298b734ca93530002
+        decided by: spend_limits.USDC.per_tx - 600 USDC > per-transaction limit 500 USDC
+          pass allowlist.recipients: recipient 0x4ffd9c7e8641947662a43af298b734ca93530002 is allowlisted (bob (vendor))
+          pass time_windows.payments_24x7: wed 22:37:42 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC
+          DENY spend_limits.USDC.per_tx: 600 USDC > per-transaction limit 500 USDC
+        executor: NOT called (denied actions are never executed)
+        audit #0f8f3949e877 (prev af5eebfac59b)
+
+[DENY] r5-unknown: transfer 50 USDC -> 0x50fbb8651e332696ba14b04e17175f960ec18ab2
+        decided by: allowlist.recipients - recipient 0x50fbb8651e332696ba14b04e17175f960ec18ab2 is not on the recipient allowlist
+          DENY allowlist.recipients: recipient 0x50fbb8651e332696ba14b04e17175f960ec18ab2 is not on the recipient allowlist
+        executor: NOT called (denied actions are never executed)
+        audit #0daef0ac6d5d (prev 0f8f3949e877)
+
+[DENY] r6-approve: contract_call 0xc879c018db60520f4355c26ed1a6d572cdac1815 data 0x095ea7b3… value 0 PROS
+        decided by: time_windows.contract_calls_business_hours - wed 22:37:42 UTC is outside window mon,tue,wed,thu,fri 08:00-20:00 UTC
+          pass allowlist.contracts: USDC.approve(address,uint256) is allowlisted
+          DENY time_windows.contract_calls_business_hours: wed 22:37:42 UTC is outside window mon,tue,wed,thu,fri 08:00-20:00 UTC
+        executor: NOT called (denied actions are never executed)
+        audit #2f59d4c7acd6 (prev 0daef0ac6d5d)
+
+[DENY] r7-wpros-call: contract_call 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 data 0x2e1a7d4d… value 0 PROS
+        decided by: allowlist.contracts - contract 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 is not on the contract allowlist
+          DENY allowlist.contracts: contract 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 is not on the contract allowlist
+        executor: NOT called (denied actions are never executed)
+        audit #603740295151 (prev 2f59d4c7acd6)
+
+[ALLOW] r8-pros-bob: transfer 0.5 PROS -> 0x4ffd9c7e8641947662a43af298b734ca93530002
+        decided by: all rules passed - recipient 0x4ffd9c7e8641947662a43af298b734ca93530002 is allowlisted (bob (vendor)); wed 22:37:42 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC; 0.5 PROS within per-tx 1 and 24 h 2 limits
+          pass allowlist.recipients: recipient 0x4ffd9c7e8641947662a43af298b734ca93530002 is allowlisted (bob (vendor))
+          pass time_windows.payments_24x7: wed 22:37:42 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC
+          pass spend_limits.PROS: 0.5 PROS within per-tx 1 and 24 h 2 limits
+        executor: prepared UNSIGNED tx (nonce 2169, signing hash 0x5c81fbf257ed6a41…) - not signed, not sent
+        sign it yourself: cast send 0x4FFD9c7E8641947662a43aF298B734ca93530002 0x --value 500000000000000000 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+        audit #4c05bfdcaf67 (prev 603740295151)
+
+[DENY] r9-wpros: transfer 10 WPROS -> 0x1f3546a29eec2102c8d52e21a45114124014c85c
+        decided by: spend_limits.WPROS - no spend limit configured for WPROS -> denied by default
+          pass allowlist.recipients: recipient 0x1f3546a29eec2102c8d52e21a45114124014c85c is allowlisted (alice (ops wallet))
+          pass time_windows.payments_24x7: wed 22:37:44 UTC is inside window mon,tue,wed,thu,fri,sat,sun 00:00-23:59:59 UTC
+          DENY spend_limits.WPROS: no spend limit configured for WPROS -> denied by default
+        executor: NOT called (denied actions are never executed)
+        audit #cf96ee5913ed (prev 4c05bfdcaf67)
+
+9 requests: 3 allowed, 6 denied; executor called 3 times. Audit log: samples/audit_log.jsonl
+exit code: 5
