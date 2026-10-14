@@ -1,0 +1,12 @@
+$ python3 scripts/gatekeeper.py check --policy assets/policy.json --log samples/audit_log.jsonl --request '{"id":"r11-unlimited-approve","type":"contract_call","to":"0xc879c018db60520f4355c26ed1a6d572cdac1815","data":"0x095ea7b300000000000000000000000018573fa18fd17ddfd790b4a5b5b2977aad3b4efbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}'
+Policy Gatekeeper · policy 'treasury-agent-v1' · agent 0x84dbd23178ba7fc6a2a396559139aef69d0f072a · Pharos mainnet · 2026-10-14 22:38:16 UTC (wed)
+
+[DENY] r11-unlimited-approve: contract_call 0xc879c018db60520f4355c26ed1a6d572cdac1815 data 0x095ea7b3… value 0 PROS
+        decided by: time_windows.contract_calls_business_hours - wed 22:38:16 UTC is outside window mon,tue,wed,thu,fri 08:00-20:00 UTC
+          pass allowlist.contracts: USDC.approve(address,uint256) is allowlisted
+          DENY time_windows.contract_calls_business_hours: wed 22:38:16 UTC is outside window mon,tue,wed,thu,fri 08:00-20:00 UTC
+        executor: NOT called (denied actions are never executed)
+        audit #749251c0bf41 (prev cf15c7ac53ef)
+
+1 requests: 0 allowed, 1 denied; executor called 0 times. Audit log: samples/audit_log.jsonl
+exit code: 5
