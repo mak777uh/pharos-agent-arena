@@ -1,0 +1,18 @@
+Chain MCP https://mcp.pharos.xyz/mcp · server pharos-mcp-server 0.1.0 · protocol 2025-03-26 · 14 tools · block #20,255,962
+[OK ] A chain id = 1672: get_chain_info -> {"name": "Pharos", "chainId": 1672, "chainIdHex": "0x688", "expectedChainId": 1672, "chainIdMatches": true, "latestBlock": "20255962", "latestBlockHex": "0x1351
+[OK ] B /health: HTTP 200 {"status":"ok","chain":"Pharos","chainId":1672,"rpcUrl":"https://rpc.pharos.xyz"}
+[OK ] C USDC totalSupply via eth_call: block 20,255,962: totalSupply = 23,219,860.017406 USDC (decimals 6)
+[OK ] D1 get_logs over 1,000 blocks: 78 USDC Transfer logs in blocks 20,254,963..20,255,962; latest tx 0x0bda0dc022e9f28ebd59e2e1f89ccf95fca0303e2c4d530c0fd1c9bc099f5430
+[OK ] D2 get_logs over 1,001 blocks: rejected as documented: get_logs: {
+  "error": {
+    "message": "Block range too large: 1001 blocks requested, maximum is 1000. Narrow fromBlock/toBlock and page th
+[GAP] E schema get_block: docs: ['block', 'fullTransactions'] · live schema: ['block', 'includeTransactions'] · docs args NOT in schema: ['fullTransactions']
+[GAP] E schema get_logs: docs: ['filter'] · live schema: ['address', 'fromBlock', 'toBlock', 'topics'] · docs args NOT in schema: ['filter']
+[GAP] E schema estimate_gas: docs: ['transaction', 'block'] · live schema: ['transaction'] · docs args NOT in schema: ['block']
+[OK ] E schema eth_call: docs: ['transaction', 'block'] · live schema: ['block', 'transaction']
+[OK ] F hosted send_raw_transaction: 'send_raw_transaction' in tools/list: True; probe with 0x00 -> {
+  "error": {
+    "message": "rawTransaction is too short to be a signed EVM transaction"
+  }
+}
+Proof: https://www.pharosscan.xyz/tx/0x0bda0dc022e9f28ebd59e2e1f89ccf95fca0303e2c4d530c0fd1c9bc099f5430
