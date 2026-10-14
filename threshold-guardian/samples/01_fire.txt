@@ -1,0 +1,50 @@
+$ python3 scripts/guardian.py --config assets/guardian.rebalance.json --log samples/guardian_log.jsonl
+Threshold Guardian · usdc-rebalance-guardian · Pharos mainnet block #20,256,179 (2026-10-14 22:20:11 UTC)
+mode: all (need 5 of 5 conditions)
+----------------------------------------------------------------------------------------------------
+[PASS] price_move                     0.0829 %  < 3 %
+       WPROS/USDC pool price moved (absolute %) over the last ~1 h (3,600 blocks)
+       WPROS/USDC 0.583049 @#20,252,579 -> 0.582565 @#20,256,179
+       source: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 slot0() @ 20252579 and @ 20256179
+[PASS] oracle_dev                     0.5215 %  < 2 %
+       pool spot price vs Chainlink PROS/USD deviation
+       pool 0.582565 vs Chainlink 0.585620
+       source: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 slot0() + 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ 20256179
+[PASS] gas                        10.0000 gwei <= 20 gwei
+       network gas price
+       priority fee 0 wei
+       source: Chain MCP get_gas_price (latest)
+[PASS] vault_liquidity        98,563.1600 USDC  > 50,000 USDC
+       available USDC liquidity in the Morpho Blue WPROS/USDC market (supply - borrow)
+       WPROS/USDC supply 1,098,122.23 borrow 999,559.07
+       source: Morpho Blue 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8a31c…) @ 20256179
+[PASS] treasury_usdc           6,846.8544 USDC >= 1,000 USDC
+       treasury (signer) USDC balance
+       owner 0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+       source: 0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(0x84dbd23178ba7fc6a2a396559139aef69d0f072a) @ 20256179
+----------------------------------------------------------------------------------------------------
+DECISION: FIRE  (5/5 passed, 5 required)
+
+=== Prepared action: rebalance 250 USDC treasury -> ops wallet (review before signing) ===
+  Pay        : 250 USDC  (contract 0xc879c018db60520f4355c26ed1a6d572cdac1815)
+  To         : 0x1F3546a29EeC2102c8d52E21a45114124014c85C  https://www.pharosscan.xyz/address/0x1f3546a29eec2102c8d52e21a45114124014c85c
+  From/signer: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  Reference  : GUARDIAN-REBALANCE  (embedded in calldata as 'PHAROS-REF:GUARDIAN-REBALANCE')
+  Network    : Pharos mainnet, chainId 1672, nonce 2166, gas limit 71,060
+  Fees       : maxFeePerGas 20 gwei, tip 0 gwei -> at most 0.0014212 PROS network fee
+  Checks:
+    [ok] Chain MCP is on Pharos mainnet (chainId 1672)
+    [ok] token USDC 0xc879c018db60520f4355c26ed1a6d572cdac1815 has code, decimals 6 (read on chain)
+    [ok] recipient is a regular account (no contract code)
+    [ok] payer not blacklisted by USDC
+    [ok] recipient not blacklisted by USDC
+    [ok] payer USDC balance 6,846.854421 >= 250 (balanceOf)
+    [ok] simulation OK: estimate_gas 59,217 -> gas limit 71,060 (+20%)
+    [ok] signer PROS balance 7.139713067 >= value + max gas fee 0.0014212 (get_balance)
+    [ok] nonce 2166 = get_transaction_count(sender, 'pending')
+Unsigned - sign it yourself (this skill never signs or broadcasts):
+  wallet (EIP-1193): {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c000000000000000000000000000000000000000000000000000000000ee6b280504841524f532d5245463a475541524449414e2d524542414c414e4345", "gas": "0x11594", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x876", "chainId": "0x688", "type": "0x2"}]}
+  or with the official pharos-skill-engine / Foundry: cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c000000000000000000000000000000000000000000000000000000000ee6b280504841524f532d5245463a475541524449414e2d524542414c414e4345 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+
+logged to samples/guardian_log.jsonl
+exit code: 0
