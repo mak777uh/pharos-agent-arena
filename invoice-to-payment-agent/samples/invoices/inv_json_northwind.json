@@ -1,0 +1,16 @@
+{
+  "invoice_number": "NW-7781",
+  "issue_date": "2026-10-12",
+  "due_date": "2026-11-12",
+  "payee": {"name": "Northwind Hosting", "wallet": "0x4ffd9c7e8641947662a43af298b734ca93530002"},
+  "payer": {"name": "Demo Customer", "wallet": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a"},
+  "currency": "USDC",
+  "network": "Pharos Pacific mainnet",
+  "line_items": [
+    {"description": "VPS plan, October", "quantity": 3, "unit_price": "40.00", "amount": "120.00"},
+    {"description": "Backup storage", "quantity": 1, "unit_price": "9.50", "amount": "9.50"}
+  ],
+  "subtotal": "129.50",
+  "tax": "0",
+  "total": "129.50"
+}
