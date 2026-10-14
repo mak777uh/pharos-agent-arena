@@ -1,0 +1,18 @@
+$ python -m unittest discover -s tests -v
+[run at 2026-10-14 21:25:02 UTC]
+test_duplicate_and_payer (test_invoice.InvoiceTests.test_duplicate_and_payer) ... ok
+test_flags (test_invoice.InvoiceTests.test_flags) ... ok
+test_json (test_invoice.InvoiceTests.test_json) ... ok
+test_pdf (test_invoice.InvoiceTests.test_pdf) ... ok
+test_text (test_invoice.InvoiceTests.test_text) ... ok
+test_two_payto_wallets (test_invoice.InvoiceTests.test_two_payto_wallets) ... ok
+test_checksum (test_pay_core.CoreTests.test_checksum) ... ok
+test_memo_roundtrip (test_pay_core.CoreTests.test_memo_roundtrip) ... ok
+test_units (test_pay_core.CoreTests.test_units) ... ok
+test_unsigned_vector (test_pay_core.CoreTests.test_unsigned_vector) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.090s
+
+OK
+[exit code 0]
