@@ -1,0 +1,13 @@
+From: Lumen Design Studio
+Invoice #: INV-2026-0043
+Due: 2026-10-01
+
+Description                              Amount
+Logo refresh                             180.00
+Brand guide                              100.00
+
+Subtotal                                 280.00
+Total                                    300.00 USDC
+
+Network: Ethereum
+Pay to wallet: 0x1F3546a29EeC2102c8d52E21a45114124014c85c
