@@ -13,5 +13,11 @@ Solutions for tasks on the [Pharos Agent Arena](https://pharos-agent-arena.verce
 | Docs MCP + Chain MCP Agent (Medium) | [`docs-chain-mcp-agent/`](docs-chain-mcp-agent/) |
 | Liquidation Watchdog (Medium) | [`liquidation-watchdog/`](liquidation-watchdog/) |
 | Gas Fee Optimizer (Medium) | [`gas-fee-optimizer/`](gas-fee-optimizer/) |
+| Wallet Risk Checker (Medium) | [`wallet-risk-checker/`](wallet-risk-checker/) |
+| Weekly Digest Agent (Medium) | [`weekly-digest-agent/`](weekly-digest-agent/) |
+| Portfolio Assistant (Hard) | [`portfolio-assistant/`](portfolio-assistant/) |
+| Natural-Language Payment Agent (Medium) | [`natural-language-payment-agent/`](natural-language-payment-agent/) |
+| Invoice-to-Payment Agent (Medium) | [`invoice-to-payment-agent/`](invoice-to-payment-agent/) |
+| Recurring Payment Agent (Medium) | [`recurring-payment-agent/`](recurring-payment-agent/) |
 
 Each folder has its own README with setup, usage and real sample output. License: MIT.
