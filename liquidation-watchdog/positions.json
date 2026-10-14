@@ -1,0 +1,13 @@
+{
+  "_comment": "Real Morpho Blue borrow positions on Pharos mainnet (found 2026-10-14 from Morpho txs/receipts). Market id = bytes32 Morpho market id.",
+  "positions": [
+    {"label": "WPROS→USDC borrower", "market": "0xb3b8a31c8a1652cf31eb872c7778716edc39471ed82bcad99b3f5c83a449e1ba", "borrower": "0xd27cb53f5920d484261cc14d32094d3f043265c9"},
+    {"label": "wsrUSD→USDC large", "market": "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73", "borrower": "0x086eb9c2b14dd657ae77d07df9115a2f946ce327"},
+    {"label": "wsrUSD→USDC", "market": "0xbea21c372be9729760844cb2d60879f5ced6a8a5bba9a538dea8801e8ac49e73", "borrower": "0xc6dd9976066f3364b4d6a72cd4f1fa0468327aa7"},
+    {"label": "syzUSD→USDC", "market": "0xc79579a002dbc8c535d3a87198fcbbece1a664ad82a356b0447c5bff9e16fd86", "borrower": "0xa4a57dcf7b15456b7053f10a377bdb437c073dcc"},
+    {"label": "syzUSD→USDC", "market": "0xc79579a002dbc8c535d3a87198fcbbece1a664ad82a356b0447c5bff9e16fd86", "borrower": "0xe6a4771284342462f4d2bfbfb86db12c8f19fe7c"},
+    {"label": "APC3M→USDC (86% LLTV)", "market": "0xba0d2638a277fd7696cdefdb96b5bd7405d0f174ba7526ce2c789f41149d91bc", "borrower": "0x67765ea217d0021e35ca973dbae3b54823081a2b"},
+    {"label": "BTCVC→WPROS", "market": "0x6657f8b7ec9d900f8e975e3f7eb74b80e2783cbbacd1d3f90d144a3e34ad2faa", "borrower": "0x44e96401ba547b25719d233daee87cb90ca649dc"},
+    {"label": "ETHVP→WPROS", "market": "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69", "borrower": "0x1f735797c030e7780f803706c5ed8e2b269a528c"}
+  ]
+}
