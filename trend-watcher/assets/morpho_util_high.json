@@ -1,0 +1,8 @@
+{
+  "series": "morpho-wpros-usdc-utilization",
+  "description": "Utilization of the Morpho Blue WPROS/USDC market (collateral WPROS, loan USDC). Act only if it stays above 90% for 3 consecutive observations - then prepare (not send) a 100 USDC top-up from the treasury to the ops wallet.",
+  "source": {"type": "morpho_utilization_pct", "params": {"market_id": "0xb3b8a31c8a1652cf31eb872c7778716edc39471ed82bcad99b3f5c83a449e1ba"}},
+  "rule": {"id": "util-above-90-x3", "type": "sustained", "op": "gt", "threshold": "90", "observations": 3, "max_gap_blocks": 1200},
+  "action": {"type": "erc20_transfer", "label": "top-up 100 USDC treasury -> ops", "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+             "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c", "token": "USDC", "amount": "100", "reference": "TREND-UTIL-90"}
+}
