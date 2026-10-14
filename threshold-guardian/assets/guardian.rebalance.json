@@ -1,0 +1,55 @@
+{
+  "name": "usdc-rebalance-guardian",
+  "description": "Rebalance treasury USDC into the ops wallet only when the WPROS/USDC market is calm, the pool agrees with Chainlink, gas is cheap, the Morpho USDC market still has liquidity and the treasury holds enough USDC.",
+  "mode": "all",
+  "conditions": [
+    {
+      "id": "price_move",
+      "type": "pool_price_change_pct",
+      "description": "WPROS/USDC pool price moved (absolute %) over the last ~1 h (3,600 blocks)",
+      "params": {"pool": "0x912c9ade24d44d8922f0866d8dcb079f1363f647", "lookback_blocks": 3600},
+      "op": "lt",
+      "threshold": "3"
+    },
+    {
+      "id": "oracle_dev",
+      "type": "pool_oracle_deviation_pct",
+      "description": "pool spot price vs Chainlink PROS/USD deviation",
+      "params": {"pool": "0x912c9ade24d44d8922f0866d8dcb079f1363f647", "feed": "0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466"},
+      "op": "lt",
+      "threshold": "2"
+    },
+    {
+      "id": "gas",
+      "type": "gas_price_gwei",
+      "description": "network gas price",
+      "op": "lte",
+      "threshold": "20"
+    },
+    {
+      "id": "vault_liquidity",
+      "type": "morpho_liquidity",
+      "description": "available USDC liquidity in the Morpho Blue WPROS/USDC market (supply - borrow)",
+      "params": {"market_id": "0xb3b8a31c8a1652cf31eb872c7778716edc39471ed82bcad99b3f5c83a449e1ba"},
+      "op": "gt",
+      "threshold": "50000"
+    },
+    {
+      "id": "treasury_usdc",
+      "type": "erc20_balance",
+      "description": "treasury (signer) USDC balance",
+      "params": {"token": "0xc879c018db60520f4355c26ed1a6d572cdac1815", "owner": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a"},
+      "op": "gte",
+      "threshold": "1000"
+    }
+  ],
+  "action": {
+    "type": "erc20_transfer",
+    "label": "rebalance 250 USDC treasury -> ops wallet",
+    "from": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+    "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+    "token": "USDC",
+    "amount": "250",
+    "reference": "GUARDIAN-REBALANCE"
+  }
+}
