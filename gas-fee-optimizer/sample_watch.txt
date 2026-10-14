@@ -1,0 +1,22 @@
+$ python gas_fee_optimizer.py watch --samples 8 --interval 10
+[2026-10-14 20:37:38 UTC] block #20,250,467  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:37:48 UTC] block #20,250,474  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:37:59 UTC] block #20,250,481  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:38:09 UTC] block #20,250,490  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:38:20 UTC] block #20,250,497  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:38:30 UTC] block #20,250,509  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:38:41 UTC] block #20,250,517  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+[2026-10-14 20:38:51 UTC] block #20,250,527  baseFee 10 gwei  tip 0 gwei  eth_gasPrice 10 gwei  (block gas used 0)
+
+Recent history (this file + earlier runs):
+  time (UTC)                 block       baseFee        tip  eth_gasPrice   block gas used
+  2026-10-14 20:37:38   20,250,467       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:37:48   20,250,474       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:37:59   20,250,481       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:38:09   20,250,490       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:38:20   20,250,497       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:38:30   20,250,509       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:38:41   20,250,517       10 gwei     0 gwei       10 gwei         0/1,000M
+  2026-10-14 20:38:51   20,250,527       10 gwei     0 gwei       10 gwei         0/1,000M
+  8 samples · min 10 gwei · median 10 gwei · max 10 gwei · trend ▁▁▁▁▁▁▁▁
+  gas price has been FLAT at 10 gwei over this window (no variation observed).
