@@ -1,0 +1,387 @@
+{
+  "endpoint": "https://docs.pharos.xyz/~gitbook/mcp",
+  "server": "docs.pharos.xyz/~gitbook/mcp",
+  "protocol": "2025-03-26",
+  "tools_offered": [
+    "searchDocumentation",
+    "getPage",
+    "askQuestion",
+    "sendFeedback"
+  ],
+  "started_utc": "2026-10-14 22:13:13",
+  "steps": [
+    {
+      "id": 1,
+      "intent": "Find out what ai.pharos.xyz is and where to start",
+      "tool": "askQuestion",
+      "query": "What is ai.pharos.xyz and how do I get started with it as a developer?",
+      "goal": "Onboard onto ai.pharos.xyz and build a first read-only agent on Pharos",
+      "arguments": {
+        "question": "What is ai.pharos.xyz and how do I get started with it as a developer?",
+        "goal": "Onboard onto ai.pharos.xyz and build a first read-only agent on Pharos"
+      },
+      "seconds": 17.6,
+      "is_error": false,
+      "answer": "I cannot find information in the docs identifying **ai.pharos.xyz** itself. The documented developer entry point for building an AI agent that reads Pharos data is the **Pharos MCP server**: it connects AI clients to Pharos chain data and contract-read tools.\n\nTo start a read-only agent:\n\n1. Add the hosted MCP server to an MCP-compatible client’s configuration:\n\n   ```json\n   {\n     \"mcpServers\": {\n       \"pharos\": {\n         \"type\": \"http\",\n         \"url\": \"https://mcp.pharos.xyz/mcp\"\n       }\n     }\n   }\n   ```\n\n   The hosted endpoint requires no API key. Check connectivity with `curl https://mcp.pharos.xyz/health`.\n2. Ask the agent for read-only tasks, such as checking the latest block, a PROS balance, or calling a contract’s view function. The server provides tools including `get_block_number`, `get_balance`, `eth_call`, and `get_logs`.\n3. Keep the agent read-only by not asking it to broadcast transactions. For a stronger technical restriction, self-host the MCP server: transaction broadcasting is disabled by default there.\n\nThe hosted endpoint also exposes a transaction-broadcasting tool, so prompts alone are not a technical access control. See the [Pharos MCP](/tooling-and-infrastructure/mcp) for client setup, available tools, and self-hosting. If you meant a toolkit for an agent to run Pharos CLI commands, see the [Pharos Skill Engine](/tooling-and-infrastructure/pharos-skill-engine-guide).\n\n# Sources\n\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)\n- [Write Your First dApp](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-dapp)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Goldsky](https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af)\n- [Encyclopedia](https://docs.pharos.xyz/introduction/encyclopedia)\n- [Using Binary](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [Pharos Network Snapshots](https://docs.pharos.xyz/node-and-validator-guide/pharos-network-snapshots)\n- [Vision & Mission](https://docs.pharos.xyz/introduction/vision-and-mission)\n- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-dapp",
+        "https://docs.pharos.xyz/getting-started/get-pros-gas",
+        "https://docs.pharos.xyz/introduction/encyclopedia",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/introduction/vision-and-mission",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/pharos-network-snapshots",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/indexing/goldsky",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+      ]
+    },
+    {
+      "id": 2,
+      "intent": "Locate the AI / agent section of the docs",
+      "tool": "searchDocumentation",
+      "query": "ai.pharos.xyz agent center MCP SkillEngine",
+      "arguments": {
+        "query": "ai.pharos.xyz agent center MCP SkillEngine"
+      },
+      "seconds": 0.7,
+      "is_error": false,
+      "answer": "Title: Pharos MCP\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/mcp\nContent: The Pharos MCP server brings Pharos chain data and onchain operations into any client that speaks the Model Context Protocol — Claude Desktop, Cursor, Windsurf, Codex, and custom agent runners.\n\nInstead of writing RPC plumbing, you ask your AI assistant in plain language — \"what's the latest Pharos block?\", \"check the PROS balance of 0x…\" — and it calls the right chain method for you.\n\nHosted endpoint\nhttps://mcp.pharos.xyz/mcp\nTransport\nStreamable HTTP\nAuthentication\nNone — public\nRate limit\n120 requests per minute per IP\nChain ID\n1672 (0x688)\nNative token\nPROS\nSource\ngithub.com/PharosNetwork/pharos-mcpTitle: Publish Service Agent\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af\nContent: A Service Agent currently hosts a single Skill package. If your repo contains multiple Skills, split them into separate packages and submit each one individually.Title: x402\nLink: https://docs.pharos.xyz/developer-guide/x402\nContent: AI Agents subscribing to content services with auto-renewal: AI agents can represent users in subscribing to content services such as industry updates, financial newsletters, or in-depth analysis reports, automatically completing periodic fee payments and renewal operations through integrated digital wallets.\nPay-per-use AI capability calls: Users or systems pay based on the actual number of uses when calling Large Language Model (LLM) inference, image generation, or other AI APIs.\nPayments between agents: Supports peer-to-peer payments between multiple autonomous agents for data sharing, task collaboration, or service provision without human intervention.\nAutomated financial trading agents: Based on real-time market data and external information sources (e.g., paid data streams), these agents autonomously execute high-frequency trading strategies and dynamically procure necessary data resources to optimize decision-making.Title: Pharos Skill Engine\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide\nContent: When a developer asks the AI agent to do something on Pharos, the agent's first action is to read SKILL.md. This file does two things:\n\nDeclares the prerequisites the agent must satisfy (Foundry installed, private key configured)\nProvides a Capability Index — a table that maps every possible user intent to the correct capability and points to detailed instructions in a reference file\n\nFor example: if a developer says \"check my wallet balance\", the agent reads the Capability Index, finds the row for balance queries, and then reads references/query.md for the exact cast balance command template, parameter spec, and output parsing rules.Title: About Pharos\nLink: https://docs.pharos.xyz/introduction/readme\nContent: Pharos has designed a Modular & Full-stack Parallel L1 Blockchain Network, structured into three primary layers: L1-Base, L1-Core, and L1-Extension.\n\nL1-Base: Delivers industry-leading data availability and hardware acceleration.\nL1-Core: A high-performance, globally distributed blockchain network powered by decentralized nodes. These nodes provide high-throughput and sub-second finality, enabling real-time Web3 user experiences.\nL1-Extension: Built on top of L1-Core, this layer supports network expansion across three dimensions:\nLeverages heterogeneous computation to create custom Special Processing Networks (SPNs), capable of running blockchain networks, sidechains, or non-blockchain applications like HFT, ZKML, and AI models.\nEnables Native Restaking to support rapid SPN creation, shared security, staking rewards, and slashing mechanisms. SPNs utilize the excess computing power of validators, providing flexibility in resource use while incentivizing upgrades.\nFacilitates Cross-SPNs Interoperation, allowing infrastructure, middleware, and application-focused SPNs to communicate and collaborate effortlessly, fostering a highly modular and composable ecosystem.Title: Piggy Bank Tutorial\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide\nContent: A Pharos Skill is a folder of files that teaches an AI (Claude) how to interact with the Pharos blockchain. When you ask the AI something like \"Deploy a vault on Pharos\", it reads your skill files to know exactly which commands to run.\n\nThe AI is smart but it does not automatically know your contract. You teach it by writing instruction files in plain Markdown. The AI reads those files and follows them precisely.Title: Circle CCTP\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp\nContent: The relationship between CCTP’s onchain components and Circle’s offchain Attestation Service is illustrated below for a burn-and-mint of USDC between EVM-compatible domains:\n\nOn Pharos, the onchain component for crosschain burning and minting is called TokenMessengerV2, which is built on top of MessageTransmitterV2, an onchain component for generalized message passing.\n\nIn the diagram, a token depositor calls the TokenMessengerV2#depositForBurn function to deposit a native token (such as USDC), which delegates to the TokenMinterV2 contract to burn the token. The TokenMessengerV2 contract then sends a message via the MessageTransmitterV2#sendMessage function. After sufficient block confirmations, Circle’s offchain attestation service, Iris, signs the message. An API consumer must query this attestation and submits it onchain to the destination domain’s MessageTransmitterV2#receiveMessage function.\n\nTo send an arbitrary message, directly call MessageTransmitterV2#sendMessage. The message recipient must implement the following methods to handle messages based on their finality threshold:\n\nImplement IMessageHandlerV2#handleReceiveFinalizedMessage to receive messages with finalityThresholdExecuted ≥ 2000.\nImplement IMessageHandlerV2#handleReceiveUnfinalizedMessage to receive messages with finalityThresholdExecuted < 2000.\n\nThis distinction allows the recipient to control the level of finality it requires before accepting a message.Title: Node Debugging & Configuration\nLink: https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration\nContent: You can refer to the Pharos Block Validation document for details on the Pharos consensus mechanism and block validation process.Title: Fordefi\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi\nContent: Pharos can be enabled directly within the Fordefi platform from the Chains settings:\n\nhttps://app.fordefi.com/settings/chains?search=PHAROS&page=1Title: Rapid Node Initialization\nLink: https://docs.pharos.xyz/node-and-validator-guide/rapid-node-initialization\nContent: Atlantic",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/rapid-node-initialization",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi"
+      ]
+    },
+    {
+      "id": 3,
+      "intent": "Get the Chain MCP endpoint and how to connect a client",
+      "tool": "askQuestion",
+      "query": "What is the URL of the hosted Pharos Chain MCP server and how do I connect an MCP client to it?",
+      "arguments": {
+        "question": "What is the URL of the hosted Pharos Chain MCP server and how do I connect an MCP client to it?"
+      },
+      "seconds": 7.9,
+      "is_error": false,
+      "answer": "The hosted Pharos Chain MCP server is **`https://mcp.pharos.xyz/mcp`**. It uses Streamable HTTP and requires no API key.\n\nFor an MCP client that supports remote HTTP servers, add:\n\n```json\n{\n  \"mcpServers\": {\n    \"pharos\": {\n      \"type\": \"http\",\n      \"url\": \"https://mcp.pharos.xyz/mcp\"\n    }\n  }\n}\n```\n\nIf your client supports only stdio, use `mcp-remote` as a bridge:\n\n```json\n{\n  \"mcpServers\": {\n    \"pharos\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-remote\", \"https://mcp.pharos.xyz/mcp\"]\n    }\n  }\n}\n```\n\nYou can check server health with `curl https://mcp.pharos.xyz/health`. The hosted endpoint is limited to 120 requests per minute per IP. See [Pharos MCP](/tooling-and-infrastructure/mcp) for details.\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft)\n- [Enable AutoPruning in Pharos Node](https://docs.pharos.xyz/enable-pruning-in-pharos-node)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/enable-pruning-in-pharos-node",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan"
+      ]
+    },
+    {
+      "id": 4,
+      "intent": "Read the MCP page in full",
+      "tool": "getPage",
+      "query": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+      "arguments": {
+        "url": "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      },
+      "seconds": 0.3,
+      "is_error": false,
+      "answer": "# Pharos MCP\n\n## Overview\n\nThe Pharos MCP server brings Pharos chain data and onchain operations into any client that speaks the [Model Context Protocol](https://modelcontextprotocol.io) — Claude Desktop, Cursor, Windsurf, Codex, and custom agent runners.\n\nInstead of writing RPC plumbing, you ask your AI assistant in plain language — *\"what's the latest Pharos block?\"*, *\"check the PROS balance of 0x…\"* — and it calls the right chain method for you.\n\n|                     |                                                                                    |\n| ------------------- | ---------------------------------------------------------------------------------- |\n| **Hosted endpoint** | `https://mcp.pharos.xyz/mcp`                                                       |\n| **Transport**       | Streamable HTTP                                                                    |\n| **Authentication**  | None — public                                                                      |\n| **Rate limit**      | 120 requests per minute per IP                                                     |\n| **Chain ID**        | `1672` (`0x688`)                                                                   |\n| **Native token**    | PROS                                                                               |\n| **Source**          | [github.com/PharosNetwork/pharos-mcp](https://github.com/PharosNetwork/pharos-mcp) |\n\n## Quick Start\n\nAdd the server to your MCP client configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"pharos\": {\n      \"type\": \"http\",\n      \"url\": \"https://mcp.pharos.xyz/mcp\"\n    }\n  }\n}\n```\n\nNo API key is required.\n\n### Clients that only support stdio\n\nSome clients cannot connect to remote MCP servers directly. Bridge to the hosted endpoint with [`mcp-remote`](https://www.npmjs.com/package/mcp-remote):\n\n```json\n{\n  \"mcpServers\": {\n    \"pharos\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-remote\", \"https://mcp.pharos.xyz/mcp\"]\n    }\n  }\n}\n```\n\n### Verify the connection\n\n```bash\ncurl https://mcp.pharos.xyz/health\n```\n\n```json\n{\"status\":\"ok\",\"chain\":\"Pharos\",\"chainId\":1672,\"rpcUrl\":\"https://rpc.pharos.xyz\"}\n```\n\n## Available Tools\n\n### Chain and block data\n\n| Tool               | JSON-RPC method                                        | Description                               |\n| ------------------ | ------------------------------------------------------ | ----------------------------------------- |\n| `get_chain_info`   | `eth_chainId`, `eth_blockNumber`, `web3_clientVersion` | Chain ID, client version and latest block |\n| `get_block_number` | `eth_blockNumber`                                      | Latest block height                       |\n| `get_block`        | `eth_getBlockByNumber`                                 | Block by tag or number                    |\n| `get_gas_price`    | `eth_gasPrice`, `eth_maxPriorityFeePerGas`             | Current gas price and priority fee        |\n\n### Accounts and transactions\n\n| Tool                      | JSON-RPC method             | Description                       |\n| ------------------------- | --------------------------- | --------------------------------- |\n| `get_balance`             | `eth_getBalance`            | Native PROS balance of an address |\n| `get_transaction_count`   | `eth_getTransactionCount`   | Address nonce                     |\n| `get_transaction`         | `eth_getTransactionByHash`  | Transaction by hash               |\n| `get_transaction_receipt` | `eth_getTransactionReceipt` | Transaction receipt               |\n\n### Contracts\n\n| Tool             | JSON-RPC method    | Description                           |\n| ---------------- | ------------------ | ------------------------------------- |\n| `eth_call`       | `eth_call`         | Read-only contract call               |\n| `estimate_gas`   | `eth_estimateGas`  | Estimate gas without sending          |\n| `get_code`       | `eth_getCode`      | Contract bytecode                     |\n| `get_storage_at` | `eth_getStorageAt` | Read a contract storage slot          |\n| `get_logs`       | `eth_getLogs`      | Event logs (max 1000 blocks per call) |\n\n### Broadcasting\n\n| Tool                   | JSON-RPC method          | Description                             |\n| ---------------------- | ------------------------ | --------------------------------------- |\n| `send_raw_transaction` | `eth_sendRawTransaction` | Broadcast an already-signed transaction |\n\n## Block Parameters\n\nTools that accept a `block` parameter take any of:\n\n* A named tag: `latest`, `earliest`, `pending`, `safe`, `finalized`\n* A decimal number: `13005874`\n* A hex quantity: `0xc67432`\n\nOmitting it defaults to `latest`.\n\n## Querying Event Logs\n\n`get_logs` is capped at **1000 blocks per call**, matching the upstream RPC limit. Requests spanning a wider range are rejected with a message telling you the requested size and the maximum, so page through larger ranges in 1000-block windows.\n\nNarrow results with `address` and `topics` wherever possible — an unfiltered query over a wide range is slow for everyone.\n\n## Sending Transactions\n\nThe server is **non-custodial**: it never receives, stores, or asks for a private key. Signing happens entirely in your own wallet or script; the server only relays the resulting signed bytes to the network.\n\n```\nYour private key ──sign (locally)──▶ 0x02f86b…──▶ MCP server ──▶ Pharos\n```\n\nThe flow is:\n\n1. Build and sign a transaction locally with your own tooling (viem, ethers, a wallet).\n2. Pass the resulting `0x`-prefixed string to `send_raw_transaction`.\n3. Use the returned transaction hash with `get_transaction_receipt` to confirm inclusion.\n\nBecause signing is local, an AI agent connected to this server can prepare and broadcast a transaction for you without ever having access to your key.\n\n## Self-Hosting\n\nRun your own instance when you need a private RPC provider, a higher rate limit, or your own operational control.\n\nRequires Node.js 20 or newer.\n\n```bash\ngit clone https://github.com/PharosNetwork/pharos-mcp.git\ncd pharos-mcp\nnpm install\nnpm run build\nnpm start\n```\n\n### Connecting a local instance over stdio\n\n```json\n{\n  \"mcpServers\": {\n    \"pharos\": {\n      \"command\": \"node\",\n      \"args\": [\"/absolute/path/to/pharos-mcp/dist/src/index.js\"],\n      \"env\": {\n        \"PHAROS_RPC_URL\": \"https://rpc.pharos.xyz\",\n        \"PHAROS_CHAIN_ID\": \"1672\",\n        \"PHAROS_NATIVE_SYMBOL\": \"PROS\"\n      }\n    }\n  }\n}\n```\n\n### Using your own RPC endpoint\n\nPoint `PHAROS_RPC_URL` at any Pharos RPC — including a provider endpoint that carries an API key, or your own node:\n\n```json\n\"env\": {\n  \"PHAROS_RPC_URL\": \"https://your-provider.example/v2/YOUR_API_KEY\"\n}\n```\n\nKeep such a URL out of version control; it holds a credential.\n\n### Docker\n\n```bash\ndocker build -t pharos-mcp-server .\ndocker run -p 3001:3001 \\\n  -e MCP_TRANSPORT=http \\\n  -e MCP_HOST=0.0.0.0 \\\n  pharos-mcp-server\n```\n\n### Configuration\n\n| Variable                      | Default                  | Description                                                                          |\n| ----------------------------- | ------------------------ | ------------------------------------------------------------------------------------ |\n| `PHAROS_RPC_URL`              | `https://rpc.pharos.xyz` | Upstream JSON-RPC endpoint                                                           |\n| `PHAROS_CHAIN_ID`             | `1672`                   | Expected chain ID                                                                    |\n| `PHAROS_NATIVE_SYMBOL`        | `PROS`                   | Native token symbol                                                                  |\n| `MCP_TRANSPORT`               | `stdio`                  | `stdio` or `http`                                                                    |\n| `MCP_HOST`                    | `127.0.0.1`              | Bind address; use `0.0.0.0` in containers                                            |\n| `MCP_PORT`                    | `3001`                   | HTTP port                                                                            |\n| `MCP_AUTH_TOKEN`              | —                        | Bearer token; authentication is off when unset                                       |\n| `ENABLE_SEND_RAW_TRANSACTION` | `false`                  | Enable transaction broadcasting                                                      |\n| `RATE_LIMIT_PER_MINUTE`       | `120`                    | Per-IP request cap; `0` disables                                                     |\n| `TRUST_PROXY`                 | `false`                  | Set `true` behind exactly one trusted proxy so rate limiting sees the real client IP |\n| `MAX_SESSIONS`                | `500`                    | Maximum concurrent sessions; further sessions get `503`                              |\n| `SESSION_TIMEOUT_MINUTES`     | `30`                     | Idle session eviction time                                                           |\n\n## Security Notes\n\n* The server has no use for a private key or mnemonic — never pass one to it.\n* `send_raw_transaction` is disabled by default in self-hosted deployments. If you enable it on a publicly reachable instance, put authentication in front of it first; an open broadcast endpoint lets anyone push transactions through your node.\n* Set `MCP_AUTH_TOKEN` and terminate TLS in front of any instance you expose beyond localhost.\n* `admin_*`, `debug_*`, `personal_*` and `txpool_*` methods are not exposed.\n\n## Troubleshooting\n\n| Symptom                 | Cause and fix                                                                                                                                      |\n| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `Unknown MCP session`   | The session expired or the server restarted. Reconnect the client — a full client restart clears cached session state.                             |\n| `429 Too Many Requests` | Rate limit reached. Back off and retry after the interval in the `Retry-After` header, or self-host for a higher limit.                            |\n| `Block range too large` | `get_logs` was called with more than 1000 blocks. Page through the range in smaller windows.                                                       |\n| `Connection failed`     | The client may not support remote MCP servers. If it connects but lists no tools, this is the same cause. Bridge with `mcp-remote` as shown above. |\n",
+      "doc_links": []
+    },
+    {
+      "id": 5,
+      "intent": "Does the hosted Chain MCP need an API key, and what are its rate limits?",
+      "tool": "askQuestion",
+      "query": "Does the hosted Pharos Chain MCP require an API key, and what are its rate limits?",
+      "arguments": {
+        "question": "Does the hosted Pharos Chain MCP require an API key, and what are its rate limits?"
+      },
+      "seconds": 7.1,
+      "is_error": false,
+      "answer": "No API key is required for the hosted Pharos MCP endpoint. It allows **120 requests per minute per IP**. Requests over the limit may receive `429 Too Many Requests`; the response includes a `Retry-After` header.\n\nSee [Pharos MCP](/tooling-and-infrastructure/mcp) for the endpoint and setup details.\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)\n- [Foundry](https://docs.pharos.xyz/developer-guide/foundry)\n- [Hardhat](https://docs.pharos.xyz/developer-guide/hardhat)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft)",
+      "doc_links": [
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/developer-guide/foundry",
+        "https://docs.pharos.xyz/developer-guide/hardhat",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan"
+      ]
+    },
+    {
+      "id": 6,
+      "intent": "Can the hosted Chain MCP send transactions?",
+      "tool": "askQuestion",
+      "query": "Can I send a signed transaction through the hosted Pharos Chain MCP with send_raw_transaction?",
+      "arguments": {
+        "question": "Can I send a signed transaction through the hosted Pharos Chain MCP with send_raw_transaction?"
+      },
+      "seconds": 6.9,
+      "is_error": false,
+      "answer": "Yes. The hosted Pharos MCP exposes `send_raw_transaction` to broadcast an already-signed transaction. Sign it locally, then pass the `0x`-prefixed signed transaction bytes; the server never needs your private key. It returns a transaction hash you can check with `get_transaction_receipt`.\n\nSee [Pharos MCP](/tooling-and-infrastructure/mcp) for the hosted endpoint and transaction flow.\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [Hardhat](https://docs.pharos.xyz/developer-guide/hardhat)\n- [Foundry](https://docs.pharos.xyz/developer-guide/foundry)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)\n- [Gas Model](https://docs.pharos.xyz/getting-started/gas-model)\n- [Wallet](https://docs.pharos.xyz/tooling-and-infrastructure/wallets)\n- [Safe MultiSig](https://docs.pharos.xyz/tooling-and-infrastructure/wallets/safe)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/foundry",
+        "https://docs.pharos.xyz/developer-guide/hardhat",
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/getting-started/gas-model",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/wallets",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/wallets/safe"
+      ]
+    },
+    {
+      "id": 7,
+      "intent": "Find the Docs MCP endpoint itself",
+      "tool": "askQuestion",
+      "query": "What is the endpoint URL of the Pharos Developer Docs MCP server?",
+      "arguments": {
+        "question": "What is the endpoint URL of the Pharos Developer Docs MCP server?"
+      },
+      "seconds": 9.9,
+      "is_error": false,
+      "answer": "The Pharos Developer Docs MCP server endpoint is **`https://mcp.pharos.xyz/mcp`**. It uses Streamable HTTP and requires no authentication. See [Pharos MCP](/tooling-and-infrastructure/mcp).\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)\n- [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Call EVM From WASM](https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm",
+        "https://docs.pharos.xyz/developer-guide/rust",
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan"
+      ]
+    },
+    {
+      "id": 8,
+      "intent": "Learn what SkillEngine is and how to use it",
+      "tool": "askQuestion",
+      "query": "What is Pharos SkillEngine and how do I install or use a skill from it?",
+      "arguments": {
+        "question": "What is Pharos SkillEngine and how do I install or use a skill from it?"
+      },
+      "seconds": 14.2,
+      "is_error": false,
+      "answer": "The **Pharos Skill Engine** is a packaged toolkit of instructions, templates, and Pharos network settings. An AI agent reads its `SKILL.md`, selects the relevant instructions, then runs Foundry `cast` or `forge` commands. It is **not** an SDK, API, or smart-contract framework. See [Pharos Skill Engine](/tooling-and-infrastructure/pharos-skill-engine-guide).\n\n### Install and set up\n\n1. Unzip the Skill Engine package and enter its folder:\n\n   ```bash\n   unzip pharos-skill-engine-0.1.0.zip\n   cd pharos-skill-engine-0.1.0\n   ```\n2. Install Foundry if needed, then verify `cast` and `forge` are available:\n\n   ```bash\n   curl -L https://foundry.paradigm.xyz | bash\n   source ~/.zshenv && foundryup\n   cast --version\n   forge --version\n   ```\n3. For transaction operations, export your private key as an environment variable:\n\n   ```bash\n   export PRIVATE_KEY=0xYOUR_PRIVATE_KEY\n   ```\n\n   Never hardcode or share the key. Pass it explicitly to commands as `--private-key $PRIVATE_KEY`.\n\n### Use a skill\n\nOpen the Skill Engine folder in an AI agent that can read its files. For example, start Claude Code there with `claude`, then make a request in natural language, such as “check my wallet balance” or “deploy an ERC20 token.” The agent uses `SKILL.md` to find the capability and its reference instructions.\n\nFor an end-to-end example of adding and using a custom vault skill, see the [Piggy Bank Tutorial](/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide).\n\n# Sources\n\n- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af)\n- [Validator Node Deployment](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment)\n- [Write Your First dApp](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-dapp)\n- [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-dapp",
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+      ]
+    },
+    {
+      "id": 9,
+      "intent": "Learn how to produce a share link on ai.pharos.xyz (needed as Arena proof)",
+      "tool": "askQuestion",
+      "query": "How do I create a share link for my agent session on ai.pharos.xyz?",
+      "arguments": {
+        "question": "How do I create a share link for my agent session on ai.pharos.xyz?"
+      },
+      "seconds": 12.6,
+      "is_error": false,
+      "answer": "I cannot find information about creating a share link for an agent session in the docs. The [Anvita Flow](/tooling-and-infrastructure/overview) links to the chat interface, but doesn’t describe session sharing.\n\n# Sources\n\n- [Publish Service Agent](https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Anvita Flow](https://docs.pharos.xyz/tooling-and-infrastructure/overview)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)\n- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Using Binary](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment)\n- [Node Configuration](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration)\n- [Chainlink CCIP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip)\n- [Hemera SocialScan](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Solidity](https://docs.pharos.xyz/resources/solidity)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment",
+        "https://docs.pharos.xyz/resources/solidity",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/chainlink-ccip",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan"
+      ]
+    },
+    {
+      "id": 10,
+      "intent": "Network parameters for the mainnet",
+      "tool": "askQuestion",
+      "query": "What is the chain ID, RPC URL and block explorer of Pharos mainnet?",
+      "arguments": {
+        "question": "What is the chain ID, RPC URL and block explorer of Pharos mainnet?"
+      },
+      "seconds": 6.4,
+      "is_error": false,
+      "answer": "Pharos Pacific Mainnet uses:\n\n* **Chain ID:** `1672`\n* **RPC URL:** `https://rpc.pharos.xyz`\n* **Block explorer:** <https://www.pharosscan.xyz>\n\nSee [Pacific Mainnet](/getting-started/network/pacific-mainnet).\n\n# Sources\n\n- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)\n- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)\n- [Hemera SocialScan](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Atlantic Testnet](https://docs.pharos.xyz/getting-started/network/atlantic-testnet)\n- [ZAN RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan)\n- [Rollback Blocks](https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks)\n- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)",
+      "doc_links": [
+        "https://docs.pharos.xyz/getting-started/network/atlantic-testnet",
+        "https://docs.pharos.xyz/getting-started/network/pacific-mainnet",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan"
+      ]
+    },
+    {
+      "id": 11,
+      "intent": "Network parameters for the testnet + faucet",
+      "tool": "askQuestion",
+      "query": "What is the chain ID and RPC URL of the Pharos Atlantic testnet and where is the faucet?",
+      "arguments": {
+        "question": "What is the chain ID and RPC URL of the Pharos Atlantic testnet and where is the faucet?"
+      },
+      "seconds": 10.8,
+      "is_error": false,
+      "answer": "* **Chain ID:** `688689`\n* **RPC URL:** `https://atlantic.dplabs-internal.com`\n* **Faucet:** The [Piggy Bank Tutorial](/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide) is referenced, but its URL isn’t specified. The guide also says testnet tokens can be requested directly from the Pharos team.\n\nSee [Atlantic Testnet](/getting-started/network/atlantic-testnet) for the network details.\n\n# Sources\n\n- [Atlantic Testnet](https://docs.pharos.xyz/getting-started/network/atlantic-testnet)\n- [Node Management](https://docs.pharos.xyz/node-and-validator-guide/node-management)\n- [Piggy Bank Tutorial](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide)\n- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token)\n- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [Rapid Node Initialization(Testnet)](https://docs.pharos.xyz/node-and-validator-guide/rapid-node-initialization/rapid-node-initialization-testnet)\n- [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token)\n- [Write Your First NFT](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-nft)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-nft",
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-token",
+        "https://docs.pharos.xyz/getting-started/network/atlantic-testnet",
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-management",
+        "https://docs.pharos.xyz/node-and-validator-guide/rapid-node-initialization/rapid-node-initialization-testnet",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy"
+      ]
+    },
+    {
+      "id": 12,
+      "intent": "Which tools does the Chain MCP expose (names + arguments)?",
+      "tool": "askQuestion",
+      "query": "List the tools exposed by the Pharos Chain MCP server and their arguments.",
+      "arguments": {
+        "question": "List the tools exposed by the Pharos Chain MCP server and their arguments."
+      },
+      "seconds": 22.7,
+      "is_error": false,
+      "answer": "The MCP page lists **13 tools**. It doesn’t publish their exact MCP JSON schemas, so the arguments below summarize the corresponding JSON-RPC inputs. Optional block arguments default to `latest`. See [Pharos MCP](/tooling-and-infrastructure/mcp) and [JSON-RPC API Methods](/api-and-sdk/json-rpc-methods).\n\n**Chain and block data**\n\n* `get_chain_info` — no arguments.\n* `get_block_number` — no arguments.\n* `get_block` — `block` (tag or number); optionally `fullTransactions` (boolean).\n* `get_gas_price` — no arguments.\n\n**Accounts and transactions**\n\n* `get_balance` — `address`; optionally `block`.\n* `get_transaction_count` — `address`; optionally `block`.\n* `get_transaction` — `hash`.\n* `get_transaction_receipt` — `hash`.\n\n**Contracts**\n\n* `eth_call` — `transaction` object (`from`, `to`, `gas`, `gasPrice`, `value`, `data`); optionally `block`.\n* `estimate_gas` — `transaction` object; optionally `block`.\n* `get_code` — `address`; optionally `block`.\n* `get_storage_at` — `address`, `position` (storage slot), optionally `block`.\n* `get_logs` — `filter` object with optional `fromBlock`, `toBlock`, `address`, and `topics`. The MCP docs cap each query at 1,000 blocks.\n\n**Broadcasting**\n\n* `send_raw_transaction` — signed transaction data (`0x`-prefixed bytes). Broadcasting is disabled by default for self-hosted deployments.\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [Pharos Skill Engine](https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide)\n- [x402](https://docs.pharos.xyz/developer-guide/x402)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Enable AutoPruning in Pharos Node](https://docs.pharos.xyz/enable-pruning-in-pharos-node)\n- [Solidity](https://docs.pharos.xyz/resources/solidity)\n- [Fordefi](https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi)\n- [Using Binary](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment)\n- [Hemera SocialScan](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)\n- [Alchemy RPC](https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [Call EVM From WASM](https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm)\n- [eth_getProof — Storage State Verification (SPV)](https://docs.pharos.xyz/api-and-sdk/eth-getproof)\n- [RPC Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/rpc)\n- [Node Configuration](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration)\n- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)",
+      "doc_links": [
+        "https://docs.pharos.xyz/api-and-sdk/eth-getproof",
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/developer-guide/interoperability/call-evm-from-wasm",
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/enable-pruning-in-pharos-node",
+        "https://docs.pharos.xyz/getting-started/get-pros-gas",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/using-binary-deployment",
+        "https://docs.pharos.xyz/resources/solidity",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/rpc/alchemy",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi"
+      ]
+    },
+    {
+      "id": 13,
+      "intent": "Find an official token / contract address to read",
+      "tool": "askQuestion",
+      "query": "What is the USDC contract address on Pharos mainnet?",
+      "arguments": {
+        "question": "What is the USDC contract address on Pharos mainnet?"
+      },
+      "seconds": 10.3,
+      "is_error": false,
+      "answer": "The USDC contract address on Pharos Pacific Mainnet is **`0xc879c018db60520f4355c26ed1a6d572cdac1815`**. See the [Token Registry](/getting-started/token-registry).\n\n# Sources\n\n- [Canonical Contracts](https://docs.pharos.xyz/getting-started/canonical-contracts)\n- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract)\n- [Write Your First Uniswap Contract](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract)\n- [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet)\n- [Token Registry](https://docs.pharos.xyz/getting-started/token-registry)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Rust](https://docs.pharos.xyz/developer-guide/rust)\n- [Hemera SocialScan](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan)\n- [LayerZero](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero)\n- [Circle CCTP](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp)",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract",
+        "https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract",
+        "https://docs.pharos.xyz/developer-guide/rust",
+        "https://docs.pharos.xyz/getting-started/canonical-contracts",
+        "https://docs.pharos.xyz/getting-started/network/pacific-mainnet",
+        "https://docs.pharos.xyz/getting-started/token-registry",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer/hemera-socialscan",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/layerzero"
+      ]
+    },
+    {
+      "id": 14,
+      "intent": "Get a block-range limit before calling get_logs",
+      "tool": "askQuestion",
+      "query": "What is the maximum block range for get_logs on the Pharos Chain MCP or RPC?",
+      "arguments": {
+        "question": "What is the maximum block range for get_logs on the Pharos Chain MCP or RPC?"
+      },
+      "seconds": 10.3,
+      "is_error": false,
+      "answer": "The limit depends on the interface:\n\n* **Pharos Chain MCP `get_logs`: 1,000 blocks per call.** Split larger ranges into 1,000-block windows. See [Pharos MCP](/tooling-and-infrastructure/mcp).\n* **JSON-RPC `eth_getLogs`: 100 blocks when rate limiting is enabled; 10,000 blocks as the fallback cap.** See [JSON-RPC API Methods](/api-and-sdk/json-rpc-methods).\n\n# Sources\n\n- [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp)\n- [Rollback Blocks](https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks)\n- [JSON-RPC API Methods](https://docs.pharos.xyz/api-and-sdk/json-rpc-methods)\n- [Node Debugging & Configuration](https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration)\n- [Block Explorer](https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer)\n- [Why Pharos](https://docs.pharos.xyz/introduction/why-pharos)\n- [About Pharos](https://docs.pharos.xyz/introduction/readme)\n- [Node Configuration](https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration)\n- [Cross Chain Infrastructure](https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain)\n- [Get PROS Gas](https://docs.pharos.xyz/getting-started/get-pros-gas)",
+      "doc_links": [
+        "https://docs.pharos.xyz/api-and-sdk/json-rpc-methods",
+        "https://docs.pharos.xyz/getting-started/get-pros-gas",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/introduction/why-pharos",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/rollback-blocks",
+        "https://docs.pharos.xyz/node-and-validator-guide/validator-node-deployment/node-configuration",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/block-explorer",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp"
+      ]
+    },
+    {
+      "id": 15,
+      "intent": "Confirm whether ai.pharos.xyz itself has docs (login, workspace, agents)",
+      "tool": "searchDocumentation",
+      "query": "ai.pharos.xyz sign in workspace share",
+      "arguments": {
+        "query": "ai.pharos.xyz sign in workspace share"
+      },
+      "seconds": 0.7,
+      "is_error": false,
+      "answer": "Title: About Pharos\nLink: https://docs.pharos.xyz/introduction/readme\nContent: Pharos has designed a Modular & Full-stack Parallel L1 Blockchain Network, structured into three primary layers: L1-Base, L1-Core, and L1-Extension.\n\nL1-Base: Delivers industry-leading data availability and hardware acceleration.\nL1-Core: A high-performance, globally distributed blockchain network powered by decentralized nodes. These nodes provide high-throughput and sub-second finality, enabling real-time Web3 user experiences.\nL1-Extension: Built on top of L1-Core, this layer supports network expansion across three dimensions:\nLeverages heterogeneous computation to create custom Special Processing Networks (SPNs), capable of running blockchain networks, sidechains, or non-blockchain applications like HFT, ZKML, and AI models.\nEnables Native Restaking to support rapid SPN creation, shared security, staking rewards, and slashing mechanisms. SPNs utilize the excess computing power of validators, providing flexibility in resource use while incentivizing upgrades.\nFacilitates Cross-SPNs Interoperation, allowing infrastructure, middleware, and application-focused SPNs to communicate and collaborate effortlessly, fostering a highly modular and composable ecosystem.Title: x402\nLink: https://docs.pharos.xyz/developer-guide/x402\nContent: Scheme Selection and Payment Payload Generation: The client parses the payment requirements returned by the server and selects a specific payment scheme based on its own supported payment capabilities. Subsequently, the client constructs a PaymentPayload containing the necessary metadata according to the protocol specifications of that scheme.\nSecondary Request Submission: The client re-initiates the resource request and attaches the signed PaymentPayload in the PAYMENT-SIGNATURE HTTP header.Title: Pharos Skill Engine\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide\nContent: The Pharos Skill Engine is a packaged developer toolkit that lets an AI agent perform any on-chain operation on the Pharos — check balances, send transactions, deploy and verify Solidity contracts, run batch airdrops, and generate Web3 interaction scripts — entirely through CLI commands.\n\nIt is not an SDK, not an API, and not a smart contract framework. It is a self-contained knowledge and tooling package that a developer installs once and then hands to an AI agent (like Claude). The agent reads the package, understands what Pharos operations are available, and executes them by running the correct cast and forge commands.Title: Pharos MCP\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/mcp\nContent: The server is non-custodial: it never receives, stores, or asks for a private key. Signing happens entirely in your own wallet or script; the server only relays the resulting signed bytes to the network.\n\nYour private key ──sign (locally)──▶ 0x02f86b…──▶ MCP server ──▶ Pharos\n\nThe flow is:\n\nBuild and sign a transaction locally with your own tooling (viem, ethers, a wallet).\nPass the resulting 0x-prefixed string to send_raw_transaction.\nUse the returned transaction hash with get_transaction_receipt to confirm inclusion.\n\nBecause signing is local, an AI agent connected to this server can prepare and broadcast a transaction for you without ever having access to your key.Title: Piggy Bank Tutorial\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide\nContent: A Pharos Skill is a folder of files that teaches an AI (Claude) how to interact with the Pharos blockchain. When you ask the AI something like \"Deploy a vault on Pharos\", it reads your skill files to know exactly which commands to run.\n\nThe AI is smart but it does not automatically know your contract. You teach it by writing instruction files in plain Markdown. The AI reads those files and follows them precisely.Title: Circle CCTP\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp\nContent: The relationship between CCTP’s onchain components and Circle’s offchain Attestation Service is illustrated below for a burn-and-mint of USDC between EVM-compatible domains:\n\nOn Pharos, the onchain component for crosschain burning and minting is called TokenMessengerV2, which is built on top of MessageTransmitterV2, an onchain component for generalized message passing.\n\nIn the diagram, a token depositor calls the TokenMessengerV2#depositForBurn function to deposit a native token (such as USDC), which delegates to the TokenMinterV2 contract to burn the token. The TokenMessengerV2 contract then sends a message via the MessageTransmitterV2#sendMessage function. After sufficient block confirmations, Circle’s offchain attestation service, Iris, signs the message. An API consumer must query this attestation and submits it onchain to the destination domain’s MessageTransmitterV2#receiveMessage function.\n\nTo send an arbitrary message, directly call MessageTransmitterV2#sendMessage. The message recipient must implement the following methods to handle messages based on their finality threshold:\n\nImplement IMessageHandlerV2#handleReceiveFinalizedMessage to receive messages with finalityThresholdExecuted ≥ 2000.\nImplement IMessageHandlerV2#handleReceiveUnfinalizedMessage to receive messages with finalityThresholdExecuted < 2000.\n\nThis distinction allows the recipient to control the level of finality it requires before accepting a message.Title: Enable AutoPruning in Pharos Node\nLink: https://docs.pharos.xyz/enable-pruning-in-pharos-node\nContent: For Binary Deployment:\n\ncd /data/$WORKSPACE/bin\n./pharos_cli prune --c ../pharos.conf --enable_auto_prune\n\nFor Docker Deployment:\n\ndocker exec -it pharos-node /bin/bash\ncd /data/bin\n./pharos_cli prune --c ../pharos.conf --enable_auto_pruneTitle: Node Debugging & Configuration\nLink: https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration\nContent: You can refer to the Pharos Block Validation document for details on the Pharos consensus mechanism and block validation process.Title: Fordefi\nLink: https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi\nContent: Pharos can be enabled directly within the Fordefi platform from the Chains settings:\n\nhttps://app.fordefi.com/settings/chains?search=PHAROS&page=1Title: Rapid Node Initialization\nLink: https://docs.pharos.xyz/node-and-validator-guide/rapid-node-initialization\nContent: Atlantic",
+      "doc_links": [
+        "https://docs.pharos.xyz/developer-guide/x402",
+        "https://docs.pharos.xyz/enable-pruning-in-pharos-node",
+        "https://docs.pharos.xyz/introduction/readme",
+        "https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration",
+        "https://docs.pharos.xyz/node-and-validator-guide/rapid-node-initialization",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/cross-chain/circle-cctp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/mcp",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide",
+        "https://docs.pharos.xyz/tooling-and-infrastructure/wallets/fordefi"
+      ]
+    }
+  ]
+}
