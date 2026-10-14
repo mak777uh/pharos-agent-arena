@@ -1,0 +1,51 @@
+$ python wallet_risk_checker.py 0x062f05cd6c835677b05a8658a351969476861316 --flag "0x9e46150765de4c40eebc2fe8bf6330d5a0b55731:demo - flagged by me on the command line after seeing it is a 0-day unverified contract"
+=== Wallet Risk Check · 0x062f05cd6c835677b05a8658a351969476861316 · Pharos mainnet block #20,252,951 (2026-10-14 21:21 UTC)
+type: wallet (EOA) · age: 268.3 days · balance 264.160589454437305208 PROS · indexed txs 706 (scanned 500)
+explorer: https://www.pharosscan.xyz/address/0x062f05cd6c835677b05a8658a351969476861316
+
+RISK LEVEL: HIGH  (score 3; low=1 medium=2 high=3; HIGH if any high flag or score>=5, MEDIUM if score>=2)
+
+Red flags:
+ 1. [HIGH] (S5) Interacted with a flagged address 0x9e46150765de4c40eebc2fe8bf6330d5a0b55731
+    why it matters: 2 transaction(s) with an address on your flag list (demo - flagged by me on the command line after seeing it is a 0-day unverified contract). Money that moved through flagged addresses can be stolen funds or a scam operator's wallet.
+    evidence: https://www.pharosscan.xyz/tx/0xc02eed4019fb746698119efa1bfc3e96eddbc0ae8f9bc5998b2a488f4594abbc
+
+Checks passed:
+ ✓ S1/S3 wallet first funded 268.3 days ago, 706 txs sent
+ ✓ S4 no approval transactions in the last 500 txs scanned
+ ✓ S6 failed transactions 0/500
+
+Not financial advice: these are heuristics over on-chain history; a LOW result is not a guarantee.
+
+exit 1
+
+$ python wallet_risk_checker.py 0x062f05cd6c835677b05a8658a351969476861316   # same wallet, no flag list entry
+=== Wallet Risk Check · 0x062f05cd6c835677b05a8658a351969476861316 · Pharos mainnet block #20,252,965 (2026-10-14 21:21 UTC)
+type: wallet (EOA) · age: 268.3 days · balance 264.160589454437305208 PROS · indexed txs 706 (scanned 500)
+explorer: https://www.pharosscan.xyz/address/0x062f05cd6c835677b05a8658a351969476861316
+
+RISK LEVEL: MEDIUM  (score 2; low=1 medium=2 high=3; HIGH if any high flag or score>=5, MEDIUM if score>=2)
+
+Red flags:
+ 1. [MEDIUM] (S5) Interacted with a new unverified contract 0x9e46150765de4c40eebc2fe8bf6330d5a0b55731 (27 minutes old)
+    why it matters: Brand-new contracts with hidden code are where most scams and drainers live. Check what that interaction was before trusting this address.
+    evidence: https://www.pharosscan.xyz/tx/0xc02eed4019fb746698119efa1bfc3e96eddbc0ae8f9bc5998b2a488f4594abbc
+
+Checks passed:
+ ✓ S1/S3 wallet first funded 268.3 days ago, 706 txs sent
+ ✓ S4 no approval transactions in the last 500 txs scanned
+ ✓ S6 failed transactions 0/500
+
+Not financial advice: these are heuristics over on-chain history; a LOW result is not a guarantee.
+
+exit 0
+
+$ python wallet_risk_checker.py 0x123
+error: not a valid EVM address: '0x123'
+exit 2
+$ python wallet_risk_checker.py 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb --fresh-days 0
+error: --fresh-days must be in (0, 365]
+exit 2
+$ python wallet_risk_checker.py 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb --max-txs 99999
+error: --max-txs must be in [1, 5000]
+exit 2
