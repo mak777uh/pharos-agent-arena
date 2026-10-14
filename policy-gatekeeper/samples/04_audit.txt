@@ -1,0 +1,16 @@
+$ python3 scripts/gatekeeper.py audit --log samples/audit_log.jsonl
+time (UTC)                 id               decision executed decided by
+2026-10-14T22:37:35+00:00  r1-pay-alice     ALLOW    True     all rules passed
+2026-10-14T22:37:39+00:00  r2-pay-bob       ALLOW    True     all rules passed
+2026-10-14T22:37:42+00:00  r3-pay-alice     DENY     False    spend_limits.USDC.per_day
+2026-10-14T22:37:42+00:00  r4-big-pay       DENY     False    spend_limits.USDC.per_tx
+2026-10-14T22:37:42+00:00  r5-unknown       DENY     False    allowlist.recipients
+2026-10-14T22:37:42+00:00  r6-approve       DENY     False    time_windows.contract_calls_business_hours
+2026-10-14T22:37:42+00:00  r7-wpros-call    DENY     False    allowlist.contracts
+2026-10-14T22:37:42+00:00  r8-pros-bob      ALLOW    True     all rules passed
+2026-10-14T22:37:44+00:00  r9-wpros         DENY     False    spend_limits.WPROS
+2026-10-14T22:38:15+00:00  r10-typo         DENY     False    request.validation
+2026-10-14T22:38:16+00:00  r11-unlimited-a  DENY     False    time_windows.contract_calls_business_hours
+
+11 decisions: 3 ALLOW, 8 DENY; executed 3; denied-but-executed 0. hash chain intact.
+exit code: 0
