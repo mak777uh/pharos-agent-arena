@@ -1,4 +1,4 @@
+/tx*.json
 __pycache__/
 *.pyc
 .venv/
-tx*.json
