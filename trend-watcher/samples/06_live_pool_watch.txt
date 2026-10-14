@@ -1,0 +1,5 @@
+$ python3 scripts/trend.py watch --config assets/wpros_down.json --db samples/trend_state.db --alerts samples/alerts.jsonl --interval 30 --count 3
+[2026-10-14 23:17:25 UTC] block 20,259,270 value 0.582057 move +0.0000% streak 0/3 stored; history 75 obs
+[2026-10-14 23:17:56 UTC] block 20,259,303 value 0.582057 move +0.0000% streak 0/3 stored; history 76 obs
+[2026-10-14 23:18:27 UTC] block 20,259,327 value 0.582057 move +0.0000% streak 0/3 stored; history 77 obs
+exit code: 0
