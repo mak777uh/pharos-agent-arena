@@ -1,0 +1,19 @@
+LUMEN DESIGN STUDIO
+From: Lumen Design Studio
+Invoice No: INV-2026-0042
+Issue date: 2026-10-10
+Due date: 2026-10-31
+
+Bill to: Demo Customer
+Bill to wallet: 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+
+Description                              Amount
+Landing page design   2 x 100.00         200.00
+Icon set                                  50.00
+
+Subtotal                                 250.00 USDC
+Total due                                250.00 USDC
+
+Network: Pharos mainnet (chainId 1672)
+Pay to wallet: 0x1F3546a29EeC2102c8d52E21a45114124014c85C
+Please include the invoice number as payment reference.
