@@ -1,0 +1,5 @@
+{
+  "_comment": "Demo address book: the names are labels we chose; the addresses are real public accounts on Pharos mainnet (EOAs seen sending/receiving USDC). Replace with your own contacts.",
+  "alice": "0x1F3546a29EeC2102c8d52E21a45114124014c85C",
+  "bob": "0x4ffd9c7e8641947662a43af298b734ca93530002"
+}
