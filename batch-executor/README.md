@@ -49,7 +49,7 @@ python3 scripts/batch.py --actions assets/keeper_with_bad.json --on-failure abor
 python3 -m unittest discover -s tests
 ```
 
-## Real sample output (Pharos mainnet block #20,258,029, 2026-10-14 22:53 UTC)
+## Real sample output (Pharos mainnet blocks #20,258,079–#20,258,130, 2026-10-14 22:54–22:55 UTC)
 
 `samples/02_keeper_partial_failure_drop.txt`:
 
