@@ -1,0 +1,1 @@
+{"series": "morpho-wpros-usdc-utilization", "rule": "util-above-90-x3", "trigger_block": 20259237, "time": "2026-10-14 23:16:38 UTC", "detail": "value gt 90 for 3 consecutive observations (blocks 20259190..20259237)"}
