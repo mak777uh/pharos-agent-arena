@@ -1,0 +1,95 @@
+=== Wallet Risk Check · 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb · Pharos mainnet block #20,252,834 (2026-10-14 21:19 UTC)
+type: contract · Morpho · age: 211.2 days · balance 0 PROS · indexed txs 129 (scanned 129)
+explorer: https://www.pharosscan.xyz/address/0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb
+
+RISK LEVEL: LOW  (score 0; low=1 medium=2 high=3; HIGH if any high flag or score>=5, MEDIUM if score>=2)
+
+Red flags: none found.
+
+Checks passed:
+ ✓ S1 contract age 211.2 days (deployed 2026-03-17 15:19 UTC, block 4,202,147)
+ ✓ S2 source verified on Pharosscan (Morpho)
+ ✓ S7 no SELFDESTRUCT opcode in runtime bytecode
+ ✓ S8 deployer wallet was funded 54.1 days before deploying
+ ✓ S5 none of 23 counterparties is on the flag list (0 entries) or a new unverified contract
+ ✓ S6 failed transactions 2/129
+
+Not financial advice: these are heuristics over on-chain history; a LOW result is not a guarantee.
+
+=== Wallet Risk Check · 0x50fbb8651e332696ba14b04e17175f960ec18ab2 · Pharos mainnet block #20,252,840 (2026-10-14 21:19 UTC)
+type: wallet (EOA) · age: 3.5 hours · balance 10.428801734538193945 PROS · indexed txs 8 (scanned 8)
+explorer: https://www.pharosscan.xyz/address/0x50fbb8651e332696ba14b04e17175f960ec18ab2
+
+RISK LEVEL: HIGH  (score 5; low=1 medium=2 high=3; HIGH if any high flag or score>=5, MEDIUM if score>=2)
+
+Red flags:
+ 1. [HIGH] (S3) Freshly funded wallet (3.5 hours old, 7 txs sent)
+    why it matters: This wallet got its first PROS very recently and has almost no history. Fresh wallets are what scammers, airdrop farmers and drainers use; a real counterparty usually has a longer past.
+    evidence: https://www.pharosscan.xyz/tx/0x826a275f003f8d9b3d47bbc10f341b27c8fd2e7547179cb2f117f9f372c64756
+ 2. [MEDIUM] (S4) Open unlimited approval to an unverified contract: UNLIMITED WPROS → 0xb300000b72deaeb607a12d5f54773d1c19c7028d (deployed 102.8 days ago)
+    why it matters: This wallet still lets a contract with unreadable code spend its tokens without any limit. If that contract is malicious or gets exploited, the tokens can be taken without another signature.
+    evidence: https://www.pharosscan.xyz/tx/0xd260f86d7ec8f8a78dcbd4c2aac1a1c6f9b8e4d92c06d44258a445c6f7d8a14e
+    evidence: https://www.pharosscan.xyz/address/0xb300000b72deaeb607a12d5f54773d1c19c7028d
+
+Checks passed:
+ ✓ S4 1 open approval(s) are limited amounts to verified contracts
+ ✓ S4 1 of 3 approval(s) found are no longer open (allowance 0 now)
+ ✓ S5 none of 6 counterparties is on the flag list (0 entries) or a new unverified contract
+ ✓ S6 failed transactions 0/8
+
+Not financial advice: these are heuristics over on-chain history; a LOW result is not a guarantee.
+
+=== Wallet Risk Check · 0x9e46150765de4c40eebc2fe8bf6330d5a0b55731 · Pharos mainnet block #20,252,850 (2026-10-14 21:19 UTC)
+type: contract · age: 25 minutes · balance 0 PROS · indexed txs 2 (scanned 2)
+explorer: https://www.pharosscan.xyz/address/0x9e46150765de4c40eebc2fe8bf6330d5a0b55731
+
+RISK LEVEL: HIGH  (score 6; low=1 medium=2 high=3; HIGH if any high flag or score>=5, MEDIUM if score>=2)
+
+Red flags:
+ 1. [HIGH] (S1) Contract is brand new (25 minutes old)
+    why it matters: It was deployed less than a day ago. Scams and rug-pulls are usually fresh contracts that nobody has had time to review; wait or verify who deployed it.
+    evidence: https://www.pharosscan.xyz/tx/0x97267e65f36f33aa32a87ce7c2961470237edb9b8edd245961d3faeca635145a
+ 2. [HIGH] (S2) Source code is NOT verified
+    why it matters: Nobody can read what this contract really does: Pharosscan has no verified source for it. Verified code does not mean safe, but unverified code you are asked to approve or call is a classic red flag.
+    evidence: https://www.pharosscan.xyz/address/0x9e46150765de4c40eebc2fe8bf6330d5a0b55731#code
+
+Checks passed:
+ ✓ S7 no SELFDESTRUCT opcode in runtime bytecode
+ ✓ S8 deployer wallet was funded 268.2 days before deploying
+ ✓ S5 none of 1 counterparties is on the flag list (0 entries) or a new unverified contract
+ ✓ S6 failed transactions 0/2
+
+Not financial advice: these are heuristics over on-chain history; a LOW result is not a guarantee.
+
+=== Wallet Risk Check · 0x1f735797c030e7780f803706c5ed8e2b269a528c · Pharos mainnet block #20,252,854 (2026-10-14 21:19 UTC)
+type: wallet (EOA) · age: 124.1 days · balance 8.62579342581824866 PROS · indexed txs 608 (scanned 500)
+explorer: https://www.pharosscan.xyz/address/0x1f735797c030e7780f803706c5ed8e2b269a528c
+
+RISK LEVEL: MEDIUM  (score 3; low=1 medium=2 high=3; HIGH if any high flag or score>=5, MEDIUM if score>=2)
+
+Red flags:
+ 1. [MEDIUM] (S4) Open unlimited approval to an unverified contract: UNLIMITED WPROS → 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 (deployed 84.8 days ago)
+    why it matters: This wallet still lets a contract with unreadable code spend its tokens without any limit. If that contract is malicious or gets exploited, the tokens can be taken without another signature.
+    evidence: https://www.pharosscan.xyz/tx/0xf20254d8a72d758fba7173631268f9aa8957d11b3fecf31a2a3b010ae864df08
+    evidence: https://www.pharosscan.xyz/address/0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73
+ 2. [LOW] (S4) 9 open unlimited approval(s) to verified contracts (DODOApprove, NonfungiblePositionManager, UniswapV2Router02)
+    why it matters: Common for DEX/bridge use, but an unlimited approval stays open forever; if one of these protocols is ever exploited, the approved token balance is exposed. Approve exact amounts when you can, and revoke what you no longer use.
+    evidence: UNLIMITED WPROS → 0xbf105f4ffbd3825f5433d074008b9a76237d849c (https://www.pharosscan.xyz/tx/0x437c66d3869d7aad5854a17237511043071e58e5008c19b34dbec72b17fcb174)
+    evidence: UNLIMITED WPROS → 0xc0479219f4feba5a668cff71bf96f4ffe124c3ab (https://www.pharosscan.xyz/tx/0x8ea826de17fe830365fc59804581e24c182678f363b2ecb0aa696603f1af5de5)
+    evidence: UNLIMITED BTCVC → 0xc0479219f4feba5a668cff71bf96f4ffe124c3ab (https://www.pharosscan.xyz/tx/0xbdc1668b9c630666e03ecdd5142cbaec12dcb65f3e9a0977bedd101c9e7e028b)
+    evidence: UNLIMITED USDC → 0xc0479219f4feba5a668cff71bf96f4ffe124c3ab (https://www.pharosscan.xyz/tx/0xdbce0d2022e86ae33addac5bd24664262e4e5864c5a0ee0b36f592d3a62c87a4)
+    evidence: UNLIMITED UNI-V2 → 0xd285e37678f07631f33eb99927eb3ff0591a12d7 (https://www.pharosscan.xyz/tx/0xad65ef72c92a246579a831fce9298ca561b0562ef5ad63583425be92d2fa948d)
+    evidence: UNLIMITED UNI-V2 → 0xd285e37678f07631f33eb99927eb3ff0591a12d7 (https://www.pharosscan.xyz/tx/0xb7c351cd5d2b9641dd3b1b35d4784bba000e25e9c2f03f040347c163bce638b4)
+    evidence: UNLIMITED CFVP → 0xbf105f4ffbd3825f5433d074008b9a76237d849c (https://www.pharosscan.xyz/tx/0xe9b327109660ddbdd9f31a5c834ed8282bd62dd73d711199f9f43dc62eb0597d)
+    evidence: UNLIMITED CFVP → 0xc0479219f4feba5a668cff71bf96f4ffe124c3ab (https://www.pharosscan.xyz/tx/0x8cc6cc8a3625ce81a4976532b88d462de02a7aa7723f2ab5dbffdab62d778233)
+    evidence: UNLIMITED BTCVP → 0xc0479219f4feba5a668cff71bf96f4ffe124c3ab (https://www.pharosscan.xyz/tx/0x02a73e35a96d0500888d2953d913d8743edc6e8ddc1dd17aa520b44b719ff1c5)
+
+Checks passed:
+ ✓ S1/S3 wallet first funded 124.1 days ago, 603 txs sent
+ ✓ S4 7 open approval(s) are limited amounts to verified contracts
+ ✓ S4 6 of 23 approval(s) found are no longer open (allowance 0 now)
+ ✓ S5 none of 36 counterparties is on the flag list (0 entries) or a new unverified contract
+ ✓ S6 failed transactions 0/500
+
+Not financial advice: these are heuristics over on-chain history; a LOW result is not a guarantee.
+
