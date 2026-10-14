@@ -1,0 +1,4 @@
+{
+  "_comment": "Your own flag list (addresses you or your team decided to avoid), with a reason each. Pharosscan exposes no public scam/phishing tags for Pharos mainnet (checked 2026-10-14: the only address tags were ENS names), so this ships empty instead of with made-up entries. Format: {\"address\": \"0x...\", \"reason\": \"...\"}.",
+  "addresses": []
+}
