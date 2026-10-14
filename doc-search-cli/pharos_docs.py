@@ -31,6 +31,7 @@ NO_ANSWER_PATTERNS = [
     r"\b(is|are) not (covered|documented|mentioned)\b",
     r"\bdoes(n['’]?t| not) (contain|cover|mention|document|provide)\b",
     r"\bnot (available|found) in (the|this) documentation\b",
+    r"\b(cannot|can't|unable to) confirm\b",
 ]
 SOURCE_LINK_RE = re.compile(r"^\s*[-*]\s*\[([^\]]+)\]\((\S+?)\)\s*$")
 MD_LINK_RE = re.compile(r"\[([^\]]+)\]\((/[^)\s]*)\)")
