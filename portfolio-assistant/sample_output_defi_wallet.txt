@@ -1,0 +1,126 @@
+$ python portfolio_assistant.py 0x1f735797c030e7780f803706c5ed8e2b269a528c "what is in my wallet?" "where is my BTCVP?" "how much do I owe?" "am I at risk of liquidation?" "what am I earning?" "which protocols am I in?" --json sample_answers_defi_wallet.json
+=== Portfolio snapshot · 0x1f735797c030e7780f803706c5ed8e2b269a528c · Pharos mainnet block #20,255,115 (2026-10-14 22:00:50 UTC) · read in 97 s
+    15 positions; https://www.pharosscan.xyz/address/0x1f735797c030e7780f803706c5ed8e2b269a528c
+
+Q: what is in my wallet?
+[wallet] Tokens sitting in the wallet (not earning): $39,951.44 priced
+• 0.4888 BTCVC ($39,940.17)
+• 8.6258 PROS ($5.05)
+• 0.0019 ETHVP ($4.59)
+• 2.7865 WPROS ($1.63)
+• 10.0000 VWTVS (no price)
+• 40.7942 CFVP (no price)
+• 1.3783 BTCVP (no price)
+• 3.118e-8 UNI-V2 (no price)
+What I could NOT read or value: VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals; CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals; BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals; UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals
+Sources:
+  - 0x1f735797c030e7780f803706c5ed8e2b269a528c get_balance @ block 20,255,115
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115
+  - 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 balanceOf(wallet) @ block 20,255,115
+  - 0xde0ed48021050a4979068a1708f6bbfb3939f385 balanceOf(wallet) @ block 20,255,115
+  - Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price
+  - 0x4b01436d82dff601281f7ebdf44e73a47d77ee3d balanceOf(wallet) @ block 20,255,115
+  - Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price
+  - 0x97ae2f0d16b9828dd7a014752366dead2abf963c balanceOf(wallet) @ block 20,255,115
+  - 0xa3b81aa35a2462c588639483ebe68a856cb32b0d balanceOf(wallet) @ block 20,255,115
+  - 0x79d154287ddc77e5c10127e68c2df1a942a330bb balanceOf(wallet) @ block 20,255,115
+  - 0xea3871093054e64c5f6e443347014f3549335c38 balanceOf(wallet) @ block 20,255,115
+
+Q: where is my BTCVP?
+[where_token] Your BTCVP: 1.3783 in total across 1 place(s):
+• 1.3783 BTCVP (no price) — held in your wallet
+Sources:
+  - 0x79d154287ddc77e5c10127e68c2df1a942a330bb balanceOf(wallet) @ block 20,255,115
+
+Q: how much do I owe?
+[debt] You owe $0.06 in total:
+• 0.1000 WPROS ($0.06) — BORROWED (owed) in Morpho Blue · ETHVP/WPROS, borrow APY 0.20%, health factor 1.588
+• 5.000e-5 USDC ($0.00) — BORROWED (owed) in Morpho Blue · BTCVC/USDC, borrow APY 0.03%, health factor 31.460
+Sources:
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115
+  - 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115
+  - 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+
+Q: am I at risk of liquidation?
+[health] Liquidation risk (health factor < 1.0 = can be liquidated):
+• Morpho ETHVP/WPROS: health factor 1.588 (healthy); liquidation if the ETHVP price falls 37.0% (LLTV 38.5%)
+• Morpho BTCVC/USDC: health factor 31.460 (healthy); liquidation if the BTCVC price falls 96.8% (LLTV 38.5%)
+Sources:
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115
+  - 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115
+  - Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115
+  - 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price
+
+Q: what am I earning?
+[earning] You are earning about $0.99 per year (≈ $0.00/day) at current rates, and paying about $0.00 per year in borrow interest → net ≈ $0.99/year.
+• 527.0979 WPROS ($308.68) — deposited in Vault Vishwa WPROS Vault · vishwaWPROS, 7-day share-price APY 0.16% → ≈ $0.49/year
+• 200.0081 USDC ($200.01) — deposited in Vault Vishwa USDC Vault · vishwaUSDC, 7-day share-price APY 0.00% → ≈ $0.00/year
+• 10.0469 USDC ($10.05) — deposited in Vault VRPC-Weekly · VRPCW, 7-day share-price APY 5.00% → ≈ $0.50/year
+• cost: 0.1000 WPROS ($0.06) — BORROWED (owed) in Morpho Blue · ETHVP/WPROS, borrow APY 0.20% → ≈ −$0.00/year
+• cost: 5.000e-5 USDC ($0.00) — BORROWED (owed) in Morpho Blue · BTCVC/USDC, borrow APY 0.03% → ≈ −$0.00/year
+Rates are current on-chain rates and change every block; vault APY is the last 7 days' share-price growth, annualised.
+What I could NOT read or value: VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals; CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals; BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals; UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals
+Sources:
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,115
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,115
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,430
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115
+  - 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 balanceOf(wallet) @ block 20,255,115
+  - 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(shares) @ block 20,255,115
+  - 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(1 share) @ block 19,649,430
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - 0xa5fb3eca411926e64c41cd9d200440953a936378 balanceOf(wallet) @ block 20,255,115
+  - 0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(shares) @ block 20,255,115
+  - 0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(1 share) @ block 19,649,430
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115
+  - 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115
+  - 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115
+
+Q: which protocols am I in?
+[protocols] You have positions in: Morpho Blue, Vault VRPC-Weekly, Vault Vishwa USDC Vault, Vault Vishwa WPROS Vault.
+I checked: Avalon lending pool 0xd9b9e4f8257bff9b1415d74c1ef88d8057f60cba; Morpho Blue 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb; ERC-4626 vault Vishwa WPROS Vault 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73; ERC-4626 vault VRPC-Weekly 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268; ERC-4626 vault Vishwa USDC Vault 0xa5fb3eca411926e64c41cd9d200440953a936378. Other Pharos protocols (DEX LPs, other lenders) are NOT read by this assistant, so positions there would not show up.
+What I could NOT read or value: VWTVS (0x97ae2f0d16b9828dd7a014752366dead2abf963c) in the wallet: no on-chain price source I trust, so it is left out of USD totals; CFVP (0xa3b81aa35a2462c588639483ebe68a856cb32b0d) in the wallet: no on-chain price source I trust, so it is left out of USD totals; BTCVP (0x79d154287ddc77e5c10127e68c2df1a942a330bb) in the wallet: no on-chain price source I trust, so it is left out of USD totals; UNI-V2 (0xea3871093054e64c5f6e443347014f3549335c38) in the wallet: no on-chain price source I trust, so it is left out of USD totals
+Sources:
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xab78…5c69, wallet) @ block 20,255,115
+  - 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115
+  - Morpho oracle 0xbdb96f2c380f13356c33f0df0ae9308a3c7b1c3a price() @ block 20,255,115 × WPROS price
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xab78…5c69) @ block 20,255,115
+  - 0xd5e02889c13230458506cc842347c4e62f8cdf3a borrowRateView() @ block 20,255,115
+  - Chainlink PROS/USD 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ block 20,255,115
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb position(0xf203…95c5, wallet) @ block 20,255,115
+  - 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115
+  - Morpho oracle 0x6f3295673386ca540e94aaf5ecb6b2e5fa0bcf10 price() @ block 20,255,115 × USDC price
+  - 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xf203…95c5) @ block 20,255,115
+  - USDC counted as $1.00 (assumption, no USDC/USD feed used)
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 balanceOf(wallet) @ block 20,255,115
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(shares) @ block 20,255,115
+  - 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 convertToAssets(1 share) @ block 19,649,430
+  - 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 balanceOf(wallet) @ block 20,255,115
+  - 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(shares) @ block 20,255,115
+  - 0x1c2bc8b553d9a7e61f7531a3a4bf2162f4569268 convertToAssets(1 share) @ block 19,649,430
+  - 0xa5fb3eca411926e64c41cd9d200440953a936378 balanceOf(wallet) @ block 20,255,115
+  - 0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(shares) @ block 20,255,115
+  - 0xa5fb3eca411926e64c41cd9d200440953a936378 convertToAssets(1 share) @ block 19,649,430
+
+exit 0
+
+$ python portfolio_assistant.py 0x123 hi
+error: not a valid EVM address: '0x123'
+exit 2
