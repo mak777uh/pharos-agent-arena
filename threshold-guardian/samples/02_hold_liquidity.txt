@@ -1,0 +1,30 @@
+$ python3 scripts/guardian.py --config assets/guardian.rebalance.json --set vault_liquidity.threshold=150000 --log samples/guardian_log.jsonl
+Threshold Guardian · usdc-rebalance-guardian · Pharos mainnet block #20,256,188 (2026-10-14 22:20:24 UTC)
+mode: all (need 5 of 5 conditions)
+----------------------------------------------------------------------------------------------------
+[PASS] price_move                     0.0322 %  < 3 %
+       WPROS/USDC pool price moved (absolute %) over the last ~1 h (3,600 blocks)
+       WPROS/USDC 0.583049 @#20,252,588 -> 0.582861 @#20,256,188
+       source: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 slot0() @ 20252588 and @ 20256188
+[PASS] oracle_dev                     0.4710 %  < 2 %
+       pool spot price vs Chainlink PROS/USD deviation
+       pool 0.582861 vs Chainlink 0.585620
+       source: 0x912c9ade24d44d8922f0866d8dcb079f1363f647 slot0() + 0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466 latestRoundData() @ 20256188
+[PASS] gas                        10.0000 gwei <= 20 gwei
+       network gas price
+       priority fee 0 wei
+       source: Chain MCP get_gas_price (latest)
+[FAIL] vault_liquidity        98,563.1600 USDC  > 150,000 USDC
+       available USDC liquidity in the Morpho Blue WPROS/USDC market (supply - borrow)
+       WPROS/USDC supply 1,098,122.23 borrow 999,559.07
+       source: Morpho Blue 0x18573fa18fd17ddfd790b4a5b5b2977aad3b4efb market(0xb3b8a31c…) @ 20256188
+[PASS] treasury_usdc           6,846.8544 USDC >= 1,000 USDC
+       treasury (signer) USDC balance
+       owner 0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+       source: 0xc879c018db60520f4355c26ed1a6d572cdac1815 balanceOf(0x84dbd23178ba7fc6a2a396559139aef69d0f072a) @ 20256188
+----------------------------------------------------------------------------------------------------
+DECISION: HOLD  (4/5 passed, 5 required)
+action: HOLD - nothing prepared
+
+logged to samples/guardian_log.jsonl
+exit code: 3
