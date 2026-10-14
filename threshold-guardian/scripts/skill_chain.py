@@ -69,6 +69,15 @@ KNOWN_ERRORS = {  # selector -> signature, for common custom errors (OpenZeppeli
     ]}
 
 
+def clean_message(msg: str | None) -> str | None:
+    if msg is None:
+        return None
+    m = str(msg).strip()
+    if m.rstrip(":").strip() == "execution reverted":
+        return "reverted without a reason (empty revert data)"
+    return m
+
+
 def decode_revert(data: str | None) -> str | None:
     if not data or data in ("0x", ""):
         return None
@@ -106,7 +115,7 @@ def simulate(chain: Chain, tx: dict, block="latest") -> dict:
     if err:
         e = payload.get("error", {}) if isinstance(payload, dict) else {}
         out["revertData"] = e.get("data") if isinstance(e, dict) else None
-        out["revertReason"] = decode_revert(out["revertData"]) or (e.get("message") if isinstance(e, dict) else str(payload)[:200])
+        out["revertReason"] = decode_revert(out["revertData"]) or clean_message(e.get("message") if isinstance(e, dict) else str(payload)[:200])
         return out
     out["returnData"] = payload.get("result") if isinstance(payload, dict) else payload
     if block == "latest":
@@ -117,7 +126,7 @@ def simulate(chain: Chain, tx: dict, block="latest") -> dict:
             out["ok"] = False
             e = p.get("error", {})
             out["revertData"] = e.get("data")
-            out["revertReason"] = decode_revert(e.get("data")) or e.get("message")
+            out["revertReason"] = decode_revert(e.get("data")) or clean_message(e.get("message"))
         else:
             out["gas"] = int(p["gas"])
     return out
