@@ -1,0 +1,36 @@
+{
+  "_comment": "Watch list for Pharos Pacific mainnet (chainId 1672). Labels marked 'explorer' were read from the pharosscan.xyz address profile on 2026-10-14; usd_price values are static, user-supplied figures (not fetched) used only for the value-terms threshold.",
+  "min_usd": 1000,
+  "native_threshold_pros": 100,
+  "tokens": [
+    {"symbol": "USDC",  "address": "0xc879c018db60520f4355c26ed1a6d572cdac1815", "threshold": 500,  "usd_price": 1.0},
+    {"symbol": "WPROS", "address": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0", "threshold": 2000, "usd_price": 0.65},
+    {"symbol": "WETH",  "address": "0x1f4b7011ee3d53969bb67f59428a9ec0477856e9", "threshold": 0.1},
+    {"symbol": "LINK",  "address": "0x51e2a24742db77604b881d6781ee16b5b8fcbe29", "threshold": 50}
+  ],
+  "watch": [
+    {"address": "0x912c9ade24d44d8922f0866d8dcb079f1363f647", "label": "Most active USDC/WPROS contract (unlabelled)"},
+    {"address": "0x936564245b69f5a293b42cbd752e0ee3bb68b470", "label": "Active swap contract (unlabelled)"},
+    {"address": "0x1f3546a29eec2102c8d52e21a45114124014c85c", "label": "High-frequency wallet (EOA)"},
+    {"address": "0x768b959191ce5876cabbbc014a08d72615bdde54", "label": "Vault (explorer)"},
+    {"address": "0xf3503da2961ff5118adaa2c4ff8d9a6fb28a411f", "label": "ERC1967Proxy, large USDC receiver (explorer)"},
+    {"address": "0xba3b260596d8412318ee6ef5476291f6c8e3b68a", "label": "MorphoMarketV1AdapterV2 (explorer)"},
+    {"address": "0xff70f4a1d11995621854f3692acf286d8acd04b2", "label": "LiFiDiamond bridge (explorer)"},
+    {"address": "0x15ddce897d76ac39c188ade4d353711a60395315", "label": "Active wallet (EOA)"}
+  ],
+  "labels": {
+    "0x0000000000000000000000000000000000000000": "zero address (mint/burn)",
+    "0xc879c018db60520f4355c26ed1a6d572cdac1815": "USDC token (token registry)",
+    "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0": "WPROS token (token registry)",
+    "0x1f4b7011ee3d53969bb67f59428a9ec0477856e9": "WETH token (token registry)",
+    "0x51e2a24742db77604b881d6781ee16b5b8fcbe29": "LINK token (token registry)",
+    "0xa5ca5fbe34e444f366b373170541ec6902b0f75c": "DODOFeeRouteProxy (explorer)",
+    "0xaf2b77d76c6256826c2b650aa6d0bbf297a0e7b8": "Uniswap V2 pair (explorer)",
+    "0x3fa4fbe561f6d5996ca69b4fb82e61a01d3ae558": "Uniswap V2 pair (explorer)",
+    "0xad65f9f3b78bc2dff5c714ccd6f6337063be09c5": "Uniswap V2 pair (explorer)",
+    "0x0faccc68b03a6cc1f5642b590d6ac3cf8c19b2e8": "Uniswap V2 pair (explorer)",
+    "0xff70f4a1d11995621854f3692acf286d8acd04b2": "LiFiDiamond bridge (explorer)",
+    "0xba3b260596d8412318ee6ef5476291f6c8e3b68a": "MorphoMarketV1AdapterV2 (explorer)",
+    "0x768b959191ce5876cabbbc014a08d72615bdde54": "Vault (explorer)"
+  }
+}
