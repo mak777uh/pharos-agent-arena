@@ -1,0 +1,31 @@
+$ python recurring_agent.py --state samples/recurring_state.json history
+[run at 2026-10-14 21:41:21 UTC]
+== payroll-600: 600 USDC weekly from 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737 - pull (operator 0x25fdb4a165661f07cb52ac55d00d8d191126b058 signs transferFrom)
+   period      due                   status              detail
+   2026-10-14  2026-10-14 20:30 UTC  paid                https://www.pharosscan.xyz/tx/0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5
+   next scheduled payment: 2026-10-21 20:30 UTC (600 USDC)
+== rent: 1000 USDC monthly from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a to 0x1f3546a29eec2102c8d52e21a45114124014c85c - push (payer signs transfer)
+   period      due                   status              detail
+   2026-10-14  2026-10-14 21:00 UTC  pending             attempt #1: nonce 2165, samples/prepared/rent_2026-10-14_attempt1.json
+   next scheduled payment: 2026-11-14 21:00 UTC (1000 USDC)
+   open (not yet paid): 2026-10-14
+== subscription: 20 USDC weekly from 0x1f3546a29eec2102c8d52e21a45114124014c85c to 0x4ffd9c7e8641947662a43af298b734ca93530002 - push (payer signs transfer)
+   period      due                   status              detail
+   2026-10-14  2026-10-14 21:00 UTC  pending             attempt #2: nonce 38492, samples/prepared/subscription_2026-10-14_attempt2.json
+                                       #1 failed         dropped: signer nonce is now 38492 > 38487 and no matching transfer exists, so this unsigned tx can never be mined
+   next scheduled payment: 2026-10-21 21:00 UTC (20 USDC)
+   open (not yet paid): 2026-10-14
+== payroll-bob: 2500 USDC weekly from 0x1f3546a29eec2102c8d52e21a45114124014c85c to 0x4ffd9c7e8641947662a43af298b734ca93530002 - push (payer signs transfer)
+   period      due                   status              detail
+   2026-10-14  2026-10-14 21:00 UTC  insufficient_funds  attempt #3: insufficient USDC: payer has 1,633.392269, needs 2500
+                                       #1 insufficient_funds insufficient USDC: payer has 1,926.073338, needs 2500
+                                       #2 insufficient_funds insufficient USDC: payer has 1,926.073338, needs 2500
+   next scheduled payment: 2026-10-21 21:00 UTC (2500 USDC)
+   open (not yet paid): 2026-10-14
+[exit code 0]
+
+$ python recurring_agent.py --state samples/recurring_state.json list
+payroll-600           600 USDC  weekly   to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737  next unpaid due 2026-10-21 20:30 UTC
+rent                 1000 USDC  monthly  to 0x1f3546a29eec2102c8d52e21a45114124014c85c  next unpaid due 2026-10-14 21:00 UTC
+subscription           20 USDC  weekly   to 0x4ffd9c7e8641947662a43af298b734ca93530002  next unpaid due 2026-10-14 21:00 UTC
+payroll-bob          2500 USDC  weekly   to 0x4ffd9c7e8641947662a43af298b734ca93530002  next unpaid due 2026-10-14 21:00 UTC
