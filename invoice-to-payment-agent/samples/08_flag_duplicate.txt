@@ -1,0 +1,19 @@
+$ python invoice_agent.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --ledger samples/ledger.jsonl samples/invoices/inv_text_lumen.txt   # same invoice again
+[run at 2026-10-14 21:24:59 UTC]
+Invoice: samples/invoices/inv_text_lumen.txt
+Extracted fields:
+  format                : text
+  reference             : INV-2026-0042
+  payee                 : Lumen Design Studio
+  payee wallet          : 0x1F3546a29EeC2102c8d52E21a45114124014c85C
+  amount                : 250.00
+  currency/token        : USDC
+  due date              : 2026-10-31
+  network               : Pharos mainnet (chainId 1672)
+  bill-to wallet        : 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+  line items            : 2
+  subtotal/tax/discount : 250.00/None/None
+  [note] payee wallet matches the vendor book entry for 'Lumen Design Studio'
+FLAGGED - not preparing a payment until these are resolved with the payee:
+  [!] DUPLICATE invoice reference INV-2026-0042 was already prepared/paid (ledger) - not paying twice
+[exit code 1]
