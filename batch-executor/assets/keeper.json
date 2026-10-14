@@ -1,0 +1,32 @@
+{
+  "_comment": "Keeper batch: accrue interest on 4 Morpho Blue markets on Pharos mainnet (permissionless; result does not depend on msg.sender) plus 1 PROS tip. Market ids are real Morpho Blue markets.",
+  "sender": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "actions": [
+    {
+      "id": "accrue-ethvp-wpros",
+      "type": "morpho_accrue",
+      "market_id": "0xab78d4ff6d4f39a7d05a822d787e33d61c68e398fd7aec5a8bca4ab296985c69"
+    },
+    {
+      "id": "accrue-ethvp-usdc",
+      "type": "morpho_accrue",
+      "market_id": "0x81c8e4d8b7dd2a97ba7ebb472af57fca74b0e5fd046b34c3a1102a467c98751a"
+    },
+    {
+      "id": "accrue-apc3m-usdc",
+      "type": "morpho_accrue",
+      "market_id": "0xba0d2638a277fd7696cdefdb96b5bd7405d0f174ba7526ce2c789f41149d91bc"
+    },
+    {
+      "id": "accrue-vrpcw-usdc",
+      "type": "morpho_accrue",
+      "market_id": "0x082e865d3606768b6883039a1899df7d7267e012a1babf88ec0c29576098e90f"
+    },
+    {
+      "id": "tip-alice",
+      "type": "send_pros",
+      "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c",
+      "amount": "0.01"
+    }
+  ]
+}
