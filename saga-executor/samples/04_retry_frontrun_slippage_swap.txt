@@ -1,0 +1,61 @@
+Saga 04_retry_frontrun_slippage_swap: 25 USDC -> WPROS -> Vishwa WPROS Vault · Pharos mainnet (chainId 1672) · 2026-10-14 23:48:33 UTC
+inject: frontrun@swap · retry policy: {"max_attempts": 3, "confirm_blocks": 3, "fee_bump_pct": 25, "max_fee_gwei": 100, "backoff_seconds": 1, "requote_on_slippage": true}
+
+[1] Mainnet preflight — hosted Pharos Chain MCP (read-only)
+    chainId 1672 · head block 20260851 · all 5 contracts have code
+    vault  Vishwa WPROS Vault https://www.pharosscan.xyz/address/0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 · asset() = WPROS ✓
+    pool   WPROS/USDC fee 0.01% https://www.pharosscan.xyz/address/0x912c9ade24d44d8922f0866d8dcb079f1363f647 · spot 1 WPROS = 0.581677 USDC
+    oracle Chainlink PROS/USD = 0.581086 (round 0)
+    sender 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a: 6959.75 USDC (need 25) · 7.1357 PROS · pending nonce 2169
+    fees   base 10.00 gwei · tip 0.0000 gwei · maxFee 20.00 gwei
+
+[2] Local fork of Pharos mainnet (anvil, upstream https://rpc.pharos.xyz, no automine; sender impersonated — no key)
+    forked at mainnet block 20260896: https://www.pharosscan.xyz/block/20260896
+
+[3] Saga state log (also appended to runs/04_retry_frontrun_slippage_swap.jsonl)
+  #01 [forward     ] 1/4 approve_usdc         STARTED         depends on: preflight
+  #02 [forward     ] 1/4 approve_usdc         SIMULATED      attempt=1 gas=55831  approve router 25.0 USDC (exact amount, no infinite approval)
+  #03 [forward     ] 1/4 approve_usdc         SENT           attempt=1 tx=0xd1e88ea792eca65b5ddb5599ce431aa92739c3797c53fa16c421a6dac2a06ff5  nonce 2169 maxFee 20.00 gwei tip 0.00 gwei gas 66997
+  #04 [forward     ] 1/4 approve_usdc         VERIFIED       attempt=1 tx=0xd1e88ea792eca65b5ddb5599ce431aa92739c3797c53fa16c421a6dac2a06ff5 block=20260897  Approval(owner,router)=25000000 · allowance now 25000000
+  #05 [forward     ] 2/4 swap                 STARTED         depends on: approve_usdc
+  #06 [forward     ] 2/4 swap                 SIMULATED      attempt=1 gas=152407  exactInputSingle 25.0 USDC -> WPROS, quote 42.9730, minOut 42.7582 (50 bps)
+  #07 [forward     ] 2/4 swap                 SENT           attempt=1 tx=0x401f8b2281567f0f55387119261cae35f05f2a892d47dde3720cd4b0f5b5d2e4  nonce 2170 maxFee 17.50 gwei tip 0.00 gwei gas 182888
+  #08 [forward     ]     swap                 INJECT         tx=0x6e24a6fa26f384d66f15f1809b3a6115b71b47fbe69ab418479fa17511547ab6  competing 3,000 USDC->WPROS swap from 0x15c25ed2… (real holder, fork-only impersonation) with higher tip, same block
+  #09 [forward     ] 2/4 swap                 RECEIPT_FAIL   attempt=1 tx=0x401f8b2281567f0f55387119261cae35f05f2a892d47dde3720cd4b0f5b5d2e4 block=20260898  receipt status 0 · Too little received
+  #10 [forward     ] 2/4 swap                 RETRYING       attempt=1  slippage (price moved before inclusion) is transient -> re-quote, new tx
+  #11 [forward     ] 2/4 swap                 SIMULATED      attempt=2 gas=152393  exactInputSingle 25.0 USDC -> WPROS, quote 42.5543, minOut 42.3416 (50 bps)
+  #12 [forward     ] 2/4 swap                 SENT           attempt=2 tx=0xc9567f43e2210d4b1a0ec49d836f834564e72769416326612a3b70824487a3bd  nonce 2171 maxFee 15.31 gwei tip 0.00 gwei gas 182871
+  #13 [forward     ] 2/4 swap                 VERIFIED       attempt=2 tx=0xc9567f43e2210d4b1a0ec49d836f834564e72769416326612a3b70824487a3bd block=20260899  paid 25000000 USDC units, received 42.554378 WPROS (>= minOut 42.3416)
+  #14 [forward     ] 3/4 approve_wpros        STARTED         depends on: swap
+  #15 [forward     ] 3/4 approve_wpros        SIMULATED      attempt=1 gas=46159  approve vault 42.554378 WPROS (exactly what the swap receipt delivered)
+  #16 [forward     ] 3/4 approve_wpros        SENT           attempt=1 tx=0x0172ce5dc1f6710a2d4b527b506dfe07e620eeb720b396b6777f1555dd559096  nonce 2172 maxFee 13.40 gwei tip 0.00 gwei gas 55390
+  #17 [forward     ] 3/4 approve_wpros        VERIFIED       attempt=1 tx=0x0172ce5dc1f6710a2d4b527b506dfe07e620eeb720b396b6777f1555dd559096 block=20260900  Approval(owner,vault)=42.554378 WPROS
+  #18 [forward     ] 4/4 deposit              STARTED         depends on: approve_wpros
+  #19 [forward     ] 4/4 deposit              SIMULATED      attempt=1 gas=175582  Vishwa WPROS Vault deposit(42.554378 WPROS, receiver=sender)
+  #20 [forward     ] 4/4 deposit              SENT           attempt=1 tx=0x393dafb2bac356bf53377cce4ecad44fb6333b18032269b6ffeff9c9a2cccea8  nonce 2173 maxFee 11.73 gwei tip 0.00 gwei gas 210698
+  #21 [forward     ] 4/4 deposit              VERIFIED       attempt=1 tx=0x393dafb2bac356bf53377cce4ecad44fb6333b18032269b6ffeff9c9a2cccea8 block=20260901  Deposit assets=42.554378 WPROS shares=42.546089 · vault balance +42.546089
+  #22 [saga        ]     -                    COMPLETED       all 4 steps verified by receipt
+
+[4] Balances on the fork, before -> after
+    asset                                     before                 after                change
+    USDC                                 6959.753033           6934.753033            -25.000000
+    WPROS                                   0.000000              0.000000              0.000000
+    vault shares                            0.000000             42.546089             42.546089
+    PROS                                    7.135753              7.132086             -0.003666
+    USDC allowance->router                  0.000000              0.000000              0.000000
+    WPROS allowance->router                 0.000000              0.000000              0.000000
+    WPROS allowance->vault                  0.000000              0.000000              0.000000
+    gas paid by 5 mined txs: 0.00366638 PROS ≈ $0.002130 (Chainlink PROS/USD 0.5811)
+
+[5] Mainnet plan — UNSIGNED, prepare-only
+    step 1 approve_usdc simulated on MAINNET via Chain MCP: ok=True gas=71481
+    approve_usdc   nonce 2169 gas   85777 to 0xc879c018db60520f4355c26ed1a6d572cdac1815 signingHash 0x7ac87834ce691381…
+    swap           nonce 2170 gas  187185 to 0xf38d34c8382b9079b0f85309578b43b8479cd875 signingHash 0x7ec1fb0d39d573de…
+    approve_wpros  nonce 2171 gas   60006 to 0x52c48d4213107b20bc583832b0d951fb9ca8f0b0 signingHash 0x2260ed498d2b01da…
+    deposit        nonce 2172 gas  215776 to 0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73 signingHash 0xdd11bac8a32dbc8a…
+    user runs e.g.: cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0x095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd87500000000000000000000000000000000000000000000000000000000017d7840 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+    nothing signed, nothing broadcast; each next step only after verify-receipt on the previous one
+
+    JSON report: samples/04_retry_frontrun_slippage_swap.json
+
+RESULT: COMPLETED (exit 0)
