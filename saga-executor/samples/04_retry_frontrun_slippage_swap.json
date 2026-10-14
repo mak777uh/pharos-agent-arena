@@ -1,0 +1,196 @@
+{
+  "saga_id": "04_retry_frontrun_slippage_swap",
+  "exit": 0,
+  "inject": "frontrun@swap",
+  "forkBlock": 20260896,
+  "done": [
+    "approve_usdc",
+    "swap",
+    "approve_wpros",
+    "deposit"
+  ],
+  "compensationPrepared": [],
+  "receipts": [
+    {
+      "step": "approve_usdc",
+      "phase": "forward",
+      "tx": "0xd1e88ea792eca65b5ddb5599ce431aa92739c3797c53fa16c421a6dac2a06ff5",
+      "gasUsed": 55449,
+      "price": 8750000000,
+      "status": 1
+    },
+    {
+      "step": "swap",
+      "phase": "forward",
+      "tx": "0x401f8b2281567f0f55387119261cae35f05f2a892d47dde3720cd4b0f5b5d2e4",
+      "gasUsed": 142938,
+      "price": 7656371295,
+      "status": 0
+    },
+    {
+      "step": "swap",
+      "phase": "forward",
+      "tx": "0xc9567f43e2210d4b1a0ec49d836f834564e72769416326612a3b70824487a3bd",
+      "gasUsed": 143989,
+      "price": 6699978160,
+      "status": 1
+    },
+    {
+      "step": "approve_wpros",
+      "phase": "forward",
+      "tx": "0x0172ce5dc1f6710a2d4b527b506dfe07e620eeb720b396b6777f1555dd559096",
+      "gasUsed": 46159,
+      "price": 5862722071,
+      "status": 1
+    },
+    {
+      "step": "deposit",
+      "phase": "forward",
+      "tx": "0x393dafb2bac356bf53377cce4ecad44fb6333b18032269b6ffeff9c9a2cccea8",
+      "gasUsed": 165982,
+      "price": 5129949467,
+      "status": 1
+    }
+  ],
+  "balancesBefore": {
+    "USDC": "6959753033",
+    "WPROS": "0",
+    "vault shares": "0",
+    "PROS": "7135753067000000000",
+    "USDC allowance->router": "0",
+    "WPROS allowance->router": "0",
+    "WPROS allowance->vault": "0"
+  },
+  "balancesAfter": {
+    "USDC": "6934753033",
+    "WPROS": "0",
+    "vault shares": "42546089098242104710",
+    "PROS": "7132086682034048167",
+    "USDC allowance->router": "0",
+    "WPROS allowance->router": "0",
+    "WPROS allowance->vault": "0"
+  },
+  "mainnetPlan": {
+    "saga": "usdc-to-wpros-vault",
+    "chainId": 1672,
+    "sender": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+    "preparedAtBlock": 20260851,
+    "note": "UNSIGNED. Sign and send one step at a time; run verify-receipt before signing the next step. Re-run the saga if the price moved (swap minOut is from the fork quote).",
+    "steps": [
+      {
+        "step": "approve_usdc",
+        "mainnetSimulation": {
+          "ok": true,
+          "gas": 71481,
+          "revert": null,
+          "via": "Chain MCP eth_call + estimate_gas"
+        },
+        "unsignedTx": {
+          "chainId": "0x688",
+          "nonce": "0x879",
+          "maxPriorityFeePerGas": "0x0",
+          "maxFeePerGas": "0x4a817c800",
+          "gas": "0x14f11",
+          "to": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "value": "0x0",
+          "data": "0x095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd87500000000000000000000000000000000000000000000000000000000017d7840"
+        },
+        "unsignedSerialized": "0x02f86e820688820879808504a817c80083014f1194c879c018db60520f4355c26ed1a6d572cdac181580b844095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd87500000000000000000000000000000000000000000000000000000000017d7840c0",
+        "signingHash": "0x7ac87834ce6913817b3ed48ab132a49949b7c49f682d53cfaf84eeb287fb4c74",
+        "walletRequest": {
+          "method": "eth_sendTransaction",
+          "params": [
+            {
+              "from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a",
+              "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+              "value": "0x0",
+              "data": "0x095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd87500000000000000000000000000000000000000000000000000000000017d7840",
+              "gas": "0x14f11",
+              "maxFeePerGas": "0x4a817c800",
+              "maxPriorityFeePerGas": "0x0",
+              "nonce": "0x879",
+              "chainId": "0x688",
+              "type": "0x2"
+            }
+          ]
+        },
+        "castCommandForUser": "cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0x095ea7b3000000000000000000000000f38d34c8382b9079b0f85309578b43b8479cd87500000000000000000000000000000000000000000000000000000000017d7840 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+        "maxNetworkFeePROS": "0.00171554",
+        "signed": false,
+        "broadcast": false
+      },
+      {
+        "step": "swap",
+        "mainnetSimulation": {
+          "ok": null,
+          "via": "depends on previous step; simulated on the fork",
+          "forkGasUsed": 143989
+        },
+        "unsignedTx": {
+          "chainId": "0x688",
+          "nonce": "0x87a",
+          "maxPriorityFeePerGas": "0x0",
+          "maxFeePerGas": "0x4a817c800",
+          "gas": "0x2db31",
+          "to": "0xf38d34c8382b9079b0f85309578b43b8479cd875",
+          "value": "0x0",
+          "data": "0x414bf389000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000000000000000000000000000000000000000006400000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a000000000000000000000000000000000000000000000000000000006ad0178200000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000024b9b9ade58cea7da0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "unsignedSerialized": "0x02f9012f82068882087a808504a817c8008302db3194f38d34c8382b9079b0f85309578b43b8479cd87580b90104414bf389000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000000000000000000000000000000000000000006400000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a000000000000000000000000000000000000000000000000000000006ad0178200000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000024b9b9ade58cea7da0000000000000000000000000000000000000000000000000000000000000000c0",
+        "signingHash": "0x7ec1fb0d39d573dec550a73f3c46295846943a937d094173a64e468ccb1f63f6",
+        "castCommandForUser": "cast send 0xf38d34c8382b9079b0f85309578b43b8479Cd875 0x414bf389000000000000000000000000c879c018db60520f4355c26ed1a6d572cdac181500000000000000000000000052c48d4213107b20bc583832b0d951fb9ca8f0b0000000000000000000000000000000000000000000000000000000000000006400000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a000000000000000000000000000000000000000000000000000000006ad0178200000000000000000000000000000000000000000000000000000000017d78400000000000000000000000000000000000000000000000024b9b9ade58cea7da0000000000000000000000000000000000000000000000000000000000000000 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+        "signed": false,
+        "broadcast": false,
+        "verifyAfterSigning": "python3 scripts/saga.py verify-receipt --plan <this file> --step swap --tx <hash>"
+      },
+      {
+        "step": "approve_wpros",
+        "mainnetSimulation": {
+          "ok": null,
+          "via": "depends on previous step; simulated on the fork",
+          "forkGasUsed": 46159
+        },
+        "unsignedTx": {
+          "chainId": "0x688",
+          "nonce": "0x87b",
+          "maxPriorityFeePerGas": "0x0",
+          "maxFeePerGas": "0x4a817c800",
+          "gas": "0xea66",
+          "to": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+          "value": "0x0",
+          "data": "0x095ea7b30000000000000000000000006ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e730000000000000000000000000000000000000000000000024e8f85c705a2ab45"
+        },
+        "unsignedSerialized": "0x02f86d82068882087b808504a817c80082ea669452c48d4213107b20bc583832b0d951fb9ca8f0b080b844095ea7b30000000000000000000000006ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e730000000000000000000000000000000000000000000000024e8f85c705a2ab45c0",
+        "signingHash": "0x2260ed498d2b01da436c75359bfb3ab61924ddc7d78df7344f6e463616626682",
+        "castCommandForUser": "cast send 0x52C48d4213107b20bC583832b0d951FB9CA8F0B0 0x095ea7b30000000000000000000000006ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e730000000000000000000000000000000000000000000000024e8f85c705a2ab45 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+        "signed": false,
+        "broadcast": false,
+        "verifyAfterSigning": "python3 scripts/saga.py verify-receipt --plan <this file> --step approve_wpros --tx <hash>"
+      },
+      {
+        "step": "deposit",
+        "mainnetSimulation": {
+          "ok": null,
+          "via": "depends on previous step; simulated on the fork",
+          "forkGasUsed": 165982
+        },
+        "unsignedTx": {
+          "chainId": "0x688",
+          "nonce": "0x87c",
+          "maxPriorityFeePerGas": "0x0",
+          "maxFeePerGas": "0x4a817c800",
+          "gas": "0x34ae0",
+          "to": "0x6ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e73",
+          "value": "0x0",
+          "data": "0x6e553f650000000000000000000000000000000000000000000000024e8f85c705a2ab4500000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a"
+        },
+        "unsignedSerialized": "0x02f86e82068882087c808504a817c80083034ae0946ce7a0c9bd655c7b4c3ca398fc74939a5f5b3e7380b8446e553f650000000000000000000000000000000000000000000000024e8f85c705a2ab4500000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072ac0",
+        "signingHash": "0xdd11bac8a32dbc8a339dc4283915e3ea3634b7aa1e20fd0d962e22017454eca0",
+        "castCommandForUser": "cast send 0x6cE7a0C9bD655C7b4C3cA398Fc74939A5f5B3e73 0x6e553f650000000000000000000000000000000000000000000000024e8f85c705a2ab4500000000000000000000000084dbd23178ba7fc6a2a396559139aef69d0f072a --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY",
+        "signed": false,
+        "broadcast": false,
+        "verifyAfterSigning": "python3 scripts/saga.py verify-receipt --plan <this file> --step deposit --tx <hash>"
+      }
+    ]
+  }
+}
