@@ -1,0 +1,22 @@
+$ python3 scripts/dryrun.py transfer --from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a --to 0x1f3546a29eec2102c8d52e21a45114124014c85c --token USDC --amount 100
+Dry run · transfer 100 USDC to 0x1f3546a29eec2102c8d52e21a45114124014c85c
+  network Pharos mainnet (chainId 1672), head block #20,257,499, 2026-10-14 22:44:20 UTC
+  from 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> to 0xc879c018db60520f4355c26ed1a6d572cdac1815 (contract), value 0 wei, data 0xa9059cbb… (68 bytes)
+[1] Simulation (Chain MCP eth_call + estimate_gas, nothing broadcast)
+  result : SUCCESS, return data 0x0000000000000000000000000000000000000000000000000000000000000001
+  gas    : estimate 58,620 -> limit 70,344 (+20%); gas price 10 gwei, maxFeePerGas 20 gwei
+  cost   : expected 0.0005862 PROS (~$0.000342 at Chainlink PROS/USD 0.5840); worst case 0.00140688 PROS
+[2] Expected outcome (debug_traceCall on https://rpc.pharos.xyz + balances via Chain MCP)
+  event  : Transfer           0xc879c018db60520f4355c26ed1a6d572cdac1815 0x84dbd23178ba7fc6a2a396559139aef69d0f072a -> 0x1f3546a29eec2102c8d52e21a45114124014c85c value 100000000
+  account                                      token                before             change                after
+  0x1f3546a29eec2102c8d52e21a45114124014c85c   USDC           1,867.834083               +100         1,967.834083
+  0x84dbd23178ba7fc6a2a396559139aef69d0f072a   USDC           6,967.089228               -100         6,867.089228
+  0x84dbd23178ba7fc6a2a396559139aef69d0f072a   PROS               7.138397          -0.000586              7.13781
+  (native PROS change of the sender includes the expected network fee)
+[3] Decision: GO
+  prepared UNSIGNED EIP-1559 tx: nonce 2167, gas 70,344, signing hash 0xd2ba9c7ff49f1773c36e21a2755f27ceea434dbfb449264cf88c33f4783f441e
+  wallet request: {"method": "eth_sendTransaction", "params": [{"from": "0x84DBd23178bA7fc6A2a396559139AEF69d0F072a", "to": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "value": "0x0", "data": "0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100", "gas": "0x112c8", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0", "nonce": "0x877", "chainId": "0x688", "type": "0x2"}]}
+  or sign yourself with Foundry: cast send 0xC879C018dB60520F4355C26eD1a6D572cdAC1815 0xa9059cbb0000000000000000000000001f3546a29eec2102c8d52e21a45114124014c85c0000000000000000000000000000000000000000000000000000000005f5e100 --rpc-url https://rpc.pharos.xyz --private-key $PRIVATE_KEY
+  (this skill never signs or broadcasts)
+  sender: https://www.pharosscan.xyz/address/0x84dbd23178ba7fc6a2a396559139aef69d0f072a
+exit code: 0
