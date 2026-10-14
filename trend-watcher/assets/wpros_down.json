@@ -1,0 +1,8 @@
+{
+  "series": "wpros-usdc-pool-price",
+  "description": "WPROS price in USDC from the WPROS/USDC pool (slot0). Confirm a downtrend: 3 consecutive declining checks, each >= 0.02% and <= 2% (bigger one-step jumps are treated as outliers), together >= 0.15%.",
+  "source": {"type": "pool_price", "params": {"pool": "0x912c9ade24d44d8922f0866d8dcb079f1363f647"}, "recheck_pct": "1"},
+  "rule": {"id": "down-3-checks", "type": "consecutive", "direction": "down", "moves": 3,
+           "min_step_pct": "0.02", "min_total_pct": "0.15", "max_step_pct": "2", "max_gap_blocks": 1200},
+  "action": {"type": "alert"}
+}
