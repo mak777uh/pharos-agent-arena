@@ -1,0 +1,118 @@
+$ pharos-docs "how do I deploy a contract?"
+Q: how do I deploy a contract?
+
+For a Solidity contract on Pharos, one documented option is **Foundry**:
+
+1. Compile and test your contract:
+
+   ```sh
+   forge build
+   forge test
+   ```
+2. Create a deployment script that loads your private key with `vm.envUint("PRIVATE_KEY")`, starts broadcasting, and deploys your contract.
+3. Set the key and deploy:
+
+   ```sh
+   export PRIVATE_KEY=<your-private-key>
+   forge script script/DeployToken.s.sol --rpc-url <PHAROS_RPC_URL> --broadcast
+   ```
+
+Use a funded testnet wallet, and pass any required constructor arguments in the deployment script. The [Write Your First Token](https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token) includes a complete deployment script and verification commands.
+
+Sources:
+  [1] Write Your First Token — https://docs.pharos.xyz/developer-guide/foundry/write-your-first-token
+  [2] Write Your First Uniswap Contract — https://docs.pharos.xyz/developer-guide/foundry/write-your-first-uniswap-contract
+  [3] Write Your First Uniswap Contract — https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-uniswap-contract
+  [4] Write Your First NFT — https://docs.pharos.xyz/developer-guide/hardhat/write-your-first-nft
+  [5] Write Your First NFT — https://docs.pharos.xyz/developer-guide/foundry/write-your-first-nft
+[exit code 0]
+
+------------------------------------------------------------
+
+$ pharos-docs "What is the chain ID and RPC URL of Pharos mainnet?"
+Q: What is the chain ID and RPC URL of Pharos mainnet?
+
+Pharos Pacific Mainnet uses **chain ID `1672`** and RPC URL **`https://rpc.pharos.xyz`**. See [Pacific Mainnet](https://docs.pharos.xyz/getting-started/network/pacific-mainnet).
+
+Sources:
+  [1] Pacific Mainnet — https://docs.pharos.xyz/getting-started/network/pacific-mainnet
+  [2] Node Debugging & Configuration — https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration
+  [3] ZAN RPC — https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan
+  [4] Atlantic Testnet — https://docs.pharos.xyz/getting-started/network/atlantic-testnet
+  [5] RPC Infrastructure — https://docs.pharos.xyz/tooling-and-infrastructure/rpc
+[exit code 0]
+
+------------------------------------------------------------
+
+$ pharos-docs "How do I connect Claude Desktop to the Pharos MCP server?"
+Q: How do I connect Claude Desktop to the Pharos MCP server?
+
+Add the Pharos server to Claude Desktop’s MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "pharos": {
+      "type": "http",
+      "url": "https://mcp.pharos.xyz/mcp"
+    }
+  }
+}
+```
+
+If your configuration already has an `mcpServers` object, add the `pharos` entry inside it. Save the configuration and reconnect Claude Desktop. No API key is required.
+
+The server uses Streamable HTTP and provides Pharos chain data and onchain tools. If your Claude Desktop setup cannot connect to remote MCP servers, use the `mcp-remote` stdio bridge shown in the [Pharos MCP](https://docs.pharos.xyz/tooling-and-infrastructure/mcp).
+
+Sources:
+  [1] Pharos MCP — https://docs.pharos.xyz/tooling-and-infrastructure/mcp
+  [2] ZAN RPC — https://docs.pharos.xyz/tooling-and-infrastructure/rpc/zan
+  [3] Piggy Bank Tutorial — https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide
+  [4] Pharos Node Monitoring — https://docs.pharos.xyz/pharos-node-monitoring
+  [5] Node Debugging & Configuration — https://docs.pharos.xyz/node-and-validator-guide/node-debugging-and-configuration
+[exit code 0]
+
+------------------------------------------------------------
+
+$ pharos-docs "how to bake a chocolate cake"
+Q: how to bake a chocolate cake
+
+No good answer found in the Pharos docs for this question.
+(Nothing was made up: the Docs MCP returned no grounded answer.)
+Docs MCP said: I can help with questions about the topics covered in this documentation, but I can’t provide a chocolate cake recipe.
+
+Closest doc pages (may be unrelated):
+  - Pharos Skill Engine — https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide
+  - Piggy Bank Tutorial — https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide/piggybank-skill-guide
+  - Publish Service Agent — https://docs.pharos.xyz/tooling-and-infrastructure/overview/publish-skill-af
+
+Try rephrasing with Pharos terms (e.g. 'RPC', 'chain ID', 'Foundry', 'MCP'),
+or browse https://docs.pharos.xyz/
+[exit code 2]
+
+------------------------------------------------------------
+
+$ pharos-docs --search --sources 3 "gas price"
+Q: gas price
+
+Matching doc pages:
+  - Pharos Skill Engine — https://docs.pharos.xyz/tooling-and-infrastructure/pharos-skill-engine-guide
+      # Estimate gas for a native transfer cast estimate <recipient> --value 0.1ether --rpc-url $RPC # Estimate gas for a contract call cast estimate <contract> "<method(paramType)>" <arg> --rpc-url $RPC # 
+  - JSON-RPC API Methods — https://docs.pharos.xyz/api-and-sdk/json-rpc-methods
+      Returns the current gas price in Wei. Input: None Output: String - Gas price in Wei Example: // Request { "jsonrpc": "2.0", "method": "eth_gasPrice", "params": [], "id": 1 } // Response { "jsonrpc": "
+  - Pharos MCP — https://docs.pharos.xyz/tooling-and-infrastructure/mcp
+      get_chain_info eth_chainId, eth_blockNumber, web3_clientVersion Chain ID, client version and latest block get_block_number eth_blockNumber Latest block height get_block eth_getBlockByNumber Block by t
+[exit code 0]
+
+$ pharos-docs "?"
+usage: pharos-docs [-h] [--sources SOURCES] [--search] [--json]
+                   [--endpoint ENDPOINT] [--version]
+                   question [question ...]
+pharos-docs: error: question is empty or too short
+[exit code 2]
+$ pharos-docs --endpoint http://docs.pharos.xyz/~gitbook/mcp "chain id"
+usage: pharos-docs [-h] [--sources SOURCES] [--search] [--json]
+                   [--endpoint ENDPOINT] [--version]
+                   question [question ...]
+pharos-docs: error: refusing insecure MCP endpoint: 'http://docs.pharos.xyz/~gitbook/mcp' (use https://)
+[exit code 2]
