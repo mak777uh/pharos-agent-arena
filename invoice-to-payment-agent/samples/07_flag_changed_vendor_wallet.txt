@@ -1,0 +1,18 @@
+$ python invoice_agent.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --ledger samples/ledger.jsonl samples/invoices/inv_json_fraud.json
+[run at 2026-10-14 21:24:58 UTC]
+Invoice: samples/invoices/inv_json_fraud.json
+Extracted fields:
+  format                : json
+  reference             : NW-7790
+  payee                 : Northwind Hosting
+  payee wallet          : 0x1f3546a29eec2102c8d52e21a45114124014c85c
+  amount                : 120.00
+  currency/token        : USDC
+  due date              : 2026-11-20
+  network               : 1672
+  bill-to wallet        : -
+  line items            : 1
+  subtotal/tax/discount : None/None/None
+FLAGGED - not preparing a payment until these are resolved with the payee:
+  [!] MISMATCH payee wallet: 'Northwind Hosting' is on file with 0x4ffd9c7e8641947662a43af298b734ca93530002, invoice says 0x1f3546a29eec2102c8d52e21a45114124014c85c (possible invoice fraud - verify out of band)
+[exit code 1]
