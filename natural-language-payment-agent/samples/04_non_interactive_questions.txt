@@ -1,0 +1,26 @@
+$ python nl_pay.py --non-interactive "send 20 or 30 to alic"
+[run at 2026-10-14 21:16:54 UTC]
+Instruction: 'send 20 or 30 to alic'
+Parsed     : amount=None token=None recipient=None
+{
+  "status": "needs_input",
+  "questions": [
+    {
+      "slot": "amount",
+      "question": "I found several amounts (20, 30). Which one should I send?"
+    },
+    {
+      "slot": "token",
+      "question": "Which token? (USDC, PROS, WPROS, LINK, WETH)"
+    },
+    {
+      "slot": "recipient",
+      "question": "'alic' is not in your address book. Did you mean 'alice'? Who should receive it (contact name or 0x address)?"
+    },
+    {
+      "slot": "from",
+      "question": "Which wallet will sign this payment (your 0x address)?"
+    }
+  ]
+}
+[exit code 3]
