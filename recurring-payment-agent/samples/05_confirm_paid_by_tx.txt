@@ -1,0 +1,19 @@
+[run at 2026-10-14 21:37:50 UTC]
+$ python recurring_agent.py --state samples/confirm_demo_state.json add --id payroll-600 --payer 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f --to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737 --signer 0x25fdb4a165661f07cb52ac55d00d8d191126b058 --amount 600 --every weekly --start 2026-10-14T20:30Z
+added payroll-600: 600 USDC weekly from 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737, first due 2026-10-14 20:30 UTC, pull via operator 0x25fdb4a165661f07cb52ac55d00d8d191126b058
+[exit code 0]
+$ python recurring_agent.py --state samples/confirm_demo_state.json run --lead-hours 0 --scan-blocks 1 --out-dir samples/prepared_confirm_demo
+[2026-10-14 21:37 UTC] run: 1 schedule(s), block 20,253,863, lead 0.0 h
+[2026-10-14 21:38 UTC] payroll-600 2026-10-14: due (due 2026-10-14 20:30 UTC), no payment on chain yet -> preparing
+[2026-10-14 21:38 UTC] payroll-600 2026-10-14: INSUFFICIENT FUNDS - insufficient USDC: payer has 0, needs 600; nothing prepared, will retry next run
+[exit code 0]
+$ python recurring_agent.py --state samples/confirm_demo_state.json confirm --id payroll-600 --period 2026-10-14 --tx 0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5
+[2026-10-14 21:38 UTC] payroll-600 2026-10-14: PAID by https://www.pharosscan.xyz/tx/0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5 (block 20,251,314, confirmed by user)
+[exit code 0]
+$ python recurring_agent.py --state samples/confirm_demo_state.json history
+== payroll-600: 600 USDC weekly from 0x84ddbccba32bee8f4e775d737bec2d3c10ea112f to 0x3e79f7ffa10d23dac3ad16af98994f2214f69737 - pull (operator 0x25fdb4a165661f07cb52ac55d00d8d191126b058 signs transferFrom)
+   period      due                   status              detail
+   2026-10-14  2026-10-14 20:30 UTC  paid                https://www.pharosscan.xyz/tx/0xe12e4b5452d0bd36900458f26148e3810051792d407e3c49075275edd2db09e5
+                                       #1 insufficient_funds insufficient USDC: payer has 0, needs 600
+   next scheduled payment: 2026-10-21 20:30 UTC (600 USDC)
+[exit code 0]
