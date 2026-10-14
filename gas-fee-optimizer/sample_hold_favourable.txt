@@ -1,0 +1,18 @@
+$ python gas_fee_optimizer.py hold --to 0x1f3546a29eec2102c8d52e21a45114124014c85c --value 0.01 --gas-limit 21000 --deadline 10m
+[2026-10-14 20:41:00 UTC] REQUEST to=0x1f3546a29eec2102c8d52e21a45114124014c85c value=0.01 PROS data=0x gasLimit=21,000
+    deadline 2026-10-14 20:50:59 UTC (600 s) · favourable when baseFee+tip <= p25 of 16 recorded samples = 10 gwei · poll every 15 s
+[2026-10-14 20:41:00 UTC] SUBMIT (gas favourable: 10 gwei <= 10 gwei) at block #20,250,642: baseFee 10 gwei + tip 0 gwei
+    request-time price 10 gwei at block #20,250,642 (2026-10-14 20:41:00 UTC)
+    expected fee now  0.00021000 PROS (~$0.000123)  vs at request time 0.00021000 PROS (~$0.000123)  -> same price
+    DRY RUN (prepare-only): nothing was signed or sent. Sign this with your own wallet now:
+    {"chainId": 1672, "type": "0x2", "to": "0x1f3546a29eec2102c8d52e21a45114124014c85c", "value": "0x2386f26fc10000", "data": "0x", "gas": "0x5208", "maxFeePerGas": "0x4a817c800", "maxPriorityFeePerGas": "0x0"}
+    (actual-vs-request comparison for a mined tx: `gas_fee_optimizer.py report --tx <hash> --request-block 20250642`)
+
+$ python gas_fee_optimizer.py hold --to 0x1f3546a29eec2102c8d52e21a45114124014c85c --value 0.01 --deadline 10m   # no --from: estimate_gas has no funded sender
+gas_fee_optimizer.py: error: estimate_gas failed (estimate_gas: { "error": { "message": "The caller does not have enough funds for value transfer.", "code": -32029 } }); pass --from <funded sender> or --gas-limit N
+$ python gas_fee_optimizer.py hold --to 0xabc --deadline 5m
+gas_fee_optimizer.py: error: not a valid EVM address: '0xabc'
+$ python gas_fee_optimizer.py hold --to 0x1f3546a29eec2102c8d52e21a45114124014c85c --deadline 3s
+gas_fee_optimizer.py: error: deadline must be between 10 s and 7 days from now
+$ python gas_fee_optimizer.py hold --to 0x1f3546a29eec2102c8d52e21a45114124014c85c --deadline 5m --broadcast
+gas_fee_optimizer.py: error: --broadcast needs --raw-tx FILE (a transaction you signed yourself)
