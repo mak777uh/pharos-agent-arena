@@ -1,0 +1,324 @@
+[
+  {
+    "tx": "0x39e3bf27e71dfbe0e6e5cdb38d18d66c35bc334c14427223a01ae890f1585c05",
+    "link": "https://www.pharosscan.xyz/tx/0x39e3bf27e71dfbe0e6e5cdb38d18d66c35bc334c14427223a01ae890f1585c05",
+    "block": 20228451,
+    "sender": "0x9ea92f9949e768b2985036409d5d6b815d2ee239",
+    "to": "0xa5ca5fbe34e444f366b373170541ec6902b0f75c",
+    "contract_created": null,
+    "method_selector": "0xff84aafa",
+    "value": "0.000000 PROS",
+    "gas_limit": 425621,
+    "gas_used": 199350,
+    "fee_paid": "0.002193 PROS",
+    "status": "failed",
+    "sender_balance_before": "9.974346 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20228450,
+      "message": "execution reverted: DODORouteProxy: Return amount is not enough",
+      "data": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002b444f444f526f75746550726f78793a2052657475726e20616d6f756e74206973"
+    },
+    "decoded_revert": {
+      "kind": "error_string",
+      "selector": "0x08c379a0",
+      "signature": "Error(string)",
+      "reason": "DODORouteProxy: Return amount is not enough"
+    },
+    "failure_type": "slippage",
+    "title": "Price moved too much (slippage protection)",
+    "explanation": "The swap would have given you less than the minimum you agreed to accept, because the price moved between signing and execution. The contract cancelled it to protect you. (Contract message: 'DODORouteProxy: Return amount is not enough'.)",
+    "fix": "Retry with a fresh quote, a smaller trade size, or a slightly higher slippage tolerance (e.g. 0.5% -> 1%).",
+    "evidence": [
+      "receipt status 0 in block #20,228,451",
+      "gas used 199,350 of limit 425,621 (46.8%)",
+      "replay reverted: 'execution reverted: DODORouteProxy: Return amount is not enough', data selector 0x08c379a0"
+    ]
+  },
+  {
+    "tx": "0xd2c9c032e2b5e3ebd67bddaeb1caabe5b89d74b03b6b8409191fdbf0413cac64",
+    "link": "https://www.pharosscan.xyz/tx/0xd2c9c032e2b5e3ebd67bddaeb1caabe5b89d74b03b6b8409191fdbf0413cac64",
+    "block": 20237118,
+    "sender": "0x4553c9a2f26efb74fc7dc9574c25ace55c0e3a43",
+    "to": "0x946dc10e5d56a3d7619859be53f99d3e4e3c4cef",
+    "contract_created": null,
+    "method_selector": "0x2280f2af",
+    "value": "0.000000 PROS",
+    "gas_limit": 600000,
+    "gas_used": 264734,
+    "fee_paid": "0.002697 PROS",
+    "status": "failed",
+    "sender_balance_before": "6.171176 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20237117,
+      "message": "execution reverted: ERC20: transfer amount exceeds allowance",
+      "data": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002845524332303a207472616e7366657220616d6f756e7420657863656564732061"
+    },
+    "decoded_revert": {
+      "kind": "error_string",
+      "selector": "0x08c379a0",
+      "signature": "Error(string)",
+      "reason": "ERC20: transfer amount exceeds allowance"
+    },
+    "failure_type": "insufficient_allowance",
+    "title": "Token spending permission (allowance) too low",
+    "explanation": "The app tried to move your tokens but you had not approved it to spend that many. Token contracts block that until you give permission. (Contract message: 'ERC20: transfer amount exceeds allowance'.)",
+    "fix": "Approve the app's contract (the spender) for at least the amount you want to use, wait for the approval to confirm, then retry. Approve only what you need rather than an unlimited amount.",
+    "evidence": [
+      "receipt status 0 in block #20,237,118",
+      "gas used 264,734 of limit 600,000 (44.1%)",
+      "replay reverted: 'execution reverted: ERC20: transfer amount exceeds allowance', data selector 0x08c379a0"
+    ]
+  },
+  {
+    "tx": "0xcc624ade283e0d0f1f1df68d1b53aa741dfd4b92e4a42ca40bb9fd81eb12b6dc",
+    "link": "https://www.pharosscan.xyz/tx/0xcc624ade283e0d0f1f1df68d1b53aa741dfd4b92e4a42ca40bb9fd81eb12b6dc",
+    "block": 20229980,
+    "sender": "0xe7cef628bbb5328d6e61d2a7e732033b5c93f733",
+    "to": "0xee860417fc843a7191d88c62b2937bb891b24bc6",
+    "contract_created": null,
+    "method_selector": "0x4dffb68d",
+    "value": "0.000000 PROS",
+    "gas_limit": 2000000,
+    "gas_used": 72700,
+    "fee_paid": "0.001636 PROS",
+    "status": "failed",
+    "sender_balance_before": "24.992772 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20229979,
+      "message": "execution reverted: ERC20: transfer amount exceeds balance",
+      "data": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062"
+    },
+    "decoded_revert": {
+      "kind": "error_string",
+      "selector": "0x08c379a0",
+      "signature": "Error(string)",
+      "reason": "ERC20: transfer amount exceeds balance"
+    },
+    "failure_type": "insufficient_token_balance",
+    "title": "Not enough tokens",
+    "explanation": "The action needed more tokens than were available (in your wallet, or in the contract that had to pay out), so the token transfer was refused. (Contract message: 'ERC20: transfer amount exceeds balance'.)",
+    "fix": "Check your token balance and use a smaller amount. If you were claiming/withdrawing, the contract may not hold enough funds right now - try later or contact the app's support.",
+    "evidence": [
+      "receipt status 0 in block #20,229,980",
+      "gas used 72,700 of limit 2,000,000 (3.6%)",
+      "replay reverted: 'execution reverted: ERC20: transfer amount exceeds balance', data selector 0x08c379a0"
+    ]
+  },
+  {
+    "tx": "0x45720e64df6d9a4bf8f16ba9a5a46ee5e403ad459bd5c5ff7babd9d856b9d03e",
+    "link": "https://www.pharosscan.xyz/tx/0x45720e64df6d9a4bf8f16ba9a5a46ee5e403ad459bd5c5ff7babd9d856b9d03e",
+    "block": 20224910,
+    "sender": "0x0077777711ce3371d9a00b5ccb5600e2dd3ac991",
+    "to": null,
+    "contract_created": "0x9c8e87a9b72f44b996fba184f8f14413eccbe1ec",
+    "method_selector": "0x60806040",
+    "value": "2,000,000,000,000,000.000000 PROS",
+    "gas_limit": 500000,
+    "gas_used": 500000,
+    "fee_paid": "0.005000 PROS",
+    "status": "failed",
+    "sender_balance_before": "0.837318 PROS",
+    "failure_type": "insufficient_native_balance",
+    "title": "Not enough PROS in the wallet",
+    "explanation": "The transaction tried to send more PROS than the wallet held at that moment, so the network could not carry it out. The network fee for the attempt was still charged.",
+    "fix": "Lower the amount (leave some PROS for fees) or top up the wallet first, then send again.",
+    "evidence": [
+      "receipt status 0 in block #20,224,910",
+      "gas used 500,000 of limit 500,000 (100.0%)",
+      "tx value 2,000,000,000,000,000.000000 PROS > sender balance 0.837318 PROS at block #20,224,909"
+    ]
+  },
+  {
+    "tx": "0xb778d422012ef4ec564229a46dfdd76a0edfe26461a2811a7b64c88cce617f3d",
+    "link": "https://www.pharosscan.xyz/tx/0xb778d422012ef4ec564229a46dfdd76a0edfe26461a2811a7b64c88cce617f3d",
+    "block": 20225269,
+    "sender": "0x771ec62dbda31cb950684beadb0ac4bd5205709d",
+    "to": "0x81cb6fd0f18b3423ff82dde6411e6d47b26bc76a",
+    "contract_created": null,
+    "method_selector": "0xb26cc394",
+    "value": "0.000000 PROS",
+    "gas_limit": 500000,
+    "gas_used": 46229,
+    "fee_paid": "0.000509 PROS",
+    "status": "failed",
+    "sender_balance_before": "8.737276 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20225268,
+      "message": "execution reverted: ",
+      "data": "0x82b42900"
+    },
+    "decoded_revert": {
+      "kind": "custom_error",
+      "selector": "0x82b42900",
+      "signature": "Unauthorized()",
+      "signature_source": "built-in table",
+      "args": [],
+      "reason": "Unauthorized"
+    },
+    "failure_type": "permission",
+    "title": "Not allowed to call this function",
+    "explanation": "The function is restricted (owner / admin / specific role) and the sending wallet does not have that permission. (Contract message: 'Unauthorized'.)",
+    "fix": "Use the wallet that holds the required role, or ask the contract owner to grant it. If you are a regular user, this action is not meant for you - check you are on the right page.",
+    "evidence": [
+      "receipt status 0 in block #20,225,269",
+      "gas used 46,229 of limit 500,000 (9.2%)",
+      "replay reverted: 'execution reverted: ', data selector 0x82b42900",
+      "custom error Unauthorized() (from built-in table)"
+    ]
+  },
+  {
+    "tx": "0xe92ccb92eb0285a7bff19f5b9c3d9d9ce5eca00f9630c407e435859b1c4f25ff",
+    "link": "https://www.pharosscan.xyz/tx/0xe92ccb92eb0285a7bff19f5b9c3d9d9ce5eca00f9630c407e435859b1c4f25ff",
+    "block": 20244982,
+    "sender": "0xc5f6fe56976e0a55aed6c0e08951a8a2f8980f45",
+    "to": "0x936564245b69f5a293b42cbd752e0ee3bb68b470",
+    "contract_created": null,
+    "method_selector": "0x2f139e4f",
+    "value": "0.000000 PROS",
+    "gas_limit": 540000,
+    "gas_used": 166077,
+    "fee_paid": "0.002566 PROS",
+    "status": "failed",
+    "sender_balance_before": "83.043577 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": false,
+      "block": 20244981,
+      "data": null
+    },
+    "replay_post_block": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20244982,
+      "message": "execution reverted: ",
+      "data": "0x911bb2c9000000000000000000000000000000000000000000000000000000000250664a0000000000000000000000000000000000000000000000000000000863dd62f200000000000000000000000000000000000000000000000000000008662dbbe2"
+    },
+    "changed_within_block": true,
+    "decoded_revert": {
+      "kind": "custom_error",
+      "selector": "0x911bb2c9",
+      "signature": "InsufficientOutputAmount(uint256,uint256,uint256)",
+      "signature_source": "built-in table",
+      "args": [
+        38823498,
+        36035191538,
+        36074011618
+      ],
+      "reason": "InsufficientOutputAmount"
+    },
+    "failure_type": "slippage",
+    "title": "Price moved too much (slippage protection)",
+    "explanation": "The swap would have given you less than the minimum you agreed to accept, because the price moved between signing and execution. The contract cancelled it to protect you. Most likely another transaction in the same block got in first and changed the state this one relied on. (Contract message: 'InsufficientOutputAmount'.) Numbers from the error: 38,823,498 / 36,035,191,538 / 36,074,011,618 (raw units).",
+    "fix": "Retry with a fresh quote, a smaller trade size, or a slightly higher slippage tolerance (e.g. 0.5% -> 1%).",
+    "evidence": [
+      "receipt status 0 in block #20,244,982",
+      "gas used 166,077 of limit 540,000 (30.8%)",
+      "replay of the same call on block #20,244,981 state does not revert",
+      "replay on block #20,244,982 state (after the block) reverts -> most likely an earlier tx in the same block changed the state first",
+      "replay reverted: 'execution reverted: ', data selector 0x911bb2c9",
+      "custom error InsufficientOutputAmount(uint256,uint256,uint256) (from built-in table) args=[38823498, 36035191538, 36074011618]"
+    ]
+  },
+  {
+    "tx": "0xe654cacd9dcf31f668f331f4c72c2822b7e0e32458baa6ac8f14c5f23b90f285",
+    "link": "https://www.pharosscan.xyz/tx/0xe654cacd9dcf31f668f331f4c72c2822b7e0e32458baa6ac8f14c5f23b90f285",
+    "block": 20228649,
+    "sender": "0x682e89a00bb55748510fafe3ef72143bce8a2ef4",
+    "to": "0xd0428799fbc35557834d33121ba4472692c8908a",
+    "contract_created": null,
+    "method_selector": "0xc3f0d30e",
+    "value": "0.000000 PROS",
+    "gas_limit": 600000,
+    "gas_used": 42423,
+    "fee_paid": "0.000460 PROS",
+    "status": "failed",
+    "sender_balance_before": "0.019371 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20228648,
+      "message": "execution reverted: ",
+      "data": "0x4ef1d5c5"
+    },
+    "decoded_revert": {
+      "kind": "custom_error",
+      "selector": "0x4ef1d5c5",
+      "signature": "NoRedeemRequest()",
+      "signature_source": "built-in table",
+      "args": [],
+      "reason": "NoRedeemRequest"
+    },
+    "failure_type": "nothing_to_do",
+    "title": "Nothing to act on",
+    "explanation": "The action refers to something that does not exist (yet) - e.g. there was no pending request to cancel or nothing to claim. (Contract message: 'NoRedeemRequest'.)",
+    "fix": "Refresh the app and check the current state of your position/request before retrying.",
+    "evidence": [
+      "receipt status 0 in block #20,228,649",
+      "gas used 42,423 of limit 600,000 (7.1%)",
+      "replay reverted: 'execution reverted: ', data selector 0x4ef1d5c5",
+      "custom error NoRedeemRequest() (from built-in table)"
+    ]
+  },
+  {
+    "tx": "0x0d826a7211ed03613847c884761def69361f7e12c7f4e9020de78aa51cb2086c",
+    "link": "https://www.pharosscan.xyz/tx/0x0d826a7211ed03613847c884761def69361f7e12c7f4e9020de78aa51cb2086c",
+    "block": 20243816,
+    "sender": "0x7ac6d25fd5e437cb7c57aee77ac2d0a6cb85936c",
+    "to": "0x69dc8e2d95c3281a643810fb5624b26da8610da4",
+    "contract_created": null,
+    "method_selector": "0xc5918880",
+    "value": "0.000000 PROS",
+    "gas_limit": 1500003,
+    "gas_used": 62035,
+    "fee_paid": "0.000620 PROS",
+    "status": "failed",
+    "sender_balance_before": "3.564364 PROS",
+    "replay": {
+      "tool": "eth_call",
+      "reverted": true,
+      "block": 20243815,
+      "message": "execution reverted: BC",
+      "data": "0x08c379a0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000024243000000000000000000000000000000000000000000000000000000000000"
+    },
+    "decoded_revert": {
+      "kind": "error_string",
+      "selector": "0x08c379a0",
+      "signature": "Error(string)",
+      "reason": "BC"
+    },
+    "failure_type": "contract_error",
+    "title": "The contract rejected the transaction",
+    "explanation": "The contract refused the call with the message: 'BC'",
+    "fix": "This is an app-specific condition. Check the inputs/state the message refers to; if unclear, send this transaction hash to the app's support.",
+    "evidence": [
+      "receipt status 0 in block #20,243,816",
+      "gas used 62,035 of limit 1,500,003 (4.1%)",
+      "replay reverted: 'execution reverted: BC', data selector 0x08c379a0"
+    ]
+  },
+  {
+    "tx": "0x3e1168df397e9da275e75329093106eee1ea938549be3d18a53b44f949ee1a2a",
+    "link": "https://www.pharosscan.xyz/tx/0x3e1168df397e9da275e75329093106eee1ea938549be3d18a53b44f949ee1a2a",
+    "block": 20223935,
+    "sender": "0x2eac2f973e93adaac746c2d55c8e8ad2b513f306",
+    "to": "0x8999fdc86522ec3ebc5bd6ea27f732387d70b6f1",
+    "contract_created": null,
+    "method_selector": "0x4805f46d",
+    "value": "0.000000 PROS",
+    "gas_limit": 202167,
+    "gas_used": 148006,
+    "fee_paid": "0.001480 PROS",
+    "status": "success",
+    "title": "This transaction did not fail",
+    "explanation": "It was executed successfully; nothing needs fixing.",
+    "fix": "If the app shows something unexpected, the issue is off-chain - contact the app's support."
+  }
+]
