@@ -1,0 +1,22 @@
+$ python invoice_agent.py --from 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a --ledger samples/ledger.jsonl --today 2026-10-14 samples/invoices/inv_text_mismatch.txt
+[run at 2026-10-14 21:24:56 UTC]
+Invoice: samples/invoices/inv_text_mismatch.txt
+Extracted fields:
+  format                : text
+  reference             : INV-2026-0043
+  payee                 : Lumen Design Studio
+  payee wallet          : 0x1F3546a29EeC2102c8d52E21a45114124014c85c
+  amount                : 300.00
+  currency/token        : USDC
+  due date              : 2026-10-01
+  network               : Ethereum
+  bill-to wallet        : -
+  line items            : 2
+  subtotal/tax/discount : 280.00/None/None
+  [note] payee wallet matches the vendor book entry for 'Lumen Design Studio'
+  [note] invoice is OVERDUE (due 2026-10-01)
+FLAGGED - not preparing a payment until these are resolved with the payee:
+  [!] INVALID payee wallet 0x1F3546a29EeC2102c8d52E21a45114124014c85c fails the EIP-55 checksum (typo?) - expected 0x1F3546a29EeC2102c8d52E21a45114124014c85C
+  [!] MISMATCH network: invoice asks for 'Ethereum', this agent pays on Pharos mainnet (chainId 1672)
+  [!] MISMATCH total 300.00 != line items 280.00 = 280.00
+[exit code 1]
