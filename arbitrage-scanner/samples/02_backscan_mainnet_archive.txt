@@ -1,0 +1,12 @@
+Backscan (archive eth_call through Chain MCP) blocks 20250500..20262500 step 2000 · threshold $1.0 / 5 bps · size cap = wallet USDC at each block
+
+     block     0.01%     0.05%     0.30%     1.00%    oracle  best route       gross bps    size $     net $  decision
+  20250500   0.58317   0.58192   0.58409   0.58479   0.58399  0.01->0.30%          15.86     10.00   -0.0170  SKIP
+  20252500   0.58368   0.58192   0.58409   0.58479   0.58362  0.01->0.30%           7.09     10.00   -0.0257  SKIP
+  20254500   0.58619   0.58192   0.58470   0.58479   0.58562  0.30->0.01%          25.38     10.00   -0.0075  SKIP
+  20256500   0.58456   0.58192   0.58429   0.58479   0.58562  0.30->0.01%           4.56     10.00   -0.0282  SKIP  [pool 0.01%: first reads disagreed at block 20256500: Chain MCP tick -285871 L 8.0139e+17 vs official RPC tick -281694 L 8.0139e+17; re-reads agree (tick -281694) -> using it]
+  20258500   0.58223   0.58192   0.58404   0.58479   0.58403  0.01->0.30%          31.08     10.00   -0.0018  SKIP  [pool 0.30%: first reads disagreed at block 20258500: Chain MCP tick -285892 L 2.9086e+17 vs official RPC tick -281703 L 2.9086e+17; re-reads agree (tick -281703) -> using it]
+  20260500 read error: [<class 'decimal.DivisionByZero'>]
+  20262500   0.58533   0.58192   0.58433   0.58479   0.58423  0.30->0.01%          17.13     10.00   -0.0157  SKIP
+
+0 block(s) above threshold out of 7 scanned
