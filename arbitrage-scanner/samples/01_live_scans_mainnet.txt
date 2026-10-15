@@ -1,0 +1,57 @@
+Arbitrage scanner · WPROS/USDC · Pharos mainnet (chainId 1672) · pools found by factory 0x2c90ccb0b989afa2433f499698451a25744a552b: 0.01% 0x912c9ade24d44d8922f0866d8dcb079f1363f647, 0.05% 0x9e1ec11d25f65ae5e7f9aaaa6f73b41eb4df651d, 0.30% 0x4146d192da6428c9e1c243d2a953c625b5765623, 1.00% 0xfc5f8974a7e94504f8d3ac20fbdc67dadff75049
+threshold: net >= $1.0 and >= 5 bps · wallet 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+
+SCAN #1 · block 20263148 · 2026-10-15 00:29:59 UTC · Pharos Chain MCP (mainnet) · all reads pinned to this block
+  sources
+    pool 0.01%  0x912c9ade24d44d8922f0866d8dcb079f1363f647  1 WPROS = 0.593323 USDC  vs oracle -0.296%  in-range L 8.014e+17
+    pool 0.05%  0x9e1ec11d25f65ae5e7f9aaaa6f73b41eb4df651d  1 WPROS = 0.581919 USDC  vs oracle -2.212%  in-range L 1.322e+12
+    pool 0.30%  0x4146d192da6428c9e1c243d2a953c625b5765623  1 WPROS = 0.595112 USDC  vs oracle +0.005%  in-range L 2.909e+17
+    pool 1.00%  0xfc5f8974a7e94504f8d3ac20fbdc67dadff75049  1 WPROS = 0.588840 USDC  vs oracle -1.049%  in-range L 1.285e+14
+    Chainlink PROS/USD 0.595084  (reference only, not a tradable leg)
+  gas: 10.00 gwei x 200000 units (2-hop exactInput)   size cap 6859.46 USDC (wallet holds 6859.46)
+  route (buy -> sell)    gross bps fee floor  best size $    gross $    fees $  slippage $     gas $      net $  net bps
+  0.01% -> 0.30%             30.15     31.00        10.00     0.0302    0.0311      0.0006  0.001190    -0.0027    -2.74
+  0.05% -> 0.30%            226.71     35.00        10.00     0.2267    0.0078      9.2849  0.001190    -9.0672 -9067.20
+  0.05% -> 0.01%            195.97      6.00        10.00     0.1960    0.0051      9.2570  0.001190    -9.0673 -9067.29
+  0.05% -> 1.00%            118.92    105.00        10.00     0.1189    0.0143      9.1954  0.001190    -9.0920 -9091.99
+  1.00% -> 0.30%            106.52    130.00        10.00     0.1065    0.1300  (screened)  0.001190    -0.0247   -24.67  upper bound, not quoted (cannot beat the best)
+  1.00% -> 0.01%             76.14    101.00        10.00     0.0761    0.1010  (screened)  0.001190    -0.0261   -26.05  upper bound, not quoted (cannot beat the best)
+  DECISION: SKIP — gross spread 30.15 bps <= swap-fee floor 31.00 bps; best net $-0.0027 < threshold $1.0; best net -2.74 bps < threshold 5 bps
+  (99 reads, 92.6 s; logged to runs/scans.jsonl)
+
+SCAN #2 · block 20263266 · 2026-10-15 00:32:00 UTC · Pharos Chain MCP (mainnet) · all reads pinned to this block
+  sources
+    pool 0.01%  0x912c9ade24d44d8922f0866d8dcb079f1363f647  1 WPROS = 0.591712 USDC  vs oracle -0.567%  in-range L 8.014e+17
+    pool 0.05%  0x9e1ec11d25f65ae5e7f9aaaa6f73b41eb4df651d  1 WPROS = 0.581919 USDC  vs oracle -2.212%  in-range L 1.322e+12
+    pool 0.30%  0x4146d192da6428c9e1c243d2a953c625b5765623  1 WPROS = 0.593291 USDC  vs oracle -0.301%  in-range L 2.909e+17
+    pool 1.00%  0xfc5f8974a7e94504f8d3ac20fbdc67dadff75049  1 WPROS = 0.588840 USDC  vs oracle -1.049%  in-range L 1.285e+14
+    Chainlink PROS/USD 0.595084  (reference only, not a tradable leg)
+  gas: 10.00 gwei x 200000 units (2-hop exactInput)   size cap 6859.46 USDC (wallet holds 6859.46)
+  route (buy -> sell)    gross bps fee floor  best size $    gross $    fees $  slippage $     gas $      net $  net bps
+  0.01% -> 0.30%             26.69     31.00        10.00     0.0267    0.0311      0.0006  0.001190    -0.0062    -6.19
+  0.05% -> 0.01%            168.29      6.00        10.00     0.1683    0.0051      9.2318  0.001190    -9.0698 -9069.83
+  0.05% -> 0.30%            195.42     35.00        10.00     0.1954    0.0078      9.2565  0.001190    -9.0701 -9070.05
+  0.05% -> 1.00%            118.92    105.00        10.00     0.1189    0.0143      9.1954  0.001190    -9.0920 -9091.99
+  1.00% -> 0.01%             48.79    101.00        10.00     0.0488    0.1010  (screened)  0.001190    -0.0534   -53.40  upper bound, not quoted (cannot beat the best)
+  1.00% -> 0.30%             75.60    130.00        10.00     0.0756    0.1300  (screened)  0.001190    -0.0556   -55.59  upper bound, not quoted (cannot beat the best)
+  DECISION: SKIP — gross spread 26.69 bps <= swap-fee floor 31.00 bps; best net $-0.0062 < threshold $1.0; best net -6.19 bps < threshold 5 bps
+  (82 reads, 101.2 s; logged to runs/scans.jsonl)
+
+SCAN #3 · block 20263421 · 2026-10-15 00:34:05 UTC · Pharos Chain MCP (mainnet) · all reads pinned to this block
+  sources
+    pool 0.01%  0x912c9ade24d44d8922f0866d8dcb079f1363f647  1 WPROS = 0.592011 USDC  vs oracle +0.062%  in-range L 8.014e+17
+    pool 0.05%  0x9e1ec11d25f65ae5e7f9aaaa6f73b41eb4df651d  1 WPROS = 0.581919 USDC  vs oracle -1.644%  in-range L 1.322e+12
+    pool 0.30%  0x4146d192da6428c9e1c243d2a953c625b5765623  1 WPROS = 0.593291 USDC  vs oracle +0.279%  in-range L 2.909e+17
+    pool 1.00%  0xfc5f8974a7e94504f8d3ac20fbdc67dadff75049  1 WPROS = 0.588840 USDC  vs oracle -0.474%  in-range L 1.285e+14
+    Chainlink PROS/USD 0.591644  (reference only, not a tradable leg)
+  gas: 10.00 gwei x 200000 units (2-hop exactInput)   size cap 6859.46 USDC (wallet holds 6859.46)
+  route (buy -> sell)    gross bps fee floor  best size $    gross $    fees $  slippage $     gas $      net $  net bps
+  0.01% -> 0.30%             21.63     31.00        10.00     0.0216    0.0311      0.0006  0.001183    -0.0112   -11.22
+  0.05% -> 0.01%            173.42      6.00        10.00     0.1734    0.0051      9.2365  0.001183    -9.0694 -9069.35
+  0.05% -> 0.30%            195.42     35.00        10.00     0.1954    0.0078      9.2565  0.001183    -9.0700 -9070.05
+  0.05% -> 1.00%            118.92    105.00        10.00     0.1189    0.0143      9.1954  0.001183    -9.0920 -9091.98
+  1.00% -> 0.01%             53.85    101.00        10.00     0.0539    0.1010  (screened)  0.001183    -0.0483   -48.33  upper bound, not quoted (cannot beat the best)
+  1.00% -> 0.30%             75.60    130.00        10.00     0.0756    0.1300  (screened)  0.001183    -0.0556   -55.58  upper bound, not quoted (cannot beat the best)
+  DECISION: SKIP — gross spread 21.63 bps <= swap-fee floor 31.00 bps; best net $-0.0112 < threshold $1.0; best net -11.22 bps < threshold 5 bps
+  (82 reads, 104.8 s; logged to runs/scans.jsonl)
+
