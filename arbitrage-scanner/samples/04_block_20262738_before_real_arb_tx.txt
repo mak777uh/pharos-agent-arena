@@ -1,0 +1,25 @@
+Arbitrage scanner · WPROS/USDC · Pharos mainnet (chainId 1672) · pools found by factory 0x2c90ccb0b989afa2433f499698451a25744a552b: 0.01% 0x912c9ade24d44d8922f0866d8dcb079f1363f647, 0.05% 0x9e1ec11d25f65ae5e7f9aaaa6f73b41eb4df651d, 0.30% 0x4146d192da6428c9e1c243d2a953c625b5765623, 1.00% 0xfc5f8974a7e94504f8d3ac20fbdc67dadff75049
+threshold: net >= $0.0 and >= 0.0 bps · wallet 0x84DBd23178bA7fc6A2a396559139AEF69d0F072a
+
+SCAN · block 20262738 · 2026-10-15 00:33:02 UTC · Pharos Chain MCP (mainnet) · all reads pinned to this block
+  sources
+    pool 0.01%  0x912c9ade24d44d8922f0866d8dcb079f1363f647  1 WPROS = 0.591230 USDC  vs oracle +0.389%  in-range L 8.014e+17
+    pool 0.05%  0x9e1ec11d25f65ae5e7f9aaaa6f73b41eb4df651d  1 WPROS = 0.581919 USDC  vs oracle -1.192%  in-range L 1.322e+12
+    pool 0.30%  0x4146d192da6428c9e1c243d2a953c625b5765623  1 WPROS = 0.589095 USDC  vs oracle +0.026%  in-range L 2.909e+17
+    pool 1.00%  0xfc5f8974a7e94504f8d3ac20fbdc67dadff75049  1 WPROS = 0.584787 USDC  vs oracle -0.705%  in-range L 1.285e+14
+    Chainlink PROS/USD 0.588942  (reference only, not a tradable leg)
+  gas: 10.00 gwei x 200000 units (2-hop exactInput)   size cap 6859.46 USDC (wallet holds 6859.46)
+  route (buy -> sell)    gross bps fee floor  best size $    gross $    fees $  slippage $     gas $      net $  net bps
+  0.30% -> 0.01%             36.24     31.00        42.09     0.1525    0.1305      0.0113  0.001178     0.0096     2.29
+  1.00% -> 0.01%            110.18    101.00        10.00     0.1102    0.1009      0.5543  0.001178    -0.5463  -546.27
+  0.05% -> 0.01%            160.01      6.00        10.00     0.1600    0.0051      9.2243  0.001178    -9.0706 -9070.57
+  0.05% -> 0.30%            123.32     35.00        10.00     0.1233    0.0078      9.1910  0.001178    -9.0766 -9076.63
+  0.05% -> 1.00%             49.29    105.00        10.00     0.0493    0.1050  (screened)  0.001178    -0.0569   -56.89  upper bound, not quoted (cannot beat the best)
+  1.00% -> 0.30%             73.67    130.00        10.00     0.0737    0.1300  (screened)  0.001178    -0.0575   -57.51  upper bound, not quoted (cannot beat the best)
+  DECISION: PREPARE — net $0.0096 (2.29 bps) >= threshold $0.0 and 0.0 bps
+  (109 reads, 135.0 s; logged to runs/scans.jsonl)
+  PREPARE: atomic router.exactInput  path USDC -3000-> WPROS -100-> USDC
+    amountIn 42.093744 USDC · amountOutMinimum 42.094922 USDC (expected 42.104548 − 10 bps buffer, floor amountIn + gas) — reverts instead of losing on the legs
+    SIMULATED EXECUTION on the fork, state of block 20262738 (wallet impersonated, no key): status 1, USDC +0.010804 (predicted +0.010804), gas 199708 = 0.00152919 PROS ≈ $0.000901 → realized net $0.009903
+    (fork tx hash exists only on the local fork, not on pharosscan)
+
