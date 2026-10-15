@@ -1,0 +1,36 @@
+{
+  "_comment": "Arbitrage scanner config, Pharos mainnet (chainId 1672). Pools are discovered on chain every run with factory.getPool(USDC, WPROS, fee) for each fee tier; the Chainlink PROS/USD feed is a reference source (not tradable). Amounts in USDC.",
+  "base_token": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+  "quote_token": "0x52c48d4213107b20bc583832b0d951fb9ca8f0b0",
+  "factory": "0x2c90ccb0b989afa2433f499698451a25744a552b",
+  "router": "0xf38d34c8382b9079b0f85309578b43b8479cd875",
+  "fee_tiers": [
+    100,
+    500,
+    3000,
+    10000
+  ],
+  "oracle": "0x371ed36aee5bffbed1a2aa9b7ded7f4eb30f5466",
+  "wallet": "0x84dbd23178ba7fc6a2a396559139aef69d0f072a",
+  "sizes_usdc": [
+    10,
+    25,
+    50,
+    100,
+    250,
+    500,
+    1000,
+    2500,
+    5000,
+    10000,
+    20000
+  ],
+  "max_size_usdc": 20000,
+  "max_oracle_deviation_pct": 5,
+  "thresholds": {
+    "min_net_profit_usd": 1.0,
+    "min_net_profit_bps": 5
+  },
+  "slippage_buffer_bps": 10,
+  "gas_units_fallback": 200000
+}
