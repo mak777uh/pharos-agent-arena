@@ -1,0 +1,17 @@
+official RPC  slot0 @ 20255000: tick -281677  price 0.585565 USDC/WPROS
+Chain MCP #1  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #2  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #3  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #4  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #5  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #6  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #7  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #8  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #9  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #10  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #11  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #12  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #13  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #14  slot0 @ 20255000: tick -281677  price 0.585565  matches
+Chain MCP #15  slot0 @ 20255000: tick -281677  price 0.585565  matches
+0/15 Chain MCP answers differed from the official RPC for the same block
